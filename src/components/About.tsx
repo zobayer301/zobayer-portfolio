@@ -74,10 +74,10 @@ export function About() {
           className="mb-24 lg:mb-32"
         >
           <h2 className="font-display text-[8vw] lg:text-section leading-none tracking-tight text-gray-300">
-            <TextScramble key={scrambleKey} as="span" trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">SOLVING REAL-WORLD</TextScramble>
-            <TextScramble key={scrambleKey} as="span" trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">PROBLEMS WITH <span className="text-white underline underline-offset-8">AI</span></TextScramble>
-            <TextScramble key={scrambleKey} as="span" trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">AND CONTINUOUSLY</TextScramble>
-            <TextScramble key={scrambleKey} as="span" trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">LEARNING NEW THINGS."</TextScramble>
+            <TextScramble key={scrambleKey} trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">SOLVING REAL-WORLD</TextScramble>
+            <TextScramble key={scrambleKey} trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">PROBLEMS WITH <span className="text-white underline underline-offset-8">AI</span></TextScramble>
+            <TextScramble key={scrambleKey} trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">AND CONTINUOUSLY</TextScramble>
+            <TextScramble key={scrambleKey} trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">LEARNING NEW THINGS."</TextScramble>
           </h2>
           <p className="mt-6 text-sm text-gray-500 tracking-widest uppercase">
             

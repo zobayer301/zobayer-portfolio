@@ -1,5 +1,5 @@
-import { type MotionProps, motion } from "framer-motion";
-import { type JSX, useEffect, useRef, useState } from "react";
+import { motion, type MotionProps } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const DEFAULT_CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -9,7 +9,6 @@ export type TextScrambleProps = {
   duration?: number;
   speed?: number;
   characterSet?: string;
-  as?: React.ElementType;
   className?: string;
   trigger?: boolean;
   onScrambleComplete?: () => void;
@@ -21,14 +20,10 @@ export function TextScramble({
   speed = 0.04,
   characterSet = DEFAULT_CHARS,
   className,
-  as: Component = "p",
   trigger = true,
   onScrambleComplete,
   ...props
 }: TextScrambleProps) {
-  const MotionComponent = motion.create(
-    Component as keyof JSX.IntrinsicElements,
-  );
   const [scrambledText, setScrambledText] = useState<string | null>(null);
   const onScrambleCompleteRef = useRef(onScrambleComplete);
   onScrambleCompleteRef.current = onScrambleComplete;
@@ -71,9 +66,9 @@ export function TextScramble({
   }, [trigger, children, duration, speed, characterSet]);
 
   return (
-    <MotionComponent className={className} {...props}>
+    <motion.span className={className} {...props}>
       {scrambledText ?? children}
-    </MotionComponent>
+    </motion.span>
   );
 }
 
