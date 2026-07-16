@@ -32,7 +32,7 @@ export function Education() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
             <motion.div {...fadeInUp}>
               <img
-                src="https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="campus.jpg"
                 alt="University campus"
                 className="w-full h-auto grayscale"
               />
