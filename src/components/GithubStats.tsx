@@ -12,10 +12,10 @@ const fadeInUp = {
 }
 
 // github-readme-stats + streak: theme=react tuned for the site's dark palette.
-const statsCard = `https://github-readme-stats.vercel.app/api?username=${USER}&show_icons=true&hide_border=true&theme=react&bg_color=0d0d0d&title_color=ffffff&icon_color=9ca3af&text_color=d1d5db`
-const streakCard = `https://github-readme-streak-stats.herokuapp.com/?user=${USER}&hide_border=true&background=0d0d0d&stroke=1f2937&ring=ffffff&fire=ffffff&currStreakLabel=ffffff&sideLabels=9ca3af&sideNums=d1d5db&currStreakNum=ffffff&dates=6b7280`
-const languagesCard = `https://github-readme-stats.vercel.app/api/top-langs/?username=${USER}&layout=compact&hide_border=true&theme=react&bg_color=0d0d0d&title_color=ffffff&text_color=d1d5db&langs_count=8`
-const graphCard = `https://github-readme-activity-graph.vercel.app/graph?username=${USER}&bg_color=0d0d0d&color=ffffff&line=9ca3af&point=ffffff&area=true&hide_border=true`
+const statsCard = `https://github-readme-stats.vercel.app/api?username=${zobayer301}&show_icons=true&hide_border=true&theme=react&bg_color=0d0d0d&title_color=ffffff&icon_color=9ca3af&text_color=d1d5db`
+const streakCard = `https://github-readme-streak-stats.herokuapp.com/?user=${zobayer301}&hide_border=true&background=0d0d0d&stroke=1f2937&ring=ffffff&fire=ffffff&currStreakLabel=ffffff&sideLabels=9ca3af&sideNums=d1d5db&currStreakNum=ffffff&dates=6b7280`
+const languagesCard = `https://github-readme-stats.vercel.app/api/top-langs/?username=${zobayer301}&layout=compact&hide_border=true&theme=react&bg_color=0d0d0d&title_color=ffffff&text_color=d1d5db&langs_count=8`
+const graphCard = `https://github-readme-activity-graph.vercel.app/graph?username=${zobayer301}&bg_color=0d0d0d&color=ffffff&line=9ca3af&point=ffffff&area=true&hide_border=true`
 
 export function GithubStats() {
   return (
