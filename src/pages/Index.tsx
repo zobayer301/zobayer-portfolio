@@ -1,6 +1,5 @@
 import { Navigation } from '@/components/Navigation'
 import { GrainOverlay } from '@/components/GrainOverlay'
-import { LiquidCursor } from '@/components/LiquidCursor'
 import { ShaderBackground } from '@/components/ShaderBackground'
 import { Hero } from '@/components/Hero'
 import { About } from '@/components/About'
@@ -14,7 +13,6 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <ShaderBackground />
-      <LiquidCursor />
       <GrainOverlay />
       <Navigation />
       <main>
