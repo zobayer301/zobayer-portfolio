@@ -30,7 +30,7 @@ export function About() {
               className="w-full h-auto grayscale"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              GREEN UNIVERSITY OF BANGLADESH — DHAKA / BD
+              GREEN UNIVERSITY OF BANGLADESH
             </p>
           </motion.div>
 
