@@ -24,10 +24,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <h1 className="font-display leading-none tracking-tighter text-[15vw] sm:text-[12vw] md:text-hero">
-              <span className="block text-white">MD. ZOBAYER</span>
-              <span className="block text-white">CHOWDHURY</span>
-              <span className="block text-white">DATA · ML · AI</span>
+            <h1 className="font-display leading-none tracking-tighter text-[10vw] sm:text-[8vw] md:text-[6vw] lg:text-[5vw]">
+              <span className="block text-white">Md. Zobayer Chowdhury</span>
+              <span className="block text-white">DATA &middot; ML &middot; AI</span>
             </h1>
             
             <motion.p
@@ -36,7 +35,7 @@ export function Hero() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="mt-6 md:mt-8 text-sm sm:text-base text-white/80 max-w-sm md:max-w-md leading-relaxed"
             >
-              CSE graduate passionate about Data Science, Machine Learning, and AI-driven solutions — building real-world models from Dhaka, Bangladesh.
+              CSE graduate passionate about Data Science, Machine Learning, and AI-driven solutions &mdash; building real-world models from Dhaka, Bangladesh.
             </motion.p>
           </motion.div>
         </div>
