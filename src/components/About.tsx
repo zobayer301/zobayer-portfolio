@@ -29,7 +29,7 @@ export function About() {
             className="order-2 lg:order-1"
           >
             <img
-              src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src="https://www.pexels.com/photo/man-using-computers-1334093/"
               alt="Data science workspace"
               className="w-full h-auto grayscale"
             />
