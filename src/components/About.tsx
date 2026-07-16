@@ -43,7 +43,7 @@ export function About() {
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
             className="order-1 lg:order-2 flex items-center"
           >
-            <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
+            <p className="text-base lg:text-lg text-gray-300 leading-relaxed text-justify">
               Computer Science and Engineering graduate from Green University of Bangladesh with practical experience in artificial intelligence, machine learning, and immersive technologies. Worked as an AR/VR/XR (Intern) at Battery Low Interactive Ltd and contributed as an Assistant Graphics Designer at the Green University Computer Club. Passionate about creating innovative solutions and applying technology to real-world challenges.
             </p>
           </motion.div>
@@ -72,7 +72,7 @@ export function About() {
             {...fadeInUp}
             className="flex items-center lg:text-right"
           >
-            <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
+            <p className="text-base lg:text-lg text-gray-300 leading-relaxed text-justify">
               His undergraduate thesis - "AI-Driven Early Detection of Heart
               Disease Using Machine Learning and Deep Learning - combined
               medical data with modern ML techniques to explore how algorithms
@@ -114,7 +114,7 @@ export function About() {
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
             className="flex items-center"
           >
-            <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
+            <p className="text-base lg:text-lg text-gray-300 leading-relaxed text-justify">
               Today Zobayer works on end-to-end ML projects - from data
               cleaning and feature engineering to regression, deep learning,
               and deployment - with a stack built around Python, scikit-learn,
