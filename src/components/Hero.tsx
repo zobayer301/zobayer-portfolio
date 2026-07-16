@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import heroAsset from '@/assets/hero-zobayer.jpg.asset.json'
+import heroAsset from '@/assets/hero-zobayer.png.asset.json'
 
 export function Hero() {
   return (
