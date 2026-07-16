@@ -2,16 +2,47 @@ import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
-const contacts = [
-  { label: 'Dhaka, Bangladesh', type: 'location', link: 'https://www.google.com/maps/place/Dhaka' },
-]
-
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-100px' },
   transition: { duration: 0.8, ease: 'easeOut' }
 }
+
+const MailIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="20" height="16" x="2" y="4" rx="2"/>
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </svg>
+)
+
+const FacebookIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+)
+
+const LinkedinIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+    <rect width="4" height="12" x="2" y="9"/>
+    <circle cx="4" cy="4" r="2"/>
+  </svg>
+)
+
+const GithubIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+    <path d="M9 18c-4.51 2-5-2-7-2"/>
+  </svg>
+)
+
+const socialLinks = [
+  { label: 'Email', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: false },
+  { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
+  { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
+]
 
 export function Contact() {
   return (
@@ -54,70 +85,27 @@ export function Contact() {
           </p>
         </motion.div>
 
-        {/* Contact Links */}
-        <div className="space-y-0 max-w-2xl">
-          {contacts.map((contact, index) => (
-            <motion.a
-              key={contact.label}
-              href={contact.link}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex items-center justify-between border-t border-gray-800 py-5 md:py-6 group hover:bg-gray-900/30 transition-colors px-4 -mx-4"
-            >
-              <span className="text-sm text-gray-400 tracking-widest">
-                {contact.label}
-              </span>
-              <span className="text-gray-500 group-hover:text-white transition-colors">
-                ↗
-              </span>
-            </motion.a>
-          ))}
-          <div className="border-t border-gray-800" />
+        {/* Social Links */}
+        <div className="flex flex-wrap gap-6 lg:gap-10 mb-16 lg:mb-24">
+          {socialLinks.map((link, index) => {
+            const Icon = link.icon
+            return (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors min-h-[44px]"
+              >
+                <Icon />
+                <span className="text-sm tracking-widest uppercase">{link.label}</span>
+              </motion.a>
+            )
+          })}
         </div>
-
-        {/* Direct Contact */}
-        <motion.div
-          {...fadeInUp}
-          className="mt-16 lg:mt-24 pt-12 lg:pt-16 border-t border-gray-800"
-        >
-          <p className="text-sm text-gray-500 mb-6 lg:mb-8 tracking-widest uppercase">
-            Or reach me directly
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-16">
-            <a
-              href="mailto:mdzobayerchowdhury3077@gmail.com"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
-            >
-              mdzobayerchowdhury3077@gmail.com
-            </a>
-            <a
-              href="https://www.facebook.com/mdzobayerchowdhury30"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
-            >
-              Facebook
-            </a>
-            <a
-              href="https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/zobayer301"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
-            >
-            Github
-            </a>
-          </div>
-        </motion.div>
 
         {/* Footer */}
         <motion.footer
@@ -125,7 +113,7 @@ export function Contact() {
           className="mt-24 lg:mt-32 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.
+            &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.
           </p>
           <p className="text-xs text-gray-600">
             Dhaka, Bangladesh
