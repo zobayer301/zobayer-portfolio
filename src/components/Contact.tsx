@@ -93,6 +93,14 @@ export function Contact() {
               mdzobayerchowdhury3077@gmail.com
             </a>
             <a
+              href="https://www.facebook.com/mdzobayerchowdhury30"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
+            >
+              Facebook
+            </a>
+            <a
               href="https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/"
               target="_blank"
               rel="noopener noreferrer"
@@ -101,12 +109,12 @@ export function Contact() {
               LinkedIn
             </a>
             <a
-              href="https://twitter.com/zobayerchowdhur"
+              href="https://github.com/zobayer301"
               target="_blank"
               rel="noopener noreferrer"
               className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
             >
-              X / Twitter
+            Github
             </a>
           </div>
         </motion.div>
