@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import thesisAsset from '@/assets/thesis.jpg.asset.json'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -83,8 +84,8 @@ export function About() {
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
           >
             <img
-              src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Machine learning research"
+              src={thesisAsset.url}
+              alt="Undergraduate thesis: AI-Driven Early Detection of Heart Disease"
               className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
