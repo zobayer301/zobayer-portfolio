@@ -85,12 +85,12 @@ export function About() {
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
           >
             <img
-              src={thesisAsset.url}
-              alt="Undergraduate thesis: AI-Driven Early Detection of Heart Disease"
+              src="thesis.jpg"
+              alt="AI-Driven Early Detection of Heart Disease Using Machine Learning and Deep Learning"
               className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              THESIS RESEARCH - HEART DISEASE DETECTION
+              THESIS RESEARCH
             </p>
           </motion.div>
         </div>
