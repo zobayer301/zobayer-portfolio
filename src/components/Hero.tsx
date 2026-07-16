@@ -24,9 +24,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <h1 className="font-display leading-none tracking-tighter text-[10vw] sm:text-[8vw] md:text-[6vw] lg:text-[5vw]">
-              <span className="block text-white">Md. Zobayer Chowdhury</span>
-              <span className="block text-white">Data Science &middot; Artificial Intelligence &middot; Machine Learning </span>
+            <h1 className="font-display leading-none tracking-tighter">
+              <span className="block text-white text-[14vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw]">Md. Zobayer Chowdhury</span>
+              <span className="block text-white text-[6vw] sm:text-[5vw] md:text-[3vw] lg:text-[2.5vw] mt-2">Data Science &middot; Artificial Intelligence &middot; Machine Learning</span>
             </h1>
             
             <motion.p
