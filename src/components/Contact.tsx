@@ -3,8 +3,9 @@ import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
 const contacts = [
-  { label: 'DHAKA, BANGLADESH', type: 'location', link: 'https://www.google.com/maps/place/Dhaka' },
-  { label: 'GITHUB — @ZOBAYER301', type: 'social', link: 'https://github.com/zobayer301' },
+  { label: 'Dhaka, Bangladesh', type: 'location', link: 'https://www.google.com/maps/place/Dhaka' },
+  
+  
 ]
 
 const fadeInUp = {
@@ -51,7 +52,7 @@ export function Contact() {
             DATA SCIENCE & ML
           </h3>
           <p className="text-sm text-gray-500 tracking-widest uppercase">
-            EMAIL IS THE FASTEST WAY TO REACH ME
+            
           </p>
         </motion.div>
 
