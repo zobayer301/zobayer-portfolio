@@ -1,9 +1,7 @@
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { useScrollVisibility } from '@/hooks/useScrollVisibility'
 import { cn } from '@/lib/utils'
-import { BottomNavBar } from '@/components/BottomNavBar'
+import { CircularNavigation } from '@/components/CircularNavigation'
 
 const navItems = [
   { id: 'about', label: 'About' },
@@ -25,8 +23,8 @@ export function Navigation() {
 
   return (
     <>
-      {/* Mobile Bottom Nav */}
-      <BottomNavBar />
+      {/* Mobile Circular Navigation */}
+      <CircularNavigation />
 
       {/* Desktop Navigation Items - Fixed Bottom Right (hidden on mobile) */}
       <nav
