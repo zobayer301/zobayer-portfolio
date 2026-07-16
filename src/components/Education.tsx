@@ -37,7 +37,7 @@ export function Education() {
                 className="w-full h-auto grayscale"
               />
               <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                GREEN UNIVERSITY OF BANGLADESH — DHAKA / BD
+                GREEN UNIVERSITY OF BANGLADESH
               </p>
             </motion.div>
 
@@ -51,12 +51,12 @@ export function Education() {
                   B.Sc. in Computer Science & Engineering
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  Undergraduate degree in Computer Science and Engineering
+                  Bachelor of Science in Computer Science and Engineering
                   with a focus on Artificial Intelligence, Machine Learning,
-                  and Data Science — including a research thesis on AI-driven
-                  early detection of heart disease.
+                  and Data Mining — including a research thesis on AI-driven
+                  early detection of heart disease using machine learning and deep learning.
                 </p>
-                <p className="text-sm text-gray-500">Graduated</p>
+                <p className="text-sm text-gray-500">Graduated (2026)</p>
               </div>
             </motion.div>
           </div>
@@ -69,14 +69,12 @@ export function Education() {
             >
               <div>
                 <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Undergraduate Thesis
+                  Higher Secondary Certificate
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  "AI-Driven Early Detection of Heart Disease Using Machine
-                  Learning and Deep Learning" — a comparative study across
-                  classical ML and neural architectures on clinical datasets.
+                  Completed Higher Secondary Certificate (HSC) from N.S. Government College, Natore.
                 </p>
-                <p className="text-sm text-gray-500">Research</p>
+                <p className="text-sm text-gray-500">HSC</p>
               </div>
             </motion.div>
 
@@ -86,12 +84,12 @@ export function Education() {
               className="lg:order-1"
             >
               <img
-                src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="college.jpg"
                 alt="Machine learning research"
                 className="w-full h-auto grayscale"
               />
               <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                MACHINE LEARNING & DEEP LEARNING
+                Nawab Siraj-Ud-Dowla Govt. College, Natore
               </p>
             </motion.div>
           </div>
