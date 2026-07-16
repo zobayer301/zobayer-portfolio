@@ -44,7 +44,7 @@ export function About() {
             className="order-1 lg:order-2 flex items-center"
           >
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed text-justify">
-              Computer Science and Engineering graduate from Green University of Bangladesh with practical experience in artificial intelligence, machine learning, and immersive technologies. Worked as an AR/VR/XR (Intern) at Battery Low Interactive Ltd and contributed as an Assistant Graphics Designer at the Green University Computer Club. Passionate about creating innovative solutions and applying technology to real-world challenges.
+              Computer Science and Engineering graduate from Green University of Bangladesh with practical experience in artificial intelligence, machine learning, and immersive technologies. Worked as an AR/VR/XR (Intern) at Battery Low Interactive Ltd. and contributed as an Assistant Graphics Designer at the Green University Computer Club.
             </p>
           </motion.div>
         </div>
