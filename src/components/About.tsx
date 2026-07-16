@@ -61,8 +61,7 @@ export function About() {
             LEARNING NEW THINGS."
           </h2>
           <p className="mt-6 text-sm text-gray-500 tracking-widest uppercase">
-            DATA SCIENCE &<br />
-            MACHINE LEARNING
+            
           </p>
         </motion.div>
 
