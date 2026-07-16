@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import thesisAsset from '@/assets/thesis.jpg.asset.json'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
