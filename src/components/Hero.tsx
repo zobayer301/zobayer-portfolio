@@ -26,7 +26,7 @@ export function Hero() {
           >
             <h1 className="font-display leading-none tracking-tighter text-[10vw] sm:text-[8vw] md:text-[6vw] lg:text-[5vw]">
               <span className="block text-white">Md. Zobayer Chowdhury</span>
-              <span className="block text-white">DATA &middot; ML &middot; AI</span>
+              <span className="block text-white">DATA Science &middot; Machine Leaning &middot; Artificial Intelligent </span>
             </h1>
             
             <motion.p
