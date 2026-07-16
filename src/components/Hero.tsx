@@ -7,7 +7,7 @@ export function Hero() {
       <div className="absolute inset-0 w-full h-full">
         <img
           src="/hero-image.jpg"
-          alt="Bruce Banner"
+          alt="Md. Zobayer Chowdhury"
           className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay for better text readability */}
@@ -24,9 +24,9 @@ export function Hero() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <h1 className="font-display leading-none tracking-tighter text-[15vw] sm:text-[12vw] md:text-hero">
-              <span className="block text-white">BRUCE</span>
-              <span className="block text-white">BANNER</span>
-              <span className="block text-white">PHOTOGRAPHY</span>
+              <span className="block text-white">MD. ZOBAYER</span>
+              <span className="block text-white">CHOWDHURY</span>
+              <span className="block text-white">DATA · ML · AI</span>
             </h1>
             
             <motion.p
@@ -35,7 +35,7 @@ export function Hero() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="mt-6 md:mt-8 text-sm sm:text-base text-white/80 max-w-sm md:max-w-md leading-relaxed"
             >
-              Bruce was named in Aperture Magazine's prestigious "Visual 100" list, as one of the Ten Most Compelling Photographers in 2023.
+              CSE graduate passionate about Data Science, Machine Learning, and AI-driven solutions — building real-world models from Dhaka, Bangladesh.
             </motion.p>
           </motion.div>
         </div>
