@@ -9,7 +9,7 @@ export function Hero() {
         <img
           src={heroAsset.url}
           alt="Md. Zobayer Chowdhury"
-          className="w-full h-full object-cover object-[center_top] md:object-center"
+          className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40 md:bg-gradient-to-r md:from-black md:via-black/60 md:to-black/20" />
