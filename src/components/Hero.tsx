@@ -35,10 +35,7 @@ export function Hero() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="mt-6 md:mt-8 text-sm sm:text-base text-white/80 max-w-sm md:max-w-md leading-relaxed"
             >
-              Computer Science and Engineering graduate from Green University of Bangladesh with practical experience
-in artificial intelligence, machine learning, and immersive technologies. Worked as an AR/VR/XR (Intern) at
-Battery Low Interactive Ltd and contributed as an Assistant Graphics Designer at the Green University Computer
-Club. Passionate about creating innovative solutions and applying technology to real-world challenges.
+              CSE graduate passionate about Data Science, Machine Learning, and AI-driven solutions &mdash; building real-world models from Dhaka, Bangladesh.
             </motion.p>
           </motion.div>
         </div>
