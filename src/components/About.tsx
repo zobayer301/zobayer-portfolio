@@ -13,7 +13,7 @@ export function About() {
       <div className="max-w-7xl mx-auto">
         {/* Section Label */}
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-gray-500 tracking-widest uppercase">About Bruce</span>
+          <span className="text-sm text-gray-500 tracking-widest uppercase">About Zobayer</span>
           <div className="w-6 h-px bg-gray-600 mt-2" />
         </motion.div>
 
@@ -24,12 +24,12 @@ export function About() {
             className="order-2 lg:order-1"
           >
             <img
-              src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Early work - Street photography"
+              src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Data science workspace"
               className="w-full h-auto grayscale"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              PARSONS SCHOOL OF DESIGN - NEW YORK / USA
+              GREEN UNIVERSITY OF BANGLADESH — DHAKA / BD
             </p>
           </motion.div>
 
@@ -39,10 +39,10 @@ export function About() {
             className="order-1 lg:order-2 flex items-center"
           >
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-              It may not be obvious, but Bruce studied computer science at MIT, 
-              with a minor in visual arts. Preferring lenses to algorithms, 
-              he quickly abandoned a promising tech career to study Photography 
-              and Visual Storytelling at Parsons School of Design in New York.
+              Zobayer is a Computer Science and Engineering graduate with a
+              deep interest in Artificial Intelligence, Machine Learning, and
+              Data Science. His journey began with classical algorithms and
+              quickly grew into building models that solve real problems.
             </p>
           </motion.div>
         </div>
@@ -53,14 +53,14 @@ export function About() {
           className="mb-24 lg:mb-32"
         >
           <h2 className="font-display text-[8vw] lg:text-section leading-none tracking-tight text-gray-300">
-            "NAMED BY THE<br />
-            <span className="text-white underline underline-offset-8">2023 APERTURE AWARDS</span><br />
-            AS ONE OF THE TOP TEN<br />
-            PHOTOGRAPHERS IN THE WORLD."
+            "SOLVING REAL-WORLD<br />
+            PROBLEMS WITH <span className="text-white underline underline-offset-8">AI</span><br />
+            AND CONTINUOUSLY<br />
+            LEARNING NEW THINGS."
           </h2>
           <p className="mt-6 text-sm text-gray-500 tracking-widest uppercase">
-            GLOBAL PHOTOGRAPHY<br />
-            DIRECTOR RANK
+            DATA SCIENCE &<br />
+            MACHINE LEARNING
           </p>
         </motion.div>
 
@@ -71,10 +71,10 @@ export function About() {
             className="flex items-center lg:text-right"
           >
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-              Bruce spent a little over a year in New York before moving to 
-              London as a Junior Photographer for Magnum Photos. He met some 
-              incredible people at the legendary agency, and they're still 
-              friends to this day.
+              His undergraduate thesis — "AI-Driven Early Detection of Heart
+              Disease Using Machine Learning and Deep Learning" — combined
+              medical data with modern ML techniques to explore how algorithms
+              can support earlier, better clinical decisions.
             </p>
           </motion.div>
 
@@ -83,12 +83,12 @@ export function About() {
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
           >
             <img
-              src="https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Magnum Photos Office"
+              src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Machine learning research"
               className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              MAGNUM PHOTOS - LONDON / UK
+              THESIS RESEARCH — HEART DISEASE DETECTION
             </p>
           </motion.div>
         </div>
@@ -97,13 +97,13 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
           <motion.div {...fadeInUp}>
             <img
-              src="https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Bruce shooting for National Geographic"
+              src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Working on ML projects"
               className="w-full h-auto grayscale"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              SHOOTING FOR NATIONAL GEOGRAPHIC - PATAGONIA / AR<br />
-              (2019)
+              BUILDING ML PROJECTS — DHAKA / BD<br />
+              (ONGOING)
             </p>
           </motion.div>
 
@@ -113,12 +113,11 @@ export function About() {
             className="flex items-center"
           >
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-              From London, Bruce moved to Berlin with VII Photo Agency. Where he 
-              worked under a great Art Director, Hans Mueller. From there he 
-              went on to build a truly global career, first as Staff Photographer 
-              then as Creative Director for the likes of National Geographic, 
-              Time Magazine, and The New York Times, before finally going 
-              independent in 2020.
+              Today Zobayer works on end-to-end ML projects — from data
+              cleaning and feature engineering to regression, deep learning,
+              and deployment — with a stack built around Python, scikit-learn,
+              TensorFlow, and PyTorch. He is always looking for the next
+              problem worth solving.
             </p>
           </motion.div>
         </div>

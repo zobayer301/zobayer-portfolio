@@ -6,16 +6,15 @@ import { cn } from '@/lib/utils'
 const navItems = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
-  { id: 'work', label: 'Work' },
+  { id: 'work', label: 'Projects' },
   { id: 'education', label: 'Education' },
-  { id: 'writing', label: 'Writing' },
-  { id: 'speaking', label: 'Speaking' },
+  { id: 'contact', label: 'Contact' },
 ]
 
 const socialLinks = [
-  { label: 'Mail', href: 'mailto:bruce@banner.com' },
-  { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'Vimeo', href: 'https://vimeo.com' },
+  { label: 'Mail', href: 'mailto:mdzobayerchowdhury3077@gmail.com' },
+  { label: 'GitHub', href: 'https://github.com/zobayer301' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/' },
 ]
 
 export function Navigation() {

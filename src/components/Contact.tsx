@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 
 const contacts = [
-  { label: 'UNITED STATES', type: 'location', link: '#' },
-  { label: 'UNITED KINGDOM', type: 'location', link: '#' },
+  { label: 'DHAKA, BANGLADESH', type: 'location', link: 'https://www.google.com/maps/place/Dhaka' },
+  { label: 'GITHUB — @ZOBAYER301', type: 'social', link: 'https://github.com/zobayer301' },
 ]
 
 const fadeInUp = {
@@ -44,12 +44,12 @@ export function Contact() {
           className="mb-12 lg:mb-16 max-w-2xl"
         >
           <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-light leading-tight mb-4">
-            I'M NOTORIOUSLY<br />
-            SLOW AT GETTING<br />
-            BACK TO EMAILS
+            OPEN TO NEW<br />
+            OPPORTUNITIES IN<br />
+            DATA SCIENCE & ML
           </h3>
           <p className="text-sm text-gray-500 tracking-widest uppercase">
-            IN A HURRY? PLEASE CONTACT MY AWESOME PRODUCERS
+            EMAIL IS THE FASTEST WAY TO REACH ME
           </p>
         </motion.div>
 
@@ -86,26 +86,26 @@ export function Contact() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-16">
             <a
-              href="mailto:bruce@banner.photography"
+              href="mailto:mdzobayerchowdhury3077@gmail.com"
               className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
             >
-              bruce@banner.photography
+              mdzobayerchowdhury3077@gmail.com
             </a>
             <a
-              href="https://instagram.com/brucebanner"
+              href="https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
             >
-              Instagram
+              LinkedIn
             </a>
             <a
-              href="https://vimeo.com/brucebanner"
+              href="https://twitter.com/zobayerchowdhur"
               target="_blank"
               rel="noopener noreferrer"
               className="text-lg lg:text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4"
             >
-              Vimeo
+              X / Twitter
             </a>
           </div>
         </motion.div>
@@ -116,10 +116,10 @@ export function Contact() {
           className="mt-24 lg:mt-32 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} Bruce Banner Photography. All rights reserved.
+            © {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.
           </p>
           <p className="text-xs text-gray-600">
-            New York / London
+            Dhaka, Bangladesh
           </p>
         </motion.footer>
       </div>
