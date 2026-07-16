@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 import thesisAsset from '@/assets/thesis.jpg.asset.json'
@@ -8,22 +7,6 @@ import { TextScramble } from '@/components/TextScramble'
 export function About() {
   const prefersReduced = useReducedMotion()
   const isMobile = useIsMobile()
-  const quoteRef = useRef<HTMLDivElement>(null)
-  const [scrambleKey, setScrambleKey] = useState(0)
-
-  useEffect(() => {
-    if (prefersReduced || !quoteRef.current) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setScrambleKey((k) => k + 1)
-        }
-      },
-      { threshold: 0.3 }
-    )
-    observer.observe(quoteRef.current)
-    return () => observer.disconnect()
-  }, [prefersReduced])
 
   const fadeInUp = {
     initial: prefersReduced ? false : { opacity: 0, y: 40 },
@@ -69,15 +52,14 @@ export function About() {
 
         {/* Quote Block */}
         <motion.div
-          ref={quoteRef}
           {...fadeInUp}
           className="mb-24 lg:mb-32"
         >
           <h2 className="font-display text-[8vw] lg:text-section leading-none tracking-tight text-gray-300">
-            <TextScramble key={scrambleKey} trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">SOLVING REAL-WORLD</TextScramble>
-            <TextScramble key={scrambleKey} trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">PROBLEMS WITH <span className="text-white underline underline-offset-8">AI</span></TextScramble>
-            <TextScramble key={scrambleKey} trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">AND CONTINUOUSLY</TextScramble>
-            <TextScramble key={scrambleKey} trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">LEARNING NEW THINGS."</TextScramble>
+            <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">SOLVING REAL-WORLD</TextScramble>
+            <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">PROBLEMS WITH <span className="text-white underline underline-offset-8">AI</span></TextScramble>
+            <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">AND CONTINUOUSLY</TextScramble>
+            <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">LEARNING NEW THINGS."</TextScramble>
           </h2>
           <p className="mt-6 text-sm text-gray-500 tracking-widest uppercase">
             
