@@ -53,75 +53,10 @@ export function Education() {
                 <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
                   Bachelor of Science in Computer Science and Engineering
                   with a focus on Artificial Intelligence, Machine Learning,
-                  and Data Mining — including a research thesis on AI-driven
+                  and Data Mining &mdash; including a research thesis on AI-driven
                   early detection of heart disease using machine learning and deep learning.
                 </p>
                 <p className="text-sm text-gray-500">Graduated (2026)</p>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Thesis */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
-            <motion.div
-              {...fadeInUp}
-              className="flex items-center lg:order-2"
-            >
-              <div>
-                <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Higher Secondary Certificate
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  Completed Higher Secondary Certificate (HSC) from N.S. Government College, Natore.
-                </p>
-                <p className="text-sm text-gray-500">HSC</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.2 }}
-              className="lg:order-1"
-            >
-              <img
-                src="college.jpg"
-                alt="Machine learning research"
-                className="w-full h-auto grayscale"
-              />
-              <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                Nawab Siraj-Ud-Dowla Govt. College, Natore
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Continuous learning */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
-            <motion.div {...fadeInUp}>
-              <img
-                src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Self-directed learning"
-                className="w-full h-auto grayscale"
-              />
-              <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                SELF-DIRECTED LEARNING
-              </p>
-            </motion.div>
-
-            <motion.div
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.2 }}
-              className="flex items-center"
-            >
-              <div>
-                <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Continuous Practice
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  Ongoing hands-on work across regression, classification, and
-                  deep learning — shipping open-source Jupyter notebooks and
-                  end-to-end ML pipelines on GitHub.
-                </p>
-                <p className="text-sm text-gray-500">Ongoing</p>
               </div>
             </motion.div>
           </div>
