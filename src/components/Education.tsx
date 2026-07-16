@@ -26,16 +26,16 @@ export function Education() {
 
         {/* Education Items */}
         <div className="space-y-16 lg:space-y-24">
-          {/* MIT */}
+          {/* BSc CSE */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
             <motion.div {...fadeInUp}>
               <img
-                src="https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="MIT Campus"
+                src="https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="University campus"
                 className="w-full h-auto grayscale"
               />
               <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                MIT - CAMBRIDGE / USA
+                GREEN UNIVERSITY OF BANGLADESH — DHAKA / BD
               </p>
             </motion.div>
 
@@ -46,19 +46,20 @@ export function Education() {
             >
               <div>
                 <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Computer Science & Visual Arts
+                  B.Sc. in Computer Science & Engineering
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  Started with algorithms, ended with apertures. Bruce's time at MIT 
-                  gave him a unique perspective on the intersection of technology 
-                  and visual storytelling that continues to influence his work today.
+                  Undergraduate degree in Computer Science and Engineering
+                  with a focus on Artificial Intelligence, Machine Learning,
+                  and Data Science — including a research thesis on AI-driven
+                  early detection of heart disease.
                 </p>
-                <p className="text-sm text-gray-500">2008 — 2012</p>
+                <p className="text-sm text-gray-500">Graduated</p>
               </div>
             </motion.div>
           </div>
 
-          {/* Parsons */}
+          {/* Thesis */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
             <motion.div
               {...fadeInUp}
@@ -66,14 +67,14 @@ export function Education() {
             >
               <div>
                 <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Photography & Visual Storytelling
+                  Undergraduate Thesis
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  The decision to pursue photography full-time led Bruce to Parsons, 
-                  where he developed his signature style of documentary portraiture 
-                  and learned the fundamentals of visual narrative.
+                  "AI-Driven Early Detection of Heart Disease Using Machine
+                  Learning and Deep Learning" — a comparative study across
+                  classical ML and neural architectures on clinical datasets.
                 </p>
-                <p className="text-sm text-gray-500">2013 — 2015</p>
+                <p className="text-sm text-gray-500">Research</p>
               </div>
             </motion.div>
 
@@ -83,26 +84,26 @@ export function Education() {
               className="lg:order-1"
             >
               <img
-                src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Parsons School of Design"
+                src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Machine learning research"
                 className="w-full h-auto grayscale"
               />
               <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                PARSONS SCHOOL OF DESIGN - NEW YORK / USA
+                MACHINE LEARNING & DEEP LEARNING
               </p>
             </motion.div>
           </div>
 
-          {/* ICP */}
+          {/* Continuous learning */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
             <motion.div {...fadeInUp}>
               <img
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="International Center of Photography"
+                src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Self-directed learning"
                 className="w-full h-auto grayscale"
               />
               <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-                ICP - NEW YORK / USA
+                SELF-DIRECTED LEARNING
               </p>
             </motion.div>
 
@@ -113,14 +114,14 @@ export function Education() {
             >
               <div>
                 <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
-                  Documentary Photography Certificate
+                  Continuous Practice
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
-                  An intensive program at ICP refined Bruce's approach to long-form 
-                  documentary projects and deepened his understanding of photographic 
-                  ethics and storytelling responsibility.
+                  Ongoing hands-on work across regression, classification, and
+                  deep learning — shipping open-source Jupyter notebooks and
+                  end-to-end ML pipelines on GitHub.
                 </p>
-                <p className="text-sm text-gray-500">2016</p>
+                <p className="text-sm text-gray-500">Ongoing</p>
               </div>
             </motion.div>
           </div>

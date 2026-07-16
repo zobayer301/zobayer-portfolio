@@ -2,44 +2,49 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    title: 'Senior Photographer & Creative Director',
-    company: 'National Geographic',
-    location: 'Washington D.C.',
-    period: '2020 — Present',
-    description: 'Leading visual storytelling projects across five continents. Responsible for conceptualizing and executing long-form documentary series, managing a team of 8 photographers, and establishing visual guidelines for flagship publications.',
-    skills: ['Documentary Photography', 'Team Leadership', 'Art Direction', 'Visual Storytelling', 'Project Management'],
+    title: 'Forest Fire — Data Cleaning & Feature Engineering',
+    company: 'Algerian Forest Fires Dataset',
+    location: 'github.com/zobayer301',
+    period: 'Project',
+    description: 'End-to-end data preprocessing project: data cleaning, feature engineering, exploratory data analysis, and dataset preparation for downstream modeling, built in Python and Jupyter.',
+    skills: ['Python', 'Pandas', 'NumPy', 'EDA', 'Feature Engineering'],
+    link: 'https://github.com/zobayer301/forest-fire-data-cleaning-feature-engineering',
   },
   {
-    title: 'Staff Photographer',
-    company: 'The New York Times',
-    location: 'New York, NY',
-    period: '2018 — 2020',
-    description: 'Covered breaking news, features, and editorial assignments for print and digital platforms. Specialized in portrait photography and human interest stories. Work featured on front page 47 times.',
-    skills: ['Editorial Photography', 'Breaking News', 'Portrait Photography', 'Deadline Management', 'Photo Editing'],
+    title: 'Economic Index Prediction',
+    company: 'Multiple Linear Regression',
+    location: 'github.com/zobayer301',
+    period: 'Project',
+    description: 'Predicting stock index prices using Multiple Linear Regression based on interest rates and unemployment rates, with model evaluation and visualization.',
+    skills: ['Scikit-learn', 'Regression', 'Statsmodels', 'Matplotlib'],
+    link: 'https://github.com/zobayer301/Multiple-Linear-Regression-Economic-Index-Prediction',
   },
   {
-    title: 'Creative Director',
-    company: 'Time Magazine',
-    location: 'New York, NY',
-    period: '2016 — 2018',
-    description: 'Oversaw visual direction for special issues and cover stories. Collaborated with editors to develop compelling visual narratives. Managed relationships with contributing photographers worldwide.',
-    skills: ['Creative Direction', 'Visual Strategy', 'Team Coordination', 'Brand Identity', 'Magazine Publishing'],
+    title: 'Polynomial Regression Comparison',
+    company: 'Scikit-learn Study',
+    location: 'github.com/zobayer301',
+    period: 'Project',
+    description: 'Implementation and comparison of Simple Linear Regression vs. Polynomial Regression on a synthetic quadratic dataset, with visualization and R² score evaluation.',
+    skills: ['Scikit-learn', 'Polynomial Regression', 'Model Evaluation'],
+    link: 'https://github.com/zobayer301/Polynomial-Regression-Comparison',
   },
   {
-    title: 'Staff Photographer',
-    company: 'VII Photo Agency',
-    location: 'Berlin, Germany',
-    period: '2014 — 2016',
-    description: 'Worked on long-term documentary projects focusing on social issues and human rights. Assignments included coverage in conflict zones and humanitarian crises across Europe and Middle East.',
-    skills: ['Documentary', 'Conflict Photography', 'Humanitarian Coverage', 'Long-form Projects', 'Risk Assessment'],
+    title: 'Linear Regression From Scratch',
+    company: 'NumPy Implementation',
+    location: 'github.com/zobayer301',
+    period: 'Project',
+    description: 'Simple Linear Regression implemented from first principles in Python using NumPy and Matplotlib for predictive analysis and visualization.',
+    skills: ['NumPy', 'Matplotlib', 'ML Fundamentals'],
+    link: 'https://github.com/zobayer301/linear-regression-from-scratch',
   },
   {
-    title: 'Junior Photographer',
-    company: 'Magnum Photos',
-    location: 'London, UK',
-    period: '2012 — 2014',
-    description: 'Assisted senior photographers on international assignments. Developed technical skills in both digital and analog photography. First solo exhibition at the agency gallery in 2013.',
-    skills: ['Analog Photography', 'Digital Processing', 'Studio Lighting', 'Archive Management', 'Exhibition Curation'],
+    title: 'AI-Driven Heart Disease Detection',
+    company: 'Undergraduate Thesis',
+    location: 'Green University of Bangladesh',
+    period: 'Thesis',
+    description: 'Early detection of heart disease using classical Machine Learning and Deep Learning models on clinical tabular data, comparing accuracy, precision, and recall across architectures.',
+    skills: ['TensorFlow', 'PyTorch', 'Classification', 'Deep Learning', 'Healthcare AI'],
+    link: 'https://github.com/zobayer301',
   },
 ]
 
@@ -64,19 +69,22 @@ export function Work() {
           {...fadeInUp}
           className="font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24"
         >
-          WORK<br />EXPERIENCE
+          FEATURED<br />PROJECTS
         </motion.h2>
 
         {/* Experiences */}
         <div className="space-y-0">
           {experiences.map((exp, index) => (
-            <motion.article
+            <motion.a
               key={exp.company + exp.period}
+              href={exp.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: index * 0.1 }}
-              className="border-t border-gray-800 py-8 md:py-12 lg:py-16 group"
+              className="block border-t border-gray-800 py-8 md:py-12 lg:py-16 group hover:bg-gray-900/30 transition-colors"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
                 {/* Left Column - Title & Company */}
@@ -116,7 +124,7 @@ export function Work() {
                   </div>
                 </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
           <div className="border-t border-gray-800" />
         </div>
