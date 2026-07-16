@@ -4,8 +4,6 @@ import { useIsMobile } from '@/hooks/use-mobile'
 
 const contacts = [
   { label: 'Dhaka, Bangladesh', type: 'location', link: 'https://www.google.com/maps/place/Dhaka' },
-  
-  
 ]
 
 const fadeInUp = {
