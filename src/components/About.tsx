@@ -1,14 +1,18 @@
 import { motion } from 'framer-motion'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useIsMobile } from '@/hooks/use-mobile'
 import thesisAsset from '@/assets/thesis.jpg.asset.json'
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 40 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
-  transition: { duration: 0.8, ease: 'easeOut' }
-}
-
 export function About() {
+  const prefersReduced = useReducedMotion()
+  const isMobile = useIsMobile()
+
+  const fadeInUp = {
+    initial: prefersReduced ? false : { opacity: 0, y: 40 },
+    whileInView: prefersReduced ? undefined : { opacity: 1, y: 0 },
+    viewport: { once: true, margin: isMobile ? '-20px' : '-100px' },
+    transition: { duration: prefersReduced ? 0 : 0.8, ease: 'easeOut' }
+  }
   return (
     <section id="about" className="section-padding">
       <div className="max-w-7xl mx-auto">
@@ -69,8 +73,8 @@ export function About() {
             className="flex items-center lg:text-right"
           >
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-              His undergraduate thesis — "AI-Driven Early Detection of Heart
-              Disease Using Machine Learning and Deep Learning" — combined
+              His undergraduate thesis - "AI-Driven Early Detection of Heart
+              Disease Using Machine Learning and Deep Learning - combined
               medical data with modern ML techniques to explore how algorithms
               can support earlier, better clinical decisions.
             </p>
@@ -86,7 +90,7 @@ export function About() {
               className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              THESIS RESEARCH — HEART DISEASE DETECTION
+              THESIS RESEARCH - HEART DISEASE DETECTION
             </p>
           </motion.div>
         </div>
@@ -100,7 +104,7 @@ export function About() {
               className="w-full h-auto grayscale"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              BUILDING ML PROJECTS — DHAKA / BD<br />
+              BUILDING ML PROJECTS - DHAKA / BD<br />
               (ONGOING)
             </p>
           </motion.div>
@@ -111,9 +115,9 @@ export function About() {
             className="flex items-center"
           >
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-              Today Zobayer works on end-to-end ML projects — from data
+              Today Zobayer works on end-to-end ML projects - from data
               cleaning and feature engineering to regression, deep learning,
-              and deployment — with a stack built around Python, scikit-learn,
+              and deployment - with a stack built around Python, scikit-learn,
               TensorFlow, and PyTorch. He is always looking for the next
               problem worth solving.
             </p>

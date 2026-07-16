@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 const USER = 'zobayer301'
 

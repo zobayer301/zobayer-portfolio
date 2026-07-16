@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 const contacts = [
   { label: 'DHAKA, BANGLADESH', type: 'location', link: 'https://www.google.com/maps/place/Dhaka' },
