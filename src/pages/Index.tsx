@@ -5,6 +5,7 @@ import { About } from '@/components/About'
 import { Skills } from '@/components/Skills'
 import { Work } from '@/components/Work'
 import { Education } from '@/components/Education'
+import { GithubStats } from '@/components/GithubStats'
 import { Contact } from '@/components/Contact'
 
 export default function Index() {
@@ -18,6 +19,7 @@ export default function Index() {
         <Skills />
         <Work />
         <Education />
+        <GithubStats />
         <Contact />
       </main>
     </div>
