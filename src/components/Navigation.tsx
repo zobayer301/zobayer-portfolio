@@ -13,12 +13,6 @@ const navItems = [
   { id: 'contact', label: 'Contact' },
 ]
 
-const socialLinks = [
-  { label: 'Mail', href: 'mailto:mdzobayerchowdhury3077@gmail.com' },
-  { label: 'GitHub', href: 'https://github.com/zobayer301' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/' },
-]
-
 export function Navigation() {
   const activeSection = useActiveSection()
   const isVisible = useScrollVisibility()
@@ -35,8 +29,7 @@ export function Navigation() {
   return (
     <>
       {/* Mobile Header - Only visible on mobile */}
-      <div className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-start md:hidden">
-        {/* Menu Button - Left */}
+      <div className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-end items-start md:hidden">
         <div className="relative">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -72,21 +65,6 @@ export function Navigation() {
             )}
           </AnimatePresence>
         </div>
-
-        {/* Social Links - Right (Mobile) */}
-        <div className="flex items-center gap-2">
-          {socialLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith('mailto') ? undefined : '_blank'}
-              rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              className="text-sm text-white mix-blend-difference hover:opacity-60 transition-opacity min-h-[44px] min-w-[44px] flex items-center justify-center"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
       </div>
 
       {/* Mobile Backdrop */}
@@ -102,23 +80,6 @@ export function Navigation() {
           />
         )}
       </AnimatePresence>
-
-      {/* Desktop Social Links - Fixed Top Right (hidden on mobile) */}
-      <div className="hidden md:block fixed top-0 right-0 z-50 p-6 md:p-10">
-        <div className="flex items-center gap-6 justify-end">
-          {socialLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith('mailto') ? undefined : '_blank'}
-              rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              className="text-sm text-white mix-blend-difference hover:opacity-60 transition-opacity min-h-[44px] flex items-center"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-      </div>
 
       {/* Desktop Navigation Items - Fixed Bottom Right (hidden on mobile) */}
       <nav 
