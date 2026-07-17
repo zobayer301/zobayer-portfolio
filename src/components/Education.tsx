@@ -11,7 +11,7 @@ const fadeInUp = {
 
 export function Education() {
   return (
-    <section id="education" className="section-padding bg-[#0d0d0d]">
+    <section id="education" className="pt-16 md:pt-24 lg:pt-32 pb-16 md:pb-32 lg:pb-48 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#0d0d0d]">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.div {...fadeInUp} className="mb-16">
