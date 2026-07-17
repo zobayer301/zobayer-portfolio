@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
@@ -43,49 +41,10 @@ const socialLinks = [
   { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
   { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
-  { label: 'Email', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: true },
+  { label: 'Email', href: 'mailto: mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: true },
 ]
 
 export function Contact() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [status, setStatus] = useState<'idle' | 'sending'>('idle')
-
-  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-
-  const handleSend = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!name.trim() || !emailValid || !message.trim()) return
-    setStatus('sending')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          message: message.trim(),
-        }),
-      })
-      const data = await res.json()
-      if (data.success) {
-        toast.success('Check your inbox! A confirmation link is on its way.')
-        setName('')
-        setEmail('')
-        setMessage('')
-      } else {
-        console.error('Contact API error:', res.status, data)
-        toast.error(data?.message ? `Error: ${data.message}` : `Something went wrong (${res.status}). Please try again.`)
-      }
-    } catch (err) {
-      console.error('Contact submit failed:', err)
-      toast.error('Network error. Please try again.')
-    } finally {
-      setStatus('idle')
-    }
-  }
-
   return (
     <section id="contact" className="section-padding">
       <div className="max-w-7xl mx-auto">
@@ -118,48 +77,6 @@ export function Contact() {
             OPPORTUNITIES IN<br />
             <span className="text-foreground">DATA SCIENCE & ML</span>
           </h3>
-        </motion.div>
-
-        <motion.div
-          {...fadeInUp}
-          className="mb-12 lg:mb-16 max-w-2xl"
-        >
-          <form
-            onSubmit={handleSend}
-            className="flex flex-col gap-4"
-          >
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Your name *"
-              required
-              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
-            />
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email *"
-              required
-              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
-            />
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Write your message..."
-              rows={4}
-              required
-              className="flex w-full rounded-lg border border-foreground/20 bg-transparent px-4 py-3 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors resize-none"
-            />
-            <button
-              type="submit"
-              disabled={!name.trim() || !emailValid || !message.trim() || status === 'sending'}
-              className="self-start inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background text-sm tracking-widest uppercase font-medium transition-opacity hover:opacity-90 disabled:opacity-40 disabled:pointer-events-none"
-            >
-              {status === 'sending' ? 'Sending...' : "Let's talk"}
-            </button>
-          </form>
         </motion.div>
 
         <div className="flex flex-wrap gap-6 lg:gap-10 mb-16 lg:mb-24">
