@@ -7,11 +7,13 @@ import { Work } from '@/components/Work'
 import { Education } from '@/components/Education'
 import { GithubStats } from '@/components/GithubStats'
 import { Contact } from '@/components/Contact'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <GrainOverlay />
+      <ThemeToggle />
       <Navigation />
       <main>
         <Hero />

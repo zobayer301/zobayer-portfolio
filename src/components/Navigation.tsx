@@ -4,7 +4,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { User, Code, Briefcase, GraduationCap, Github, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { id: "about", label: "About", icon: User },
@@ -109,10 +108,6 @@ export function Navigation() {
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="absolute top-1 bottom-1 rounded-full bg-white/10 pointer-events-none"
           />
-
-          <div className="ml-1 pl-1 border-l border-white/15 dark:border-white/10">
-            <ThemeToggle />
-          </div>
         </div>
       </motion.nav>
     </div>
