@@ -57,18 +57,10 @@ export function Education() {
             </p>
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm border border-white/30 text-white bg-white/10 hover:bg-white/20 hover:border-white/50 transition-all duration-300 min-h-[44px]"
+              className="inline-flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm border border-black bg-black text-white transition-all duration-300 min-h-[44px] dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
             >
               Graduated (2026)
             </button>
-            <div className="flex flex-wrap gap-3 mt-4">
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
-                AI & ML Focus
-              </span>
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
-                Data Mining
-              </span>
-            </div>
           </motion.div>
         </div>
       </div>
