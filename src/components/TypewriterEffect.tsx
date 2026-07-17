@@ -28,9 +28,7 @@ export const TypewriterEffect = ({
       animate(
         "span",
         {
-          display: "inline-block",
           opacity: 1,
-          width: "fit-content",
         },
         {
           duration: 0.3,
@@ -39,20 +37,20 @@ export const TypewriterEffect = ({
         }
       );
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
   const renderWords = () => {
     return (
       <motion.div ref={scope} className="inline">
         {wordsArray.map((word, idx) => {
           return (
-            <div key={word-} className="inline-block">
+            <div key={"word-" + idx} className="inline-block">
               {word.text.map((char, index) => (
                 <motion.span
-                  initial={{}}
-                  key={char-}
+                  initial={{ opacity: 0 }}
+                  key={"char-" + index}
                   className={cn(
-                    "dark:text-white text-black opacity-0 hidden",
+                    "text-white opacity-0",
                     word.className
                   )}
                 >
