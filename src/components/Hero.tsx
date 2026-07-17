@@ -54,15 +54,6 @@ export function Hero() {
               </span>
             </h1>
             
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-6 md:mt-8 text-sm sm:text-base text-white leading-relaxed"
-            >
-              SOLVING REAL-WORLD PROBLEMS WITH AI AND CONTINUOUSLY LEARNING NEW THINGS.
-            </motion.p>
-
             <motion.a
               href="/Md_Zobayer_Chowdhury_CV.pdf"
               target="_blank"
