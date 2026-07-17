@@ -57,7 +57,7 @@ export function Education() {
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
-                Graduated (2026)
+                Graduate (2026)
               </span>
               <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
                 AI & ML Focus
