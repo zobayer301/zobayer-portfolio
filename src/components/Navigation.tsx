@@ -32,7 +32,7 @@ export function Navigation() {
           }
         });
       },
-      { threshold: 0.3, rootMargin: "-80px 0px -40% 0px" }
+      { threshold: 0, rootMargin: "-45% 0px -45% 0px" }
     );
     sections.forEach((id) => {
       const el = document.getElementById(id);
@@ -58,7 +58,8 @@ export function Navigation() {
     return () => window.removeEventListener("resize", updateIndicator);
   }, [activeIndex]);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string, index: number) => {
+    setActiveIndex(index);
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: "smooth" });
   };
@@ -83,14 +84,14 @@ export function Navigation() {
               <button
                 key={item.id}
                 ref={(el) => (btnRefs.current[index] = el)}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => scrollToSection(item.id, index)}
                 aria-label={item.label}
                 aria-current={isActive ? "page" : undefined}
                 type="button"
                 className={cn(
                   "relative flex items-center justify-center gap-2 px-2.5 py-2 rounded-full transition-colors duration-200 h-10 min-w-[40px] min-h-[40px] max-h-[44px] flex-1",
                   isActive
-                    ? "bg-white/10 text-white"
+                    ? "bg-white/15 text-white"
                     : "bg-transparent text-gray-500 hover:text-gray-300 dark:text-gray-400 dark:hover:text-gray-200",
                   "focus:outline-none focus-visible:ring-0"
                 )}
@@ -106,7 +107,7 @@ export function Navigation() {
           <motion.div
             animate={indicatorStyle}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="absolute top-1 bottom-1 rounded-full bg-white/10 pointer-events-none"
+            className="absolute top-1 bottom-1 rounded-full bg-white/15 pointer-events-none"
           />
         </div>
       </motion.nav>
