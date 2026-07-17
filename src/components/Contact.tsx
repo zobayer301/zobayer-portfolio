@@ -53,10 +53,8 @@ export function Contact() {
   const [message, setMessage] = useState('')
 
   const handleSend = () => {
-    if (!message.trim()) return
-    const text = name.trim()
-      ? `Hi, I'm ${name.trim()}.\n\n${message.trim()}`
-      : message.trim()
+    if (!name.trim() || !message.trim()) return
+    const text = `Hi, I'm ${name.trim()}.\n\n${message.trim()}`
     window.open(`${WHATSAPP_HREF}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer')
   }
 
@@ -106,7 +104,8 @@ export function Contact() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Your name"
+              placeholder="Your name *"
+              required
               className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
             <textarea
@@ -114,14 +113,15 @@ export function Contact() {
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Write your message..."
               rows={4}
+              required
               className="flex w-full rounded-lg border border-foreground/20 bg-transparent px-4 py-3 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors resize-none"
             />
             <button
               type="submit"
-              disabled={!message.trim()}
+              disabled={!name.trim() || !message.trim()}
               className="self-start inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background text-sm tracking-widest uppercase font-medium transition-opacity hover:opacity-90 disabled:opacity-40 disabled:pointer-events-none"
             >
-              Send via WhatsApp
+              Send to Zobayer
             </button>
           </form>
         </motion.div>
