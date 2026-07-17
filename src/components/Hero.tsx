@@ -32,7 +32,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-6 md:mt-8 text-sm sm:text-base text-white/80 max-w-xl md:max-w-3xl leading-relaxed whitespace-nowrap"
+              className="mt-6 md:mt-8 text-sm sm:text-base text-white/80 leading-relaxed"
             >
              Passionate about Data Science, Machine Learning, and AI-driven solutions &mdash; building real-world models.
             </motion.p>
