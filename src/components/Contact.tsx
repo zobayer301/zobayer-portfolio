@@ -4,8 +4,6 @@ import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
-const WEB3FORMS_ACCESS_KEY = '40ec33e7-bac2-4dd4-99a3-8186426bf388'
-
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
@@ -50,28 +48,31 @@ const socialLinks = [
 
 export function Contact() {
   const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending'>('idle')
 
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!name.trim() || !message.trim()) return
+    if (!name.trim() || !emailValid || !message.trim()) return
     setStatus('sending')
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          from_name: name.trim(),
-          subject: `Portfolio message from ${name.trim()}`,
+          name: name.trim(),
+          email: email.trim(),
           message: message.trim(),
         }),
       })
       const data = await res.json()
       if (data.success) {
-        toast.success("Message sent! I'll get back to you soon.")
+        toast.success('Check your inbox! A confirmation link is on its way.')
         setName('')
+        setEmail('')
         setMessage('')
       } else {
         toast.error('Something went wrong. Please try again.')
@@ -133,6 +134,14 @@ export function Contact() {
               required
               className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email *"
+              required
+              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
+            />
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -143,7 +152,7 @@ export function Contact() {
             />
             <button
               type="submit"
-              disabled={!name.trim() || !message.trim() || status === 'sending'}
+              disabled={!name.trim() || !emailValid || !message.trim() || status === 'sending'}
               className="self-start inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background text-sm tracking-widest uppercase font-medium transition-opacity hover:opacity-90 disabled:opacity-40 disabled:pointer-events-none"
             >
               {status === 'sending' ? 'Sending...' : "Let's talk"}
