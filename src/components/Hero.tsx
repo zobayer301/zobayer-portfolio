@@ -10,16 +10,16 @@ export function Hero() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="absolute top-6 left-4 sm:left-6 md:left-12 lg:left-16 z-20 h-20 w-auto md:h-24 lg:h-28"
+        className="absolute top-4 left-4 sm:top-6 sm:left-6 md:left-12 lg:left-16 z-20 h-14 w-auto max-w-[45vw] sm:h-20 md:h-24 lg:h-28"
       />
 
       <div className="absolute inset-0 w-full h-full">
         <img
           src="/hero-image.jpg"
           alt="Md. Zobayer Chowdhury"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-top sm:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40 md:bg-gradient-to-r md:from-black md:via-black/60 md:to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/50 sm:via-black/70 sm:to-black/40 md:bg-gradient-to-r md:from-black md:via-black/60 md:to-black/20" />
       </div>
 
       <div className="relative z-10 h-full flex items-end md:items-center pb-32 md:pb-0 px-4 sm:px-6 md:px-12 lg:px-16">
