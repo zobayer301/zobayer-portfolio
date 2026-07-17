@@ -1,54 +1,122 @@
-import { useActiveSection } from '@/hooks/useActiveSection'
-import { useScrollVisibility } from '@/hooks/useScrollVisibility'
-import { cn } from '@/lib/utils'
-import { CircularNavigation } from '@/components/CircularNavigation'
+"use client";
+
+import React, { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import { User, Code, Briefcase, GraduationCap, Github, Mail } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const navItems = [
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'work', label: 'Projects' },
-  { id: 'education', label: 'Education' },
-  { id: 'github', label: 'GitHub' },
-  { id: 'contact', label: 'Contact' },
-]
+  { id: "about", label: "About", icon: User },
+  { id: "skills", label: "Skills", icon: Code },
+  { id: "work", label: "Projects", icon: Briefcase },
+  { id: "education", label: "Education", icon: GraduationCap },
+  { id: "github", label: "GitHub", icon: Github },
+  { id: "contact", label: "Contact", icon: Mail },
+];
+
+const sections = navItems.map((item) => item.id);
 
 export function Navigation() {
-  const activeSection = useActiveSection()
-  const isVisible = useScrollVisibility()
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const btnRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = sections.findIndex((id) => id === entry.target.id);
+            if (idx !== -1) setActiveIndex(idx);
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: "-80px 0px -40% 0px" }
+    );
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const updateIndicator = () => {
+      const btn = btnRefs.current[activeIndex];
+      const container = containerRef.current;
+      if (!btn || !container) return;
+      const btnRect = btn.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      setIndicatorStyle({
+        width: btnRect.width,
+        left: btnRect.left - containerRect.left,
+      });
+    };
+    updateIndicator();
+    window.addEventListener("resize", updateIndicator);
+    return () => window.removeEventListener("resize", updateIndicator);
+  }, [activeIndex]);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
-  }
+    const element = document.getElementById(sectionId);
+    if (element) element.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <>
-      {/* Mobile Circular Navigation */}
-      <CircularNavigation />
-
-      {/* Desktop Navigation Items - Fixed Bottom Right (hidden on mobile) */}
-      <nav
-        className={cn(
-          'hidden fixed bottom-0 right-0 z-50 p-6 md:p-10 transition-all duration-500',
-          isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8 pointer-events-none'
-        )}
+    <motion.nav
+      initial={{ y: 80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 300, damping: 26, delay: 0.5 }}
+      aria-label="Navigation"
+      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-fit max-w-[95vw] mx-auto"
+    >
+      <div
+        ref={containerRef}
+        className="relative flex items-center bg-black border border-black rounded-full px-1.5 py-2 shadow-2xl dark:bg-neutral-900 dark:border-gray-800 min-w-[320px] max-w-[95vw] h-[52px]"
       >
-        <div className="flex flex-col items-end gap-3">
-          {navItems.map((item) => (
+        {navItems.map((item, index) => {
+          const Icon = item.icon;
+          const isActive = activeIndex === index;
+          return (
             <button
               key={item.id}
+              ref={(el) => (btnRefs.current[index] = el)}
               onClick={() => scrollToSection(item.id)}
+              aria-label={item.label}
+              aria-current={isActive ? "page" : undefined}
+              type="button"
               className={cn(
-                'text-sm text-white mix-blend-difference transition-all duration-300 relative py-1 min-h-[44px] flex items-center',
-                'hover:opacity-60',
-                activeSection === item.id && 'after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-white'
+                "relative flex items-center justify-center gap-0 px-2.5 py-2 rounded-full transition-colors duration-200 h-10 min-w-[40px] min-h-[40px] max-h-[44px] flex-1",
+                isActive ? "bg-white/10 text-white gap-2" : "bg-transparent text-gray-500 hover:text-gray-300 dark:text-gray-400 dark:hover:text-gray-200",
+                "focus:outline-none focus-visible:ring-0"
               )}
             >
-              {item.label}
+              <Icon size={20} strokeWidth={2} aria-hidden className="transition-colors duration-200 shrink-0" />
+              <motion.span
+                initial={false}
+                animate={{
+                  width: isActive ? "auto" : 0,
+                  opacity: isActive ? 1 : 0,
+                  marginLeft: isActive ? "6px" : 0,
+                }}
+                transition={{ duration: 0.19 }}
+                className="overflow-hidden flex items-center whitespace-nowrap text-xs font-medium select-none"
+              >
+                {item.label}
+              </motion.span>
             </button>
-          ))}
-        </div>
-      </nav>
-    </>
-  )
+          );
+        })}
+
+        <motion.div
+          animate={indicatorStyle}
+          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+          className="absolute top-1 bottom-1 rounded-full bg-white/10 pointer-events-none"
+        />
+      </div>
+    </motion.nav>
+  );
 }
+
+export default Navigation;
