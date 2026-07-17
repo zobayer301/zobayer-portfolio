@@ -8,6 +8,7 @@ import { Education } from '@/components/Education'
 import { GithubStats } from '@/components/GithubStats'
 import { Contact } from '@/components/Contact'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import { ScrollToTop } from '@/components/ScrollToTop'
 
 export default function Index() {
   return (
@@ -15,6 +16,7 @@ export default function Index() {
       <GrainOverlay />
       <ThemeToggle />
       <Navigation />
+      <ScrollToTop />
       <main>
         <Hero />
         <About />
