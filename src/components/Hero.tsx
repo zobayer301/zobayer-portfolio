@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { TypewriterEffect } from '@/components/TypewriterEffect'
 
 export function Hero() {
   return (
@@ -25,7 +26,20 @@ export function Hero() {
           >
             <h1 className="font-display leading-none tracking-tighter">
               <span className="block text-white text-[14vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw]">Md. Zobayer Chowdhury</span>
-              <span className="block text-white text-[6vw] sm:text-[5vw] md:text-[3vw] lg:text-[2.5vw] mt-2">Machine Learning Explorer &middot; Data Science Enthusiast</span>
+              <span className="block mt-2">
+                <TypewriterEffect
+                  words={[
+                    { text: 'Machine' },
+                    { text: 'Learning' },
+                    { text: 'Explorer' },
+                    { text: '\u00B7' },
+                    { text: 'Data' },
+                    { text: 'Science' },
+                    { text: 'Enthusiast' },
+                  ]}
+                  className="text-white text-[6vw] sm:text-[5vw] md:text-[3vw] lg:text-[2.5vw] font-normal tracking-normal text-left"
+                />
+              </span>
             </h1>
             
             <motion.p
