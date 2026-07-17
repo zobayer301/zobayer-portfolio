@@ -100,7 +100,7 @@ export function About() {
 
         <motion.div {...fadeInUp} className="mb-24 lg:mb-32">
           <div className="relative py-12 px-8 lg:px-16 rounded-3xl border border-cyan-500/5 bg-gradient-to-br from-cyan-500/[0.02] to-transparent">
-            <div className="absolute top-6 left-8 text-6xl text-white/10 font-display">"</div>
+            <div className="absolute top-6 left-8 text-6xl text-white/30 font-display">"</div>
             <h2 className="font-display text-[6vw] lg:text-[4vw] xl:text-section leading-none tracking-tight text-white pl-4 lg:pl-12">
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">SOLVING REAL-WORLD</TextScramble>
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">PROBLEMS WITH AI </TextScramble>
