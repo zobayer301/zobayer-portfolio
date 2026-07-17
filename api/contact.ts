@@ -43,13 +43,30 @@ function getTransport() {
   })
 }
 
+function readBody(req: VercelRequest): Promise<any> {
+  return new Promise((resolve, reject) => {
+    let data = ''
+    req.on('data', (chunk) => (data += chunk))
+    req.on('end', () => {
+      if (!data) return resolve({})
+      try {
+        resolve(JSON.parse(data))
+      } catch {
+        reject(new Error('Invalid JSON'))
+      }
+    })
+    req.on('error', reject)
+  })
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     res.status(405).json({ success: false, message: 'Method not allowed' })
     return
   }
 
-  const { name, email, message } = req.body || {}
+  const raw = await readBody(req)
+  const { name, email, message } = raw || {}
   if (!name || !email || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     res.status(400).json({ success: false, message: 'Invalid input' })
     return
