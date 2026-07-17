@@ -29,12 +29,12 @@ export function About() {
     {
       icon: <Code className="w-5 h-5" />,
       title: 'Graphics',
-      desc: 'Assistant Graphics Designer @ GU Computer Club',
+      desc: 'Assistant Graphics Designer @ GUCC',
     },
     {
       icon: <HeartPulse className="w-5 h-5" />,
       title: 'Research',
-      desc: 'AI-Driven Heart Disease Detection - 95.7% Accuracy',
+      desc: 'AI-Driven Heart Disease Detection',
     },
   ]
 
@@ -70,14 +70,13 @@ export function About() {
             <h3 className="font-display text-2xl lg:text-3xl text-gray-200 mb-6 leading-snug">
               Computer Science & Engineering graduate passionate about{' '}
               <span className="text-emerald-400">AI</span>,{' '}
-              <span className="text-blue-400">Machine Learning</span>, and{' '}
-              <span className="text-purple-400">Immersive Technologies</span>
+              <span className="text-blue-400"> Machine Learning</span>, and{' '}
+              <span className="text-purple-400"> Immersive Technologies</span>
             </h3>
             <p className="text-base lg:text-lg text-gray-400 leading-relaxed mb-8">
               From building AR/VR experiences at Battery Low Interactive to designing graphics
               for the university computer club - I thrive at the intersection of creativity
-              and engineering. Today I build end-to-end ML projects, from data cleaning and
-              feature engineering to deep learning and deployment.
+              and engineering.
             </p>
 
             <div className="grid grid-cols-2 gap-3">
