@@ -71,12 +71,13 @@ export function About() {
               Computer Science & Engineering graduate passionate about{' '}
               AI,{' '}
               Machine Learning, and{' '}
-              Immersive Technologies
+              Immersive Technologies.
             </h3>
             <p className="text-base lg:text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-              From building AR/VR experiences at Battery Low Interactive to designing graphics
-              for the university computer club - I thrive at the intersection of creativity
-              and engineering.
+              Computer Science and Engineering graduate from Green University of Bangladesh with practical experience
+in artificial intelligence, machine learning, and immersive technologies. Worked as an AR/VR/XR (Intern) at
+Battery Low Interactive Ltd and contributed as an Assistant Graphics Designer at the Green University Computer
+Club. Passionate about creating innovative solutions and applying technology to real-world challenges.
             </p>
 
             <div className="grid grid-cols-2 gap-3">
