@@ -64,9 +64,9 @@ export function Navigation() {
   };
 
   return (
-    <div className="fixed bottom-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+    <div className="fixed top-4 left-0 right-0 z-[8000] flex justify-center px-4 pointer-events-none">
       <motion.nav
-        initial={{ y: 80, opacity: 0 }}
+        initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 26, delay: 0.5 }}
         aria-label="Navigation"
@@ -74,7 +74,7 @@ export function Navigation() {
       >
         <div
           ref={containerRef}
-          className="relative flex items-center bg-black border border-black rounded-full px-1.5 py-2 shadow-2xl dark:bg-neutral-900 dark:border-gray-800 min-w-[320px] max-w-[95vw] h-[52px]"
+          className="relative flex items-center bg-black border border-black rounded-full px-1.5 py-2 shadow-2xl dark:bg-neutral-900 dark:border-gray-800 max-w-[95vw] h-[52px] min-w-0 sm:min-w-[320px]"
         >
           {navItems.map((item, index) => {
             const Icon = item.icon;
@@ -96,7 +96,7 @@ export function Navigation() {
                 )}
               >
                 <Icon size={20} strokeWidth={2} aria-hidden className="transition-colors duration-200 shrink-0" />
-                <span className="flex items-center whitespace-nowrap text-xs font-medium select-none">
+                <span className="hidden sm:flex items-center whitespace-nowrap text-xs font-medium select-none">
                   {item.label}
                 </span>
               </button>
