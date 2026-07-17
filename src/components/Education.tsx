@@ -11,7 +11,7 @@ const fadeInUp = {
 
 export function Education() {
   return (
-    <section id="education" className="pt-16 md:pt-24 lg:pt-32 pb-16 md:pb-32 lg:pb-48 px-4 sm:px-6 md:px-12 lg:px-16 bg-background">
+    <section id="education" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
           <span className="text-sm text-foreground/60 tracking-widest uppercase">Background</span>
@@ -56,7 +56,9 @@ export function Education() {
                   and Data Mining &mdash; including a research thesis on AI-driven
                   early detection of heart disease using machine learning and deep learning.
                 </p>
-                <p className="text-sm text-foreground/50">Graduated (2026)</p>
+                <span className="inline-block px-3 py-1 text-xs text-white border border-white/30 rounded-full bg-white/10">
+                  Graduated (2026)
+                </span>
               </div>
             </motion.div>
           </div>
