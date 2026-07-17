@@ -102,8 +102,7 @@ Achieved 95.7% accuracy for machine learning-based risk prediction and 92.3% acc
               className="w-full h-auto grayscale"
             />
             <p className="mt-4 text-xs text-gray-500 tracking-widest uppercase">
-              BUILDING ML PROJECTS - DHAKA / BD<br />
-              (ONGOING)
+              BUILDING ML PROJECTS
             </p>
           </motion.div>
 
