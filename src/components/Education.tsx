@@ -11,7 +11,7 @@ const fadeInUp = {
 
 export function Education() {
   return (
-    <section id="education" className="pt-16 md:pt-24 lg:pt-32 pb-16 md:pb-32 lg:pb-48 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#0d0d0d]">
+    <section id="education" className="pt-16 md:pt-24 lg:pt-32 pb-16 md:pb-32 lg:pb-48 px-4 sm:px-6 md:px-12 lg:px-16 bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
           <span className="text-sm text-violet-400 tracking-widest uppercase">Background</span>
@@ -47,10 +47,10 @@ export function Education() {
               className="flex items-center"
             >
               <div>
-                <h3 className="text-xl lg:text-2xl font-light text-white mb-4">
+                <h3 className="text-xl lg:text-2xl font-light text-gray-900 dark:text-white mb-4">
                   B.Sc. in Computer Science & Engineering
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4 text-sm lg:text-base">
                   Bachelor of Science in Computer Science and Engineering
                   with a focus on <span className="text-cyan-400">Artificial Intelligence</span>, <span className="text-blue-400">Machine Learning</span>,
                   and <span className="text-indigo-400">Data Mining</span> &mdash; including a research thesis on AI-driven

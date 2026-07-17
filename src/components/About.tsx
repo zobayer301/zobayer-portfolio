@@ -67,13 +67,13 @@ export function About() {
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
             className="lg:col-span-3 flex flex-col justify-center"
           >
-            <h3 className="font-display text-2xl lg:text-3xl text-gray-200 mb-6 leading-snug">
+            <h3 className="font-display text-2xl lg:text-3xl text-gray-900 dark:text-gray-200 mb-6 leading-snug">
               Computer Science & Engineering graduate passionate about{' '}
               <span className="text-cyan-400">AI</span>,{' '}
               <span className="text-blue-400">Machine Learning</span>, and{' '}
               <span className="text-violet-400">Immersive Technologies</span>
             </h3>
-            <p className="text-base lg:text-lg text-gray-400 leading-relaxed mb-8">
+            <p className="text-base lg:text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
               From building AR/VR experiences at Battery Low Interactive to designing graphics
               for the university computer club - I thrive at the intersection of creativity
               and engineering.
@@ -90,7 +90,7 @@ export function About() {
                   <div className="text-cyan-400 shrink-0">{m.icon}</div>
                   <div className="min-w-0">
                     <p className="text-xs text-gray-500 uppercase tracking-wider">{m.title}</p>
-                    <p className="text-sm text-gray-300 truncate">{m.desc}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 truncate">{m.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -100,8 +100,8 @@ export function About() {
 
         <motion.div {...fadeInUp} className="mb-24 lg:mb-32">
           <div className="relative py-12 px-8 lg:px-16 rounded-3xl border border-cyan-500/5 bg-gradient-to-br from-cyan-500/[0.02] to-transparent">
-            <div className="absolute top-6 left-8 text-6xl font-display" style={{ color: '#ffffff' }}>"</div>
-            <h2 className="font-display text-[6vw] lg:text-[4vw] xl:text-section leading-none tracking-tight text-white pl-4 lg:pl-12">
+            <div className="absolute top-6 left-8 text-6xl font-display text-gray-900 dark:text-white">"</div>
+            <h2 className="font-display text-[6vw] lg:text-[4vw] xl:text-section leading-none tracking-tight text-gray-900 dark:text-white pl-4 lg:pl-12">
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">SOLVING REAL-WORLD</TextScramble>
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">PROBLEMS WITH AI </TextScramble>
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">AND CONTINUOUSLY</TextScramble>
@@ -116,10 +116,10 @@ export function About() {
             className="lg:col-span-3 flex flex-col justify-center order-2 lg:order-1"
           >
             <span className="text-xs text-blue-400 tracking-widest uppercase mb-3">Undergraduate Thesis</span>
-            <h3 className="font-display text-xl lg:text-2xl text-gray-200 mb-4 leading-snug">
+            <h3 className="font-display text-xl lg:text-2xl text-gray-900 dark:text-gray-200 mb-4 leading-snug">
               AI-Driven Early Detection of Heart Disease Using Machine Learning and Deep Learning
             </h3>
-            <p className="text-base text-gray-400 leading-relaxed mb-6">
+            <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
               Developed a hybrid AI framework integrating a stacking ensemble (Random Forest, XGBoost,
               and Logistic Regression) with a Residual 1D-CNN to improve early heart disease detection
               using structured clinical data and ECG signals.
@@ -176,10 +176,10 @@ export function About() {
             className="lg:col-span-3 flex flex-col justify-center"
           >
             <span className="text-xs text-violet-400 tracking-widest uppercase mb-3">What I Do Now</span>
-            <h3 className="font-display text-xl lg:text-2xl text-gray-200 mb-4 leading-snug">
+            <h3 className="font-display text-xl lg:text-2xl text-gray-900 dark:text-gray-200 mb-4 leading-snug">
               Building End-to-End Machine Learning Projects
             </h3>
-            <p className="text-base text-gray-400 leading-relaxed mb-6">
+            <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
               From data cleaning and feature engineering to regression, deep learning, and
               deployment - with a stack built around Python, scikit-learn, TensorFlow, and PyTorch.
               Always looking for the next problem worth solving.

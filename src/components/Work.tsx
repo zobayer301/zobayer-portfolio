@@ -88,16 +88,16 @@ export function Work() {
               }
               className="group relative block rounded-xl overflow-hidden min-h-[44px]"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] to-white/[0.01] border border-indigo-500/10 rounded-xl group-hover:border-indigo-400/30 group-hover:shadow-[0_0_20px_rgba(129,140,248,0.08)] transition-all duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-200/60 to-slate-100/30 dark:from-white/[0.06] dark:to-white/[0.01] border border-indigo-500/10 rounded-xl group-hover:border-indigo-400/30 group-hover:shadow-[0_0_20px_rgba(129,140,248,0.08)] transition-all duration-500" />
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 to-violet-500/0 group-hover:from-indigo-500/[0.04] group-hover:to-violet-500/[0.02] rounded-xl transition-all duration-500" />
 
               <div className="relative p-6 lg:p-8 flex flex-col h-full">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-light text-white group-hover:text-indigo-200 transition-colors duration-300 leading-tight">
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-light text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-200 transition-colors duration-300 leading-tight">
                       {exp.title}
                     </h3>
-                    <p className="text-sm lg:text-base text-gray-400 mt-1">
+                    <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 mt-1">
                       {exp.company}
                     </p>
                   </div>
@@ -106,7 +106,7 @@ export function Work() {
                   </span>
                 </div>
 
-                <p className="text-sm lg:text-base text-gray-500 leading-relaxed mb-6 flex-1 group-hover:text-gray-400 transition-colors duration-300">
+                <p className="text-sm lg:text-base text-gray-600 dark:text-gray-500 leading-relaxed mb-6 flex-1 group-hover:text-gray-700 dark:group-hover:text-gray-400 transition-colors duration-300">
                   {exp.description}
                 </p>
 

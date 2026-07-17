@@ -72,7 +72,7 @@ export function Contact() {
           {...fadeInUp}
           className="mb-12 lg:mb-16 max-w-2xl"
         >
-          <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-light leading-tight mb-4">
+          <h3 className="text-xl md:text-2xl lg:text-3xl text-gray-900 dark:text-white font-light leading-tight mb-4">
             OPEN TO NEW<br />
             OPPORTUNITIES IN<br />
             <span className="text-gradient-cool">DATA SCIENCE & ML</span>
@@ -91,7 +91,7 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={'flex items-center gap-3 text-gray-400 transition-colors min-h-[44px] ' + link.color}
+                className={'flex items-center gap-3 text-gray-700 dark:text-gray-400 transition-colors min-h-[44px] ' + link.color}
               >
                 <Icon />
                 <span className="text-sm tracking-widest uppercase">{link.label}</span>
@@ -102,7 +102,7 @@ export function Contact() {
 
         <motion.footer
           {...fadeInUp}
-          className="mt-24 lg:mt-32 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="mt-24 lg:mt-32 pt-8 border-t border-gray-300 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-xs text-gray-600">
             &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.

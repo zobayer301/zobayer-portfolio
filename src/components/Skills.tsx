@@ -26,7 +26,7 @@ export function Skills() {
   const viewportMargin = isMobile ? '-20px' : '-100px'
 
   return (
-    <section id="skills" className="section-padding bg-[#0d0d0d]">
+    <section id="skills" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 40 }}
