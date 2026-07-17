@@ -1,5 +1,47 @@
+import crypto from 'crypto'
+import nodemailer from 'nodemailer'
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { signPayload, sendWeb3Form, BASE_URL, OWNER } from './_lib'
+
+const GMAIL_USER = process.env.GMAIL_USER || ''
+const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD || ''
+const VERIFY_SECRET = process.env.VERIFY_SECRET || 'dev-insecure-secret-change-me'
+const SITE_URL = process.env.SITE_URL || 'https://zobayer-xo.vercel.app'
+
+type PendingMessage = {
+  name: string
+  email: string
+  message: string
+  exp: number
+}
+
+function signPayload(payload: PendingMessage): string {
+  const body = Buffer.from(JSON.stringify(payload)).toString('base64url')
+  const sig = crypto.createHmac('sha256', VERIFY_SECRET).update(body).digest('base64url')
+  return `${body}.${sig}`
+}
+
+function verifyToken(token: string): PendingMessage | null {
+  const [body, sig] = token.split('.')
+  if (!body || !sig) return null
+  const expected = crypto.createHmac('sha256', VERIFY_SECRET).update(body).digest('base64url')
+  const a = Buffer.from(sig)
+  const b = Buffer.from(expected)
+  if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) return null
+  try {
+    const payload = JSON.parse(Buffer.from(body, 'base64url').toString()) as PendingMessage
+    if (Date.now() > payload.exp) return null
+    return payload
+  } catch {
+    return null
+  }
+}
+
+function getTransport() {
+  return nodemailer.createTransport({
+    service: 'gmail',
+    auth: { user: GMAIL_USER, pass: GMAIL_APP_PASSWORD },
+  })
+}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -20,33 +62,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     exp: Date.now() + 1000 * 60 * 60 * 24,
   })
 
-  const confirmUrl = `${BASE_URL}/confirm?token=${encodeURIComponent(token)}`
-
-  const emailBody = `
-A new message is waiting confirmation on your portfolio contact form.
-
-From: ${name} <${email}>
-
-"${message}"
-
-Confirm and deliver this message to ${OWNER} by opening the link below:
-${confirmUrl}
-
-This link expires in 24 hours. If you did not submit this form, you can ignore this email.
-`.trim()
+  const confirmUrl = `${SITE_URL}/confirm?token=${encodeURIComponent(token)}`
 
   try {
-    const result = await sendWeb3Form(email, {
-      subject: `Confirm your message to Md. Zobayer Chowdhury`,
-      from_name: 'Portfolio Contact',
-      message: emailBody,
+    await getTransport().sendMail({
+      from: GMAIL_USER,
+      to: String(email),
+      subject: 'Confirm your message to Md. Zobayer Chowdhury',
+      text: `Hi ${name},\n\nYou submitted a message on Md. Zobayer Chowdhury's portfolio contact form. Confirm it by opening this link:\n\n${confirmUrl}\n\nThis link expires in 24 hours. If you did not submit this form, you can ignore this email.`,
     })
-    if (!result.success) {
-      res.status(502).json({ success: false, message: 'Email delivery failed' })
-      return
-    }
     res.status(200).json({ success: true, message: 'Confirmation email sent' })
-  } catch {
+  } catch (err) {
+    console.error('Mail send failed:', err)
     res.status(502).json({ success: false, message: 'Email delivery failed' })
   }
 }

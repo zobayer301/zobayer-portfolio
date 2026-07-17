@@ -75,9 +75,11 @@ export function Contact() {
         setEmail('')
         setMessage('')
       } else {
-        toast.error('Something went wrong. Please try again.')
+        console.error('Contact API error:', res.status, data)
+        toast.error(data?.message ? `Error: ${data.message}` : `Something went wrong (${res.status}). Please try again.`)
       }
-    } catch {
+    } catch (err) {
+      console.error('Contact submit failed:', err)
       toast.error('Network error. Please try again.')
     } finally {
       setStatus('idle')
