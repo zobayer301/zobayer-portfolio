@@ -4,6 +4,15 @@ import { TypewriterEffect } from '@/components/TypewriterEffect'
 export function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
+      <motion.img
+        src="/logo.png"
+        alt="Md. Zobayer Chowdhury"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="absolute top-6 left-4 sm:left-6 md:left-12 lg:left-16 z-20 h-12 w-auto md:h-14"
+      />
+
       <div className="absolute inset-0 w-full h-full">
         <img
           src="/hero-image.jpg"
