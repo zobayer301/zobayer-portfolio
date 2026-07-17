@@ -125,16 +125,16 @@ export function About() {
               using structured clinical data and ECG signals.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
+              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">
                 95.7% ML Accuracy
               </span>
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
+              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">
                 92.3% ECG Classification
               </span>
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
+              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">
                 Stacking Ensemble
               </span>
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
+              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">
                 Interpretable AI
               </span>
             </div>
@@ -185,11 +185,11 @@ export function About() {
               Always looking for the next problem worth solving.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">Python</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">scikit-learn</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">TensorFlow</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">PyTorch</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">Deep Learning</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">Python</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">scikit-learn</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">TensorFlow</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">PyTorch</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">Deep Learning</span>
             </div>
           </motion.div>
         </div>
