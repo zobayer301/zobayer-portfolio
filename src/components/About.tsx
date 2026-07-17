@@ -19,17 +19,17 @@ export function About() {
     {
       icon: <BookOpen className="w-5 h-5" />,
       title: 'University',
-      desc: 'Green University of Bangladesh',
+      desc: 'B.Sc in CSE @ Green University of Bangladesh',
     },
     {
       icon: <Award className="w-5 h-5" />,
       title: 'Experience',
-      desc: 'AR/VR/XR Intern @ Battery Low Interactive',
+      desc: 'Unity Developer (Intern) @ Battery Low Interactive Ltd.',
     },
     {
       icon: <Code className="w-5 h-5" />,
       title: 'Volunteer',
-      desc: 'Assistant Graphics Designer',
+      desc: 'Assistant Graphics Designer @ Green University Computer Club',
     },
     {
       icon: <HeartPulse className="w-5 h-5" />,
@@ -75,9 +75,9 @@ export function About() {
             </h3>
             <p className="text-base lg:text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
               Computer Science and Engineering graduate from Green University of Bangladesh with practical experience
-in artificial intelligence, machine learning, and immersive technologies. Worked as an AR/VR/XR (Intern) at
-Battery Low Interactive Ltd and contributed as an Assistant Graphics Designer at the Green University Computer
-Club. Passionate about creating innovative solutions and applying technology to real-world challenges.
+in artificial intelligence, machine learning, and immersive technologies. Worked as an Unity Developer (Intern) at
+Battery Low Interactive Ltd. and contributed as an Assistant Graphics Designer at the Green University Computer
+Club.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
