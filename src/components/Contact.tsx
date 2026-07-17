@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
+
+const WHATSAPP_NUMBER = '8801889384340'
+const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -45,6 +49,17 @@ const socialLinks = [
 ]
 
 export function Contact() {
+  const [name, setName] = useState('')
+  const [message, setMessage] = useState('')
+
+  const handleSend = () => {
+    if (!message.trim()) return
+    const text = name.trim()
+      ? `Hi, I'm ${name.trim()}.\n\n${message.trim()}`
+      : message.trim()
+    window.open(`${WHATSAPP_HREF}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <section id="contact" className="section-padding">
       <div className="max-w-7xl mx-auto">
@@ -77,6 +92,38 @@ export function Contact() {
             OPPORTUNITIES IN<br />
             <span className="text-foreground">DATA SCIENCE & ML</span>
           </h3>
+        </motion.div>
+
+        <motion.div
+          {...fadeInUp}
+          className="mb-12 lg:mb-16 max-w-2xl"
+        >
+          <form
+            onSubmit={(e) => { e.preventDefault(); handleSend() }}
+            className="flex flex-col gap-4"
+          >
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
+            />
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Write your message..."
+              rows={4}
+              className="flex w-full rounded-lg border border-foreground/20 bg-transparent px-4 py-3 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors resize-none"
+            />
+            <button
+              type="submit"
+              disabled={!message.trim()}
+              className="self-start inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background text-sm tracking-widest uppercase font-medium transition-opacity hover:opacity-90 disabled:opacity-40 disabled:pointer-events-none"
+            >
+              Send via WhatsApp
+            </button>
+          </form>
         </motion.div>
 
         <div className="flex flex-wrap gap-6 lg:gap-10 mb-16 lg:mb-24">
