@@ -85,12 +85,12 @@ export function About() {
                   key={m.title}
                   {...fadeInUp}
                   transition={{ ...fadeInUp.transition, delay: 0.1 * (i + 1) }}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-300"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-black bg-black hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300 dark:border-foreground/10 dark:bg-foreground/[0.02] dark:hover:bg-foreground/[0.04] dark:hover:border-foreground/20"
                 >
-                  <div className="text-foreground/70 shrink-0">{m.icon}</div>
+                  <div className="text-white shrink-0">{m.icon}</div>
                   <div className="min-w-0">
-                    <p className="text-xs text-foreground/40 uppercase tracking-wider">{m.title}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 truncate">{m.desc}</p>
+                    <p className="text-xs text-neutral-400 uppercase tracking-wider">{m.title}</p>
+                    <p className="text-sm text-neutral-200 dark:text-gray-300 truncate">{m.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -125,16 +125,16 @@ export function About() {
               using structured clinical data and ECG signals.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 rounded-full text-xs border border-foreground/15 text-foreground/70">
+              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
                 95.7% ML Accuracy
               </span>
-              <span className="px-3 py-1 rounded-full text-xs border border-foreground/15 text-foreground/70">
+              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
                 92.3% ECG Classification
               </span>
-              <span className="px-3 py-1 rounded-full text-xs border border-foreground/15 text-foreground/70">
+              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
                 Stacking Ensemble
               </span>
-              <span className="px-3 py-1 rounded-full text-xs border border-foreground/15 text-foreground/70">
+              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
                 Interpretable AI
               </span>
             </div>
@@ -185,11 +185,11 @@ export function About() {
               Always looking for the next problem worth solving.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 rounded-full text-xs border border-foreground/15 text-foreground/70">Python</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-foreground/15 text-foreground/70">scikit-learn</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-foreground/15 text-foreground/70">TensorFlow</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-foreground/15 text-foreground/70">PyTorch</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-foreground/15 text-foreground/70">Deep Learning</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">Python</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">scikit-learn</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">TensorFlow</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">PyTorch</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">Deep Learning</span>
             </div>
           </motion.div>
         </div>

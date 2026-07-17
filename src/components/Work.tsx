@@ -88,24 +88,24 @@ export function Work() {
               }
               className="group relative block rounded-xl overflow-hidden min-h-[44px]"
             >
-              <div className="absolute inset-0 bg-foreground/[0.02] dark:from-white/[0.06] dark:to-white/[0.01] border border-foreground/10 rounded-xl group-hover:border-foreground/30 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.06)] dark:group-hover:shadow-[0_0_20px_rgba(255,255,255,0.06)] transition-all duration-500" />
+              <div className="absolute inset-0 bg-black border border-black rounded-xl group-hover:border-neutral-700 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.12)] dark:bg-transparent dark:border-foreground/10 dark:group-hover:border-foreground/30 dark:group-hover:shadow-[0_0_20px_rgba(255,255,255,0.06)] transition-all duration-500" />
 
               <div className="relative p-6 lg:p-8 flex flex-col h-full">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-light text-gray-900 dark:text-white group-hover:text-foreground transition-colors duration-300 leading-tight">
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-light text-white group-hover:text-white transition-colors duration-300 leading-tight">
                       {exp.title}
                     </h3>
-                    <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 mt-1">
+                    <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-400 mt-1">
                       {exp.company}
                     </p>
                   </div>
-                  <span className="shrink-0 px-3 py-1 text-[10px] lg:text-xs text-foreground/60 border border-foreground/15 rounded-full tracking-widest uppercase bg-foreground/5">
+                  <span className="shrink-0 px-3 py-1 text-[10px] lg:text-xs text-white border border-white/30 rounded-full tracking-widest uppercase bg-white/10">
                     {exp.period}
                   </span>
                 </div>
 
-                <p className="text-sm lg:text-base text-gray-600 dark:text-gray-500 leading-relaxed mb-6 flex-1 group-hover:text-gray-700 dark:group-hover:text-gray-400 transition-colors duration-300">
+                <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-500 leading-relaxed mb-6 flex-1 group-hover:text-neutral-200 dark:group-hover:text-gray-400 transition-colors duration-300">
                   {exp.description}
                 </p>
 
@@ -113,7 +113,7 @@ export function Work() {
                   {exp.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 text-xs text-foreground/60 border border-foreground/15 rounded-full bg-foreground/[0.03] group-hover:border-foreground/30 transition-all duration-300"
+                      className="px-3 py-1 text-xs text-white border border-white/30 rounded-full bg-white/10 group-hover:border-white/50 transition-all duration-300"
                     >
                       {skill}
                     </span>
@@ -121,7 +121,7 @@ export function Work() {
                 </div>
 
                 <div className="absolute top-6 right-6 lg:top-8 lg:right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
-                  <svg className="w-4 h-4 text-foreground/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>
                 </div>

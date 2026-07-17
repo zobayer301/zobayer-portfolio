@@ -107,12 +107,12 @@ export function GithubStats() {
               <motion.div
                 key={item.label}
                 {...statAnimation}
-                className="rounded-lg border border-foreground/10 bg-foreground/[0.02] p-4 lg:p-6 text-center hover:border-foreground/20 transition-all duration-500"
+                className="rounded-lg border border-black bg-black p-4 lg:p-6 text-center hover:border-neutral-700 transition-all duration-500 dark:border-foreground/10 dark:bg-foreground/[0.02] dark:hover:border-foreground/20"
               >
-                <div className="text-xl lg:text-3xl font-display font-bold tracking-tight text-foreground">
+                <div className="text-xl lg:text-3xl font-display font-bold tracking-tight text-white">
                   {item.value}
                 </div>
-                <div className="text-xs lg:text-sm text-foreground/50 mt-1 lg:mt-2">{item.label}</div>
+                <div className="text-xs lg:text-sm text-neutral-400 mt-1 lg:mt-2 dark:text-foreground/50">{item.label}</div>
               </motion.div>
             ))}
           </div>
