@@ -52,8 +52,8 @@ export function Work() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="mb-16"
         >
-          <span className="text-sm text-indigo-400 tracking-widest uppercase">Projects</span>
-          <div className="w-6 h-px bg-gradient-to-r from-indigo-500 to-violet-500 mt-2" />
+          <span className="text-sm text-foreground/60 tracking-widest uppercase">Projects</span>
+          <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
         <motion.h2
@@ -61,7 +61,7 @@ export function Work() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24 text-gradient-violet"
+          className="font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24"
         >
           FEATURED<br />PROJECTS
         </motion.h2>
@@ -88,20 +88,19 @@ export function Work() {
               }
               className="group relative block rounded-xl overflow-hidden min-h-[44px]"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-200/60 to-slate-100/30 dark:from-white/[0.06] dark:to-white/[0.01] border border-indigo-500/10 rounded-xl group-hover:border-indigo-400/30 group-hover:shadow-[0_0_20px_rgba(129,140,248,0.08)] transition-all duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 to-violet-500/0 group-hover:from-indigo-500/[0.04] group-hover:to-violet-500/[0.02] rounded-xl transition-all duration-500" />
+              <div className="absolute inset-0 bg-foreground/[0.02] dark:from-white/[0.06] dark:to-white/[0.01] border border-foreground/10 rounded-xl group-hover:border-foreground/30 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.06)] dark:group-hover:shadow-[0_0_20px_rgba(255,255,255,0.06)] transition-all duration-500" />
 
               <div className="relative p-6 lg:p-8 flex flex-col h-full">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-light text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-200 transition-colors duration-300 leading-tight">
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-light text-gray-900 dark:text-white group-hover:text-foreground transition-colors duration-300 leading-tight">
                       {exp.title}
                     </h3>
                     <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 mt-1">
                       {exp.company}
                     </p>
                   </div>
-                  <span className="shrink-0 px-3 py-1 text-[10px] lg:text-xs text-indigo-400 border border-indigo-500/20 rounded-full tracking-widest uppercase bg-indigo-500/5">
+                  <span className="shrink-0 px-3 py-1 text-[10px] lg:text-xs text-foreground/60 border border-foreground/15 rounded-full tracking-widest uppercase bg-foreground/5">
                     {exp.period}
                   </span>
                 </div>
@@ -114,7 +113,7 @@ export function Work() {
                   {exp.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 text-xs text-indigo-300/70 border border-indigo-500/15 rounded-full bg-indigo-500/[0.03] group-hover:border-indigo-400/30 group-hover:text-indigo-300 transition-all duration-300"
+                      className="px-3 py-1 text-xs text-foreground/60 border border-foreground/15 rounded-full bg-foreground/[0.03] group-hover:border-foreground/30 transition-all duration-300"
                     >
                       {skill}
                     </span>
@@ -122,7 +121,7 @@ export function Work() {
                 </div>
 
                 <div className="absolute top-6 right-6 lg:top-8 lg:right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
-                  <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-foreground/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>
                 </div>
