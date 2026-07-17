@@ -76,19 +76,6 @@ export function Navigation() {
           ref={containerRef}
           className="relative flex items-center bg-black border border-black rounded-full px-1.5 py-2 shadow-2xl dark:bg-neutral-900 dark:border-gray-800 max-w-[95vw] h-[52px] min-w-0 sm:min-w-[320px]"
         >
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            aria-label="Back to top"
-            type="button"
-            className="relative shrink-0 flex items-center justify-center rounded-full border border-white/40 bg-black p-0.5 ml-1 mr-1 h-10 w-10 sm:h-11 sm:w-11 hover:border-white transition-colors duration-200 focus:outline-none focus-visible:ring-0"
-          >
-            <img
-              src="/logo.svg"
-              alt="Md. Zobayer Chowdhury"
-              className="h-full w-full object-contain rounded-full"
-            />
-          </button>
-
           {navItems.map((item, index) => {
             const Icon = item.icon;
             const isActive = activeIndex === index;
