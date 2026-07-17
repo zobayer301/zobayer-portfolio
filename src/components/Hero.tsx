@@ -49,7 +49,7 @@ export function Hero() {
                     { text: 'Science' },
                     { text: 'Enthusiast' },
                   ]}
-                  className="text-[6vw] sm:text-[5vw] md:text-[3vw] lg:text-[2.5vw] font-normal tracking-normal text-left"
+                  className="text-[6vw] sm:text-[5vw] md:text-[3vw] lg:text-[2.5vw] font-normal tracking-normal text-left text-amber-300 dark:text-amber-300"
                 />
               </span>
             </h1>
