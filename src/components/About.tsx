@@ -34,7 +34,7 @@ export function About() {
     {
       icon: <HeartPulse className="w-5 h-5" />,
       title: 'Thesis',
-      desc: 'AI-Driven Heart Disease Detection',
+      desc: 'AI-Driven Early Detection of Heart Disease Using Machine Learning and Deep Learning',
     },
   ]
 
