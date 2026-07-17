@@ -14,9 +14,9 @@ const fadeInUp = {
 }
 
 const streakCard = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=9ca3af&ring=374151&fire=374151&currStreakLabel=374151&sideLabels=6b7280&sideNums=111827&currStreakNum=111827&dates=6b7280'
-const streakCardDark = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=4b5563&ring=e5e7eb&fire=e5e7eb&currStreakLabel=e5e7eb&sideLabels=9ca3af&sideNums=f3f4f6&currStreakNum=f3f4f6&dates=9ca3af'
+const streakCardDark = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=6b7280&ring=f9fafb&fire=f9fafb&currStreakLabel=f9fafb&sideLabels=cbd5e1&sideNums=f9fafb&currStreakNum=f9fafb&dates=cbd5e1'
 const graphCard = 'https://github-readme-activity-graph.vercel.app/graph?username=' + USER + '&bg_color=transparent&color=374151&line=6b7280&point=374151&area=true&hide_border=true'
-const graphCardDark = 'https://github-readme-activity-graph.vercel.app/graph?username=' + USER + '&bg_color=0d0d0d&color=e5e7eb&line=f3f4f6&point=e5e7eb&area=true&area_color=6b7280&hide_border=true'
+const graphCardDark = 'https://github-readme-activity-graph.vercel.app/graph?username=' + USER + '&bg_color=0d0d0d&color=f9fafb&line=f9fafb&point=f9fafb&area=true&area_color=9ca3af&hide_border=true'
 
 interface Stats {
   totalContributions: number
