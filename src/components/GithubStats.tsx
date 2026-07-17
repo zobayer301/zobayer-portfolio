@@ -14,7 +14,9 @@ const fadeInUp = {
 }
 
 const streakCard = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=9ca3af&ring=374151&fire=374151&currStreakLabel=374151&sideLabels=6b7280&sideNums=111827&currStreakNum=111827&dates=6b7280'
+const streakCardDark = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=4b5563&ring=e5e7eb&fire=e5e7eb&currStreakLabel=e5e7eb&sideLabels=9ca3af&sideNums=f3f4f6&currStreakNum=f3f4f6&dates=9ca3af'
 const graphCard = 'https://github-readme-activity-graph.vercel.app/graph?username=' + USER + '&bg_color=transparent&color=374151&line=6b7280&point=374151&area=true&hide_border=true'
+const graphCardDark = 'https://github-readme-activity-graph.vercel.app/graph?username=' + USER + '&bg_color=0d0d0d&color=e5e7eb&line=f3f4f6&point=e5e7eb&area=true&area_color=6b7280&hide_border=true'
 
 interface Stats {
   totalContributions: number
@@ -27,6 +29,8 @@ const STATS_API = 'https://github-readme-streak-stats.herokuapp.com/user/' + USE
 export function GithubStats() {
   const prefersReducedMotion = useReducedMotion()
   const isMobile = useIsMobile()
+  const { resolvedTheme } = useTheme()
+  const isDark = resolvedTheme === 'dark'
   const [stats, setStats] = useState<Stats | null>(null)
 
   useEffect(() => {
@@ -90,10 +94,10 @@ export function GithubStats() {
           className="rounded-lg border border-foreground/10 bg-foreground/[0.02] p-4 mb-6 lg:mb-8 overflow-hidden max-w-2xl hover:border-foreground/20 transition-all duration-500"
         >
           <img
-            src={streakCard}
+            src={isDark ? streakCardDark : streakCard}
             alt={USER + ' GitHub streak'}
             loading="lazy"
-            className="w-full h-auto [filter:grayscale(1)]"
+            className="w-full h-auto"
           />
         </motion.div>
 
@@ -119,10 +123,10 @@ export function GithubStats() {
           className="rounded-lg border border-foreground/10 bg-foreground/[0.02] p-4 overflow-hidden hover:border-foreground/20 transition-all duration-500"
         >
           <img
-            src={graphCard}
+            src={isDark ? graphCardDark : graphCard}
             alt={USER + ' contribution activity graph'}
             loading="lazy"
-            className="w-full h-auto [filter:grayscale(1)]"
+            className="w-full h-auto"
           />
         </motion.div>
       </div>
