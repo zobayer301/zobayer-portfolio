@@ -3,14 +3,16 @@ import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
 const skills = [
-  'Python, Java, C',
-  'Pandas & NumPy',
+  'Python, OOPs',
+  'Pandas, NumPy, Matplotlib & Seaborn',
   'Scikit-learn',
-  'TensorFlow & PyTorch',
   'Deep Learning',
+  'NLP, GenAI',
+  'LLMs',
   'Data Cleaning & EDA',
   'Feature Engineering',
-  'Flask & Django',
+  'TensorFlow',
+  'Flask & Streamlit',
   'MySQL',
   'HTML & CSS',
   'Git & GitHub',
