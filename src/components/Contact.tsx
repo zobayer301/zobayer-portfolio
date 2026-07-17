@@ -4,8 +4,6 @@ import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
-const WEB3FORMS_ACCESS_KEY = '40ec33e7-bac2-4dd4-99a3-8186426bf388'
-
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
@@ -54,21 +52,19 @@ export function Contact() {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending'>('idle')
 
-  const emailValid = !email.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!name.trim() || !message.trim() || !emailValid) return
+    if (!name.trim() || !emailValid || !message.trim()) return
     setStatus('sending')
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          from_name: name.trim(),
+          name: name.trim(),
           email: email.trim(),
-          subject: `Portfolio message from ${name.trim()}`,
           message: message.trim(),
         }),
       })
@@ -143,6 +139,7 @@ export function Contact() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email *"
+              required
               className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
             <textarea
