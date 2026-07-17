@@ -4,7 +4,7 @@ import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
-const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY'
+const WEB3FORMS_ACCESS_KEY = '40ec33e7-bac2-4dd4-99a3-8186426bf388'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
