@@ -97,7 +97,7 @@ Achieved 95.7% accuracy for machine learning-based risk prediction and 92.3% acc
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
           <motion.div {...fadeInUp}>
             <img
-              src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src="ml.jpg"
               alt="Working on ML projects"
               className="w-full h-auto grayscale"
             />
