@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
-const WHATSAPP_NUMBER = '8801889384340'
-const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`
+const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -51,11 +51,36 @@ const socialLinks = [
 export function Contact() {
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
+  const [status, setStatus] = useState<'idle' | 'sending'>('idle')
 
-  const handleSend = () => {
+  const handleSend = async (e: React.FormEvent) => {
+    e.preventDefault()
     if (!name.trim() || !message.trim()) return
-    const text = `Hi, I'm ${name.trim()}.\n\n${message.trim()}`
-    window.open(`${WHATSAPP_HREF}?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer')
+    setStatus('sending')
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          from_name: name.trim(),
+          subject: `Portfolio message from ${name.trim()}`,
+          message: message.trim(),
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        toast.success("Message sent! I'll get back to you soon.")
+        setName('')
+        setMessage('')
+      } else {
+        toast.error('Something went wrong. Please try again.')
+      }
+    } catch {
+      toast.error('Network error. Please try again.')
+    } finally {
+      setStatus('idle')
+    }
   }
 
   return (
@@ -97,7 +122,7 @@ export function Contact() {
           className="mb-12 lg:mb-16 max-w-2xl"
         >
           <form
-            onSubmit={(e) => { e.preventDefault(); handleSend() }}
+            onSubmit={handleSend}
             className="flex flex-col gap-4"
           >
             <input
@@ -118,10 +143,10 @@ export function Contact() {
             />
             <button
               type="submit"
-              disabled={!name.trim() || !message.trim()}
+              disabled={!name.trim() || !message.trim() || status === 'sending'}
               className="self-start inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background text-sm tracking-widest uppercase font-medium transition-opacity hover:opacity-90 disabled:opacity-40 disabled:pointer-events-none"
             >
-              Send to Zobayer
+              {status === 'sending' ? 'Sending...' : 'Send to Zobayer'}
             </button>
           </form>
         </motion.div>
