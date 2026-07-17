@@ -73,10 +73,8 @@ export function About() {
             className="flex items-center lg:text-right"
           >
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed text-justify">
-              His undergraduate thesis - "AI-Driven Early Detection of Heart
-              Disease Using Machine Learning and Deep Learning - combined
-              medical data with modern ML techniques to explore how algorithms
-              can support earlier, better clinical decisions.
+              Undergraduate Thesis - Developed a hybrid AI framework integrating a stacking ensemble (Random Forest, XGBoost, and Logistic Regression) with a Residual 1D-CNN to improve early heart disease detection using structured clinical data and ECG signals.
+Achieved 95.7% accuracy for machine learning-based risk prediction and 92.3% accuracy for deep learning-based ECG classification, enhancing diagnostic reliability through probability calibration and interpretable AI techniques.
             </p>
           </motion.div>
 
