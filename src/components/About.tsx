@@ -18,8 +18,8 @@ export function About() {
   const milestones = [
     {
       icon: <BookOpen className="w-5 h-5" />,
-      title: 'Education',
-      desc: 'B.Sc. in CSE, Green University of Bangladesh',
+      title: 'University',
+      desc: 'Green University of Bangladesh',
     },
     {
       icon: <Award className="w-5 h-5" />,
@@ -28,12 +28,12 @@ export function About() {
     },
     {
       icon: <Code className="w-5 h-5" />,
-      title: 'Graphics',
-      desc: 'Assistant Graphics Designer @ GUCC',
+      title: 'Volunteer',
+      desc: 'Assistant Graphics Designer',
     },
     {
       icon: <HeartPulse className="w-5 h-5" />,
-      title: 'Research',
+      title: 'Thesis',
       desc: 'AI-Driven Heart Disease Detection',
     },
   ]
