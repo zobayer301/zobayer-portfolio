@@ -55,7 +55,7 @@ export function GithubStats() {
     : null
 
   return (
-    <section id="github" className="section-padding bg-[#0d0d0d]">
+    <section id="github" className="min-h-screen flex flex-col justify-center bg-[#0d0d0d]">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
           <span className="text-sm text-gray-500 tracking-widest uppercase">Open Source</span>
