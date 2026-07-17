@@ -4,7 +4,7 @@ import { useIsMobile } from '@/hooks/use-mobile'
 
 const experiences = [
   {
-    title: 'Forest Fire — Data Cleaning & Feature Engineering',
+    title: 'Forest Fire \u2014 Data Cleaning & Feature Engineering',
     company: 'Algerian Forest Fires Dataset',
     location: 'github.com/zobayer301',
     period: 'Project',
@@ -26,7 +26,7 @@ const experiences = [
     company: 'Scikit-learn Study',
     location: 'github.com/zobayer301',
     period: 'Project',
-    description: 'Implementation and comparison of Simple Linear Regression vs. Polynomial Regression on a synthetic quadratic dataset, with visualization and R² score evaluation.',
+    description: 'Implementation and comparison of Simple Linear Regression vs. Polynomial Regression on a synthetic quadratic dataset, with visualization and R\u00b2 score evaluation.',
     skills: ['Scikit-learn', 'Polynomial Regression', 'Model Evaluation'],
     link: 'https://github.com/zobayer301/Polynomial-Regression-Comparison',
   },
@@ -38,15 +38,6 @@ const experiences = [
     description: 'Simple Linear Regression implemented from first principles in Python using NumPy and Matplotlib for predictive analysis and visualization.',
     skills: ['NumPy', 'Matplotlib', 'ML Fundamentals'],
     link: 'https://github.com/zobayer301/linear-regression-from-scratch',
-  },
-  {
-    title: 'AI-Driven Heart Disease Detection',
-    company: 'Undergraduate Thesis',
-    location: 'Green University of Bangladesh',
-    period: 'Thesis',
-    description: 'Early detection of heart disease using classical Machine Learning and Deep Learning models on clinical tabular data, comparing accuracy, precision, and recall across architectures.',
-    skills: ['TensorFlow', 'PyTorch', 'Classification', 'Deep Learning', 'Healthcare AI'],
-    link: 'https://github.com/zobayer301',
   },
 ]
 
