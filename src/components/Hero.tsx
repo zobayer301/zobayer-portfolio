@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <motion.img
-        src="/logo.png"
+        src="/logo.svg"
         alt="Md. Zobayer Chowdhury"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
