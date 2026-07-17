@@ -50,12 +50,15 @@ const socialLinks = [
 
 export function Contact() {
   const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending'>('idle')
 
+  const emailValid = !email.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!name.trim() || !message.trim()) return
+    if (!name.trim() || !message.trim() || !emailValid) return
     setStatus('sending')
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -64,16 +67,18 @@ export function Contact() {
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           from_name: name.trim(),
+          email: email.trim(),
           subject: `Portfolio message from ${name.trim()}`,
           message: message.trim(),
         }),
       })
       const data = await res.json()
-      if (data.success) {
-        toast.success("Message sent! I'll get back to you soon.")
-        setName('')
-        setMessage('')
-      } else {
+        if (data.success) {
+          toast.success("Message sent! I'll get back to you soon.")
+          setName('')
+          setEmail('')
+          setMessage('')
+        } else {
         toast.error('Something went wrong. Please try again.')
       }
     } catch {
@@ -133,6 +138,13 @@ export function Contact() {
               required
               className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email (optional)"
+              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
+            />
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -143,7 +155,7 @@ export function Contact() {
             />
             <button
               type="submit"
-              disabled={!name.trim() || !message.trim() || status === 'sending'}
+              disabled={!name.trim() || !message.trim() || !emailValid || status === 'sending'}
               className="self-start inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background text-sm tracking-widest uppercase font-medium transition-opacity hover:opacity-90 disabled:opacity-40 disabled:pointer-events-none"
             >
               {status === 'sending' ? 'Sending...' : "Let's talk"}
