@@ -11,7 +11,7 @@ export function Hero() {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}
         aria-label="Back to top"
-        className="fixed top-4 left-4 sm:top-6 sm:left-6 z-[8500] flex items-center justify-center rounded-full border border-black/40 bg-white/90 p-1 shadow-lg backdrop-blur dark:border-white/30 dark:bg-black/80 h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 transition-colors duration-200"
+        className="fixed top-4 left-4 sm:top-6 sm:left-6 z-[8500] flex items-center justify-center rounded-full border border-black/40 bg-white/90 p-1 shadow-lg backdrop-blur dark:border-white/30 dark:bg-black/80 h-12 w-12 transition-colors duration-200"
       >
         <img
           src="/logo.svg"
