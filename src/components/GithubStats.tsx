@@ -55,7 +55,7 @@ export function GithubStats() {
     : null
 
   return (
-    <section id="github" className="min-h-screen flex flex-col justify-center bg-[#0d0d0d]">
+    <section id="github" className="section-padding min-h-screen flex flex-col justify-center bg-[#0d0d0d]">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
           <span className="text-sm text-gray-500 tracking-widest uppercase">Open Source</span>
@@ -99,7 +99,7 @@ export function GithubStats() {
 
         {/* Stats row */}
         {statItems && (
-          <div className="grid grid-cols-3 gap-3 lg:gap-4 mb-6 lg:mb-8 max-w-2xl">
+          <div className="grid grid-cols-3 gap-3 lg:gap-4 mb-6 lg:mb-8 max-w-2xl mx-auto">
             {statItems.map((item) => (
               <motion.div
                 key={item.label}
