@@ -38,7 +38,7 @@ export function CircularNavigation() {
       {/* Toggle Button */}
       <button
         onClick={toggleMenu}
-        className="fixed top-6 right-6 z-[9000] md:hidden w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white min-h-[44px] min-w-[44px]"
+        className="fixed top-6 right-6 z-[9000] w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white min-h-[44px] min-w-[44px]"
       >
         {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
       </button>
@@ -51,7 +51,7 @@ export function CircularNavigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[9000] md:hidden flex items-center justify-center"
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[9000] flex items-center justify-center"
             onClick={toggleMenu}
           >
             <motion.div
