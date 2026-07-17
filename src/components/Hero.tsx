@@ -21,7 +21,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <h1 className="font-display leading-none tracking-tighter">
-              <span className="block text-gradient-cool text-[14vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw]">Md. Zobayer Chowdhury</span>
+              <span className="block text-white text-[14vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw]">Md. Zobayer Chowdhury</span>
               <span className="block mt-2">
                 <TypewriterEffect
                   words={[
@@ -42,9 +42,9 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-6 md:mt-8 text-sm sm:text-base text-gray-300 leading-relaxed"
+              className="mt-6 md:mt-8 text-sm sm:text-base text-white leading-relaxed"
             >
-              Passionate about Data Science, Machine Learning, and AI-driven solutions &mdash; building real-world models.
+              SOLVING REAL-WORLD PROBLEMS WITH AI AND CONTINUOUSLY LEARNING NEW THINGS.
             </motion.p>
 
             <motion.a
@@ -54,7 +54,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="inline-block mt-6 md:mt-8 px-6 py-3 border border-cyan-500/40 text-cyan-300 text-sm tracking-widest uppercase rounded-full hover:bg-cyan-500/10 hover:border-cyan-400/60 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300 min-h-[44px]"
+              className="inline-block mt-6 md:mt-8 px-6 py-3 border border-white/30 text-white text-sm tracking-widest uppercase rounded-full hover:bg-white hover:text-black transition-all duration-300 min-h-[44px]"
             >
               Resume
             </motion.a>
