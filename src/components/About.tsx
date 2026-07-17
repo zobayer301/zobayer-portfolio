@@ -80,18 +80,18 @@ Battery Low Interactive Ltd and contributed as an Assistant Graphics Designer at
 Club. Passionate about creating innovative solutions and applying technology to real-world challenges.
             </p>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {milestones.map((m, i) => (
                 <motion.div
                   key={m.title}
                   {...fadeInUp}
                   transition={{ ...fadeInUp.transition, delay: 0.1 * (i + 1) }}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-black bg-black hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300 dark:border-foreground/10 dark:bg-foreground/[0.02] dark:hover:bg-foreground/[0.04] dark:hover:border-foreground/20"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-black bg-black hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300 min-h-[44px] dark:border-foreground/10 dark:bg-foreground/[0.02] dark:hover:bg-foreground/[0.04] dark:hover:border-foreground/20"
                 >
                   <div className="text-white shrink-0">{m.icon}</div>
                   <div className="min-w-0">
                     <p className="text-xs text-neutral-400 uppercase tracking-wider">{m.title}</p>
-                    <p className="text-sm text-neutral-200 dark:text-gray-300 truncate">{m.desc}</p>
+                    <p className="text-sm text-neutral-200 dark:text-gray-300 break-words">{m.desc}</p>
                   </div>
                 </motion.div>
               ))}
