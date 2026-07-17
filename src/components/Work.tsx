@@ -41,85 +41,106 @@ const experiences = [
   },
 ]
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
-  transition: { duration: 1, ease: 'easeOut' }
-}
-
 export function Work() {
+  const prefersReducedMotion = useReducedMotion()
+  const isMobile = useIsMobile()
+  const viewportMargin = isMobile ? '-20px' : '-100px'
+
   return (
     <section id="work" className="section-padding">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <motion.div {...fadeInUp} className="mb-16">
+        <motion.div
+          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: viewportMargin }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="mb-16"
+        >
           <span className="text-sm text-gray-500 tracking-widest uppercase">Projects</span>
           <div className="w-6 h-px bg-gray-600 mt-2" />
         </motion.div>
 
         <motion.h2
-          {...fadeInUp}
+          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: viewportMargin }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
           className="font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24"
         >
           FEATURED<br />PROJECTS
         </motion.h2>
 
-        {/* Experiences */}
-        <div className="space-y-0">
+        {/* Project Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
           {experiences.map((exp, index) => (
             <motion.a
               key={exp.company + exp.period}
               href={exp.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 40 }}
+              initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: index * 0.1 }}
-              className="block border-t border-gray-800 py-8 md:py-12 lg:py-16 group hover:bg-gray-900/30 transition-colors"
+              viewport={{ once: true, margin: viewportMargin }}
+              transition={{
+                duration: 0.6,
+                delay: isMobile ? 0 : index * 0.1,
+                ease: 'easeOut',
+              }}
+              whileHover={
+                prefersReducedMotion
+                  ? {}
+                  : { y: -4, transition: { duration: 0.25 } }
+              }
+              className="group relative block rounded-xl overflow-hidden min-h-[44px]"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-                {/* Left Column - Title & Company */}
-                <div className="lg:col-span-5">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-white mb-2">
-                    {exp.title}
-                  </h3>
-                  <p className="text-base lg:text-lg text-gray-400">
-                    {exp.company}
-                  </p>
-                  <p className="text-sm text-gray-600 mt-2">
-                    {exp.location}
-                  </p>
-                </div>
+              {/* Card Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] to-white/[0.01] border border-gray-800/60 rounded-xl group-hover:border-gray-600/80 transition-all duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/[0.04] group-hover:to-white/[0.01] rounded-xl transition-all duration-500" />
 
-                {/* Middle Column - Period */}
-                <div className="lg:col-span-2">
-                  <p className="text-sm text-gray-500 tracking-widest uppercase">
-                    {exp.period}
-                  </p>
-                </div>
-
-                {/* Right Column - Description & Skills */}
-                <div className="lg:col-span-5">
-                  <p className="text-gray-400 leading-relaxed mb-6 text-sm lg:text-base">
-                    {exp.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 text-xs text-gray-500 border border-gray-800 rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+              {/* Card Content */}
+              <div className="relative p-6 lg:p-8 flex flex-col h-full">
+                {/* Header */}
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-light text-white group-hover:text-gray-100 transition-colors duration-300 leading-tight">
+                      {exp.title}
+                    </h3>
+                    <p className="text-sm lg:text-base text-gray-400 mt-1">
+                      {exp.company}
+                    </p>
                   </div>
+                  <span className="shrink-0 px-3 py-1 text-[10px] lg:text-xs text-gray-500 border border-gray-800/60 rounded-full tracking-widest uppercase">
+                    {exp.period}
+                  </span>
+                </div>
+
+                {/* Description */}
+                <p className="text-sm lg:text-base text-gray-500 leading-relaxed mb-6 flex-1 group-hover:text-gray-400 transition-colors duration-300">
+                  {exp.description}
+                </p>
+
+                {/* Skills */}
+                <div className="flex flex-wrap gap-2">
+                  {exp.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1 text-xs text-gray-500 border border-gray-800/50 rounded-full bg-white/[0.02] group-hover:border-gray-700/60 group-hover:text-gray-400 transition-all duration-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Arrow indicator */}
+                <div className="absolute top-6 right-6 lg:top-8 lg:right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
+                  <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
+                  </svg>
                 </div>
               </div>
             </motion.a>
           ))}
-          <div className="border-t border-gray-800" />
         </div>
       </div>
     </section>
