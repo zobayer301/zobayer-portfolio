@@ -57,7 +57,7 @@ export function Education() {
             </p>
             <button
               type="button"
-              className="inline-flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm border border-black bg-black text-white transition-all duration-300 min-h-[44px] dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
+              className="self-start inline-flex items-center justify-center w-full sm:w-auto px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm border border-black bg-black text-white transition-all duration-300 min-h-[44px] dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
             >
               Graduated (2026)
             </button>
