@@ -55,10 +55,13 @@ export function Education() {
               and Data Mining &mdash; including a research thesis on AI-driven
               early detection of heart disease using machine learning and deep learning.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
-                Graduate (2026)
-              </span>
+            <button
+              type="button"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm border border-white/30 text-white bg-white/10 hover:bg-white/20 hover:border-white/50 transition-all duration-300 min-h-[44px]"
+            >
+              Graduated (2026)
+            </button>
+            <div className="flex flex-wrap gap-3 mt-4">
               <span className="px-3 py-1 rounded-full text-xs border border-white/30 text-white bg-white/10">
                 AI & ML Focus
               </span>
