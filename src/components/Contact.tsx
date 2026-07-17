@@ -38,39 +38,36 @@ const GithubIcon = () => (
 )
 
 const socialLinks = [
-  { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
-  { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
-  { label: 'Email', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: false },
+  { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true, color: 'hover:text-blue-400' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true, color: 'hover:text-sky-400' },
+  { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true, color: 'hover:text-indigo-400' },
+  { label: 'Email', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: false, color: 'hover:text-cyan-400' },
 ]
 
 export function Contact() {
   return (
     <section id="contact" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        {/* Section Label */}
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-gray-500 tracking-widest uppercase">Contact</span>
-          <div className="w-6 h-px bg-gray-600 mt-2" />
+          <span className="text-sm text-teal-400 tracking-widest uppercase">Contact</span>
+          <div className="w-6 h-px bg-gradient-to-r from-teal-500 to-cyan-500 mt-2" />
         </motion.div>
 
-        {/* Giant Headline */}
         <motion.h2
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="font-display text-[12vw] lg:text-hero leading-none tracking-tight mb-8"
+          className="font-display text-[12vw] lg:text-hero leading-none tracking-tight mb-8 text-gradient-cool"
         >
           Get in touch
         </motion.h2>
 
         <motion.div
           {...fadeInUp}
-          className="w-full h-px bg-gray-700 mb-12 lg:mb-16"
+          className="w-full h-px bg-gradient-to-r from-cyan-500/40 via-blue-500/30 to-violet-500/20 mb-12 lg:mb-16"
         />
 
-        {/* Informal Text */}
         <motion.div
           {...fadeInUp}
           className="mb-12 lg:mb-16 max-w-2xl"
@@ -78,14 +75,10 @@ export function Contact() {
           <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-light leading-tight mb-4">
             OPEN TO NEW<br />
             OPPORTUNITIES IN<br />
-            DATA SCIENCE & ML
+            <span className="text-gradient-cool">DATA SCIENCE & ML</span>
           </h3>
-          <p className="text-sm text-gray-500 tracking-widest uppercase">
-            
-          </p>
         </motion.div>
 
-        {/* Social Links */}
         <div className="flex flex-wrap gap-6 lg:gap-10 mb-16 lg:mb-24">
           {socialLinks.map((link, index) => {
             const Icon = link.icon
@@ -98,7 +91,7 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors min-h-[44px]"
+                className={'flex items-center gap-3 text-gray-400 transition-colors min-h-[44px] ' + link.color}
               >
                 <Icon />
                 <span className="text-sm tracking-widest uppercase">{link.label}</span>
@@ -107,7 +100,6 @@ export function Contact() {
           })}
         </div>
 
-        {/* Footer */}
         <motion.footer
           {...fadeInUp}
           className="mt-24 lg:mt-32 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"

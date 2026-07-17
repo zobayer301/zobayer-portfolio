@@ -42,8 +42,8 @@ export function About() {
     <section id="about" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-gray-500 tracking-widest uppercase">About Zobayer</span>
-          <div className="w-6 h-px bg-gray-600 mt-2" />
+          <span className="text-sm text-cyan-400 tracking-widest uppercase">About Zobayer</span>
+          <div className="w-6 h-px bg-gradient-to-r from-cyan-500 to-blue-500 mt-2" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 mb-24 lg:mb-32">
@@ -52,14 +52,14 @@ export function About() {
             className="lg:col-span-2 relative group"
           >
             <div className="relative overflow-hidden rounded-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src="computer.jpg"
                 alt="Data science workspace"
                 className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700"
               />
             </div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-emerald-500/20 rounded-2xl -z-10" />
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-cyan-500/20 rounded-2xl -z-10" />
           </motion.div>
 
           <motion.div
@@ -69,9 +69,9 @@ export function About() {
           >
             <h3 className="font-display text-2xl lg:text-3xl text-gray-200 mb-6 leading-snug">
               Computer Science & Engineering graduate passionate about{' '}
-              <span className="text-emerald-400">AI</span>,{' '}
-              <span className="text-blue-400"> Machine Learning</span>, and{' '}
-              <span className="text-purple-400"> Immersive Technologies</span>
+              <span className="text-cyan-400">AI</span>,{' '}
+              <span className="text-blue-400">Machine Learning</span>, and{' '}
+              <span className="text-violet-400">Immersive Technologies</span>
             </h3>
             <p className="text-base lg:text-lg text-gray-400 leading-relaxed mb-8">
               From building AR/VR experiences at Battery Low Interactive to designing graphics
@@ -85,9 +85,9 @@ export function About() {
                   key={m.title}
                   {...fadeInUp}
                   transition={{ ...fadeInUp.transition, delay: 0.1 * (i + 1) }}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-emerald-500/20 transition-all duration-300"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-cyan-500/[0.03] hover:border-cyan-500/15 transition-all duration-300"
                 >
-                  <div className="text-emerald-400 shrink-0">{m.icon}</div>
+                  <div className="text-cyan-400 shrink-0">{m.icon}</div>
                   <div className="min-w-0">
                     <p className="text-xs text-gray-500 uppercase tracking-wider">{m.title}</p>
                     <p className="text-sm text-gray-300 truncate">{m.desc}</p>
@@ -99,8 +99,8 @@ export function About() {
         </div>
 
         <motion.div {...fadeInUp} className="mb-24 lg:mb-32">
-          <div className="relative py-12 px-8 lg:px-16 rounded-3xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent">
-            <div className="absolute top-6 left-8 text-6xl text-emerald-500/20 font-display">"</div>
+          <div className="relative py-12 px-8 lg:px-16 rounded-3xl border border-cyan-500/5 bg-gradient-to-br from-cyan-500/[0.02] to-transparent">
+            <div className="absolute top-6 left-8 text-6xl text-cyan-500/20 font-display">"</div>
             <h2 className="font-display text-[6vw] lg:text-[4vw] xl:text-section leading-none tracking-tight text-gray-300 pl-4 lg:pl-12">
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">SOLVING REAL-WORLD</TextScramble>
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">PROBLEMS WITH AI </TextScramble>
@@ -115,7 +115,7 @@ export function About() {
             {...fadeInUp}
             className="lg:col-span-3 flex flex-col justify-center order-2 lg:order-1"
           >
-            <span className="text-xs text-emerald-400 tracking-widest uppercase mb-3">Undergraduate Thesis</span>
+            <span className="text-xs text-blue-400 tracking-widest uppercase mb-3">Undergraduate Thesis</span>
             <h3 className="font-display text-xl lg:text-2xl text-gray-200 mb-4 leading-snug">
               AI-Driven Early Detection of Heart Disease Using Machine Learning and Deep Learning
             </h3>
@@ -125,16 +125,16 @@ export function About() {
               using structured clinical data and ECG signals.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 rounded-full text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <span className="px-3 py-1 rounded-full text-xs bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
                 95.7% ML Accuracy
               </span>
               <span className="px-3 py-1 rounded-full text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20">
                 92.3% ECG Classification
               </span>
-              <span className="px-3 py-1 rounded-full text-xs bg-purple-500/10 text-purple-400 border border-purple-500/20">
+              <span className="px-3 py-1 rounded-full text-xs bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
                 Stacking Ensemble
               </span>
-              <span className="px-3 py-1 rounded-full text-xs bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              <span className="px-3 py-1 rounded-full text-xs bg-violet-500/10 text-violet-400 border border-violet-500/20">
                 Interpretable AI
               </span>
             </div>
@@ -146,7 +146,7 @@ export function About() {
             className="lg:col-span-2 relative group order-1 lg:order-2"
           >
             <div className="relative overflow-hidden rounded-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src="thesis.jpg"
                 alt="AI-Driven Early Detection of Heart Disease"
@@ -160,14 +160,14 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
           <motion.div {...fadeInUp} className="lg:col-span-2 relative group">
             <div className="relative overflow-hidden rounded-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-rose-500/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-cyan-500/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src="ml.jpg"
                 alt="Working on ML projects"
                 className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700"
               />
             </div>
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border border-amber-500/20 rounded-2xl -z-10" />
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 border border-violet-500/20 rounded-2xl -z-10" />
           </motion.div>
 
           <motion.div
@@ -175,7 +175,7 @@ export function About() {
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
             className="lg:col-span-3 flex flex-col justify-center"
           >
-            <span className="text-xs text-amber-400 tracking-widest uppercase mb-3">What I Do Now</span>
+            <span className="text-xs text-violet-400 tracking-widest uppercase mb-3">What I Do Now</span>
             <h3 className="font-display text-xl lg:text-2xl text-gray-200 mb-4 leading-snug">
               Building End-to-End Machine Learning Projects
             </h3>
@@ -185,11 +185,11 @@ export function About() {
               Always looking for the next problem worth solving.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 rounded-full text-xs bg-amber-500/10 text-amber-400 border border-amber-500/20">Python</span>
+              <span className="px-3 py-1 rounded-full text-xs bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Python</span>
               <span className="px-3 py-1 rounded-full text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20">scikit-learn</span>
-              <span className="px-3 py-1 rounded-full text-xs bg-orange-500/10 text-orange-400 border border-orange-500/20">TensorFlow</span>
-              <span className="px-3 py-1 rounded-full text-xs bg-red-500/10 text-red-400 border border-red-500/20">PyTorch</span>
-              <span className="px-3 py-1 rounded-full text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Deep Learning</span>
+              <span className="px-3 py-1 rounded-full text-xs bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">TensorFlow</span>
+              <span className="px-3 py-1 rounded-full text-xs bg-violet-500/10 text-violet-400 border border-violet-500/20">PyTorch</span>
+              <span className="px-3 py-1 rounded-full text-xs bg-sky-500/10 text-sky-400 border border-sky-500/20">Deep Learning</span>
             </div>
           </motion.div>
         </div>

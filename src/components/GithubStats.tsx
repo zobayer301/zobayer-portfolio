@@ -12,8 +12,8 @@ const fadeInUp = {
   transition: { duration: 0.8, ease: 'easeOut' },
 }
 
-const streakCard = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=0d0d0d&stroke=1f2937&ring=ffffff&fire=ffffff&currStreakLabel=ffffff&sideLabels=9ca3af&sideNums=d1d5db&currStreakNum=ffffff&dates=6b7280'
-const graphCard = 'https://github-readme-activity-graph.vercel.app/graph?username=' + USER + '&bg_color=0d0d0d&color=ffffff&line=9ca3af&point=ffffff&area=true&hide_border=true'
+const streakCard = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=0d0d0d&stroke=1f2937&ring=22d3ee&fire=22d3ee&currStreakLabel=22d3ee&sideLabels=64748b&sideNums=c4b5fd&currStreakNum=ffffff&dates=6b7280'
+const graphCard = 'https://github-readme-activity-graph.vercel.app/graph?username=' + USER + '&bg_color=0d0d0d&color=22d3ee&line=818cf8&point=22d3ee&area=true&hide_border=true'
 
 interface Stats {
   totalContributions: number
@@ -48,9 +48,9 @@ export function GithubStats() {
 
   const statItems = stats
     ? [
-        { label: 'Total Contributions', value: stats.totalContributions.toLocaleString() },
-        { label: 'Current Streak', value: stats.currentStreak + ' days' },
-        { label: 'Longest Streak', value: stats.longestStreak + ' days' },
+        { label: 'Total Contributions', value: stats.totalContributions.toLocaleString(), color: 'text-cyan-400' },
+        { label: 'Current Streak', value: stats.currentStreak + ' days', color: 'text-blue-400' },
+        { label: 'Longest Streak', value: stats.longestStreak + ' days', color: 'text-indigo-400' },
       ]
     : null
 
@@ -58,13 +58,13 @@ export function GithubStats() {
     <section id="github" className="section-padding min-h-screen flex flex-col justify-center bg-[#0d0d0d]">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-gray-500 tracking-widest uppercase">Open Source</span>
-          <div className="w-6 h-px bg-gray-600 mt-2" />
+          <span className="text-sm text-sky-400 tracking-widest uppercase">Open Source</span>
+          <div className="w-6 h-px bg-gradient-to-r from-sky-500 to-cyan-500 mt-2" />
         </motion.div>
 
         <motion.h2
           {...fadeInUp}
-          className="font-display text-[10vw] lg:text-section leading-none tracking-tight mb-6"
+          className="font-display text-[10vw] lg:text-section leading-none tracking-tight mb-6 text-gradient-blue"
         >
           GITHUB
         </motion.h2>
@@ -78,16 +78,15 @@ export function GithubStats() {
             href={'https://github.com/' + USER}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white underline underline-offset-4 hover:text-gray-300"
+            className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200 decoration-cyan-500/30 hover:decoration-cyan-400/50"
           >
             @{USER}
           </a>{' '}{"\u2014"}{' commits, streaks, and the languages I reach for most.'}
         </motion.p>
 
-        {/* Streak */}
         <motion.div
           {...fadeInUp}
-          className="rounded-lg border border-gray-800 bg-black/40 p-4 mb-6 lg:mb-8 overflow-hidden max-w-2xl"
+          className="rounded-lg border border-sky-500/10 bg-black/40 p-4 mb-6 lg:mb-8 overflow-hidden max-w-2xl hover:border-sky-400/20 hover:shadow-[0_0_15px_rgba(56,189,248,0.06)] transition-all duration-500"
         >
           <img
             src={streakCard}
@@ -97,16 +96,15 @@ export function GithubStats() {
           />
         </motion.div>
 
-        {/* Stats row */}
         {statItems && (
           <div className="grid grid-cols-3 gap-3 lg:gap-4 mb-6 lg:mb-8 max-w-2xl mx-auto">
             {statItems.map((item) => (
               <motion.div
                 key={item.label}
                 {...statAnimation}
-                className="rounded-lg border border-gray-800 bg-black/40 p-4 lg:p-6 text-center"
+                className="rounded-lg border border-sky-500/10 bg-black/40 p-4 lg:p-6 text-center hover:border-sky-400/25 hover:shadow-[0_0_15px_rgba(56,189,248,0.06)] transition-all duration-500"
               >
-                <div className="text-xl lg:text-3xl font-display font-bold text-white tracking-tight">
+                <div className={'text-xl lg:text-3xl font-display font-bold tracking-tight ' + item.color}>
                   {item.value}
                 </div>
                 <div className="text-xs lg:text-sm text-gray-500 mt-1 lg:mt-2">{item.label}</div>
@@ -115,10 +113,9 @@ export function GithubStats() {
           </div>
         )}
 
-        {/* Contribution graph */}
         <motion.div
           {...fadeInUp}
-          className="rounded-lg border border-gray-800 bg-black/40 p-4 overflow-hidden"
+          className="rounded-lg border border-sky-500/10 bg-black/40 p-4 overflow-hidden hover:border-sky-400/20 hover:shadow-[0_0_15px_rgba(56,189,248,0.06)] transition-all duration-500"
         >
           <img
             src={graphCard}
