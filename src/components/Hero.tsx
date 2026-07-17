@@ -36,6 +36,18 @@ export function Hero() {
             >
              Passionate about Data Science, Machine Learning, and AI-driven solutions &mdash; building real-world models.
             </motion.p>
+
+            <motion.a
+              href="/Md_Zobayer_Chowdhury_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="inline-block mt-6 md:mt-8 px-6 py-3 border border-white/30 text-white text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors duration-300 min-h-[44px]"
+            >
+              Resume
+            </motion.a>
           </motion.div>
         </div>
       </div>
