@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
@@ -175,7 +175,9 @@ export function Contact() {
                 className="flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px]"
               >
                 <Icon />
-                <span className="text-sm tracking-widest uppercase">{link.label}</span>
+                {link.label.includes('@') && (
+                  <span className="text-xs tracking-widest uppercase">{link.label}</span>
+                )}
               </motion.a>
             )
           })}
