@@ -39,10 +39,19 @@ const GithubIcon = () => (
   </svg>
 )
 
+const ResearchGateIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M7.5 10.5c1-1.5 2.5-2 4-2 1.8 0 3 .9 3 2.4 0 2.6-4.5 2.1-4.5 4.1h1.6c0-1.4 3.4-1.3 3.4-3.6 0-1.9-1.6-3-3.5-3-1.6 0-3 .8-3.7 2.1"/>
+    <circle cx="11.5" cy="16.5" r=".6" fill="currentColor"/>
+  </svg>
+)
+
 const socialLinks = [
   { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
   { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
+  { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Md-Zobayer-Chowdhury', icon: ResearchGateIcon, external: true },
   { label: 'mdzobayerchowdhury3077@gmail.com', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: true },
 ]
 
