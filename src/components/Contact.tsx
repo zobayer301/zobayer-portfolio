@@ -167,7 +167,7 @@ export function Contact() {
           </form>
         </motion.div>
 
-        <div className="flex flex-wrap gap-6 lg:gap-10 mb-16 lg:mb-24">
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mb-16 lg:mb-24">
           {socialLinks.map((link, index) => {
             const Icon = link.icon
             return (
@@ -179,7 +179,8 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px]"
+                aria-label={link.label.includes('@') ? link.label : link.label}
+                className="flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2"
               >
                 <Icon />
                 {link.label.includes('@') && (
