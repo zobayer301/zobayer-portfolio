@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { TextScramble } from '@/components/TextScramble'
@@ -138,6 +138,14 @@ Club.
                 Interpretable AI
               </span>
             </div>
+            <a
+              href="/thesispaper.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 self-start inline-flex items-center justify-center px-4 py-2 rounded-full text-sm border border-black bg-black text-white transition-all duration-300 min-h-[44px] hover:bg-neutral-800 hover:border-neutral-700 dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
+            >
+              Preview Paper
+            </a>
           </motion.div>
 
           <motion.div
