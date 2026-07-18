@@ -1,9 +1,10 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { User, Code, Briefcase, GraduationCap, Github, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { id: "about", label: "About", icon: User },
@@ -102,6 +103,12 @@ export function Navigation() {
             );
           })}
 
+          <div className="mx-1 h-7 w-px bg-black/20 dark:bg-white/20" aria-hidden />
+
+          <div className="flex items-center justify-center h-10 min-w-[44px] min-h-[44px] px-1">
+            <ThemeToggle inline />
+          </div>
+
           <motion.div
             animate={indicatorStyle}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
@@ -114,5 +121,3 @@ export function Navigation() {
 }
 
 export default Navigation;
-
-

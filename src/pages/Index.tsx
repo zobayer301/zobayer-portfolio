@@ -1,4 +1,4 @@
-import { Navigation } from '@/components/Navigation'
+﻿import { Navigation } from '@/components/Navigation'
 import { GrainOverlay } from '@/components/GrainOverlay'
 import { Hero } from '@/components/Hero'
 import { About } from '@/components/About'
@@ -7,14 +7,12 @@ import { Work } from '@/components/Work'
 import { Education } from '@/components/Education'
 import { GithubStats } from '@/components/GithubStats'
 import { Contact } from '@/components/Contact'
-import { ThemeToggle } from '@/components/ThemeToggle'
 import { ScrollToTop } from '@/components/ScrollToTop'
 
 export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <GrainOverlay />
-      <ThemeToggle />
       <Navigation />
       <ScrollToTop />
       <main>
