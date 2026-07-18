@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
@@ -40,16 +40,18 @@ const GithubIcon = () => (
 )
 
 const ResearchGateIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M19.5 2h-15A1.5 1.5 0 0 0 3 3.5v17A1.5 1.5 0 0 0 4.5 22h15a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 19.5 2zM8.1 16.2c-1 0-1.9-.4-2.6-1.1V21H4.1v-8.9h1.5v1.1c.6-.8 1.5-1.2 2.5-1.2 1.9 0 3.2 1.4 3.2 3.6s-1.3 3.6-3.2 3.6zm8.4 0c-1 0-1.9-.4-2.6-1.1V21h-1.4v-8.9h1.5v1.1c.6-.8 1.5-1.2 2.5-1.2 1.9 0 3.2 1.4 3.2 3.6s-1.3 3.6-3.2 3.6zm-8.3-3.2c.9 0 1.5-.7 1.5-1.9s-.6-1.9-1.5-1.9-1.5.7-1.5 1.9.6 1.9 1.5 1.9zm8.3 0c.9 0 1.5-.7 1.5-1.9s-.6-1.9-1.5-1.9-1.5.7-1.5 1.9.6 1.9 1.5 1.9z"/>
-  </svg>
+  <img
+    src="/logo.svg"
+    alt="ResearchGate"
+    className="h-6 w-6 object-contain"
+  />
 )
 
 const socialLinks = [
   { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
   { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
-  { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Md-Zobayer-Chowdhury', icon: ResearchGateIcon, external: true },
+  { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Md-Zobayer-Chowdhury', icon: ResearchGateIcon, external: true, showLabel: true },
   { label: 'mdzobayerchowdhury3077@gmail.com', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: true },
 ]
 
@@ -183,7 +185,7 @@ export function Contact() {
                 className="flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2"
               >
                 <Icon />
-                {link.label.includes('@') && (
+                {(link.label.includes('@') || link.showLabel) && (
                   <span className="text-xs tracking-wide normal-case">{link.label}</span>
                 )}
               </motion.a>
