@@ -19,11 +19,9 @@ export function ThemeToggle({ inline = false }: { inline?: boolean }) {
       aria-checked={mounted ? isDark : false}
       type="button"
       className={cn(
-        "flex items-center justify-center rounded-full transition-colors duration-300",
-        "bg-[#c1d1e0] border border-black text-black hover:bg-[#b3c4d6] dark:bg-white/10 dark:border-white/20 dark:text-white dark:hover:bg-white/20",
-        inline
-          ? "h-10 w-10 min-h-[40px] min-w-[40px]"
-          : "fixed top-4 right-4 sm:top-6 sm:right-6 z-[9000] h-12 w-12 min-h-[44px] min-w-[44px]"
+        "flex items-center justify-center rounded-full transition-colors duration-200 h-10 w-10 min-h-[40px] min-w-[40px]",
+        "text-gray-800 hover:text-black hover:bg-black/10 dark:text-gray-300 dark:hover:text-gray-200 dark:hover:bg-white/15",
+        "focus:outline-none"
       )}
     >
       {mounted && !isDark ? (
