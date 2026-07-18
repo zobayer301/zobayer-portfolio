@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
@@ -47,7 +47,16 @@ const ResearchGateIcon = () => (
   />
 )
 
-const socialLinks = [
+type SocialLink = {
+  label: string
+  href: string
+  icon: React.FC
+  external: boolean
+  showLabel?: boolean
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
+}
+
+const socialLinks: SocialLink[] = [
   { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
   { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
@@ -90,6 +99,16 @@ export function Contact() {
       toast.error('Network error. Please try again.')
     } finally {
       setStatus('idle')
+    }
+  }
+
+
+  const copyEmail = async (email: string) => {
+    try {
+      await navigator.clipboard.writeText(email)
+      toast.success("Email copied to clipboard!")
+    } catch {
+      toast.error("Could not copy. Email: " + email)
     }
   }
 
@@ -176,6 +195,11 @@ export function Contact() {
               <motion.a
                 key={link.label}
                 href={link.href}
+                onClick={
+                  link.label.includes('@')
+                    ? (e) => { e.preventDefault(); copyEmail(link.label) }
+                    : link.onClick
+                }
                 {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
