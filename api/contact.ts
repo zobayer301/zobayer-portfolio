@@ -5,7 +5,13 @@ const GMAIL_USER = process.env.GMAIL_USER || ''
 const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD || ''
 const OWNER_EMAIL = process.env.OWNER_EMAIL || 'mdzobayerchowdhury3077@gmail.com'
 
-function readBody(req: VercelRequest): Promise<any> {
+interface ContactBody {
+  name?: unknown
+  email?: unknown
+  message?: unknown
+}
+
+function readBody(req: VercelRequest): Promise<ContactBody> {
   return new Promise((resolve, reject) => {
     let data = ''
     req.on('data', (chunk) => (data += chunk))
@@ -35,8 +41,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const body = await readBody(req)
-  const { name, email, message } = body || {}
-  if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email || '')) {
+  const name = typeof body.name === 'string' ? body.name : ''
+  const email = typeof body.email === 'string' ? body.email : ''
+  const message = typeof body.message === 'string' ? body.message : ''
+  if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     res.status(400).json({ success: false, message: 'Invalid input' })
     return
   }
@@ -46,8 +54,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       from: GMAIL_USER,
       to: OWNER_EMAIL,
       replyTo: email,
-      subject: `Portfolio message from ${String(name).slice(0, 200)}`,
-      text: `New message from your portfolio contact form.\n\nFrom: ${name}${email ? ` <${email}>` : ''}\n\n${String(message).slice(0, 5000)}`,
+      subject: `Portfolio message from ${name.slice(0, 200)}`,
+      text: `New message from your portfolio contact form.\n\nFrom: ${name} <${email}>\n\n${message.slice(0, 5000)}`,
     })
     res.status(200).json({ success: true, message: 'Message sent' })
   } catch (err) {
