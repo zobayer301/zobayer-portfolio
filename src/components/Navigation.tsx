@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -65,7 +65,7 @@ export function Navigation() {
   };
 
   return (
-    <div className="fixed top-4 left-0 right-0 z-[8000] flex justify-center px-4 pointer-events-none">
+    <div className="fixed top-4 left-0 right-0 z-[9500] flex justify-center px-4 pointer-events-none">
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
