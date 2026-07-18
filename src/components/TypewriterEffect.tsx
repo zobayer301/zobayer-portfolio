@@ -50,7 +50,7 @@ export const TypewriterEffect = ({
                   initial={{ opacity: 0 }}
                   key={"char-" + index}
                   className={cn(
-                    "text-cyan-300 opacity-0",
+                    "opacity-0",
                     word.className
                   )}
                 >
@@ -78,7 +78,7 @@ export const TypewriterEffect = ({
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
         className={cn(
-          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-cyan-400",
+          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-current",
           cursorClassName
         )}
       />
