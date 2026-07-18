@@ -75,7 +75,7 @@ export function Navigation() {
       >
         <div
           ref={containerRef}
-          className="relative flex items-center bg-neutral-100 border border-black rounded-full px-1.5 py-2 shadow-2xl dark:bg-neutral-900 dark:border-gray-800 max-w-[95vw] h-[52px] min-w-0 sm:min-w-[320px]"
+          className="relative flex items-center bg-[#A9A9A9] border border-black rounded-full px-1.5 py-2 shadow-2xl dark:bg-neutral-900 dark:border-gray-800 max-w-[95vw] h-[52px] min-w-0 sm:min-w-[320px]"
         >
           {navItems.map((item, index) => {
             const Icon = item.icon;
