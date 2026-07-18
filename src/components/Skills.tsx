@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
@@ -35,7 +35,7 @@ export function Skills() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="mb-16"
         >
-          <span className="text-sm text-foreground/60 tracking-widest uppercase">Expertise</span>
+          <span className="text-sm text-foreground/80 tracking-widest uppercase">Expertise</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 

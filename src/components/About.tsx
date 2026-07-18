@@ -42,7 +42,7 @@ export function About() {
     <section id="about" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-foreground/60 tracking-widest uppercase">About Zobayer</span>
+          <span className="text-sm text-foreground/80 tracking-widest uppercase">About Zobayer</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -73,7 +73,7 @@ export function About() {
               Machine Learning, and{' '}
               Immersive Technologies.
             </h3>
-            <p className="text-base lg:text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+            <p className="text-base lg:text-lg text-gray-800 dark:text-gray-700 leading-relaxed mb-8">
               Computer Science and Engineering graduate from Green University of Bangladesh with practical experience
 in artificial intelligence, machine learning, and immersive technologies. Worked as an Unity Developer (Intern) at
 Battery Low Interactive Ltd. and contributed as an Assistant Graphics Designer at the Green University Computer
@@ -115,11 +115,11 @@ Club.
             {...fadeInUp}
             className="lg:col-span-3 flex flex-col justify-center order-2 lg:order-1"
           >
-            <span className="text-xs text-foreground/50 tracking-widest uppercase mb-3">Undergraduate Thesis</span>
+            <span className="text-xs text-foreground/70 tracking-widest uppercase mb-3">Undergraduate Thesis</span>
             <h3 className="font-display text-xl lg:text-2xl text-gray-900 dark:text-gray-200 mb-4 leading-snug">
               AI-Driven Early Detection of Heart Disease Using Machine Learning and Deep Learning
             </h3>
-            <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+            <p className="text-base text-gray-800 dark:text-gray-700 leading-relaxed mb-6">
               Developed a hybrid AI framework integrating a stacking ensemble (Random Forest, XGBoost,
               and Logistic Regression) with a Residual 1D-CNN to improve early heart disease detection
               using structured clinical data and ECG signals.
@@ -184,11 +184,11 @@ Club.
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
             className="lg:col-span-3 flex flex-col justify-center"
           >
-            <span className="text-xs text-foreground/50 tracking-widest uppercase mb-3">What I Do Now</span>
+            <span className="text-xs text-foreground/70 tracking-widest uppercase mb-3">What I Do Now</span>
             <h3 className="font-display text-xl lg:text-2xl text-gray-900 dark:text-gray-200 mb-4 leading-snug">
               Building End-to-End Machine Learning Projects
             </h3>
-            <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+            <p className="text-base text-gray-800 dark:text-gray-700 leading-relaxed mb-6">
               From data cleaning and feature engineering to regression, deep learning, and
               deployment - with a stack built around Python, scikit-learn, TensorFlow, and PyTorch.
               Always looking for the next problem worth solving.

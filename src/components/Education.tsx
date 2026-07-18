@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
@@ -14,7 +14,7 @@ export function Education() {
     <section id="education" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-foreground/60 tracking-widest uppercase">Background</span>
+          <span className="text-sm text-foreground/80 tracking-widest uppercase">Background</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -36,7 +36,7 @@ export function Education() {
               />
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-foreground/20 rounded-2xl -z-10" />
-            <p className="mt-4 text-xs text-foreground/50 uppercase tracking-widest">
+            <p className="mt-4 text-xs text-foreground/70 uppercase tracking-widest">
               GREEN UNIVERSITY OF BANGLADESH
             </p>
           </motion.div>
@@ -49,7 +49,7 @@ export function Education() {
             <h3 className="font-display text-xl lg:text-2xl text-gray-900 dark:text-gray-200 mb-4 leading-snug">
               B.Sc. in Computer Science & Engineering
             </h3>
-            <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+            <p className="text-base text-gray-800 dark:text-gray-700 leading-relaxed mb-6">
               Bachelor of Science in Computer Science and Engineering
               with a focus on Artificial Intelligence, Machine Learning,
               and Data Mining &mdash; including a research thesis on AI-driven

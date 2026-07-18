@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
@@ -52,7 +52,7 @@ export function Work() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="mb-16"
         >
-          <span className="text-sm text-foreground/60 tracking-widest uppercase">Projects</span>
+          <span className="text-sm text-foreground/80 tracking-widest uppercase">Projects</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -96,7 +96,7 @@ export function Work() {
                     <h3 className="text-lg md:text-xl lg:text-2xl font-light text-white group-hover:text-white transition-colors duration-300 leading-tight">
                       {exp.title}
                     </h3>
-                    <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-400 mt-1">
+                    <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-700 mt-1">
                       {exp.company}
                     </p>
                   </div>
@@ -105,7 +105,7 @@ export function Work() {
                   </span>
                 </div>
 
-                <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-500 leading-relaxed mb-6 flex-1 group-hover:text-neutral-200 dark:group-hover:text-gray-400 transition-colors duration-300">
+                <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-600 leading-relaxed mb-6 flex-1 group-hover:text-neutral-200 dark:group-hover:text-gray-700 transition-colors duration-300">
                   {exp.description}
                 </p>
 

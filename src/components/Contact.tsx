@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
@@ -88,7 +88,7 @@ export function Contact() {
     <section id="contact" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-foreground/60 tracking-widest uppercase">Contact</span>
+          <span className="text-sm text-foreground/80 tracking-widest uppercase">Contact</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -132,7 +132,7 @@ export function Contact() {
               onChange={(e) => setName(e.target.value)}
               placeholder="Your name *"
               required
-              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
+              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
             <input
               type="email"
@@ -140,7 +140,7 @@ export function Contact() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email *"
               required
-              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
+              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
             <textarea
               value={message}
@@ -148,7 +148,7 @@ export function Contact() {
               placeholder="Write your message to Zobayer..."
               rows={4}
               required
-              className="flex w-full rounded-lg border border-foreground/20 bg-transparent px-4 py-3 text-base text-gray-900 dark:text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors resize-none"
+              className="flex w-full rounded-lg border border-foreground/20 bg-transparent px-4 py-3 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors resize-none"
             />
             <button
               type="submit"
@@ -172,7 +172,7 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex items-center gap-3 text-gray-700 dark:text-gray-400 hover:text-foreground transition-colors min-h-[44px]"
+                className="flex items-center gap-3 text-gray-800 dark:text-gray-700 hover:text-foreground transition-colors min-h-[44px]"
               >
                 <Icon />
                 <span className="text-sm tracking-widest uppercase">{link.label}</span>
@@ -185,10 +185,10 @@ export function Contact() {
           {...fadeInUp}
           className="mt-24 lg:mt-32 pt-8 border-t border-gray-300 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-800">
             &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.
           </p>
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-800">
             Dhaka, Bangladesh
           </p>
         </motion.footer>

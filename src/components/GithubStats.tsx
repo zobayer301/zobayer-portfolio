@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
@@ -63,7 +63,7 @@ export function GithubStats() {
     <section id="github" className="section-padding min-h-screen flex flex-col justify-center bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-foreground/60 tracking-widest uppercase">Open Source</span>
+          <span className="text-sm text-foreground/80 tracking-widest uppercase">Open Source</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -76,7 +76,7 @@ export function GithubStats() {
 
         <motion.p
           {...fadeInUp}
-          className="text-base lg:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mb-16 lg:mb-20 leading-relaxed"
+          className="text-base lg:text-lg text-gray-800 dark:text-gray-700 max-w-2xl mb-16 lg:mb-20 leading-relaxed"
         >
           A live snapshot of my work on{' '}
           <a
@@ -112,7 +112,7 @@ export function GithubStats() {
                 <div className="text-xl lg:text-3xl font-display font-bold tracking-tight text-white">
                   {item.value}
                 </div>
-                <div className="text-xs lg:text-sm text-neutral-400 mt-1 lg:mt-2 dark:text-foreground/50">{item.label}</div>
+                <div className="text-xs lg:text-sm text-neutral-400 mt-1 lg:mt-2 dark:text-foreground/70">{item.label}</div>
               </motion.div>
             ))}
           </div>

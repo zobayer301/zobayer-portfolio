@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 
 const articles = [
   {
@@ -40,7 +40,7 @@ export function Writing() {
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-gray-500 tracking-widest uppercase">Essays & Articles</span>
+          <span className="text-sm text-gray-600 tracking-widest uppercase">Essays & Articles</span>
           <div className="w-6 h-px bg-gray-600 mt-2" />
         </motion.div>
 
@@ -68,11 +68,11 @@ export function Writing() {
                   <h3 className="text-lg md:text-xl lg:text-2xl text-white font-light group-hover:text-gray-300 transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-gray-500 mt-1 md:mt-2">
+                  <p className="text-sm text-gray-600 mt-1 md:mt-2">
                     Essay — {article.publication}
                   </p>
                 </div>
-                <span className="text-sm text-gray-600">{article.year}</span>
+                <span className="text-sm text-gray-800">{article.year}</span>
               </div>
             </motion.a>
           ))}
