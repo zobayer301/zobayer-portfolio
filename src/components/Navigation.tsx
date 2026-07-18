@@ -84,7 +84,7 @@ export function Navigation() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[9500] flex justify-center px-4 pointer-events-none">
+    <div className="fixed top-4 left-0 right-0 z-[9500] flex justify-center px-4 pointer-events-none">
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: hidden ? -100 : 0, opacity: hidden ? 0 : 1 }}
