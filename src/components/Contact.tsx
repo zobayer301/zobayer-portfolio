@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
@@ -52,7 +52,7 @@ const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
   { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
   { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Md-Zobayer-Chowdhury', icon: ResearchGateIcon, external: true },
-  { label: 'mdzobayerchowdhury3077@gmail.com', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: true },
+  { label: 'mdzobayerchowdhury3077@gmail.com', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: false },
 ]
 
 export function Contact() {
