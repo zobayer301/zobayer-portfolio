@@ -65,6 +65,8 @@ export function Navigation() {
     if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
     <div className="fixed top-4 left-0 right-0 z-[9500] flex justify-center px-4 pointer-events-none">
       <motion.nav
@@ -78,6 +80,21 @@ export function Navigation() {
           ref={containerRef}
           className="relative flex items-center bg-[#c1d1e0] border border-black rounded-full px-1.5 py-2 shadow-2xl dark:bg-neutral-900 dark:border-gray-800 max-w-[95vw] h-[52px] min-w-0 sm:min-w-[320px]"
         >
+          <button
+            onClick={scrollToTop}
+            aria-label="Back to home"
+            type="button"
+            className="flex items-center justify-center h-10 w-10 min-h-[40px] min-w-[40px] rounded-full shrink-0 hover:bg-black/10 dark:hover:bg-white/15 transition-colors duration-200 focus:outline-none"
+          >
+            <img
+              src="/logo.svg"
+              alt="Md. Zobayer Chowdhury"
+              className="h-7 w-7 object-contain rounded-full"
+            />
+          </button>
+
+          <div className="mx-0.5 h-7 w-px bg-black/20 dark:bg-white/20" aria-hidden />
+
           {navItems.map((item, index) => {
             const Icon = item.icon;
             const isActive = activeIndex === index;
@@ -105,7 +122,7 @@ export function Navigation() {
 
           <div className="mx-1 h-7 w-px bg-black/20 dark:bg-white/20" aria-hidden />
 
-          <div className="flex items-center justify-center h-10 min-w-[44px] min-h-[44px] px-1">
+          <div className="flex items-center justify-center h-10 min-w-[40px] min-h-[40px] px-1">
             <ThemeToggle inline />
           </div>
 
