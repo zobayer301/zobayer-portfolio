@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 
@@ -14,13 +14,21 @@ export function ThemeToggle() {
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle day and night mode"
-      className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[9000] w-12 h-12 rounded-full bg-black text-white border border-black flex items-center justify-center hover:bg-neutral-800 hover:border-neutral-800 transition-all duration-300 min-h-[44px] min-w-[44px] dark:bg-foreground/10 dark:text-foreground/80 dark:border-foreground/20 dark:hover:bg-foreground/20 dark:hover:border-foreground/40 dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+      role="switch"
+      aria-checked={mounted ? isDark : false}
+      className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[9000] min-h-[44px] min-w-[44px] flex items-center w-16 h-9 rounded-full border border-black bg-black px-1 transition-colors duration-300 dark:bg-foreground/10 dark:border-foreground/20"
     >
-      {mounted && !isDark ? (
-        <Sun className="w-5 h-5" />
-      ) : (
-        <Moon className="w-5 h-5" />
-      )}
+      <span
+        className={`flex items-center justify-center w-7 h-7 rounded-full bg-white text-black shadow-md transform transition-transform duration-300 dark:bg-foreground/80 dark:text-background ${
+          isDark ? "translate-x-7" : "translate-x-0"
+        }`}
+      >
+        {mounted && !isDark ? (
+          <Sun className="w-4 h-4" />
+        ) : (
+          <Moon className="w-4 h-4" />
+        )}
+      </span>
     </button>
   );
 }
