@@ -20,6 +20,7 @@ const sections = navItems.map((item) => item.id);
 export function Navigation() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
+  const [hidden, setHidden] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const btnRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -65,11 +66,28 @@ export function Navigation() {
     if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
+  useEffect(() => {
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y < 10) {
+        setHidden(false);
+      } else if (y > lastY + 4) {
+        setHidden(true);
+      } else if (y < lastY - 4) {
+        setHidden(false);
+      }
+      lastY = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div className="fixed top-0 left-0 right-0 z-[9500] flex justify-center px-4 pointer-events-none">
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        animate={{ y: hidden ? -100 : 0, opacity: hidden ? 0 : 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 26, delay: 0.5 }}
         aria-label="Navigation"
         className="pointer-events-auto w-fit max-w-[95vw]"
