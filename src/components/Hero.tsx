@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { TypewriterEffect } from '@/components/TypewriterEffect'
+import { ExternalLink } from 'lucide-react'
 
 export function Hero() {
   return (
@@ -61,9 +62,10 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="inline-block mt-6 md:mt-8 px-6 py-3 border border-white/30 text-white text-sm tracking-widest uppercase rounded-full hover:bg-white hover:text-black transition-all duration-300 min-h-[44px]"
+              className="inline-flex items-center justify-center gap-2 mt-6 md:mt-8 px-6 py-3 border border-white/30 text-white text-sm tracking-widest uppercase rounded-full hover:bg-white hover:text-black transition-all duration-300 min-h-[44px]"
             >
               Resume
+              <ExternalLink size={16} className="shrink-0" />
             </motion.a>
           </motion.div>
         </div>
