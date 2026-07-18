@@ -40,10 +40,8 @@ const GithubIcon = () => (
 )
 
 const ResearchGateIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"/>
-    <path d="M7.5 10.5c1-1.5 2.5-2 4-2 1.8 0 3 .9 3 2.4 0 2.6-4.5 2.1-4.5 4.1h1.6c0-1.4 3.4-1.3 3.4-3.6 0-1.9-1.6-3-3.5-3-1.6 0-3 .8-3.7 2.1"/>
-    <circle cx="11.5" cy="16.5" r=".6" fill="currentColor"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.5 2h-15A1.5 1.5 0 0 0 3 3.5v17A1.5 1.5 0 0 0 4.5 22h15a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 19.5 2zM8.1 16.2c-1 0-1.9-.4-2.6-1.1V21H4.1v-8.9h1.5v1.1c.6-.8 1.5-1.2 2.5-1.2 1.9 0 3.2 1.4 3.2 3.6s-1.3 3.6-3.2 3.6zm8.4 0c-1 0-1.9-.4-2.6-1.1V21h-1.4v-8.9h1.5v1.1c.6-.8 1.5-1.2 2.5-1.2 1.9 0 3.2 1.4 3.2 3.6s-1.3 3.6-3.2 3.6zm-8.3-3.2c.9 0 1.5-.7 1.5-1.9s-.6-1.9-1.5-1.9-1.5.7-1.5 1.9.6 1.9 1.5 1.9zm8.3 0c.9 0 1.5-.7 1.5-1.9s-.6-1.9-1.5-1.9-1.5.7-1.5 1.9.6 1.9 1.5 1.9z"/>
   </svg>
 )
 
@@ -185,7 +183,7 @@ export function Contact() {
               >
                 <Icon />
                 {link.label.includes('@') && (
-                  <span className="text-xs tracking-widest uppercase">{link.label}</span>
+                  <span className="text-xs tracking-wide normal-case">{link.label}</span>
                 )}
               </motion.a>
             )
