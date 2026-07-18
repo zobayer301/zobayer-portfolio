@@ -83,12 +83,27 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      if (e.clientY <= 80) setHidden(false);
+    };
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  const handleNavEnter = () => setHidden(false);
+  const handleNavLeave = () => {
+    if (window.scrollY > 10) setHidden(true);
+  };
+
   return (
     <div className="fixed top-4 left-0 right-0 z-[9500] flex justify-center px-4 pointer-events-none">
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: hidden ? -100 : 0, opacity: hidden ? 0 : 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 26, delay: 0.5 }}
+        onMouseEnter={handleNavEnter}
+        onMouseLeave={handleNavLeave}
         aria-label="Navigation"
         className="pointer-events-auto w-fit max-w-[95vw]"
       >
