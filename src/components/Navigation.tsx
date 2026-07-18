@@ -75,7 +75,7 @@ export function Navigation() {
       >
         <div
           ref={containerRef}
-          className="relative flex items-center bg-black border border-black rounded-full px-1.5 py-2 shadow-2xl dark:bg-neutral-900 dark:border-gray-800 max-w-[95vw] h-[52px] min-w-0 sm:min-w-[320px]"
+          className="relative flex items-center bg-white border border-black rounded-full px-1.5 py-2 shadow-2xl dark:bg-neutral-900 dark:border-gray-800 max-w-[95vw] h-[52px] min-w-0 sm:min-w-[320px]"
         >
           {navItems.map((item, index) => {
             const Icon = item.icon;
@@ -90,9 +90,7 @@ export function Navigation() {
                 type="button"
                 className={cn(
                   "relative flex items-center justify-center gap-2 px-2.5 py-2 rounded-full transition-colors duration-200 h-10 min-w-[40px] min-h-[40px] max-h-[44px] flex-1",
-                  isActive
-                    ? "bg-white/15 text-white"
-                    : "bg-transparent text-gray-500 hover:text-gray-300 dark:text-gray-400 dark:hover:text-gray-200",
+                  isActive ? "bg-black/10 text-black dark:bg-white/15 dark:text-white" : "bg-transparent text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-gray-200",
                   "focus:outline-none focus-visible:ring-0"
                 )}
               >
@@ -107,7 +105,7 @@ export function Navigation() {
           <motion.div
             animate={indicatorStyle}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="absolute top-1 bottom-1 rounded-full bg-white/15 pointer-events-none"
+            className="absolute top-1 bottom-1 rounded-full bg-black/10 dark:bg-white/15 pointer-events-none"
           />
         </div>
       </motion.nav>
@@ -116,3 +114,5 @@ export function Navigation() {
 }
 
 export default Navigation;
+
+
