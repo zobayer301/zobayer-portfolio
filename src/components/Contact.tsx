@@ -43,7 +43,7 @@ const socialLinks = [
   { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
   { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
-  { label: 'Email', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: true },
+  { label: 'mdzobayerchowdhury3077@gmail.com', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: true },
 ]
 
 export function Contact() {
@@ -187,9 +187,6 @@ export function Contact() {
         >
           <p className="text-xs text-gray-800 dark:text-gray-300">
             &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.
-          </p>
-          <p className="text-xs text-gray-800 dark:text-gray-300">
-            Email: mdzobayerchowdhury3077@gmail.com
           </p>
           <p className="text-xs text-gray-800 dark:text-gray-300">
             Dhaka, Bangladesh
