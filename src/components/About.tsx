@@ -159,7 +159,7 @@ Club.
               <img
                 src="thesis.jpg"
                 alt="AI-Driven Early Detection of Heart Disease"
-                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700"
               />
             </div>
             <div className="absolute -top-4 -left-4 w-24 h-24 border border-foreground/20 rounded-2xl -z-10" />
