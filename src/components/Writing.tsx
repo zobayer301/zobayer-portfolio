@@ -72,7 +72,7 @@ export function Writing() {
                     Essay — {article.publication}
                   </p>
                 </div>
-                <span className="text-sm text-gray-800">{article.year}</span>
+                <span className="text-sm text-gray-800 dark:text-gray-300">{article.year}</span>
               </div>
             </motion.a>
           ))}

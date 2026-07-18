@@ -96,7 +96,7 @@ export function Work() {
                     <h3 className="text-lg md:text-xl lg:text-2xl font-light text-white group-hover:text-white transition-colors duration-300 leading-tight">
                       {exp.title}
                     </h3>
-                    <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-700 mt-1">
+                    <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-300 mt-1">
                       {exp.company}
                     </p>
                   </div>
@@ -105,7 +105,7 @@ export function Work() {
                   </span>
                 </div>
 
-                <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-600 leading-relaxed mb-6 flex-1 group-hover:text-neutral-200 dark:group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-300 leading-relaxed mb-6 flex-1 group-hover:text-neutral-200 dark:group-hover:text-gray-700 transition-colors duration-300">
                   {exp.description}
                 </p>
 

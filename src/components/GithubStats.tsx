@@ -76,7 +76,7 @@ export function GithubStats() {
 
         <motion.p
           {...fadeInUp}
-          className="text-base lg:text-lg text-gray-800 dark:text-gray-700 max-w-2xl mb-16 lg:mb-20 leading-relaxed"
+          className="text-base lg:text-lg text-gray-800 dark:text-gray-300 max-w-2xl mb-16 lg:mb-20 leading-relaxed"
         >
           A live snapshot of my work on{' '}
           <a

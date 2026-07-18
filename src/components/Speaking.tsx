@@ -78,7 +78,7 @@ export function Speaking() {
                     Talk — {talk.event}
                   </p>
                 </div>
-                <span className="text-sm text-gray-800">{talk.year}</span>
+                <span className="text-sm text-gray-800 dark:text-gray-300">{talk.year}</span>
               </div>
             </motion.a>
           ))}

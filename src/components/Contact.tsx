@@ -172,7 +172,7 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex items-center gap-3 text-gray-800 dark:text-gray-700 hover:text-foreground transition-colors min-h-[44px]"
+                className="flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px]"
               >
                 <Icon />
                 <span className="text-sm tracking-widest uppercase">{link.label}</span>
@@ -185,10 +185,10 @@ export function Contact() {
           {...fadeInUp}
           className="mt-24 lg:mt-32 pt-8 border-t border-gray-300 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p className="text-xs text-gray-800">
+          <p className="text-xs text-gray-800 dark:text-gray-300">
             &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.
           </p>
-          <p className="text-xs text-gray-800">
+          <p className="text-xs text-gray-800 dark:text-gray-300">
             Dhaka, Bangladesh
           </p>
         </motion.footer>

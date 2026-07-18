@@ -46,16 +46,16 @@ export function Education() {
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
             className="lg:col-span-3 flex flex-col justify-center"
           >
-            <h3 className="font-display text-xl lg:text-2xl text-gray-900 dark:text-gray-200 mb-4 leading-snug">
+            <h3 className="font-display text-xl lg:text-2xl text-gray-900 dark:text-white mb-4 leading-snug">
               B.Sc. in Computer Science & Engineering
             </h3>
-            <p className="text-base text-gray-800 dark:text-gray-700 leading-relaxed mb-6">
+            <p className="text-base text-gray-800 dark:text-gray-300 leading-relaxed mb-6">
               Bachelor of Science in Computer Science and Engineering
               with a focus on Artificial Intelligence, Machine Learning,
               and Data Mining &mdash; including a research thesis on AI-driven
               early detection of heart disease using machine learning and deep learning.
             </p>
-            <p className="text-sm text-gray-800 dark:text-gray-400">
+            <p className="text-sm text-gray-800 dark:text-gray-300">
               Graduated (2026)
             </p>
           </motion.div>
