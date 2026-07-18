@@ -2,7 +2,7 @@
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { TextScramble } from '@/components/TextScramble'
-import { Award, BookOpen, Code, HeartPulse } from 'lucide-react'
+import { Award, BookOpen, Code, HeartPulse, ExternalLink } from 'lucide-react'
 
 export function About() {
   const prefersReduced = useReducedMotion()
@@ -142,9 +142,10 @@ Club.
               href="/thesispaper.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 self-start inline-flex items-center justify-center px-4 py-2 rounded-full text-sm border border-black bg-black text-white transition-all duration-300 min-h-[44px] hover:bg-neutral-800 hover:border-neutral-700 dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
+              className="mt-6 self-start inline-flex items-center justify-center gap-2 px-6 py-3 border border-black text-gray-900 text-sm tracking-widest uppercase rounded-full hover:bg-black hover:text-white transition-all duration-300 min-h-[44px] dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
             >
               Preview Paper
+              <ExternalLink size={16} className="shrink-0" />
             </a>
           </motion.div>
 
