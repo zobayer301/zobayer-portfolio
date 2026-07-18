@@ -189,7 +189,7 @@ export function Contact() {
                 href={link.href}
                 onClick={
                   link.label.includes('@')
-                    ? (e) => { e.preventDefault(); window.open(link.href, '_blank', 'noopener,noreferrer') }
+                    ? (e) => { window.location.href = link.href }
                     : link.onClick
                 }
                 {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
