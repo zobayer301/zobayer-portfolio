@@ -189,6 +189,9 @@ export function Contact() {
             &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.
           </p>
           <p className="text-xs text-gray-800 dark:text-gray-300">
+            Email: mdzobayerchowdhury3077@gmail.com
+          </p>
+          <p className="text-xs text-gray-800 dark:text-gray-300">
             Dhaka, Bangladesh
           </p>
         </motion.footer>
