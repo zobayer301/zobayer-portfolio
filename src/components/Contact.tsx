@@ -72,13 +72,17 @@ export function Contact() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending'>('idle')
+  const [showErrors, setShowErrors] = useState(false)
 
   const nameValid = /^[A-Za-z\s.'-]+$/.test(name.trim())
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!nameValid || !emailValid || !message.trim()) return
+    if (!nameValid || !emailValid || !message.trim()) {
+      setShowErrors(true)
+      return
+    }
     setStatus('sending')
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -162,6 +166,9 @@ export function Contact() {
               required
               className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
+            {showErrors && !nameValid && (
+              <span className="text-xs text-red-500">Please write your name properly (letters only).</span>
+            )}
             <input
               type="email"
               value={email}
@@ -170,6 +177,9 @@ export function Contact() {
               required
               className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
+            {showErrors && !emailValid && (
+              <span className="text-xs text-red-500">Please enter a valid email address.</span>
+            )}
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
