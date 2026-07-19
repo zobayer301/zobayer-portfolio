@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
@@ -50,13 +50,13 @@ export function Education() {
               B.Sc. in Computer Science & Engineering
             </h3>
             <p className="text-base text-gray-800 dark:text-gray-300 leading-relaxed mb-6">
-              Bachelor of Science in Computer Science and Engineering
-              with a focus on Artificial Intelligence, Machine Learning,
-              and Data Mining &mdash; including a research thesis on AI-driven
-              early detection of heart disease using machine learning and deep learning.
+              Graduated with a Bachelor's degree in Computer Science and Engineering, specializing in
+              Artificial Intelligence and Machine Learning. Built a solid understanding of data structures,
+              algorithms, software engineering, databases, and data analytics while completing a research
+              thesis on AI-based heart disease prediction.
             </p>
             <p className="text-sm text-gray-800 dark:text-gray-300">
-              Graduated (2026)
+              Graduate: 2026
             </p>
           </motion.div>
         </div>
