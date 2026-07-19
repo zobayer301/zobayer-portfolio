@@ -65,14 +65,15 @@ const socialLinks: SocialLink[] = [
 ]
 
 export function Contact() {
+  const ownerEmail = 'mdzobayerchowdhury3077@gmail.com'
+  const WEB3FORMS_KEY = ''
+
   const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState(ownerEmail)
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending'>('idle')
 
-  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-
-  const ownerEmail = 'mdzobayerchowdhury3077@gmail.com'
+  const emailValid = email === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
   const openMailto = () => {
     const subject = `Portfolio message from ${name.trim()}`
@@ -87,21 +88,24 @@ export function Contact() {
     if (!name.trim() || !emailValid || !message.trim()) return
     setStatus('sending')
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
           name: name.trim(),
           email: email.trim(),
           message: message.trim(),
+          subject: `Portfolio message from ${name.trim()}`,
         }),
       })
       const data = await res.json().catch(() => ({}))
       if (data && data.success) {
         toast.success("Message sent! I'll get back to you soon.")
-        setName('')
-        setEmail('')
         setMessage('')
+      } else if (!WEB3FORMS_KEY) {
+        toast.error('Email service not configured. Opening your mail app...')
+        openMailto()
       } else {
         toast.error('Could not send automatically. Opening your mail app...')
         openMailto()
@@ -170,8 +174,7 @@ export function Contact() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email *"
-              required
+              placeholder="Your email (optional)"
               className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
             <textarea
@@ -184,7 +187,7 @@ export function Contact() {
             />
             <button
               type="submit"
-              disabled={!name.trim() || !message.trim() || !emailValid || status === 'sending'}
+              disabled={!name.trim() || !message.trim() || status === 'sending'}
               className="self-start inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background text-sm tracking-widest uppercase font-medium transition-opacity hover:opacity-90 disabled:opacity-40 disabled:pointer-events-none"
             >
               {status === 'sending' ? 'Sending...' : "Let's talk"}
