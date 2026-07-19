@@ -135,7 +135,7 @@ Club.
                 Stacking Ensemble
               </span>
               <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">
-                Interpretable AI
+                Residual 1D-CNN
               </span>
             </div>
             <a
