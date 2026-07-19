@@ -72,6 +72,16 @@ export function Contact() {
 
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
+  const ownerEmail = 'mdzobayerchowdhury3077@gmail.com'
+
+  const openMailto = () => {
+    const subject = `Portfolio message from ${name.trim()}`
+    const body = `From: ${name.trim()} <${email.trim()}>\n\n${message.trim()}`
+    window.location.href = `mailto:${ownerEmail}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`
+  }
+
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!name.trim() || !emailValid || !message.trim()) return
@@ -86,17 +96,19 @@ export function Contact() {
           message: message.trim(),
         }),
       })
-      const data = await res.json()
-        if (data.success) {
-          toast.success("Message sent! I'll get back to you soon.")
-          setName('')
-          setEmail('')
-          setMessage('')
-        } else {
-        toast.error('Something went wrong. Please try again.')
+      const data = await res.json().catch(() => ({}))
+      if (data && data.success) {
+        toast.success("Message sent! I'll get back to you soon.")
+        setName('')
+        setEmail('')
+        setMessage('')
+      } else {
+        toast.error('Could not send automatically. Opening your mail app...')
+        openMailto()
       }
     } catch {
-      toast.error('Network error. Please try again.')
+      toast.error('Network error. Opening your mail app...')
+      openMailto()
     } finally {
       setStatus('idle')
     }
