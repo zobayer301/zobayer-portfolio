@@ -22,7 +22,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <h1 className="font-display leading-none tracking-tighter">
-              <span className="block text-white text-[15vw] sm:text-[11vw] md:text-[8vw] lg:text-[6.5vw] xl:text-[5.5vw]">Md. Zobayer Chowdhury</span>
+              <span className="block text-white text-[14vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw]">Md. Zobayer Chowdhury</span>
               <span className="block mt-2">
                 <TypewriterEffect
                   words={[
@@ -34,7 +34,7 @@ export function Hero() {
                     { text: 'Science' },
                     { text: 'Enthusiast' },
                   ]}
-                  className="text-[7vw] sm:text-[5vw] md:text-[3vw] lg:text-[2.2vw] xl:text-[1.8vw] font-normal tracking-normal text-left text-[#c1d1e0]"
+                  className="text-[6vw] sm:text-[5vw] md:text-[3vw] lg:text-[2.5vw] font-normal tracking-normal text-left text-[#c1d1e0]"
                 />
               </span>
             </h1>
