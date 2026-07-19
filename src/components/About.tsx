@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { TextScramble } from '@/components/TextScramble'
@@ -186,12 +186,12 @@ Club.
           >
             <span className="text-xs text-foreground/70 tracking-widest uppercase mb-3">What I Do Now</span>
             <h3 className="font-display text-xl lg:text-2xl text-gray-900 dark:text-white mb-4 leading-snug">
-              Building End-to-End Machine Learning Projects
+              Building AI & Machine Learning Solutions
             </h3>
             <p className="text-base text-gray-800 dark:text-gray-300 leading-relaxed mb-6">
-              From data cleaning and feature engineering to regression, deep learning, and
-              deployment - with a stack built around Python, scikit-learn, TensorFlow, and PyTorch.
-              Always looking for the next problem worth solving.
+              I design and develop end-to-end machine learning solutions, from data preprocessing and feature
+              engineering to model training, evaluation, and deployment. I enjoy transforming complex datasets into
+              practical, data-driven applications using modern AI technologies.
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">Python</span>
