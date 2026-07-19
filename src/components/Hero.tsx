@@ -35,7 +35,7 @@ export function Hero() {
             </motion.div>
 
             <h1 className="font-display leading-none tracking-tighter">
-              <span className="block text-white text-[14vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw]">Md. Zobayer Chowdhury</span>
+              <span className="block whitespace-nowrap text-white text-[14vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw]">Md. Zobayer Chowdhury</span>
               <span className="block mt-2">
                 <TypewriterEffect
                   words={[
