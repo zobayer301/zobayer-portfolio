@@ -69,23 +69,16 @@ export function Contact() {
   const WEB3FORMS_KEY = '40ec33e7-bac2-4dd4-99a3-8186426bf388'
 
   const [name, setName] = useState('')
-  const [email, setEmail] = useState(ownerEmail)
+  const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending'>('idle')
 
-  const emailValid = email === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-
-  const openMailto = () => {
-    const subject = `Portfolio message from ${name.trim()}`
-    const body = `From: ${name.trim()} <${email.trim()}>\n\n${message.trim()}`
-    window.location.href = `mailto:${ownerEmail}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`
-  }
+  const nameValid = /^[A-Za-z\s.'-]+$/.test(name.trim())
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!name.trim() || !emailValid || !message.trim()) return
+    if (!nameValid || !emailValid || !message.trim()) return
     setStatus('sending')
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -93,7 +86,7 @@ export function Contact() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          name: name.trim(),
+          from_name: name.trim(),
           email: email.trim(),
           message: message.trim(),
           subject: `Portfolio message from ${name.trim()}`,
@@ -102,17 +95,14 @@ export function Contact() {
       const data = await res.json().catch(() => ({}))
       if (data && data.success) {
         toast.success("Message sent! I'll get back to you soon.")
+        setName('')
+        setEmail('')
         setMessage('')
-      } else if (!WEB3FORMS_KEY) {
-        toast.error('Email service not configured. Opening your mail app...')
-        openMailto()
       } else {
-        toast.error('Could not send automatically. Opening your mail app...')
-        openMailto()
+        toast.error('Something went wrong. Please try again.')
       }
     } catch {
-      toast.error('Network error. Opening your mail app...')
-      openMailto()
+      toast.error('Network error. Please try again.')
     } finally {
       setStatus('idle')
     }
@@ -164,9 +154,11 @@ export function Contact() {
           >
             <input
               type="text"
+              inputMode="text"
+              pattern="[A-Za-z\s.'-]+"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Your name *"
+              placeholder="Your name * (letters only)"
               required
               className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
@@ -174,7 +166,8 @@ export function Contact() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email (optional)"
+              placeholder="Your email *"
+              required
               className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
             <textarea
@@ -187,7 +180,7 @@ export function Contact() {
             />
             <button
               type="submit"
-              disabled={!name.trim() || !message.trim() || status === 'sending'}
+              disabled={!nameValid || !emailValid || !message.trim() || status === 'sending'}
               className="self-start inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background text-sm tracking-widest uppercase font-medium transition-opacity hover:opacity-90 disabled:opacity-40 disabled:pointer-events-none"
             >
               {status === 'sending' ? 'Sending...' : "Let's talk"}
