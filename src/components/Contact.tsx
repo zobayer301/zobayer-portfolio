@@ -190,7 +190,7 @@ export function Contact() {
             />
             <button
               type="submit"
-              disabled={!nameValid || !emailValid || !message.trim() || status === 'sending'}
+              disabled={status === 'sending'}
               className="self-start inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background text-sm tracking-widest uppercase font-medium transition-opacity hover:opacity-90 disabled:opacity-40 disabled:pointer-events-none"
             >
               {status === 'sending' ? 'Sending...' : "Let's talk"}
