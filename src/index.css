@@ -1,4 +1,4 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -155,22 +155,11 @@
   background: hsl(var(--accent));
 }
 
-/* Section spacing */
+/* Section spacing - fluid via clamp so it scales smoothly with zoom */
 .section-padding {
-  padding: 8rem 2rem;
+  padding: clamp(4rem, 14vw, 16rem) clamp(1.25rem, 6vw, 6rem);
 }
-
-@media (min-width: 768px) {
-  .section-padding {
-    padding: 12rem 4rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-padding {
-    padding: 16rem 6rem;
-  }
-}
+
 
 /* Image grayscale filter */
 .img-editorial {

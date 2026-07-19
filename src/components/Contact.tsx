@@ -127,7 +127,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="font-display text-[12vw] lg:text-hero leading-none tracking-tight mb-8"
+          className="font-display text-[14vw] sm:text-[10vw] lg:text-hero leading-none tracking-tight mb-8"
         >
           Get in touch
         </motion.h2>
