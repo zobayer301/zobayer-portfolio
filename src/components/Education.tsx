@@ -56,7 +56,7 @@ export function Education() {
               thesis on AI-based heart disease prediction.
             </p>
             <p className="text-sm text-gray-800 dark:text-gray-300">
-              Graduate: 2026
+              <span className="font-bold">Graduated: 2026</span>
             </p>
           </motion.div>
         </div>
