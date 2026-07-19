@@ -158,7 +158,7 @@ export function Contact() {
               pattern="[A-Za-z\s.'-]+"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Your name * (letters only)"
+              placeholder="Your name *"
               required
               className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
             />
