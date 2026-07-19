@@ -25,11 +25,30 @@ export function TextScramble({
   ...props
 }: TextScrambleProps) {
   const [scrambledText, setScrambledText] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const spanRef = useRef<HTMLSpanElement>(null);
   const onScrambleCompleteRef = useRef(onScrambleComplete);
   onScrambleCompleteRef.current = onScrambleComplete;
 
   useEffect(() => {
-    if (!trigger) return;
+    if (!trigger || !spanRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(spanRef.current);
+    return () => observer.disconnect();
+  }, [trigger]);
+
+  useEffect(() => {
+    if (!trigger || !isVisible) return;
 
     const steps = Math.ceil(duration / speed);
     let step = 0;
@@ -63,10 +82,10 @@ export function TextScramble({
     }, speed * 1000);
 
     return () => clearInterval(interval);
-  }, [trigger, children, duration, speed, characterSet]);
+  }, [trigger, isVisible, children, duration, speed, characterSet]);
 
   return (
-    <motion.span className={className} {...props}>
+    <motion.span ref={spanRef} className={className} {...props}>
       {scrambledText ?? children}
     </motion.span>
   );
