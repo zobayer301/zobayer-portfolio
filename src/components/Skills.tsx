@@ -75,7 +75,7 @@ export function Skills() {
             >
               <div className={cn(
                 'relative px-5 py-2.5 lg:px-6 lg:py-3 rounded-full border border-foreground/15 backdrop-blur-sm transition-all duration-300 min-h-[44px] flex items-center',
-                'bg-black text-white border-black hover:bg-neutral-800 hover:border-neutral-800',
+                'hoverable bg-black text-white border-black hover:bg-neutral-800 hover:border-neutral-800',
                 'dark:bg-transparent dark:text-foreground/80 dark:border-foreground/15 dark:hover:border-foreground/40 dark:hover:bg-transparent dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.08)]'
               )}>
                 <span className="text-sm lg:text-base font-light tracking-wide transition-colors duration-300 whitespace-nowrap">

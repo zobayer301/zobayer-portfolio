@@ -245,7 +245,7 @@ export function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 aria-label={link.label.includes('@') ? link.label : link.label}
-                className="flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2"
+                className="hoverable flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2"
               >
                 <Icon />
                 {(link.label.includes('@') || link.showLabel) && (

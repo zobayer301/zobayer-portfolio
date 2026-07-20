@@ -133,7 +133,7 @@ export function Navigation() {
                 aria-current={isActive ? "page" : undefined}
                 type="button"
                 className={cn(
-                  "relative flex items-center justify-center gap-2 px-2.5 py-2 rounded-full transition-colors duration-200 h-10 min-w-[40px] min-h-[40px] max-h-[44px] flex-1",
+                  "hoverable relative flex items-center justify-center gap-2 px-2.5 py-2 rounded-full transition-colors duration-200 h-10 min-w-[40px] min-h-[40px] max-h-[44px] flex-1",
                   isActive ? "bg-black/10 text-black dark:bg-white/15 dark:text-white" : "bg-transparent text-gray-800 hover:text-black dark:text-gray-300 dark:hover:text-gray-200",
                   "focus:outline-none focus-visible:ring-0"
                 )}

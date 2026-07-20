@@ -52,7 +52,7 @@ export function About() {
             {...fadeInUp}
             className="lg:col-span-2 relative group"
           >
-            <div className="relative overflow-hidden rounded-2xl">
+            <div className="hoverable relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src="computer.jpg"
@@ -87,7 +87,7 @@ Club.
                   key={m.title}
                   {...fadeInUp}
                   transition={{ ...fadeInUp.transition, delay: 0.1 * (i + 1) }}
-                  className="flex items-start gap-3 px-4 py-3 rounded-xl border border-black bg-black hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300 min-h-[44px] dark:border-foreground/10 dark:bg-foreground/[0.02] dark:hover:bg-foreground/[0.04] dark:hover:border-foreground/20"
+                  className="hoverable flex items-start gap-3 px-4 py-3 rounded-xl border border-black bg-black hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300 min-h-[44px] dark:border-foreground/10 dark:bg-foreground/[0.02] dark:hover:bg-foreground/[0.04] dark:hover:border-foreground/20"
                 >
                   <div className="text-white shrink-0">{m.icon}</div>
                   <div className="min-w-0 flex-1">
@@ -98,7 +98,7 @@ Club.
                         href={m.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-green-400 hover:text-green-300 transition-colors"
+                        className="hoverable mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-green-400 hover:text-green-300 transition-colors"
                       >
                         View Profile
                         <ExternalLink size={12} className="shrink-0" />
@@ -166,7 +166,7 @@ Club.
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
             className="lg:col-span-2 relative group order-1 lg:order-2"
           >
-            <div className="relative overflow-hidden rounded-2xl">
+            <div className="hoverable relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src="thesis.jpg"
@@ -180,7 +180,7 @@ Club.
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
           <motion.div {...fadeInUp} className="lg:col-span-2 relative group">
-            <div className="relative overflow-hidden rounded-2xl">
+            <div className="hoverable relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src="ml.jpg"
