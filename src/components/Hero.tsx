@@ -59,7 +59,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="inline-flex items-center justify-center gap-2 mt-6 md:mt-8 px-6 py-3 border border-white/30 text-white text-sm tracking-widest uppercase rounded-full hover:bg-white hover:text-black transition-all duration-300 min-h-[44px]"
+              className="inline-flex items-center justify-center gap-1.5 mt-6 md:mt-8 px-3 py-1.5 border border-white/30 text-white text-xs font-medium rounded-full hover:bg-white hover:text-black transition-all duration-300"
             >
               Resume
               <ExternalLink size={16} className="shrink-0" />
