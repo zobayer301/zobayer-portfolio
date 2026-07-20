@@ -154,7 +154,7 @@ Club.
               href="/thesispaper.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 self-start inline-flex items-center justify-center gap-2 px-6 py-3 border border-black text-gray-900 text-sm tracking-widest uppercase rounded-full hover:bg-black hover:text-white transition-all duration-300 min-h-[44px] dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
+              className="mt-4 self-start inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-black/20 text-gray-900 text-xs font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
             >
               Preview Paper
               <ExternalLink size={16} className="shrink-0" />
