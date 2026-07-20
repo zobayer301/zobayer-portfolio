@@ -15,8 +15,8 @@ const fadeInUp = {
 
 const streakCard = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=9ca3af&ring=374151&fire=374151&currStreakLabel=374151&sideLabels=6b7280&sideNums=111827&currStreakNum=111827&dates=6b7280'
 const streakCardDark = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=6b7280&ring=f9fafb&fire=f9fafb&currStreakLabel=f9fafb&sideLabels=cbd5e1&sideNums=f9fafb&currStreakNum=f9fafb&dates=cbd5e1'
-const graphCard = 'https://github-readme-activity-graph.vercel.app/graph?username=' + USER + '&bg_color=transparent&color=374151&line=6b7280&point=374151&area=true&hide_border=true'
-const graphCardDark = 'https://github-readme-activity-graph.vercel.app/graph?username=' + USER + '&bg_color=0d0d0d&color=f9fafb&line=f9fafb&point=f9fafb&area=true&area_color=9ca3af&hide_border=true'
+const graphCard = 'https://github-contributions-api.deno.dev/' + USER + '.svg?theme=github'
+const graphCardDark = 'https://github-contributions-api.deno.dev/' + USER + '.svg?theme=github-dark'
 
 interface Stats {
   totalContributions: number
@@ -124,7 +124,7 @@ export function GithubStats() {
         >
           <img
             src={isDark ? graphCardDark : graphCard}
-            alt={USER + ' contribution activity graph'}
+            alt={USER + ' GitHub contribution calendar'}
             loading="lazy"
             className="w-full h-auto"
           />
