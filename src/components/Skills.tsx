@@ -33,7 +33,7 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="mb-16"
+          className="group mb-16"
         >
           <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Expertise</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />

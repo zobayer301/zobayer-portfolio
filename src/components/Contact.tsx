@@ -118,7 +118,7 @@ export function Contact() {
   return (
     <section id="contact" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <motion.div {...fadeInUp} className="mb-16">
+        <motion.div {...fadeInUp} className="group mb-16">
           <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Contact</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>

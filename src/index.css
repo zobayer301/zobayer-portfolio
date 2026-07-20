@@ -144,15 +144,17 @@
   box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.2);
 }
-/* Shared bobbing hover: moves up and down on hover */
+/* Shared bobbing hover: moves up and down on hover (triggers from header group) */
 @keyframes bob {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-8px); }
 }
 .hover-bob {
   display: inline-block;
   transition: transform 0.3s ease;
+  will-change: transform;
 }
+.group:hover .hover-bob,
 .hover-bob:hover {
   animation: bob 0.9s ease-in-out infinite;
 }
