@@ -13,8 +13,6 @@ const fadeInUp = {
   transition: { duration: 0.8, ease: 'easeOut' },
 }
 
-const streakCard = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=9ca3af&ring=374151&fire=374151&currStreakLabel=374151&sideLabels=6b7280&sideNums=111827&currStreakNum=111827&dates=6b7280'
-const streakCardDark = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=6b7280&ring=f9fafb&fire=f9fafb&currStreakLabel=f9fafb&sideLabels=cbd5e1&sideNums=f9fafb&currStreakNum=f9fafb&dates=cbd5e1'
 const graphCard = 'https://github-contributions-api.deno.dev/' + USER + '.svg?theme=radical&text_color=1f2937&bg_color=transparent'
 const graphCardDark = 'https://github-contributions-api.deno.dev/' + USER + '.svg?theme=radical&text_color=f9fafb&bg_color=transparent'
 
@@ -88,18 +86,6 @@ export function GithubStats() {
             @{USER}
           </a>{' '}{"\u2014"}{' commits, streaks, and the languages I reach for most.'}
         </motion.p>
-
-        <motion.div
-          {...fadeInUp}
-          className="rounded-lg border border-foreground/10 bg-foreground/[0.02] p-4 mb-6 lg:mb-8 overflow-hidden max-w-2xl hover:border-foreground/20 transition-all duration-500"
-        >
-          <img
-            src={isDark ? streakCardDark : streakCard}
-            alt={USER + ' GitHub streak'}
-            loading="lazy"
-            className="w-full h-auto"
-          />
-        </motion.div>
 
         {statItems && (
           <div className="grid grid-cols-3 gap-3 lg:gap-4 mb-6 lg:mb-8 max-w-2xl mx-auto">
