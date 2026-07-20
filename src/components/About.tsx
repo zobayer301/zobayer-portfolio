@@ -30,6 +30,7 @@ export function About() {
       icon: <Code className="w-5 h-5" />,
       title: 'Volunteer',
       desc: 'Assistant Graphics Designer @ Green University Computer Club',
+        link: 'https://gucc.green.edu.bd/executives/221902038',
     },
     {
       icon: <HeartPulse className="w-5 h-5" />,
@@ -86,7 +87,7 @@ Club.
                   key={m.title}
                   {...fadeInUp}
                   transition={{ ...fadeInUp.transition, delay: 0.1 * (i + 1) }}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-black bg-black hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300 min-h-[44px] dark:border-foreground/10 dark:bg-foreground/[0.02] dark:hover:bg-foreground/[0.04] dark:hover:border-foreground/20"
+                  className="flex items-start gap-3 px-4 py-3 rounded-xl border border-black bg-black hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300 min-h-[44px] dark:border-foreground/10 dark:bg-foreground/[0.02] dark:hover:bg-foreground/[0.04] dark:hover:border-foreground/20"
                 >
                   <div className="text-white shrink-0">{m.icon}</div>
                   <div className="min-w-0 flex-1">
