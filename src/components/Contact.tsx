@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
+import { User, Mail, MessageSquare, Send } from 'lucide-react'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -139,7 +140,7 @@ export function Contact() {
 
         <motion.div
           {...fadeInUp}
-          className="mb-12 lg:mb-16 max-w-2xl"
+          className="mb-12 lg:mb-16 max-w-2xl rounded-3xl p-2 transition-all duration-500 hover:bg-black/5 dark:hover:bg-white/5"
         >
           <h3 className="text-xl md:text-2xl lg:text-3xl text-gray-900 dark:text-white font-light leading-tight mb-4">
             OPEN TO NEW<br />
@@ -154,45 +155,66 @@ export function Contact() {
         >
           <form
             onSubmit={handleSend}
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-gradient-to-br from-foreground/[0.04] to-foreground/[0.01] p-7 sm:p-10 backdrop-blur-md shadow-2xl transition-all duration-500 hover:bg-black/5 hover:shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] hover:border-foreground/30 hover:scale-[1.01] dark:hover:bg-white/5 dark:hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.25)]"
           >
-            <input
-              type="text"
-              inputMode="text"
-              pattern="[A-Za-z\s.'-]+"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Your name *"
-              required
-              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
-            />
-            {showErrors && !nameValid && (
-              <span className="text-xs text-red-500">Please write your name properly (letters only).</span>
-            )}
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email *"
-              required
-              className="flex h-12 w-full rounded-lg border border-foreground/20 bg-transparent px-4 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors"
-            />
-            {showErrors && !emailValid && (
-              <span className="text-xs text-red-500">Please enter a valid email address.</span>
-            )}
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Write your message to Zobayer..."
-              rows={4}
-              required
-              className="flex w-full rounded-lg border border-foreground/20 bg-transparent px-4 py-3 text-base text-gray-900 dark:text-white placeholder:text-gray-600 focus-visible:outline-none focus-visible:border-foreground/60 transition-colors resize-none"
-            />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="flex flex-col gap-2">
+                <label className="text-lg font-medium font-poppins tracking-wide text-foreground mb-1">Your name</label>
+                <div className="relative">
+                  <User size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none" />
+                  <input
+                    type="text"
+                    inputMode="text"
+                    pattern="[A-Za-z\s.'-]+"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="E.g. Mahmudullah Riyad"
+                    required
+                    className="flex h-14 w-full rounded-2xl border border-foreground/15 bg-background/70 pl-11 pr-4 text-base text-gray-900 dark:text-white placeholder:text-xs placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 focus-visible:border-transparent transition-all"
+                  />
+                </div>
+                {showErrors && !nameValid && (
+                  <span className="text-xs text-red-500">Please write your name properly (letters only).</span>
+                )}
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-lg font-medium font-poppins tracking-wide text-foreground mb-1">Email Address</label>
+                <div className="relative">
+                  <Mail size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none" />
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="E.g. name@example.com"
+                    required
+                    className="flex h-14 w-full rounded-2xl border border-foreground/15 bg-background/70 pl-11 pr-4 text-base text-gray-900 dark:text-white placeholder:text-xs placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 focus-visible:border-transparent transition-all"
+                  />
+                </div>
+                {showErrors && !emailValid && (
+                  <span className="text-xs text-red-500">Please enter a valid email address.</span>
+                )}
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="text-lg font-medium font-poppins tracking-wide text-foreground mb-1">Project details</label>
+              <div className="relative">
+                <MessageSquare size={18} className="absolute left-3.5 top-4 text-gray-500 dark:text-gray-400 pointer-events-none" />
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Tell me about your project visions..."
+                  rows={5}
+                  required
+                  className="flex w-full rounded-2xl border border-foreground/15 bg-background/70 pl-11 pr-4 pt-3.5 pb-3 text-base text-gray-900 dark:text-white placeholder:text-xs placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 focus-visible:border-transparent transition-all resize-none"
+                />
+              </div>
+            </div>
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="self-start inline-flex items-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background text-sm tracking-widest uppercase font-medium transition-opacity hover:opacity-90 disabled:opacity-40 disabled:pointer-events-none"
+              className="self-start inline-flex items-center gap-1.5 h-10 px-5 rounded-2xl bg-gradient-to-r from-foreground to-foreground/80 text-background text-xs font-normal tracking-wide shadow-md transition-all hover:scale-[1.03] hover:shadow-xl active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none"
             >
+              <Send size={18} className="shrink-0" />
               {status === 'sending' ? 'Sending...' : "Let's talk"}
             </button>
           </form>

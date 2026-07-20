@@ -52,6 +52,7 @@ export default {
       fontFamily: {
         display: ['Bebas Neue', 'sans-serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       fontSize: {
         'hero': 'clamp(4rem, 15vw, 12rem)',
