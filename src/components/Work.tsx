@@ -105,7 +105,7 @@ export function Work() {
                   </span>
                 </div>
 
-                <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-300 leading-relaxed mb-6 flex-1 group-hover:text-neutral-200 dark:group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-sm lg:text-base text-neutral-300 dark:text-gray-300 leading-relaxed mb-6 flex-1 group-hover:text-neutral-200 dark:group-hover:text-gray-100 transition-colors duration-300">
                   {exp.description}
                 </p>
 
