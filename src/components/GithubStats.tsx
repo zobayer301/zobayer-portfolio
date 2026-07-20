@@ -15,8 +15,8 @@ const fadeInUp = {
 
 const streakCard = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=9ca3af&ring=374151&fire=374151&currStreakLabel=374151&sideLabels=6b7280&sideNums=111827&currStreakNum=111827&dates=6b7280'
 const streakCardDark = 'https://github-readme-streak-stats.herokuapp.com/?user=' + USER + '&hide_border=true&background=transparent&stroke=6b7280&ring=f9fafb&fire=f9fafb&currStreakLabel=f9fafb&sideLabels=cbd5e1&sideNums=f9fafb&currStreakNum=f9fafb&dates=cbd5e1'
-const graphCard = 'https://github-contributions-api.deno.dev/' + USER + '.svg?theme=radical'
-const graphCardDark = 'https://github-contributions-api.deno.dev/' + USER + '.svg?theme=radical'
+const graphCard = 'https://github-contributions-api.deno.dev/' + USER + '.svg?theme=radical&text_color=1f2937&bg_color=transparent'
+const graphCardDark = 'https://github-contributions-api.deno.dev/' + USER + '.svg?theme=radical&text_color=f9fafb&bg_color=transparent'
 
 interface Stats {
   totalContributions: number
