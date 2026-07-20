@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { User, Code, Briefcase, GraduationCap, Github, Mail } from "lucide-react";
+import { User, Code, Briefcase, GraduationCap, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -11,7 +11,6 @@ const navItems = [
   { id: "education", label: "Education", icon: GraduationCap },
   { id: "skills", label: "Skills", icon: Code },
   { id: "work", label: "Projects", icon: Briefcase },
-  { id: "github", label: "GitHub", icon: Github },
   { id: "contact", label: "Contact", icon: Mail },
 ];
 

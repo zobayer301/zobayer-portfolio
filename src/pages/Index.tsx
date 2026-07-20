@@ -5,7 +5,6 @@ import { About } from '@/components/About'
 import { Skills } from '@/components/Skills'
 import { Work } from '@/components/Work'
 import { Education } from '@/components/Education'
-import { GithubStats } from '@/components/GithubStats'
 import { Contact } from '@/components/Contact'
 import { ScrollToTop } from '@/components/ScrollToTop'
 
@@ -21,7 +20,6 @@ export default function Index() {
         <Education />
         <Skills />
         <Work />
-        <GithubStats />
         <Contact />
       </main>
     </div>
