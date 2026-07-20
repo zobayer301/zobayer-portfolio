@@ -57,7 +57,7 @@ export function About() {
               <img
                 src="computer.jpg"
                 alt="Data science workspace"
-                className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-auto transition-all duration-700 group-hover:scale-105"
               />
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-foreground/20 rounded-2xl -z-10" />
@@ -171,7 +171,7 @@ Club.
               <img
                 src="thesis.jpg"
                 alt="AI-Driven Early Detection of Heart Disease"
-                className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-auto transition-all duration-700 group-hover:scale-105"
               />
             </div>
             <div className="absolute -top-4 -left-4 w-24 h-24 border border-foreground/20 rounded-2xl -z-10" />
@@ -185,7 +185,7 @@ Club.
               <img
                 src="ml.jpg"
                 alt="Working on ML projects"
-                className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-auto transition-all duration-700 group-hover:scale-105"
               />
             </div>
             <div className="absolute -bottom-4 -left-4 w-24 h-24 border border-foreground/20 rounded-2xl -z-10" />
