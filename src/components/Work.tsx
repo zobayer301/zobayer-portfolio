@@ -52,7 +52,7 @@ export function Work() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="mb-16"
         >
-          <span className="text-sm text-foreground/80 tracking-widest uppercase">Projects</span>
+          <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Projects</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -61,7 +61,7 @@ export function Work() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24"
+          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24"
         >
           FEATURED<br />PROJECTS
         </motion.h2>

@@ -63,13 +63,13 @@ export function GithubStats() {
     <section id="github" className="section-padding min-h-screen flex flex-col justify-center bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-foreground/80 tracking-widest uppercase">Open Source</span>
+          <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Open Source</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
         <motion.h2
           {...fadeInUp}
-          className="font-display text-[10vw] lg:text-section leading-none tracking-tight mb-6"
+          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-6"
         >
           GITHUB
         </motion.h2>

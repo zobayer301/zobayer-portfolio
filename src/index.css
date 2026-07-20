@@ -144,6 +144,19 @@
   box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.2);
 }
+/* Shared bobbing hover: moves up and down on hover */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.hover-bob {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.hover-bob:hover {
+  animation: bob 0.9s ease-in-out infinite;
+}
+
 /* Typography utilities */
 .font-display {
   font-family: 'Bebas Neue', sans-serif;

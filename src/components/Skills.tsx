@@ -35,7 +35,7 @@ export function Skills() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="mb-16"
         >
-          <span className="text-sm text-foreground/80 tracking-widest uppercase">Expertise</span>
+          <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Expertise</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -44,7 +44,7 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="font-display text-[10vw] lg:text-section leading-none tracking-tight mb-12 lg:mb-20"
+          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-12 lg:mb-20"
         >
           SKILLS
         </motion.h2>

@@ -43,7 +43,7 @@ export function About() {
     <section id="about" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16">
-          <span className="text-sm text-foreground/80 tracking-widest uppercase">About Zobayer</span>
+          <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">About Zobayer</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
