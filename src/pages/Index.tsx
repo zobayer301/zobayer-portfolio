@@ -1,4 +1,4 @@
-﻿import { Navigation } from '@/components/Navigation'
+import { Navigation } from '@/components/Navigation'
 import { GrainOverlay } from '@/components/GrainOverlay'
 import { Hero } from '@/components/Hero'
 import { About } from '@/components/About'
@@ -18,9 +18,9 @@ export default function Index() {
       <main>
         <Hero />
         <About />
+        <Education />
         <Skills />
         <Work />
-        <Education />
         <GithubStats />
         <Contact />
       </main>
