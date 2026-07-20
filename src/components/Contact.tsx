@@ -1,8 +1,6 @@
 ﻿import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
-import { useReducedMotion } from '@/hooks/useReducedMotion'
-import { useIsMobile } from '@/hooks/use-mobile'
 import { User, Mail, MessageSquare, Send } from 'lucide-react'
 
 const fadeInUp = {
