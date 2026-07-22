@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useIsMobile } from '@/hooks/use-mobile'
 
@@ -50,7 +50,7 @@ export function Work() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="group mb-16"
+          className="group mb-10 lg:mb-12"
         >
           <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Projects</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
@@ -61,7 +61,7 @@ export function Work() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24"
+          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
         >
           FEATURED<br />PROJECTS
         </motion.h2>

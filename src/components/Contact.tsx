@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { User, Mail, MessageSquare, Send } from 'lucide-react'
@@ -116,7 +116,7 @@ export function Contact() {
   return (
     <section id="contact" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <motion.div {...fadeInUp} className="group mb-16">
+        <motion.div {...fadeInUp} className="group mb-10 lg:mb-12">
           <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Contact</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
@@ -133,12 +133,12 @@ export function Contact() {
 
         <motion.div
           {...fadeInUp}
-          className="w-full h-px bg-foreground/20 mb-12 lg:mb-16"
+          className="w-full h-px bg-foreground/20 mb-8 lg:mb-12"
         />
 
         <motion.div
           {...fadeInUp}
-          className="mb-12 lg:mb-16 max-w-2xl rounded-3xl p-2 transition-all duration-500 hover:bg-black/5 dark:hover:bg-white/5"
+          className="mb-8 lg:mb-12 max-w-2xl rounded-3xl p-2 transition-all duration-500 hover:bg-black/5 dark:hover:bg-white/5"
         >
           <h3 className="text-xl md:text-2xl lg:text-3xl text-gray-900 dark:text-white font-light leading-tight mb-4">
             OPEN TO NEW<br />
@@ -149,7 +149,7 @@ export function Contact() {
 
         <motion.div
           {...fadeInUp}
-          className="mb-12 lg:mb-16 max-w-2xl"
+          className="mb-8 lg:mb-12 max-w-2xl"
         >
           <form
             onSubmit={handleSend}
@@ -218,7 +218,7 @@ export function Contact() {
           </form>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mb-16 lg:mb-24">
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mb-12 lg:mb-16">
           {socialLinks.map((link, index) => {
             const Icon = link.icon
             return (
@@ -256,7 +256,7 @@ export function Contact() {
 
         <motion.footer
           {...fadeInUp}
-          className="mt-24 lg:mt-32 pt-8 border-t border-gray-300 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="pt-8 border-t border-gray-300 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-xs text-gray-800 dark:text-gray-300">
             &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.

@@ -187,7 +187,7 @@
 
 /* Section spacing - fluid via clamp so it scales smoothly with zoom */
 .section-padding {
-  padding: clamp(4rem, 14vw, 16rem) clamp(1.25rem, 6vw, 6rem);
+  padding: clamp(2.5rem, 6vw, 6rem) clamp(1.25rem, 5vw, 4rem);
 }
 
 

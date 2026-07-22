@@ -13,14 +13,14 @@ export function Education() {
   return (
     <section id="education" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <motion.div {...fadeInUp} className="group mb-16">
+        <motion.div {...fadeInUp} className="group mb-10 lg:mb-12">
           <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Background</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
         <motion.h2
           {...fadeInUp}
-          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24"
+          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
         >
           EDUCATION
         </motion.h2>

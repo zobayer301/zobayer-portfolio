@@ -42,12 +42,12 @@ export function About() {
   return (
     <section id="about" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <motion.div {...fadeInUp} className="group mb-16">
+        <motion.div {...fadeInUp} className="group mb-10 lg:mb-12">
           <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">About Zobayer</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 mb-24 lg:mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 mb-16 lg:mb-20">
           <motion.div
             {...fadeInUp}
             className="lg:col-span-2 relative group"
@@ -111,7 +111,7 @@ Club.
           </motion.div>
         </div>
 
-        <motion.div {...fadeInUp} className="mb-24 lg:mb-32">
+        <motion.div {...fadeInUp} className="mb-16 lg:mb-20">
           <div className="relative py-12 px-8 lg:px-16 rounded-3xl border border-foreground/10 bg-foreground/[0.02]">
             <h2 className="font-display text-[6vw] lg:text-[4vw] xl:text-section leading-none tracking-tight text-gray-900 dark:text-white pl-4 lg:pl-12">
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">&quot;SOLVING REAL-WORLD</TextScramble>
@@ -122,7 +122,7 @@ Club.
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 mb-24 lg:mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 mb-16 lg:mb-20">
           <motion.div
             {...fadeInUp}
             className="lg:col-span-3 flex flex-col justify-center order-2 lg:order-1"
