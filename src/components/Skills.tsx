@@ -42,8 +42,6 @@ export function Skills() {
   const isMobile = useIsMobile()
   const viewportMargin = isMobile ? '-20px' : '-100px'
 
-  let globalIndex = 0
-
   return (
     <section id="skills" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
@@ -63,111 +61,80 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-12 lg:mb-20"
+          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24"
         >
           SKILLS
         </motion.h2>
 
-        <div className={cn(
-          'grid gap-4 lg:gap-5',
-          isMobile ? 'grid-cols-1' : 'grid-cols-12'
-        )}>
-          {skillCategories.map((cat, catIdx) => {
-            const colSpans = [5, 8, 7, 4]
-            const span = colSpans[catIdx]
-            const isLarge = catIdx === 1
-
-            return (
-              <motion.div
-                key={cat.category}
-                initial={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: viewportMargin }}
-                transition={{
-                  duration: 0.7,
-                  delay: isMobile ? catIdx * 0.1 : catIdx * 0.12,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-                className={cn(
-                  'group relative rounded-3xl overflow-hidden transition-all duration-500',
-                  'border border-foreground/10',
-                  'bg-gradient-to-br from-foreground/[0.04] to-foreground/[0.01]',
-                  'backdrop-blur-md shadow-2xl',
-                  'hover:bg-black/5 hover:shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] hover:border-foreground/30 hover:scale-[1.01]',
-                  'dark:hover:bg-white/5 dark:hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.25)]',
-                  isMobile ? '' : ''
-                )}
-                style={!isMobile ? { gridColumn: `span ${span}` } : undefined}
-              >
-                <div className={cn(
-                  'relative p-7 sm:p-10',
-                  isLarge ? 'lg:p-10' : ''
-                )}>
-                  <div className="flex items-baseline gap-3 mb-5 lg:mb-7">
-                    <span className="text-xs font-medium tracking-widest uppercase text-foreground/50">
-                      {String(catIdx + 1).padStart(2, '0')}
-                    </span>
-                    <h3 className={cn(
-                      'font-medium tracking-wide uppercase text-foreground/80',
-                      isLarge ? 'text-base lg:text-lg' : 'text-sm lg:text-base'
-                    )}>
-                      {cat.category}
-                    </h3>
-                    <div className="flex-1 h-px bg-foreground/10 ml-2" />
-                  </div>
-
-                  <div className="flex flex-wrap gap-3">
-                    {cat.skills.map((skill) => {
-                      const idx = globalIndex++
-                      return (
-                        <motion.div
-                          key={skill}
-                          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true, margin: viewportMargin }}
-                          transition={{
-                            duration: 0.4,
-                            delay: isMobile ? 0 : idx * 0.03,
-                            ease: [0.25, 0.46, 0.45, 0.94],
-                          }}
-                          whileHover={
-                            prefersReducedMotion
-                              ? {}
-                              : {
-                                  scale: 1.05,
-                                  y: -2,
-                                  transition: { duration: 0.15 },
-                                }
-                          }
-                          whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
-                          className="cursor-default"
-                        >
-                          <div className={cn(
-                            'flex items-center h-14 px-6 rounded-2xl border transition-all duration-300',
-                            'border-foreground/15 bg-background/70',
-                            'hover:bg-black/5 hover:border-foreground/30 hover:shadow-lg',
-                            'dark:hover:bg-white/5 dark:hover:border-foreground/30',
-                          )}>
-                            <span className="text-sm lg:text-base font-light tracking-wide whitespace-nowrap text-gray-900 dark:text-white">
-                              {skill}
-                            </span>
-                          </div>
-                        </motion.div>
-                      )
-                    })}
-                  </div>
-
-                  {isLarge && (
-                    <div className="mt-6 pt-5 border-t border-foreground/10">
-                      <p className="text-xs text-foreground/30 tracking-wider uppercase">
-                        {cat.skills.length} skills
-                      </p>
-                    </div>
-                  )}
+        <div className="flex flex-col">
+          {skillCategories.map((cat, catIdx) => (
+            <motion.div
+              key={cat.category}
+              initial={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: viewportMargin }}
+              transition={{
+                duration: 0.7,
+                delay: catIdx * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+              className="group"
+            >
+              <div className={cn(
+                'flex items-start gap-6 lg:gap-10 py-8 lg:py-12',
+                catIdx < skillCategories.length - 1 && 'border-b border-foreground/10'
+              )}>
+                <div className="shrink-0 relative">
+                  <span className="font-display text-[80px] lg:text-[120px] leading-none text-foreground/[0.06] select-none">
+                    {String(catIdx + 1).padStart(2, '0')}
+                  </span>
+                  <span className="absolute bottom-2 lg:bottom-4 left-1/2 -translate-x-1/2 text-xs font-medium tracking-widest text-foreground/40">
+                    {String(catIdx + 1).padStart(2, '0')}
+                  </span>
                 </div>
-              </motion.div>
-            )
-          })}
+
+                <div className="flex-1 pt-2 lg:pt-4">
+                  <h3 className="text-lg lg:text-xl font-medium tracking-wide text-foreground/80 mb-5 lg:mb-7">
+                    {cat.category}
+                  </h3>
+
+                  <div className="flex flex-wrap gap-2.5 lg:gap-3">
+                    {cat.skills.map((skill, skillIdx) => (
+                      <motion.div
+                        key={skill}
+                        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: viewportMargin }}
+                        transition={{
+                          duration: 0.4,
+                          delay: isMobile ? 0 : skillIdx * 0.03,
+                          ease: [0.25, 0.46, 0.45, 0.94],
+                        }}
+                        whileHover={
+                          prefersReducedMotion
+                            ? {}
+                            : { scale: 1.05, y: -2, transition: { duration: 0.15 } }
+                        }
+                        whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
+                        className="cursor-default"
+                      >
+                        <div className={cn(
+                          'flex items-center h-12 px-5 rounded-2xl border transition-all duration-300',
+                          'border-foreground/15 bg-background/70',
+                          'hover:bg-black/5 hover:border-foreground/30 hover:shadow-lg',
+                          'dark:hover:bg-white/5 dark:hover:border-foreground/30',
+                        )}>
+                          <span className="text-sm font-light tracking-wide whitespace-nowrap text-gray-900 dark:text-white">
+                            {skill}
+                          </span>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
