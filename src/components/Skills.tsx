@@ -92,10 +92,7 @@ export function Skills() {
                 'dark:bg-white/[0.02] dark:hover:bg-white/5 dark:hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.25)]',
                 'backdrop-blur-md',
               )}>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="font-display text-4xl lg:text-5xl leading-none text-foreground/[0.08] select-none">
-                    {String(catIdx + 1).padStart(2, '0')}
-                  </span>
+                <div className="mb-6">
                   <h3 className="text-lg lg:text-xl font-medium font-poppins tracking-wide text-foreground/80">
                     {cat.category}
                   </h3>
