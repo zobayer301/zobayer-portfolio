@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 const skillCategories = [
   {
     category: 'Programming Languages',
-    skills: ['Python', 'SQL', 'HTML & CSS'],
+    skills: ['Python', 'HTML & CSS'],
   },
   {
     category: 'Data Science & Analytics',
