@@ -86,16 +86,17 @@ export function Skills() {
               className="group"
             >
               <div className={cn(
-                'relative h-full p-6 lg:p-8 rounded-2xl border transition-all duration-300',
-                'border-foreground/10 bg-foreground/[0.02]',
-                'hover:border-foreground/25 hover:bg-foreground/[0.04] hover:shadow-lg',
-                'dark:bg-white/[0.02] dark:hover:bg-white/[0.04]',
+                'relative h-full p-6 lg:p-8 rounded-3xl border transition-all duration-500',
+                'border-foreground/10 bg-gradient-to-br from-foreground/[0.04] to-foreground/[0.01]',
+                'hover:border-foreground/25 hover:bg-black/5 hover:shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)]',
+                'dark:bg-white/[0.02] dark:hover:bg-white/5 dark:hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.25)]',
+                'backdrop-blur-md',
               )}>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="font-display text-4xl lg:text-5xl leading-none text-foreground/[0.08] select-none">
                     {String(catIdx + 1).padStart(2, '0')}
                   </span>
-                  <h3 className="text-lg lg:text-xl font-medium tracking-wide text-foreground/80">
+                  <h3 className="text-lg lg:text-xl font-medium font-poppins tracking-wide text-foreground/80">
                     {cat.category}
                   </h3>
                 </div>
@@ -121,12 +122,12 @@ export function Skills() {
                       className="cursor-default"
                     >
                       <div className={cn(
-                        'flex items-center h-10 px-4 rounded-xl border transition-all duration-300',
+                        'flex items-center h-10 px-4 rounded-2xl border transition-all duration-300',
                         'border-foreground/15 bg-background/70',
                         'hover:bg-black/5 hover:border-foreground/30 hover:shadow-md',
                         'dark:hover:bg-white/5 dark:hover:border-foreground/30',
                       )}>
-                        <span className="text-sm font-light tracking-wide whitespace-nowrap text-gray-900 dark:text-white">
+                        <span className="text-base font-poppins font-light tracking-wide whitespace-nowrap text-gray-900 dark:text-white">
                           {skill}
                         </span>
                       </div>
