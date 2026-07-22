@@ -5,6 +5,7 @@ import { About } from '@/components/About'
 import { Skills } from '@/components/Skills'
 import { Work } from '@/components/Work'
 import { Education } from '@/components/Education'
+import { Faq } from '@/components/Faq'
 import { Contact } from '@/components/Contact'
 import { ScrollToTop } from '@/components/ScrollToTop'
 
@@ -20,6 +21,7 @@ export default function Index() {
         <Education />
         <Skills />
         <Work />
+        <Faq />
         <Contact />
       </main>
     </div>
