@@ -14,7 +14,7 @@ const skillCategories = [
       'Pandas',
       'NumPy',
       'Data Cleaning',
-      'Exploratory Data Analysis (EDA)',
+      'Exploratory Data Analysis',
       'Feature Engineering',
       'Matplotlib',
       'Seaborn',
@@ -68,59 +68,109 @@ export function Skills() {
           SKILLS
         </motion.h2>
 
-        <div className="flex flex-col gap-10 lg:gap-14">
-          {skillCategories.map((cat) => (
-            <div key={cat.category}>
-              <motion.h3
-                initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+        <div className={cn(
+          'grid gap-4 lg:gap-5',
+          isMobile ? 'grid-cols-1' : 'grid-cols-12'
+        )}>
+          {skillCategories.map((cat, catIdx) => {
+            const colSpans = [5, 8, 7, 4]
+            const span = colSpans[catIdx]
+            const isLarge = catIdx === 1
+
+            return (
+              <motion.div
+                key={cat.category}
+                initial={prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: viewportMargin }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
-                className="text-sm font-medium text-foreground/60 tracking-widest uppercase mb-4"
+                transition={{
+                  duration: 0.7,
+                  delay: isMobile ? catIdx * 0.1 : catIdx * 0.12,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+                className={cn(
+                  'group relative rounded-2xl border border-foreground/10 overflow-hidden transition-all duration-500',
+                  'bg-gradient-to-br from-black/5 to-transparent',
+                  'dark:from-foreground/[0.04] dark:to-transparent',
+                  'hover:border-foreground/20',
+                  isMobile ? '' : ''
+                )}
+                style={!isMobile ? { gridColumn: `span ${span}` } : undefined}
               >
-                {cat.category}
-              </motion.h3>
-              <div className="flex flex-wrap gap-3 lg:gap-4">
-                {cat.skills.map((skill) => {
-                  const idx = globalIndex++
-                  return (
-                    <motion.div
-                      key={skill}
-                      initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.8, y: 20 }}
-                      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                      viewport={{ once: true, margin: viewportMargin }}
-                      transition={{
-                        duration: 0.5,
-                        delay: isMobile ? 0 : idx * 0.04,
-                        ease: [0.25, 0.46, 0.45, 0.94],
-                      }}
-                      whileHover={
-                        prefersReducedMotion
-                          ? {}
-                          : {
-                              scale: 1.05,
-                              y: -2,
-                              transition: { duration: 0.2 },
-                            }
-                      }
-                      whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
-                      className="group relative cursor-default"
-                    >
-                      <div className={cn(
-                        'relative px-5 py-2.5 lg:px-6 lg:py-3 rounded-full border border-foreground/15 backdrop-blur-sm transition-all duration-300 min-h-[44px] flex items-center',
-                        'hoverable bg-black text-white border-black hover:bg-neutral-800 hover:border-neutral-800',
-                        'dark:bg-transparent dark:text-foreground/80 dark:border-foreground/15 dark:hover:border-foreground/40 dark:hover:bg-transparent dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.08)]'
-                      )}>
-                        <span className="text-sm lg:text-base font-light tracking-wide transition-colors duration-300 whitespace-nowrap">
-                          {skill}
-                        </span>
-                      </div>
-                    </motion.div>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
+                <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className={cn(
+                  'relative p-6 lg:p-8',
+                  isLarge ? 'lg:p-10' : ''
+                )}>
+                  <div className="flex items-baseline gap-3 mb-5 lg:mb-7">
+                    <span className="text-xs font-medium tracking-widest uppercase text-foreground/50">
+                      {String(catIdx + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className={cn(
+                      'font-medium tracking-wide uppercase text-foreground/80',
+                      isLarge ? 'text-base lg:text-lg' : 'text-sm lg:text-base'
+                    )}>
+                      {cat.category}
+                    </h3>
+                    <div className="flex-1 h-px bg-foreground/10 ml-2" />
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 lg:gap-2.5">
+                    {cat.skills.map((skill) => {
+                      const idx = globalIndex++
+                      return (
+                        <motion.div
+                          key={skill}
+                          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true, margin: viewportMargin }}
+                          transition={{
+                            duration: 0.4,
+                            delay: isMobile ? 0 : idx * 0.03,
+                            ease: [0.25, 0.46, 0.45, 0.94],
+                          }}
+                          whileHover={
+                            prefersReducedMotion
+                              ? {}
+                              : {
+                                  scale: 1.05,
+                                  y: -1,
+                                  transition: { duration: 0.15 },
+                                }
+                          }
+                          whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
+                          className="cursor-default"
+                        >
+                          <div className={cn(
+                            'px-4 py-2 lg:px-5 lg:py-2.5 rounded-full border transition-all duration-300 min-h-[40px] flex items-center',
+                            'hoverable',
+                            'bg-foreground/5 text-foreground/70 border-foreground/10',
+                            'hover:bg-foreground/10 hover:text-foreground/90 hover:border-foreground/20',
+                            'dark:bg-white/5 dark:text-white/60 dark:border-white/10',
+                            'dark:hover:bg-white/10 dark:hover:text-white/90 dark:hover:border-white/20',
+                            isLarge && 'lg:text-base'
+                          )}>
+                            <span className="text-sm font-light tracking-wide whitespace-nowrap">
+                              {skill}
+                            </span>
+                          </div>
+                        </motion.div>
+                      )
+                    })}
+                  </div>
+
+                  {isLarge && (
+                    <div className="mt-6 pt-5 border-t border-foreground/5">
+                      <p className="text-xs text-foreground/30 tracking-wider uppercase">
+                        {cat.skills.length} skills
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>
