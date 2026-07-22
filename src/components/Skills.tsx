@@ -66,7 +66,7 @@ export function Skills() {
           SKILLS
         </motion.h2>
 
-        <div className="flex flex-col">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
           {skillCategories.map((cat, catIdx) => (
             <motion.div
               key={cat.category}
@@ -78,59 +78,60 @@ export function Skills() {
                 delay: catIdx * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
+              whileHover={
+                prefersReducedMotion
+                  ? {}
+                  : { y: -4, transition: { duration: 0.2 } }
+              }
               className="group"
             >
               <div className={cn(
-                'flex items-start gap-6 lg:gap-10 py-8 lg:py-12',
-                catIdx < skillCategories.length - 1 && 'border-b border-foreground/10'
+                'relative h-full p-6 lg:p-8 rounded-2xl border transition-all duration-300',
+                'border-foreground/10 bg-foreground/[0.02]',
+                'hover:border-foreground/25 hover:bg-foreground/[0.04] hover:shadow-lg',
+                'dark:bg-white/[0.02] dark:hover:bg-white/[0.04]',
               )}>
-                <div className="shrink-0 relative">
-                  <span className="font-display text-[80px] lg:text-[120px] leading-none text-foreground/[0.06] select-none">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="font-display text-4xl lg:text-5xl leading-none text-foreground/[0.08] select-none">
                     {String(catIdx + 1).padStart(2, '0')}
                   </span>
-                  <span className="absolute bottom-2 lg:bottom-4 left-1/2 -translate-x-1/2 text-xs font-medium tracking-widest text-foreground/40">
-                    {String(catIdx + 1).padStart(2, '0')}
-                  </span>
-                </div>
-
-                <div className="flex-1 pt-2 lg:pt-4">
-                  <h3 className="text-lg lg:text-xl font-medium tracking-wide text-foreground/80 mb-5 lg:mb-7">
+                  <h3 className="text-lg lg:text-xl font-medium tracking-wide text-foreground/80">
                     {cat.category}
                   </h3>
+                </div>
 
-                  <div className="flex flex-wrap gap-2.5 lg:gap-3">
-                    {cat.skills.map((skill, skillIdx) => (
-                      <motion.div
-                        key={skill}
-                        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: viewportMargin }}
-                        transition={{
-                          duration: 0.4,
-                          delay: isMobile ? 0 : skillIdx * 0.03,
-                          ease: [0.25, 0.46, 0.45, 0.94],
-                        }}
-                        whileHover={
-                          prefersReducedMotion
-                            ? {}
-                            : { scale: 1.05, y: -2, transition: { duration: 0.15 } }
-                        }
-                        whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
-                        className="cursor-default"
-                      >
-                        <div className={cn(
-                          'flex items-center h-12 px-5 rounded-2xl border transition-all duration-300',
-                          'border-foreground/15 bg-background/70',
-                          'hover:bg-black/5 hover:border-foreground/30 hover:shadow-lg',
-                          'dark:hover:bg-white/5 dark:hover:border-foreground/30',
-                        )}>
-                          <span className="text-sm font-light tracking-wide whitespace-nowrap text-gray-900 dark:text-white">
-                            {skill}
-                          </span>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
+                <div className="flex flex-wrap gap-2.5 lg:gap-3">
+                  {cat.skills.map((skill, skillIdx) => (
+                    <motion.div
+                      key={skill}
+                      initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: viewportMargin }}
+                      transition={{
+                        duration: 0.4,
+                        delay: isMobile ? 0 : skillIdx * 0.03,
+                        ease: [0.25, 0.46, 0.45, 0.94],
+                      }}
+                      whileHover={
+                        prefersReducedMotion
+                          ? {}
+                          : { scale: 1.05, y: -2, transition: { duration: 0.15 } }
+                      }
+                      whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
+                      className="cursor-default"
+                    >
+                      <div className={cn(
+                        'flex items-center h-10 px-4 rounded-xl border transition-all duration-300',
+                        'border-foreground/15 bg-background/70',
+                        'hover:bg-black/5 hover:border-foreground/30 hover:shadow-md',
+                        'dark:hover:bg-white/5 dark:hover:border-foreground/30',
+                      )}>
+                        <span className="text-sm font-light tracking-wide whitespace-nowrap text-gray-900 dark:text-white">
+                          {skill}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </motion.div>
