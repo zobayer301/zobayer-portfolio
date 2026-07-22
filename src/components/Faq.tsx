@@ -17,22 +17,6 @@ const faqs = [
     answer: 'I\'m currently open to full-time, internship, and freelance opportunities in Artificial Intelligence, Machine Learning, Data Science, and Python Development.',
   },
   {
-    question: 'What is your strongest project?',
-    answer: 'My undergraduate thesis, AI-Driven Early Detection of Heart Disease, is my flagship project. It involved building and evaluating machine learning and deep learning models for disease prediction, focusing on data preprocessing, model performance, and practical healthcare applications.',
-  },
-  {
-    question: 'Can I see your projects?',
-    answer: 'Absolutely! My portfolio showcases a collection of AI, Machine Learning, and Data Science projects. You can also explore the source code and additional work on my GitHub profile.',
-  },
-  {
-    question: 'Are you available for collaboration?',
-    answer: 'Yes! I\'m always interested in collaborating on innovative AI, Machine Learning, and open-source projects. Feel free to reach out if you\'d like to work together.',
-  },
-  {
-    question: 'Do you have industry experience?',
-    answer: 'Alongside my academic projects, I completed an internship focused on AR/VR development and Unity scripting. I have also built multiple practical machine learning projects and continue expanding my skills through continuous learning.',
-  },
-  {
     question: 'How can I contact you?',
     answer: 'The easiest way to reach me is through the contact form on this website or via email and LinkedIn. I\'ll respond as soon as possible.',
   },
@@ -72,9 +56,9 @@ export function Faq() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-16 lg:mb-24"
+          className="hover-bob font-display text-[7vw] sm:text-[6vw] lg:text-large leading-none tracking-tight mb-16 lg:mb-24"
         >
-          FAQ
+          FREQUENTLY ASKED QUESTIONS
         </motion.h2>
 
         <div className="max-w-4xl mx-auto">
