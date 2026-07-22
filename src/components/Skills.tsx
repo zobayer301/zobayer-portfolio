@@ -89,18 +89,18 @@ export function Skills() {
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
                 className={cn(
-                  'group relative rounded-2xl border border-foreground/10 overflow-hidden transition-all duration-500',
-                  'bg-gradient-to-br from-black/5 to-transparent',
-                  'dark:from-foreground/[0.04] dark:to-transparent',
-                  'hover:border-foreground/20',
+                  'group relative rounded-3xl overflow-hidden transition-all duration-500',
+                  'border border-foreground/10',
+                  'bg-gradient-to-br from-foreground/[0.04] to-foreground/[0.01]',
+                  'backdrop-blur-md shadow-2xl',
+                  'hover:bg-black/5 hover:shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] hover:border-foreground/30 hover:scale-[1.01]',
+                  'dark:hover:bg-white/5 dark:hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.25)]',
                   isMobile ? '' : ''
                 )}
                 style={!isMobile ? { gridColumn: `span ${span}` } : undefined}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-foreground/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
                 <div className={cn(
-                  'relative p-6 lg:p-8',
+                  'relative p-7 sm:p-10',
                   isLarge ? 'lg:p-10' : ''
                 )}>
                   <div className="flex items-baseline gap-3 mb-5 lg:mb-7">
@@ -116,7 +116,7 @@ export function Skills() {
                     <div className="flex-1 h-px bg-foreground/10 ml-2" />
                   </div>
 
-                  <div className="flex flex-wrap gap-2 lg:gap-2.5">
+                  <div className="flex flex-wrap gap-3">
                     {cat.skills.map((skill) => {
                       const idx = globalIndex++
                       return (
@@ -135,7 +135,7 @@ export function Skills() {
                               ? {}
                               : {
                                   scale: 1.05,
-                                  y: -1,
+                                  y: -2,
                                   transition: { duration: 0.15 },
                                 }
                           }
@@ -143,15 +143,12 @@ export function Skills() {
                           className="cursor-default"
                         >
                           <div className={cn(
-                            'px-4 py-2 lg:px-5 lg:py-2.5 rounded-full border transition-all duration-300 min-h-[40px] flex items-center',
-                            'hoverable',
-                            'bg-foreground/5 text-foreground/70 border-foreground/10',
-                            'hover:bg-foreground/10 hover:text-foreground/90 hover:border-foreground/20',
-                            'dark:bg-white/5 dark:text-white/60 dark:border-white/10',
-                            'dark:hover:bg-white/10 dark:hover:text-white/90 dark:hover:border-white/20',
-                            isLarge && 'lg:text-base'
+                            'flex items-center h-14 px-6 rounded-2xl border transition-all duration-300',
+                            'border-foreground/15 bg-background/70',
+                            'hover:bg-black/5 hover:border-foreground/30 hover:shadow-lg',
+                            'dark:hover:bg-white/5 dark:hover:border-foreground/30',
                           )}>
-                            <span className="text-sm font-light tracking-wide whitespace-nowrap">
+                            <span className="text-sm lg:text-base font-light tracking-wide whitespace-nowrap text-gray-900 dark:text-white">
                               {skill}
                             </span>
                           </div>
@@ -161,7 +158,7 @@ export function Skills() {
                   </div>
 
                   {isLarge && (
-                    <div className="mt-6 pt-5 border-t border-foreground/5">
+                    <div className="mt-6 pt-5 border-t border-foreground/10">
                       <p className="text-xs text-foreground/30 tracking-wider uppercase">
                         {cat.skills.length} skills
                       </p>
