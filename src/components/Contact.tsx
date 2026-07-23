@@ -69,8 +69,14 @@ const socialLinks: SocialLink[] = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
   { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
   { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Md-Zobayer-Chowdhury', icon: ResearchGateIcon, external: true },
-  { label: 'mdzobayerchowdhury3077@gmail.com', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: false },
 ]
+
+const emailLink: SocialLink = {
+  label: 'mdzobayerchowdhury3077@gmail.com',
+  href: 'mailto:mdzobayerchowdhury3077@gmail.com',
+  icon: MailIcon,
+  external: false,
+}
 
 export function Contact() {
   const ownerEmail = 'mdzobayerchowdhury3077@gmail.com'
@@ -227,40 +233,48 @@ export function Contact() {
           </form>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mb-12 lg:mb-16">
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mb-6">
           {socialLinks.map((link, index) => {
             const Icon = link.icon
             return (
               <motion.a
                 key={link.label}
                 href={link.href}
-                onClick={
-                  link.label.includes('@')
-                    ? (e) => {
-                        e.preventDefault()
-                        window.open(link.href, '_blank', 'noopener,noreferrer')
-                        navigator.clipboard?.writeText(link.label).then(
-                          () => toast.success('Email copied to clipboard!'),
-                          () => {}
-                        )
-                      }
-                    : link.onClick
-                }
                 {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                aria-label={link.label.includes('@') ? link.label : link.label}
+                aria-label={link.label}
                 className="hoverable flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2"
               >
                 <Icon />
-                {(link.label.includes('@') || link.showLabel) && (
-                  <span className="text-xs tracking-wide normal-case">{link.label}</span>
-                )}
               </motion.a>
             )
           })}
+        </div>
+
+        <div className="flex justify-center mb-12 lg:mb-16">
+          <motion.a
+            href={emailLink.href}
+            onClick={(e) => {
+              e.preventDefault()
+              window.open(emailLink.href, '_blank', 'noopener,noreferrer')
+              navigator.clipboard?.writeText(emailLink.label).then(
+                () => toast.success('Email copied to clipboard!'),
+                () => {}
+              )
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            aria-label={emailLink.label}
+            className="hoverable flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2"
+          >
+            <MailIcon />
+            <span className="text-xs tracking-wide normal-case">{emailLink.label}</span>
+          </motion.a>
         </div>
 
         <motion.footer
