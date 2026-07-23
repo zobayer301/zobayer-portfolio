@@ -278,8 +278,11 @@ export function Contact() {
         </div>
 
         <motion.footer
-          {...fadeInUp}
-          className="pt-8 border-t border-gray-300 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '0px' }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="pt-8 pb-4 border-t border-gray-300 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-xs text-gray-800 dark:text-gray-300">
             &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.
