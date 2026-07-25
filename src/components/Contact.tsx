@@ -271,7 +271,9 @@ export function Contact() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="w-full py-6 flex flex-col items-center justify-center gap-2"
       >
-        <img src="/logo.png" alt="Logo" className="h-10 w-10 rounded-full object-cover" />
+        <div className="h-10 w-10 rounded-full bg-black dark:bg-white flex items-center justify-center">
+          <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover" />
+        </div>
         <p className="text-xs text-gray-900 dark:text-gray-100">
           &copy; 2026 All rights reserved by Md. Zobayer Chowdhury
         </p>
