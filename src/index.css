@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -200,4 +200,21 @@
 
 .img-editorial:hover {
   filter: grayscale(0%);
+}
+
+/* Theme transition — vertical wipe */
+::view-transition-old(root) {
+  animation: none;
+}
+::view-transition-new(root) {
+  animation: vertical-wipe-in 0.5s ease;
+  mix-blend-mode: normal;
+}
+@keyframes vertical-wipe-in {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
 }
