@@ -115,7 +115,7 @@ export function Education() {
           />
 
           <EducationCard
-            image="campus.jpg"
+            image="school.png"
             label="KRISHNAGOPALPUR DWI-MUKHI HIGH SCHOOL, NAOGAON"
             degree="Secondary School Certificate (Science)"
             description="Completed Secondary School education in the Science group, developing fundamental knowledge in core scientific disciplines and analytical thinking."
