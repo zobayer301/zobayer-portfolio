@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react"
 import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle, Menu, Sun, Moon } from "lucide-react"
 import { useTheme } from "next-themes"
 import { MenuContainer, MenuItem } from "@/components/NavigationMenu"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 const navItems = [
   { id: "about", label: "About", icon: <User size={18} /> },
@@ -18,8 +19,15 @@ export function Navigation() {
   const [activeIndex, setActiveIndex] = useState(0)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const isMobile = useIsMobile()
 
   useEffect(() => setMounted(true), [])
+
+  useEffect(() => {
+    if (isMobile && theme === "dark") {
+      setTheme("light")
+    }
+  }, [isMobile])
 
   useEffect(() => {
     const onScroll = () => {
@@ -65,7 +73,7 @@ export function Navigation() {
   }
 
   return (
-    <div className="fixed left-4 top-4 z-[9500]">
+    <div className="fixed right-4 sm:left-4 top-4 z-[9500]">
       <MenuContainer>
         <MenuItem icon={<Menu size={20} />} />
         {navItems.map((item) => (

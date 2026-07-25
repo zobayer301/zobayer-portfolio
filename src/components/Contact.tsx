@@ -45,7 +45,7 @@ const ResearchGateIcon = () => (
   <img
     src="/research.png"
     alt="ResearchGate"
-    className="h-28 w-28 object-contain rounded"
+    className="h-28 w-28 object-contain rounded dark:brightness-0 dark:invert"
   />
 )
 
