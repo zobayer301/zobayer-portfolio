@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ExternalLink, Mail, ChevronDown } from "lucide-react"
+import { ArrowRight, Mail, ChevronDown } from "lucide-react"
 
 const MapPinIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-primary shrink-0">
@@ -90,7 +90,7 @@ export function Hero() {
             className="inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-black/20 text-foreground/80 text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 dark:border-foreground/30 dark:hover:bg-foreground/10"
           >
             RESUME
-            <ExternalLink size={16} className="shrink-0" />
+            <ArrowRight size={16} className="shrink-0" />
           </motion.a>
         </motion.main>
 

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -43,7 +43,7 @@ function EducationCard({
             className="mt-4 text-xs text-foreground/70 uppercase tracking-widest hover:text-foreground transition-colors inline-flex items-center gap-1.5"
           >
             {label}
-            <ExternalLink size={12} className="shrink-0" />
+            <ArrowRight size={12} className="shrink-0" />
           </a>
         ) : (
           <p className="mt-4 text-xs text-foreground/70 uppercase tracking-widest">
