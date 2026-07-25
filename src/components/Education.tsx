@@ -85,17 +85,17 @@ export function Education() {
           />
 
           <EducationCard
-            image="campus.jpg"
+            image="college.jpg"
             label="N.S GOVT. COLLEGE, NATORE"
             degree="Higher Secondary Certificate (Science)"
-            description="Completed Higher Secondary education with a focus on Science, building a strong foundation in physics, chemistry, mathematics, and biology that paved the way for a career in technology and data science."
+            description="Completed Higher Secondary education with a focus on Science, building a strong foundation in physics, chemistry, mathematics, and biology."
             year="2020"
             index={1}
           />
 
           <EducationCard
             image="campus.jpg"
-            label="KRISHNAGOPALPUR DWI-MUKHI HIGH SCHOOL"
+            label="KRISHNAGOPALPUR DWI-MUKHI HIGH SCHOOL, NAOGAON"
             degree="Secondary School Certificate (Science)"
             description="Completed Secondary School education in the Science group, developing fundamental knowledge in core scientific disciplines and analytical thinking."
             year="2018"
