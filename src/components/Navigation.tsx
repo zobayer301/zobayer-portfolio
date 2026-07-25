@@ -67,9 +67,7 @@ export function Navigation() {
       </div>
 
       <div className="fixed top-3 right-3 z-[9500]">
-        <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center shadow-md">
-          <ThemeToggle inline />
-        </div>
+        <ThemeToggle inline />
       </div>
     </>
   )

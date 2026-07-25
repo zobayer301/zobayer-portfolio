@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -19,8 +19,8 @@ export function ThemeToggle({ inline = false }: { inline?: boolean }) {
       aria-checked={mounted ? isDark : false}
       type="button"
       className={cn(
-        "flex items-center justify-center rounded-full transition-colors duration-200 h-10 w-10 min-h-[40px] min-w-[40px]",
-        "text-gray-800 hover:text-black hover:bg-black/10 dark:text-gray-300 dark:hover:text-gray-200 dark:hover:bg-white/15",
+        "flex items-center justify-center transition-colors duration-200",
+        "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100",
         "focus:outline-none"
       )}
     >

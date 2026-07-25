@@ -59,7 +59,6 @@ export function MenuItem({ children, onClick, disabled = false, icon, isActive =
     <button
       className={`relative block w-full h-12 text-center group
         ${disabled ? "text-gray-400 dark:text-gray-500 cursor-not-allowed" : "text-gray-600 dark:text-gray-300"}
-        ${isActive ? "bg-white/10" : ""}
       `}
       role="menuitem"
       onClick={onClick}
@@ -86,10 +85,10 @@ export function MenuContainer({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="relative w-12" data-expanded={isExpanded}>
+    <div className="relative w-8" data-expanded={isExpanded}>
       <div className="relative">
         <div 
-          className="relative w-12 h-12 bg-gray-100 dark:bg-gray-800 cursor-pointer rounded-full group will-change-transform z-50"
+          className="relative w-8 h-8 cursor-pointer z-50 flex items-center justify-center"
           onClick={handleToggle}
         >
           {childrenArray[0]}
@@ -98,9 +97,9 @@ export function MenuContainer({ children }: { children: React.ReactNode }) {
         {childrenArray.slice(1).map((child, index) => (
           <div 
             key={index} 
-            className="absolute top-0 left-0 w-12 h-12 bg-gray-100 dark:bg-gray-800 will-change-transform rounded-full"
+            className="absolute top-0 left-0 w-8 h-8 will-change-transform flex items-center justify-center"
             style={{
-              transform: `translateY(${isExpanded ? (index + 1) * 40 : 0}px)`,
+              transform: `translateY(${isExpanded ? (index + 1) * 36 : 0}px)`,
               opacity: isExpanded ? 1 : 0,
               zIndex: 40 - index,
               transition: `transform ${isExpanded ? '300ms' : '300ms'} cubic-bezier(0.4, 0, 0.2, 1),
