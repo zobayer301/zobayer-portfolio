@@ -58,7 +58,7 @@ export function MenuItem({ children, onClick, disabled = false, icon, isActive =
   return (
     <button
       className={`relative block w-full h-12 text-center group
-        ${disabled ? "text-gray-400 dark:text-gray-500 cursor-not-allowed" : "text-gray-700 dark:text-gray-200"}
+        ${disabled ? "text-gray-400 dark:text-gray-500 cursor-not-allowed" : "text-white/80 dark:text-gray-200"}
       `}
       role="menuitem"
       onClick={onClick}
@@ -88,7 +88,7 @@ export function MenuContainer({ children }: { children: React.ReactNode }) {
     <div className="relative w-8" data-expanded={isExpanded}>
       <div className="relative">
         <div 
-          className="relative w-8 h-8 cursor-pointer z-50 flex items-center justify-center text-gray-700 dark:text-gray-200"
+          className="relative w-8 h-8 cursor-pointer z-50 flex items-center justify-center text-white/80 dark:text-gray-200"
           onClick={handleToggle}
         >
           {childrenArray[0]}
@@ -97,7 +97,7 @@ export function MenuContainer({ children }: { children: React.ReactNode }) {
         {childrenArray.slice(1).map((child, index) => (
           <div 
             key={index} 
-            className="absolute top-0 left-0 w-8 h-8 will-change-transform flex items-center justify-center text-gray-700 dark:text-gray-200"
+            className="absolute top-0 left-0 w-8 h-8 will-change-transform flex items-center justify-center text-white/80 dark:text-gray-200"
             style={{
               transform: `translateY(${isExpanded ? (index + 1) * 36 : 0}px)`,
               opacity: isExpanded ? 1 : 0,
