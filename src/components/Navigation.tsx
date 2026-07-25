@@ -1,17 +1,16 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle } from "lucide-react"
-import { ThemeToggle } from "@/components/ThemeToggle"
-import { cn } from "@/lib/utils"
+import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle, MoreVertical } from "lucide-react"
+import { MenuContainer, MenuItem } from "@/components/NavigationMenu"
 
 const navItems = [
-  { id: "about", label: "About", icon: User },
-  { id: "education", label: "Education", icon: GraduationCap },
-  { id: "skills", label: "Skills", icon: Code },
-  { id: "work", label: "Projects", icon: Briefcase },
-  { id: "faq", label: "FAQ", icon: HelpCircle },
-  { id: "contact", label: "Contact", icon: Mail },
+  { id: "about", label: "About", icon: <User size={18} /> },
+  { id: "education", label: "Education", icon: <GraduationCap size={18} /> },
+  { id: "skills", label: "Skills", icon: <Code size={18} /> },
+  { id: "work", label: "Projects", icon: <Briefcase size={18} /> },
+  { id: "faq", label: "FAQ", icon: <HelpCircle size={18} /> },
+  { id: "contact", label: "Contact", icon: <Mail size={18} /> },
 ]
 
 export function Navigation() {
@@ -53,32 +52,19 @@ export function Navigation() {
     if (element) element.scrollIntoView({ behavior: "smooth" })
   }
 
-  const iconColor = atHero ? "text-white/80 hover:text-white" : "text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-
   return (
     <>
       <div className="fixed left-4 top-4 z-[9500]">
-        <div className="flex flex-col items-center gap-5">
-          {navItems.map((item, index) => {
-            const Icon = item.icon
-            const isActive = activeIndex === index
-            return (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                aria-label={item.label}
-                type="button"
-                className={cn(
-                  "flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl transition-all duration-200",
-                  iconColor,
-                  isActive && "bg-white/15 dark:bg-white/10"
-                )}
-              >
-                <Icon size={18} />
-              </button>
-            )
-          })}
-        </div>
+        <MenuContainer atHero={atHero}>
+          <MenuItem icon={<MoreVertical size={20} />} />
+          {navItems.map((item) => (
+            <MenuItem
+              key={item.id}
+              icon={item.icon}
+              onClick={() => scrollToSection(item.id)}
+            />
+          ))}
+        </MenuContainer>
       </div>
       <div className="fixed top-3 right-3 z-[9500]">
         <ThemeToggle />
