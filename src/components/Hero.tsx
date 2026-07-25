@@ -53,35 +53,33 @@ export function Hero() {
       animate="visible"
       variants={containerVariants}
     >
-      <div className="flex w-full flex-col justify-between p-6 sm:p-8 md:p-12 lg:w-3/5 lg:p-16">
-        <div>
-          <motion.main variants={containerVariants}>
-            <motion.h1
-              variants={itemVariants}
-              className="font-display text-[13vw] sm:text-[10vw] md:text-[6.5vw] lg:text-[5.5vw] leading-none tracking-tighter text-foreground"
-            >
-              Md. Zobayer Chowdhury
-            </motion.h1>
-            <motion.div variants={itemVariants} className="my-5 sm:my-6 h-1 w-20 bg-primary" />
-            <motion.p variants={itemVariants} className="mb-8 max-w-md text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-              Computer Science & Engineering Graduate<br />
-              Data Science & Machine Learning Engineer
-            </motion.p>
-            <motion.a
-              href="/Md_Zobayer_Chowdhury_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={itemVariants}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary/30 bg-primary/5 text-sm font-medium tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              RESUME
-              <ExternalLink size={16} />
-            </motion.a>
-          </motion.main>
-        </div>
+      <div className="flex w-full flex-col p-6 sm:p-8 md:p-12 lg:w-3/5 lg:p-16 md:relative md:justify-center">
+        <motion.main variants={containerVariants}>
+          <motion.h1
+            variants={itemVariants}
+            className="font-display text-[13vw] sm:text-[10vw] md:text-[6.5vw] lg:text-[5.5vw] leading-none tracking-tighter text-foreground"
+          >
+            Md. Zobayer Chowdhury
+          </motion.h1>
+          <motion.div variants={itemVariants} className="my-5 sm:my-6 h-1 w-20 bg-primary" />
+          <motion.p variants={itemVariants} className="mb-8 max-w-md text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+            Computer Science & Engineering Graduate<br />
+            Data Science & Machine Learning Engineer
+          </motion.p>
+          <motion.a
+            href="/Md_Zobayer_Chowdhury_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={itemVariants}
+            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-black/20 text-foreground/80 text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 dark:border-foreground/30 dark:hover:bg-foreground/10"
+          >
+            RESUME
+            <ExternalLink size={16} className="shrink-0" />
+          </motion.a>
+        </motion.main>
 
-        <motion.footer variants={itemVariants} className="mt-10 sm:mt-12 w-full">
-          <div className="grid grid-cols-1 gap-3 sm:gap-4 text-xs text-muted-foreground sm:grid-cols-3">
+        <motion.footer variants={itemVariants} className="mt-10 sm:mt-12 md:absolute md:bottom-8 lg:bottom-12 md:left-12 lg:left-16 w-full max-w-[calc(100%-6rem)]">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground">
             <div className="flex items-center gap-2">
               <GlobeIcon />
               <span className="truncate">mdzobayerchowdhury3077@gmail.com</span>
