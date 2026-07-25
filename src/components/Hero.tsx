@@ -1,14 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { ExternalLink } from "lucide-react"
-
-const GlobeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-primary shrink-0">
-    <circle cx="12" cy="12" r="10" />
-    <line x1="2" x2="22" y1="12" y2="12" />
-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-  </svg>
-)
+import { ExternalLink, Mail, ChevronDown } from "lucide-react"
 
 const MapPinIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-primary shrink-0">
@@ -81,7 +73,7 @@ export function Hero() {
         <motion.footer variants={itemVariants} className="mt-10 sm:mt-12 md:absolute md:bottom-8 lg:bottom-12 md:left-12 lg:left-16 w-full max-w-[calc(100%-6rem)]">
           <div className="flex flex-row flex-wrap justify-between gap-x-4 gap-y-2 text-xs text-muted-foreground">
             <div className="flex items-center gap-2">
-              <GlobeIcon />
+              <Mail size={16} className="text-primary shrink-0" />
               <span className="truncate">mdzobayerchowdhury3077@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
@@ -94,6 +86,7 @@ export function Hero() {
             >
               <BriefcaseIcon />
               <span>Open to opportunities</span>
+              <ChevronDown size={14} className="text-primary shrink-0" />
             </button>
           </div>
         </motion.footer>
