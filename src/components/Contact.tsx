@@ -45,7 +45,7 @@ const ResearchGateIcon = () => (
   <img
     src="/research.png"
     alt="ResearchGate"
-    className="h-10 w-10 object-contain rounded"
+    className="h-14 w-14 object-contain rounded"
   />
 )
 
@@ -269,9 +269,9 @@ export function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '0px' }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="w-full py-6 flex flex-col items-center justify-center gap-1"
+        className="w-full py-6 flex flex-col items-center justify-center gap-2"
       >
-        <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover" />
+        <img src="/logo.png" alt="Logo" className="h-10 w-10 rounded-full object-cover" />
         <p className="text-xs text-gray-900 dark:text-gray-100">
           &copy; 2026 All rights reserved by Md. Zobayer Chowdhury
         </p>
