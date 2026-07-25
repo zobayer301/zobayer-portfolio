@@ -16,6 +16,7 @@ const navItems = [
 
 export function Navigation() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [atHero, setAtHero] = useState(true)
 
   useEffect(() => {
     const onScroll = () => {
@@ -35,6 +36,7 @@ export function Navigation() {
         }
       }
       setActiveIndex((prev) => (prev === current ? prev : current))
+      setAtHero(window.scrollY < window.innerHeight * 0.5)
     }
 
     onScroll()
@@ -54,7 +56,7 @@ export function Navigation() {
   return (
     <>
       <div className="fixed top-3 left-3 z-[9500]">
-        <MenuContainer>
+        <MenuContainer atHero={atHero}>
           <MenuItem icon={<MenuIcon size={18} />} />
           {navItems.map((item) => (
             <MenuItem
