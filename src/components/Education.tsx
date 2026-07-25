@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { ExternalLink } from 'lucide-react'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -22,36 +23,27 @@ function EducationCard({
   description: string
   year: string
 }) {
-  const img = (
-    <div className="hoverable relative overflow-hidden rounded-2xl">
-      <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <img
-        src={image}
-        alt={label}
-        className="w-full h-auto transition-all duration-700 group-hover:scale-105"
-      />
-    </div>
-  )
-
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
       <motion.div {...fadeInUp} className="lg:col-span-2 relative group overflow-hidden">
-        {url ? (
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            {img}
-          </a>
-        ) : (
-          img
-        )}
+        <div className="hoverable relative overflow-hidden rounded-2xl">
+          <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img
+            src={image}
+            alt={label}
+            className="w-full h-auto transition-all duration-700 group-hover:scale-105"
+          />
+        </div>
         <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-foreground/20 rounded-2xl -z-10" />
         {url ? (
           <a
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 text-xs text-foreground/70 uppercase tracking-widest hover:text-foreground transition-colors inline-block"
+            className="mt-4 text-xs text-foreground/70 uppercase tracking-widest hover:text-foreground transition-colors inline-flex items-center gap-1.5"
           >
             {label}
+            <ExternalLink size={12} className="shrink-0" />
           </a>
         ) : (
           <p className="mt-4 text-xs text-foreground/70 uppercase tracking-widest">

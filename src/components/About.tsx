@@ -40,7 +40,7 @@ export function About() {
   ]
 
   return (
-    <section id="about" className="section-padding" style={{ paddingTop: 0 }}>
+    <section id="about" className="section-padding" style={{ paddingTop: 'clamp(1.25rem, 2vw, 2.5rem)' }}>
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="group mb-10 lg:mb-12">
           <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">About Zobayer</span>

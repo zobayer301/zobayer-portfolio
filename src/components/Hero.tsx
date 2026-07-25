@@ -1,5 +1,5 @@
-import React from "react"
-import { motion } from "framer-motion"
+import React, { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { ExternalLink, Mail, ChevronDown } from "lucide-react"
 
 const MapPinIcon = () => (
@@ -37,7 +37,21 @@ const scrollToContact = () => {
   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
 }
 
+const subtitles = [
+  "Computer Science & Engineering Graduate",
+  "Data Science & Machine Learning Engineer",
+]
+
 export function Hero() {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % subtitles.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <motion.section
       className="relative flex w-full flex-col overflow-hidden bg-background text-foreground md:flex-row min-h-screen"
@@ -54,9 +68,19 @@ export function Hero() {
             Md. Zobayer Chowdhury
           </motion.h1>
           <motion.div variants={itemVariants} className="my-5 sm:my-6 h-1 w-20 bg-primary" />
-          <motion.p variants={itemVariants} className="mb-8 max-w-md text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-            Computer Science & Engineering Graduate<br />
-            Data Science & Machine Learning Engineer
+          <motion.p variants={itemVariants} className="mb-8 max-w-md text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed min-h-[1.5em]">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={subtitles[index]}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="block"
+              >
+                {subtitles[index]}
+              </motion.span>
+            </AnimatePresence>
           </motion.p>
           <motion.a
             href="/Md_Zobayer_Chowdhury_CV.pdf"
