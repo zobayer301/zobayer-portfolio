@@ -1,5 +1,4 @@
 import React from "react"
-import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { ExternalLink } from "lucide-react"
 
@@ -42,6 +41,10 @@ const itemVariants = {
   },
 }
 
+const scrollToContact = () => {
+  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+}
+
 export function Hero() {
   return (
     <motion.section
@@ -50,25 +53,17 @@ export function Hero() {
       animate="visible"
       variants={containerVariants}
     >
-      <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16">
+      <div className="flex w-full flex-col justify-between p-6 sm:p-8 md:p-12 lg:w-3/5 lg:p-16">
         <div>
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm mb-8">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-            </span>
-            <span className="text-xs sm:text-sm tracking-wide text-primary/80">Available for Opportunities</span>
-          </motion.div>
-
           <motion.main variants={containerVariants}>
             <motion.h1
               variants={itemVariants}
-              className="font-display text-5xl md:text-6xl lg:text-7xl leading-none tracking-tighter text-foreground"
+              className="font-display text-[13vw] sm:text-[10vw] md:text-[6.5vw] lg:text-[5.5vw] leading-none tracking-tighter text-foreground"
             >
-              Md. Zobayer<br />Chowdhury
+              Md. Zobayer Chowdhury
             </motion.h1>
-            <motion.div variants={itemVariants} className="my-6 h-1 w-20 bg-primary" />
-            <motion.p variants={itemVariants} className="mb-8 max-w-md text-base md:text-lg text-muted-foreground leading-relaxed">
+            <motion.div variants={itemVariants} className="my-5 sm:my-6 h-1 w-20 bg-primary" />
+            <motion.p variants={itemVariants} className="mb-8 max-w-md text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
               Computer Science & Engineering Graduate<br />
               Data Science & Machine Learning Engineer
             </motion.p>
@@ -77,7 +72,7 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               variants={itemVariants}
-              className="inline-flex items-center gap-2 text-base font-medium tracking-widest text-primary hover:text-primary/70 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary/30 bg-primary/5 text-sm font-medium tracking-widest text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
               RESUME
               <ExternalLink size={16} />
@@ -85,26 +80,29 @@ export function Hero() {
           </motion.main>
         </div>
 
-        <motion.footer variants={itemVariants} className="mt-12 w-full">
-          <div className="grid grid-cols-1 gap-4 text-xs text-muted-foreground sm:grid-cols-3">
+        <motion.footer variants={itemVariants} className="mt-10 sm:mt-12 w-full">
+          <div className="grid grid-cols-1 gap-3 sm:gap-4 text-xs text-muted-foreground sm:grid-cols-3">
             <div className="flex items-center gap-2">
               <GlobeIcon />
-              <span>mdzobayerchowdhury3077@gmail.com</span>
+              <span className="truncate">mdzobayerchowdhury3077@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPinIcon />
               <span>Dhaka, Bangladesh</span>
             </div>
-            <div className="flex items-center gap-2">
+            <button
+              onClick={scrollToContact}
+              className="flex items-center gap-2 text-left hover:text-primary transition-colors cursor-pointer"
+            >
               <BriefcaseIcon />
               <span>Open to opportunities</span>
-            </div>
+            </button>
           </div>
         </motion.footer>
       </div>
 
       <motion.div
-        className="w-full min-h-[300px] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-2/5"
+        className="w-full min-h-[250px] sm:min-h-[300px] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-2/5"
         style={{ backgroundImage: "url(/hero-image.jpg)" }}
         initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
         animate={{ clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0% 100%)" }}
