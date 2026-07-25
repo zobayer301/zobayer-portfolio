@@ -262,20 +262,20 @@ export function Contact() {
             )
           })}
         </div>
-
-        <motion.footer
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '0px' }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="pt-6 pb-6 bg-black dark:bg-transparent flex items-center justify-center gap-3"
-        >
-          <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover" />
-          <p className="text-xs text-white/80 dark:text-gray-300">
-            &copy; 2026 All rights reserved by Md. Zobayer Chowdhury
-          </p>
-        </motion.footer>
       </div>
+
+      <motion.footer
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '0px' }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="w-full py-6 bg-black dark:bg-transparent flex flex-col items-center justify-center gap-1"
+      >
+        <img src="/logo.png" alt="Logo" className="h-6 w-6 rounded-full object-cover" />
+        <p className="text-xs text-white/80 dark:text-gray-300">
+          &copy; 2026 All rights reserved by Md. Zobayer Chowdhury
+        </p>
+      </motion.footer>
     </section>
   )
 }
