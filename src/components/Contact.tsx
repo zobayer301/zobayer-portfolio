@@ -43,9 +43,9 @@ const GithubIcon = () => (
 
 const ResearchGateIcon = () => (
   <img
-    src="/logo.svg"
+    src="/research.png"
     alt="ResearchGate"
-    className="h-7 w-7 object-contain"
+    className="h-7 w-7 object-contain rounded"
   />
 )
 
@@ -271,8 +271,8 @@ export function Contact() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="w-full py-6 flex flex-col items-center justify-center gap-1"
       >
-        <img src="/logo.png" alt="Logo" className="h-6 w-6 rounded-full object-cover" />
-        <p className="text-xs text-white/80 dark:text-gray-300">
+        <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover" />
+        <p className="text-sm text-gray-900 dark:text-gray-100">
           &copy; 2026 All rights reserved by Md. Zobayer Chowdhury
         </p>
       </motion.footer>
