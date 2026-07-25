@@ -68,18 +68,15 @@ type SocialLink = {
   external: boolean
 }
 
-const row1: SocialLink[] = [
-  { label: 'Email', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: false },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
-  { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
-  { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Md-Zobayer-Chowdhury', icon: ResearchGateIcon, external: true },
-]
-
-const row2: SocialLink[] = [
+const socialLinks: SocialLink[] = [
   { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true },
   { label: 'Instagram', href: 'https://www.instagram.com/random___state_42/', icon: InstagramIcon, external: true },
   { label: 'X', href: 'https://x.com/zobayerchowdhur', icon: XIcon, external: true },
   { label: 'Pinterest', href: 'https://www.pinterest.com/mdzobayerchowdhury3077/_profile/', icon: PinterestIcon, external: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
+  { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
+  { label: 'Email', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: false },
+  { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Md-Zobayer-Chowdhury', icon: ResearchGateIcon, external: true },
 ]
 
 export function Contact() {
@@ -237,8 +234,8 @@ export function Contact() {
           </form>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mb-4">
-          {row1.map((link, index) => {
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mt-12 mb-12 lg:mb-16">
+          {socialLinks.map((link, index) => {
             const Icon = link.icon
             return (
               <motion.a
@@ -253,28 +250,6 @@ export function Contact() {
                     () => {}
                   )
                 } : undefined}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                aria-label={link.label}
-                className="hoverable flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2"
-              >
-                <Icon />
-              </motion.a>
-            )
-          })}
-        </div>
-
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mb-12 lg:mb-16">
-          {row2.map((link, index) => {
-            const Icon = link.icon
-            return (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
