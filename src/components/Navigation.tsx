@@ -77,35 +77,35 @@ export function Navigation() {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-[9500] transition-all duration-300"
+      className="fixed left-4 top-1/2 -translate-y-1/2 z-[9500] transition-all duration-300"
       style={{
-        transform: hidden ? "translateY(-100%)" : "translateY(0)",
         opacity: hidden ? 0 : 1,
+        pointerEvents: hidden ? "none" : "auto",
       }}
     >
-      <div className="w-full px-4 sm:px-6 py-2 flex items-center justify-between">
-        <div className="flex items-center gap-1 sm:gap-2">
-          {navItems.map((item, index) => {
-            const Icon = item.icon
-            const isActive = activeIndex === index
-            return (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                aria-label={item.label}
-                type="button"
-                className={cn(
-                  "flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full transition-all duration-200",
-                  iconColor,
-                  isActive && "bg-white/15 dark:bg-white/10"
-                )}
-              >
-                <Icon size={18} />
-              </button>
-            )
-          })}
+      <div className="flex flex-col items-center gap-5 py-4">
+        {navItems.map((item, index) => {
+          const Icon = item.icon
+          const isActive = activeIndex === index
+          return (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              aria-label={item.label}
+              type="button"
+              className={cn(
+                "flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl transition-all duration-200",
+                iconColor,
+                isActive && "bg-white/15 dark:bg-white/10"
+              )}
+            >
+              <Icon size={18} />
+            </button>
+          )
+        })}
+        <div className="mt-2">
+          <ThemeToggle inline />
         </div>
-        <ThemeToggle inline />
       </div>
     </div>
   )
