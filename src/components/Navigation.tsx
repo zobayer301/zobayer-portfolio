@@ -76,38 +76,40 @@ export function Navigation() {
   const iconColor = atHero ? "text-white/80 hover:text-white" : "text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
 
   return (
-    <div
-      className="fixed left-4 top-1/2 -translate-y-1/2 z-[9500] transition-all duration-300"
-      style={{
-        opacity: hidden ? 0 : 1,
-        pointerEvents: hidden ? "none" : "auto",
-      }}
-    >
-      <div className="flex flex-col items-center gap-5 py-4">
-        {navItems.map((item, index) => {
-          const Icon = item.icon
-          const isActive = activeIndex === index
-          return (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              aria-label={item.label}
-              type="button"
-              className={cn(
-                "flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl transition-all duration-200",
-                iconColor,
-                isActive && "bg-white/15 dark:bg-white/10"
-              )}
-            >
-              <Icon size={18} />
-            </button>
-          )
-        })}
-        <div className="mt-2">
-          <ThemeToggle inline />
+    <>
+      <div
+        className="fixed left-4 top-4 z-[9500] transition-all duration-300"
+        style={{
+          opacity: hidden ? 0 : 1,
+          pointerEvents: hidden ? "none" : "auto",
+        }}
+      >
+        <div className="flex flex-col items-center gap-5">
+          {navItems.map((item, index) => {
+            const Icon = item.icon
+            const isActive = activeIndex === index
+            return (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                aria-label={item.label}
+                type="button"
+                className={cn(
+                  "flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl transition-all duration-200",
+                  iconColor,
+                  isActive && "bg-white/15 dark:bg-white/10"
+                )}
+              >
+                <Icon size={18} />
+              </button>
+            )
+          })}
         </div>
       </div>
-    </div>
+      <div className="fixed top-3 right-3 z-[9500]">
+        <ThemeToggle inline />
+      </div>
+    </>
   )
 }
 
