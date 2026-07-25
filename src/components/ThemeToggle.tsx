@@ -26,37 +26,13 @@ export function ThemeToggle({ inline = false }: { inline?: boolean }) {
       role="switch"
       aria-checked={mounted ? isDark : false}
       type="button"
-      className="relative w-11 h-11 rounded-full transition-all duration-500 focus:outline-none hover:scale-110 active:scale-95 group"
+      className="relative w-11 h-11 rounded-full border border-border bg-background/60 backdrop-blur-sm text-foreground/70 hover:text-foreground hover:bg-background/80 hover:border-foreground/20 transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none"
     >
-      <div
-        className="absolute inset-0 rounded-full backdrop-blur-md border transition-all duration-500 group-hover:shadow-lg"
-        style={{
-          borderColor: isDark ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.12)",
-          background: isDark
-            ? "linear-gradient(135deg, rgba(59,130,246,0.15), rgba(30,64,175,0.1))"
-            : "linear-gradient(135deg, rgba(251,191,36,0.2), rgba(245,158,11,0.1))",
-          boxShadow: isDark
-            ? "0 0 12px rgba(59,130,246,0.15)"
-            : "0 0 12px rgba(251,191,36,0.15)",
-        }}
-      />
       <div className="absolute inset-0 flex items-center justify-center">
         {mounted && isDark ? (
-          <Moon
-            size={18}
-            className="text-blue-300 transition-all duration-500 group-hover:scale-110"
-            style={{
-              filter: "drop-shadow(0 0 4px rgba(96,165,250,0.5))",
-            }}
-          />
+          <Moon size={18} className="transition-all duration-300" />
         ) : (
-          <Sun
-            size={18}
-            className="text-amber-500 transition-all duration-500 group-hover:scale-110 group-hover:rotate-45"
-            style={{
-              filter: "drop-shadow(0 0 4px rgba(251,191,36,0.4))",
-            }}
-          />
+          <Sun size={18} className="transition-all duration-300" />
         )}
       </div>
     </button>
