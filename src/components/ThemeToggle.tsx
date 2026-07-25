@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export function ThemeToggle({ inline = false }: { inline?: boolean }) {
   const { theme, setTheme } = useTheme();
@@ -11,24 +10,28 @@ export function ThemeToggle({ inline = false }: { inline?: boolean }) {
 
   const isDark = theme === "dark";
 
+  const toggle = () => setTheme(isDark ? "light" : "dark");
+
   return (
     <button
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={toggle}
       aria-label="Toggle day and night mode"
       role="switch"
       aria-checked={mounted ? isDark : false}
       type="button"
-      className={cn(
-        "flex items-center justify-center transition-colors duration-200",
-        "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100",
-        "focus:outline-none"
-      )}
+      className="relative w-14 h-7 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none shadow-inner"
     >
-      {mounted && !isDark ? (
-        <Sun className="w-5 h-5" />
-      ) : (
-        <Moon className="w-5 h-5" />
-      )}
+      <div
+        className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center transition-all duration-300 ${
+          isDark ? "left-[calc(100%-26px)]" : "left-0.5"
+        }`}
+      >
+        {mounted && isDark ? (
+          <Moon size={12} className="text-gray-800" />
+        ) : (
+          <Sun size={12} className="text-amber-500" />
+        )}
+      </div>
     </button>
   );
 }
