@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle, MoreVertical } from "lucide-react"
+import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle, Menu } from "lucide-react"
 import { MenuContainer, MenuItem } from "@/components/NavigationMenu"
 import { ThemeToggle } from "@/components/ThemeToggle"
 
@@ -57,7 +57,7 @@ export function Navigation() {
     <>
       <div className="fixed left-4 top-4 z-[9500]">
         <MenuContainer atHero={atHero}>
-          <MenuItem icon={<MoreVertical size={20} />} />
+          <MenuItem icon={<Menu size={20} />} />
           {navItems.map((item) => (
             <MenuItem
               key={item.id}

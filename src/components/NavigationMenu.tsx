@@ -57,24 +57,31 @@ export function MenuContainer({ children, atHero = false }: MenuContainerProps) 
           {childrenArray[0]}
         </div>
 
-        {childrenArray.slice(1).map((child, index) => (
-          <div
-            key={index}
-            className={`absolute top-0 left-0 w-8 h-8 will-change-transform flex items-center justify-center transition-colors duration-200 ${iconColor}`}
-            style={{
-              transform: `translateY(${isExpanded ? (index + 1) * 36 : 0}px)`,
-              opacity: isExpanded ? 1 : 0,
-              zIndex: 40 - index,
-              transition: `transform ${isExpanded ? '300ms' : '300ms'} cubic-bezier(0.4, 0, 0.2, 1),
-                         opacity ${isExpanded ? '300ms' : '350ms'}`,
-              backfaceVisibility: 'hidden',
-              perspective: 1000,
-              WebkitFontSmoothing: 'antialiased'
-            }}
-          >
-            {child}
-          </div>
-        ))}
+        {childrenArray.slice(1).map((child, index) => {
+          const item = child as React.ReactElement<MenuItemProps>
+          const wrappedOnClick = () => {
+            item.props.onClick?.()
+            setIsExpanded(false)
+          }
+          return (
+            <div
+              key={index}
+              className={`absolute top-0 left-0 w-8 h-8 will-change-transform flex items-center justify-center transition-colors duration-200 ${iconColor}`}
+              style={{
+                transform: `translateY(${isExpanded ? (index + 1) * 36 : 0}px)`,
+                opacity: isExpanded ? 1 : 0,
+                zIndex: 40 - index,
+                transition: `transform ${isExpanded ? '300ms' : '300ms'} cubic-bezier(0.4, 0, 0.2, 1),
+                           opacity ${isExpanded ? '300ms' : '350ms'}`,
+                backfaceVisibility: 'hidden',
+                perspective: 1000,
+                WebkitFontSmoothing: 'antialiased'
+              }}
+            >
+              {React.cloneElement(item, { onClick: wrappedOnClick })}
+            </div>
+          )
+        })}
       </div>
     </div>
   )
