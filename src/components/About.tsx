@@ -25,7 +25,6 @@ export function About() {
       icon: <Award className="w-5 h-5" />,
       title: 'Experience',
       desc: 'Game Developer (Intern) @Battery Low Interactive Ltd.',
-      link: 'https://batterylowglobal.com/en',
     },
     {
       icon: <Code className="w-5 h-5" />,
