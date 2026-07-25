@@ -202,22 +202,17 @@
   filter: grayscale(0%);
 }
 
-/* Theme transition — horizontal wipe */
+/* Theme transition — horizontal slide */
 ::view-transition-old(root) {
-  animation: fade-out 0.2s ease-out forwards;
-}
-@keyframes fade-out {
-  to { opacity: 0; }
+  animation: slide-out-left 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 ::view-transition-new(root) {
-  animation: horizontal-wipe-in 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  mix-blend-mode: normal;
+  animation: slide-in-right 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
-@keyframes horizontal-wipe-in {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-  }
+@keyframes slide-out-left {
+  to { transform: translateX(-15%); opacity: 0; }
+}
+@keyframes slide-in-right {
+  from { transform: translateX(15%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
