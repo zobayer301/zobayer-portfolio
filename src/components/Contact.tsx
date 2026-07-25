@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { User, Mail, MessageSquare, Send } from 'lucide-react'
@@ -285,10 +285,10 @@ export function Contact() {
           className="pt-8 pb-4 border-t border-gray-300 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-xs text-gray-800 dark:text-gray-300">
-            &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.
+            &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury.
           </p>
           <p className="text-xs text-gray-800 dark:text-gray-300">
-            Dhaka, Bangladesh
+            All rights reserved.
           </p>
         </motion.footer>
       </div>
