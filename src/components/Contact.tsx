@@ -54,29 +54,38 @@ const ResearchGateIcon = () => (
   />
 )
 
+const XIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+    <path d="M4 4l16 16M20 4l-16 16"/>
+  </svg>
+)
+
+const PinterestIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2C8 2 4 5 4 9c0 3 2 5.5 4 7l-1 4h3l1-3c1 1 3 2 5 2 4 0 7-3 7-7s-3-7-7-7z"/>
+  </svg>
+)
+
 type SocialLink = {
   label: string
   href: string
   icon: React.FC
   external: boolean
-  showLabel?: boolean
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
-const socialLinks: SocialLink[] = [
-  { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true },
-  { label: 'Instagram', href: 'https://www.instagram.com/random___state_42/', icon: InstagramIcon, external: true },
+const row1: SocialLink[] = [
+  { label: 'Email', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: false },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
   { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
   { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Md-Zobayer-Chowdhury', icon: ResearchGateIcon, external: true },
 ]
 
-const emailLink: SocialLink = {
-  label: 'mdzobayerchowdhury3077@gmail.com',
-  href: 'mailto:mdzobayerchowdhury3077@gmail.com',
-  icon: MailIcon,
-  external: false,
-}
+const row2: SocialLink[] = [
+  { label: 'Facebook', href: 'https://www.facebook.com/mdzobayerchowdhury30', icon: FacebookIcon, external: true },
+  { label: 'Instagram', href: 'https://www.instagram.com/random___state_42/', icon: InstagramIcon, external: true },
+  { label: 'X', href: 'https://x.com/zobayerchowdhur', icon: XIcon, external: true },
+  { label: 'Pinterest', href: 'https://www.pinterest.com/mdzobayerchowdhury3077/_profile/', icon: PinterestIcon, external: true },
+]
 
 export function Contact() {
   const ownerEmail = 'mdzobayerchowdhury3077@gmail.com'
@@ -233,14 +242,22 @@ export function Contact() {
           </form>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mb-6">
-          {socialLinks.map((link, index) => {
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mb-4">
+          {row1.map((link, index) => {
             const Icon = link.icon
             return (
               <motion.a
                 key={link.label}
                 href={link.href}
                 {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                onClick={link.label === 'Email' ? (e) => {
+                  e.preventDefault()
+                  window.open(link.href, '_blank', 'noopener,noreferrer')
+                  navigator.clipboard?.writeText(ownerEmail).then(
+                    () => toast.success('Email copied to clipboard!'),
+                    () => {}
+                  )
+                } : undefined}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -254,26 +271,26 @@ export function Contact() {
           })}
         </div>
 
-        <div className="flex justify-center mb-12 lg:mb-16">
-          <motion.a
-            href={emailLink.href}
-            onClick={(e) => {
-              e.preventDefault()
-              window.open(emailLink.href, '_blank', 'noopener,noreferrer')
-              navigator.clipboard?.writeText(emailLink.label).then(
-                () => toast.success('Email copied to clipboard!'),
-                () => {}
-              )
-            }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            aria-label={emailLink.label}
-            className="hoverable flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2"
-          >
-            <MailIcon />
-          </motion.a>
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mb-12 lg:mb-16">
+          {row2.map((link, index) => {
+            const Icon = link.icon
+            return (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                aria-label={link.label}
+                className="hoverable flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2"
+              >
+                <Icon />
+              </motion.a>
+            )
+          })}
         </div>
 
         <motion.footer
