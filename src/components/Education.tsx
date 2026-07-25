@@ -117,6 +117,7 @@ export function Education() {
           <EducationCard
             image="school.png"
             label="KRISHNAGOPALPUR DWI-MUKHI HIGH SCHOOL, NAOGAON"
+            url="https://www.sohopathi.com/krisna-gopalpur-dwi-mukhi-high-school/"
             degree="Secondary School Certificate (Science)"
             description="Completed Secondary School education in the Science group, developing fundamental knowledge in core scientific disciplines and analytical thinking."
             year="2018"
