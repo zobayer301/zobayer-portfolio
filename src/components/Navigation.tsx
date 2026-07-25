@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react"
 import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle, MoreVertical } from "lucide-react"
 import { MenuContainer, MenuItem } from "@/components/NavigationMenu"
+import { ThemeToggle } from "@/components/ThemeToggle"
 
 const navItems = [
   { id: "about", label: "About", icon: <User size={18} /> },
