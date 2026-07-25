@@ -57,7 +57,7 @@ interface MenuItemProps {
 export function MenuItem({ children, onClick, disabled = false, icon, isActive = false }: MenuItemProps) {
   return (
     <button
-      className={`relative block w-full h-16 text-center group
+      className={`relative block w-full h-12 text-center group
         ${disabled ? "text-gray-400 dark:text-gray-500 cursor-not-allowed" : "text-gray-600 dark:text-gray-300"}
         ${isActive ? "bg-white/10" : ""}
       `}
@@ -67,7 +67,7 @@ export function MenuItem({ children, onClick, disabled = false, icon, isActive =
     >
       <span className="flex items-center justify-center h-full mt-[5%]">
         {icon && (
-          <span className="h-6 w-6 transition-all duration-200 group-hover:[&_svg]:stroke-[2.5]">
+          <span className="h-5 w-5 transition-all duration-200 group-hover:[&_svg]:stroke-[2.5]">
             {icon}
           </span>
         )}
@@ -80,40 +80,29 @@ export function MenuItem({ children, onClick, disabled = false, icon, isActive =
 export function MenuContainer({ children }: { children: React.ReactNode }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const childrenArray = React.Children.toArray(children)
-  const totalItems = childrenArray.length
 
   const handleToggle = () => {
-    if (isExpanded) {
-      setIsExpanded(false)
-    } else {
-      setIsExpanded(true)
-    }
+    setIsExpanded(!isExpanded)
   }
 
   return (
-    <div className="relative w-[64px]" data-expanded={isExpanded}>
-      {/* Container for all items */}
+    <div className="relative w-12" data-expanded={isExpanded}>
       <div className="relative">
-        {/* First item - always visible */}
         <div 
-          className="relative w-16 h-16 bg-gray-100 dark:bg-gray-800 cursor-pointer rounded-full group will-change-transform z-50"
+          className="relative w-12 h-12 bg-gray-100 dark:bg-gray-800 cursor-pointer rounded-full group will-change-transform z-50"
           onClick={handleToggle}
         >
           {childrenArray[0]}
         </div>
 
-        {/* Other items */}
         {childrenArray.slice(1).map((child, index) => (
           <div 
             key={index} 
-            className="absolute top-0 left-0 w-16 h-16 bg-gray-100 dark:bg-gray-800 will-change-transform"
+            className="absolute top-0 left-0 w-12 h-12 bg-gray-100 dark:bg-gray-800 will-change-transform rounded-full"
             style={{
-              transform: `translateY(${isExpanded ? (index + 1) * 48 : 0}px)`,
+              transform: `translateY(${isExpanded ? (index + 1) * 40 : 0}px)`,
               opacity: isExpanded ? 1 : 0,
               zIndex: 40 - index,
-              clipPath: index === childrenArray.length - 2 
-                ? "circle(50% at 50% 50%)" 
-                : "circle(50% at 50% 55%)",
               transition: `transform ${isExpanded ? '300ms' : '300ms'} cubic-bezier(0.4, 0, 0.2, 1),
                          opacity ${isExpanded ? '300ms' : '350ms'}`,
               backfaceVisibility: 'hidden',

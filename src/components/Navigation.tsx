@@ -1,22 +1,21 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle, Menu as MenuIcon, X } from "lucide-react"
+import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle, Menu as MenuIcon } from "lucide-react"
 import { MenuContainer, MenuItem } from "@/components/NavigationMenu"
 import { ThemeToggle } from "@/components/ThemeToggle"
 
 const navItems = [
-  { id: "about", label: "About", icon: <User size={20} /> },
-  { id: "education", label: "Education", icon: <GraduationCap size={20} /> },
-  { id: "skills", label: "Skills", icon: <Code size={20} /> },
-  { id: "work", label: "Projects", icon: <Briefcase size={20} /> },
-  { id: "faq", label: "FAQ", icon: <HelpCircle size={20} /> },
-  { id: "contact", label: "Contact", icon: <Mail size={20} /> },
+  { id: "about", label: "About", icon: <User size={18} /> },
+  { id: "education", label: "Education", icon: <GraduationCap size={18} /> },
+  { id: "skills", label: "Skills", icon: <Code size={18} /> },
+  { id: "work", label: "Projects", icon: <Briefcase size={18} /> },
+  { id: "faq", label: "FAQ", icon: <HelpCircle size={18} /> },
+  { id: "contact", label: "Contact", icon: <Mail size={18} /> },
 ]
 
 export function Navigation() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
@@ -47,31 +46,6 @@ export function Navigation() {
     }
   }, [])
 
-  useEffect(() => {
-    let lastY = window.scrollY
-    const onScroll = () => {
-      const y = window.scrollY
-      if (y < 10) {
-        setHidden(false)
-      } else if (y > lastY + 4) {
-        setHidden(true)
-      } else if (y < lastY - 4) {
-        setHidden(false)
-      }
-      lastY = y
-    }
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
-
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      if (e.clientY <= 80) setHidden(false)
-    }
-    window.addEventListener("mousemove", onMove, { passive: true })
-    return () => window.removeEventListener("mousemove", onMove)
-  }, [])
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) element.scrollIntoView({ behavior: "smooth" })
@@ -79,18 +53,9 @@ export function Navigation() {
 
   return (
     <>
-      {/* Left side: Navigation Menu */}
-      <div 
-        className="fixed top-4 left-4 z-[9500] transition-all duration-300"
-        style={{ 
-          transform: hidden ? 'translateY(-100px)' : 'translateY(0)',
-          opacity: hidden ? 0 : 1
-        }}
-      >
+      <div className="fixed top-3 left-3 z-[9500]">
         <MenuContainer>
-          <MenuItem
-            icon={<MenuIcon size={20} />}
-          />
+          <MenuItem icon={<MenuIcon size={18} />} />
           {navItems.map((item) => (
             <MenuItem
               key={item.id}
@@ -101,15 +66,8 @@ export function Navigation() {
         </MenuContainer>
       </div>
 
-      {/* Right side: Theme Toggle */}
-      <div 
-        className="fixed top-4 right-4 z-[9500] transition-all duration-300"
-        style={{ 
-          transform: hidden ? 'translateY(-100px)' : 'translateY(0)',
-          opacity: hidden ? 0 : 1
-        }}
-      >
-        <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+      <div className="fixed top-3 right-3 z-[9500]">
+        <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center shadow-md">
           <ThemeToggle inline />
         </div>
       </div>
