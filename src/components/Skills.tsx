@@ -66,7 +66,7 @@ export function Skills() {
           SKILLS
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
           {skillCategories.map((cat, catIdx) => (
             <motion.div
               key={cat.category}

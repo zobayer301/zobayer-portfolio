@@ -19,7 +19,7 @@ export function ThemeToggle({ inline = false }: { inline?: boolean }) {
       role="switch"
       aria-checked={mounted ? isDark : false}
       type="button"
-      className="relative w-9 h-9 rounded-full transition-all duration-300 focus:outline-none hover:scale-110 active:scale-95"
+      className="relative w-11 h-11 rounded-full transition-all duration-300 focus:outline-none hover:scale-110 active:scale-95"
     >
       <div className="absolute inset-0 rounded-full backdrop-blur-md border transition-all duration-300"
         style={{
@@ -31,9 +31,9 @@ export function ThemeToggle({ inline = false }: { inline?: boolean }) {
       />
       <div className="absolute inset-0 flex items-center justify-center">
         {mounted && isDark ? (
-          <Moon size={16} className="text-blue-200" />
+          <Moon size={18} className="text-blue-200" />
         ) : (
-          <Sun size={16} className="text-amber-600" />
+          <Sun size={18} className="text-amber-600" />
         )}
       </div>
     </button>

@@ -13,7 +13,7 @@ interface MenuItemProps {
 export function MenuItem({ children, onClick, disabled = false, icon }: MenuItemProps) {
   return (
     <button
-      className={`relative block w-full h-12 text-center group
+      className={`relative block w-full text-center group
         ${disabled ? "cursor-not-allowed opacity-40" : ""}
       `}
       role="menuitem"
@@ -22,7 +22,7 @@ export function MenuItem({ children, onClick, disabled = false, icon }: MenuItem
     >
       <span className="flex items-center justify-center h-full">
         {icon && (
-          <span className="h-5 w-5 transition-all duration-200 group-hover:[&_svg]:stroke-[2.5]">
+          <span className="transition-all duration-200 group-hover:[&_svg]:stroke-[2.5]">
             {icon}
           </span>
         )}
@@ -48,10 +48,10 @@ export function MenuContainer({ children, atHero = false }: MenuContainerProps) 
   const iconColor = atHero ? "text-white/80 hover:text-white" : "text-gray-700 dark:text-gray-200"
 
   return (
-    <div className="relative w-8" data-expanded={isExpanded}>
+    <div data-expanded={isExpanded}>
       <div className="relative">
         <div
-          className={`relative w-8 h-8 cursor-pointer z-50 flex items-center justify-center transition-colors duration-200 ${iconColor}`}
+          className={`relative w-8 h-8 sm:w-10 sm:h-10 cursor-pointer z-50 flex items-center justify-center transition-colors duration-200 ${iconColor}`}
           onClick={handleToggle}
         >
           {childrenArray[0]}
@@ -66,9 +66,9 @@ export function MenuContainer({ children, atHero = false }: MenuContainerProps) 
           return (
             <div
               key={index}
-              className={`absolute top-0 left-0 w-8 h-8 will-change-transform flex items-center justify-center transition-colors duration-200 ${iconColor}`}
+              className={`absolute top-0 left-0 w-8 h-8 sm:w-10 sm:h-10 will-change-transform flex items-center justify-center transition-colors duration-200 ${iconColor}`}
               style={{
-                transform: `translateY(${isExpanded ? (index + 1) * 36 : 0}px)`,
+                transform: `translateY(${isExpanded ? (index + 1) * 44 : 0}px)`,
                 opacity: isExpanded ? 1 : 0,
                 zIndex: 40 - index,
                 transition: `transform ${isExpanded ? '300ms' : '300ms'} cubic-bezier(0.4, 0, 0.2, 1),

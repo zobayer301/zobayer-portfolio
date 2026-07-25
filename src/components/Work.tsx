@@ -66,7 +66,7 @@ export function Work() {
           FEATURED<br />PROJECTS
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-6">
           {experiences.map((exp, index) => (
             <motion.a
               key={exp.company + exp.period}
@@ -100,7 +100,7 @@ export function Work() {
                       {exp.company}
                     </p>
                   </div>
-                  <span className="shrink-0 px-3 py-1 text-[10px] lg:text-xs text-white border border-white/30 rounded-full tracking-widest uppercase bg-white/10">
+                  <span className="shrink-0 px-3 py-1 text-xs text-white border border-white/30 rounded-full tracking-widest uppercase bg-white/10">
                     {exp.period}
                   </span>
                 </div>
@@ -120,7 +120,7 @@ export function Work() {
                   ))}
                 </div>
 
-                <div className="absolute top-6 right-6 lg:top-8 lg:right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
+                <div className="absolute top-6 right-6 lg:top-8 lg:right-8 opacity-100 transition-all duration-300 translate-x-0">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>

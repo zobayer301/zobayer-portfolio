@@ -50,7 +50,7 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 mb-16 lg:mb-20">
           <motion.div
             {...fadeInUp}
-            className="lg:col-span-2 relative group"
+            className="lg:col-span-2 relative group overflow-hidden"
           >
             <div className="hoverable relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -164,7 +164,7 @@ Club.
           <motion.div
             {...fadeInUp}
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
-            className="lg:col-span-2 relative group order-1 lg:order-2"
+            className="lg:col-span-2 relative group overflow-hidden order-1 lg:order-2"
           >
             <div className="hoverable relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -179,7 +179,7 @@ Club.
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
-          <motion.div {...fadeInUp} className="lg:col-span-2 relative group">
+          <motion.div {...fadeInUp} className="lg:col-span-2 relative group overflow-hidden">
             <div className="hoverable relative overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img

@@ -47,12 +47,11 @@ const GithubIcon = () => (
 )
 
 const ResearchGateIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="2" ry="2"/>
-    <path d="M7 16V8l3 4 3-4v8"/>
-    <path d="M17 8v4a2 2 0 0 0 2 2"/>
-    <path d="M17 12a2 2 0 0 0 2-2V8"/>
-  </svg>
+  <img
+    src="/logo.svg"
+    alt="ResearchGate"
+    className="h-7 w-7 object-contain"
+  />
 )
 
 type SocialLink = {
@@ -226,7 +225,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="self-start inline-flex items-center gap-1.5 h-10 px-5 rounded-2xl bg-gradient-to-r from-foreground to-foreground/80 text-background text-xs font-normal tracking-wide shadow-md transition-all hover:scale-[1.03] hover:shadow-xl active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none"
+              className="self-start inline-flex items-center gap-1.5 h-11 px-5 rounded-2xl bg-gradient-to-r from-foreground to-foreground/80 text-background text-xs font-normal tracking-wide shadow-md transition-all hover:scale-[1.03] hover:shadow-xl active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none"
             >
               <Send size={18} className="shrink-0" />
               {status === 'sending' ? 'Sending...' : "Let's talk"}
