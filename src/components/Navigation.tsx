@@ -1,9 +1,9 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle, Menu } from "lucide-react"
+import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle, Menu, Sun, Moon } from "lucide-react"
+import { useTheme } from "next-themes"
 import { MenuContainer, MenuItem } from "@/components/NavigationMenu"
-import { ThemeToggle } from "@/components/ThemeToggle"
 
 const navItems = [
   { id: "about", label: "About", icon: <User size={18} /> },
@@ -16,6 +16,10 @@ const navItems = [
 
 export function Navigation() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
 
   useEffect(() => {
     const onScroll = () => {
@@ -51,24 +55,36 @@ export function Navigation() {
     if (element) element.scrollIntoView({ behavior: "smooth" })
   }
 
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark"
+    if (document.startViewTransition) {
+      document.startViewTransition(() => setTheme(newTheme))
+    } else {
+      setTheme(newTheme)
+    }
+  }
+
   return (
-    <>
-      <div className="fixed left-4 top-4 z-[9500]">
-        <MenuContainer>
-          <MenuItem icon={<Menu size={20} />} />
-          {navItems.map((item) => (
-            <MenuItem
-              key={item.id}
-              icon={item.icon}
-              onClick={() => scrollToSection(item.id)}
-            />
-          ))}
-        </MenuContainer>
-      </div>
-      <div className="fixed top-3 right-3 z-[9500]">
-        <ThemeToggle />
-      </div>
-    </>
+    <div className="fixed left-4 top-4 z-[9500]">
+      <MenuContainer>
+        <MenuItem icon={<Menu size={20} />} />
+        {navItems.map((item) => (
+          <MenuItem
+            key={item.id}
+            icon={item.icon}
+            onClick={() => scrollToSection(item.id)}
+          />
+        ))}
+        <MenuItem
+          icon={
+            mounted && theme === "dark"
+              ? <Moon size={18} />
+              : <Sun size={18} />
+          }
+          onClick={toggleTheme}
+        />
+      </MenuContainer>
+    </div>
   )
 }
 
