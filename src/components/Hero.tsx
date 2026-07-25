@@ -79,7 +79,7 @@ export function Hero() {
         </motion.main>
 
         <motion.footer variants={itemVariants} className="mt-10 sm:mt-12 md:absolute md:bottom-8 lg:bottom-12 md:left-12 lg:left-16 w-full max-w-[calc(100%-6rem)]">
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground">
+          <div className="flex flex-row flex-wrap justify-between gap-x-4 gap-y-2 text-xs text-muted-foreground">
             <div className="flex items-center gap-2">
               <GlobeIcon />
               <span className="truncate">mdzobayerchowdhury3077@gmail.com</span>

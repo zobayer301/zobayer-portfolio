@@ -34,10 +34,9 @@ export function MenuItem({ children, onClick, disabled = false, icon }: MenuItem
 
 interface MenuContainerProps {
   children: React.ReactNode
-  atHero?: boolean
 }
 
-export function MenuContainer({ children, atHero = false }: MenuContainerProps) {
+export function MenuContainer({ children }: MenuContainerProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const childrenArray = React.Children.toArray(children)
 
@@ -45,7 +44,7 @@ export function MenuContainer({ children, atHero = false }: MenuContainerProps) 
     setIsExpanded(!isExpanded)
   }
 
-  const iconColor = atHero ? "text-white/80 hover:text-white" : "text-gray-700 dark:text-gray-200"
+  const iconColor = "text-gray-900 dark:text-gray-100"
 
   return (
     <div data-expanded={isExpanded}>
