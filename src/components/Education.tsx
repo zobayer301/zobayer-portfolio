@@ -1,12 +1,61 @@
 import { motion } from 'framer-motion'
-import { useReducedMotion } from '@/hooks/useReducedMotion'
-import { useIsMobile } from '@/hooks/use-mobile'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-100px' },
   transition: { duration: 0.8, ease: 'easeOut' }
+}
+
+function EducationCard({
+  image,
+  label,
+  degree,
+  description,
+  year,
+  index,
+}: {
+  image: string
+  label: string
+  degree: string
+  description: string
+  year: string
+  index: number
+}) {
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
+      <motion.div {...fadeInUp} className="lg:col-span-2 relative group overflow-hidden">
+        <div className="hoverable relative overflow-hidden rounded-2xl">
+          <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img
+            src={image}
+            alt={label}
+            className="w-full h-auto transition-all duration-700 group-hover:scale-105"
+          />
+        </div>
+        <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-foreground/20 rounded-2xl -z-10" />
+        <p className="mt-4 text-xs text-foreground/70 uppercase tracking-widest">
+          {label}
+        </p>
+      </motion.div>
+
+      <motion.div
+        {...fadeInUp}
+        transition={{ ...fadeInUp.transition, delay: 0.2 }}
+        className="lg:col-span-3 flex flex-col justify-center"
+      >
+        <h3 className="text-xl lg:text-2xl text-gray-900 dark:text-white mb-4 leading-snug">
+          {degree}
+        </h3>
+        <p className="text-base text-gray-800 dark:text-gray-300 leading-relaxed mb-6">
+          {description}
+        </p>
+        <p className="text-sm text-gray-800 dark:text-gray-300">
+          <span className="font-bold">Graduated: {year}</span>
+        </p>
+      </motion.div>
+    </div>
+  )
 }
 
 export function Education() {
@@ -25,40 +74,33 @@ export function Education() {
           EDUCATION
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
-          <motion.div {...fadeInUp} className="lg:col-span-2 relative group overflow-hidden">
-            <div className="hoverable relative overflow-hidden rounded-2xl">
-              <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <img
-                src="campus.jpg"
-                alt="University campus"
-                className="w-full h-auto transition-all duration-700 group-hover:scale-105"
-              />
-            </div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-foreground/20 rounded-2xl -z-10" />
-            <p className="mt-4 text-xs text-foreground/70 uppercase tracking-widest">
-              GREEN UNIVERSITY OF BANGLADESH
-            </p>
-          </motion.div>
+        <div className="flex flex-col gap-12 lg:gap-16">
+          <EducationCard
+            image="campus.jpg"
+            label="GREEN UNIVERSITY OF BANGLADESH"
+            degree="B.Sc. in Computer Science & Engineering"
+            description="Graduated with a Bachelor's degree in Computer Science and Engineering, specializing in Artificial Intelligence and Machine Learning. Built a solid understanding of data structures, algorithms, software engineering, databases, and data analytics while completing a research thesis on AI-based heart disease prediction."
+            year="2026"
+            index={0}
+          />
 
-          <motion.div
-            {...fadeInUp}
-            transition={{ ...fadeInUp.transition, delay: 0.2 }}
-            className="lg:col-span-3 flex flex-col justify-center"
-          >
-            <h3 className="text-xl lg:text-2xl text-gray-900 dark:text-white mb-4 leading-snug">
-              B.Sc. in Computer Science & Engineering
-            </h3>
-            <p className="text-base text-gray-800 dark:text-gray-300 leading-relaxed mb-6">
-              Graduated with a Bachelor's degree in Computer Science and Engineering, specializing in
-              Artificial Intelligence and Machine Learning. Built a solid understanding of data structures,
-              algorithms, software engineering, databases, and data analytics while completing a research
-              thesis on AI-based heart disease prediction.
-            </p>
-            <p className="text-sm text-gray-800 dark:text-gray-300">
-              <span className="font-bold">Graduated: 2026</span>
-            </p>
-          </motion.div>
+          <EducationCard
+            image="campus.jpg"
+            label="N.S GOVT. COLLEGE, NATORE"
+            degree="Higher Secondary Certificate (Science)"
+            description="Completed Higher Secondary education with a focus on Science, building a strong foundation in physics, chemistry, mathematics, and biology that paved the way for a career in technology and data science."
+            year="2020"
+            index={1}
+          />
+
+          <EducationCard
+            image="campus.jpg"
+            label="KRISHNAGOPALPUR DWI-MUKHI HIGH SCHOOL"
+            degree="Secondary School Certificate (Science)"
+            description="Completed Secondary School education in the Science group, developing fundamental knowledge in core scientific disciplines and analytical thinking."
+            year="2018"
+            index={2}
+          />
         </div>
       </div>
     </section>
