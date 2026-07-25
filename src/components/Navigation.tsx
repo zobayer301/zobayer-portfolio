@@ -1,25 +1,28 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle, Menu as MenuIcon } from "lucide-react"
-import { MenuContainer, MenuItem } from "@/components/NavigationMenu"
+import { User, Code, Briefcase, GraduationCap, Mail, HelpCircle } from "lucide-react"
 import { ThemeToggle } from "@/components/ThemeToggle"
+import { cn } from "@/lib/utils"
 
 const navItems = [
-  { id: "about", label: "About", icon: <User size={18} /> },
-  { id: "education", label: "Education", icon: <GraduationCap size={18} /> },
-  { id: "skills", label: "Skills", icon: <Code size={18} /> },
-  { id: "work", label: "Projects", icon: <Briefcase size={18} /> },
-  { id: "faq", label: "FAQ", icon: <HelpCircle size={18} /> },
-  { id: "contact", label: "Contact", icon: <Mail size={18} /> },
+  { id: "about", label: "About", icon: User },
+  { id: "education", label: "Education", icon: GraduationCap },
+  { id: "skills", label: "Skills", icon: Code },
+  { id: "work", label: "Projects", icon: Briefcase },
+  { id: "faq", label: "FAQ", icon: HelpCircle },
+  { id: "contact", label: "Contact", icon: Mail },
 ]
 
 export function Navigation() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [atHero, setAtHero] = useState(true)
+  const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
+    let lastY = window.scrollY
     const onScroll = () => {
+      const y = window.scrollY
       const referenceLine = window.innerHeight * 0.35
       let current = 0
       let maxVisible = -1
@@ -36,7 +39,16 @@ export function Navigation() {
         }
       }
       setActiveIndex((prev) => (prev === current ? prev : current))
-      setAtHero(window.scrollY < window.innerHeight * 0.5)
+      setAtHero(y < window.innerHeight * 0.5)
+
+      if (y < 10) {
+        setHidden(false)
+      } else if (y > lastY + 4) {
+        setHidden(true)
+      } else if (y < lastY - 4) {
+        setHidden(false)
+      }
+      lastY = y
     }
 
     onScroll()
@@ -48,30 +60,54 @@ export function Navigation() {
     }
   }, [])
 
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      if (e.clientY <= 80) setHidden(false)
+    }
+    window.addEventListener("mousemove", onMove, { passive: true })
+    return () => window.removeEventListener("mousemove", onMove)
+  }, [])
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) element.scrollIntoView({ behavior: "smooth" })
   }
 
-  return (
-    <>
-      <div className="fixed top-3 left-3 z-[9500]">
-        <MenuContainer atHero={atHero}>
-          <MenuItem icon={<MenuIcon size={18} />} />
-          {navItems.map((item) => (
-            <MenuItem
-              key={item.id}
-              icon={item.icon}
-              onClick={() => scrollToSection(item.id)}
-            />
-          ))}
-        </MenuContainer>
-      </div>
+  const iconColor = atHero ? "text-white/80 hover:text-white" : "text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
 
-      <div className="fixed top-3 right-3 z-[9500]">
+  return (
+    <div
+      className="fixed top-0 left-0 right-0 z-[9500] transition-all duration-300"
+      style={{
+        transform: hidden ? "translateY(-100%)" : "translateY(0)",
+        opacity: hidden ? 0 : 1,
+      }}
+    >
+      <div className="w-full px-4 sm:px-6 py-2 flex items-center justify-between">
+        <div className="flex items-center gap-1 sm:gap-2">
+          {navItems.map((item, index) => {
+            const Icon = item.icon
+            const isActive = activeIndex === index
+            return (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                aria-label={item.label}
+                type="button"
+                className={cn(
+                  "flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full transition-all duration-200",
+                  iconColor,
+                  isActive && "bg-white/15 dark:bg-white/10"
+                )}
+              >
+                <Icon size={18} />
+              </button>
+            )
+          })}
+        </div>
         <ThemeToggle inline />
       </div>
-    </>
+    </div>
   )
 }
 
