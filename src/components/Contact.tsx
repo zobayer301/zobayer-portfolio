@@ -268,13 +268,11 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '0px' }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="pt-8 pb-4 border-t border-gray-300 dark:border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="pt-6 pb-6 bg-black dark:bg-transparent flex items-center justify-center gap-3"
         >
-          <p className="text-xs text-gray-800 dark:text-gray-300">
-            &copy; {new Date().getFullYear()} Md. Zobayer Chowdhury. All rights reserved.
-          </p>
-          <p className="text-xs text-gray-800 dark:text-gray-300">
-            Dhaka, Bangladesh
+          <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover" />
+          <p className="text-xs text-white/80 dark:text-gray-300">
+            &copy; 2026 All rights reserved by Md. Zobayer Chowdhury
           </p>
         </motion.footer>
       </div>
