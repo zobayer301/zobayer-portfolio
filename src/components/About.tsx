@@ -19,17 +19,18 @@ export function About() {
     {
       icon: <BookOpen className="w-5 h-5" />,
       title: 'University',
-      desc: 'B.Sc in CSE @ Green University of Bangladesh',
+      desc: 'B.Sc in CSE @Green University of Bangladesh',
     },
     {
       icon: <Award className="w-5 h-5" />,
       title: 'Experience',
-      desc: 'Unity Developer (Intern) @ Battery Low Interactive Ltd.',
+      desc: 'Game Developer (Intern) @Battery Low Interactive Ltd.',
+      link: 'https://batterylowglobal.com/en',
     },
     {
       icon: <Code className="w-5 h-5" />,
       title: 'Volunteer',
-      desc: 'Assistant Graphics Designer @ Green University Computer Club',
+      desc: 'Assistant Graphics Designer @Green University Computer Club',
         link: 'https://gucc.green.edu.bd/executives/221902038',
     },
     {
@@ -100,7 +101,7 @@ Club.
                         rel="noopener noreferrer"
                         className="hoverable mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-green-400 hover:text-green-300 transition-colors"
                       >
-                        Visit
+                        View Profile
                         <ExternalLink size={12} className="shrink-0" />
                       </a>
                     )}
