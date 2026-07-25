@@ -17,12 +17,9 @@ const navItems = [
 export function Navigation() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [atHero, setAtHero] = useState(true)
-  const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
-    let lastY = window.scrollY
     const onScroll = () => {
-      const y = window.scrollY
       const referenceLine = window.innerHeight * 0.35
       let current = 0
       let maxVisible = -1
@@ -39,16 +36,7 @@ export function Navigation() {
         }
       }
       setActiveIndex((prev) => (prev === current ? prev : current))
-      setAtHero(y < window.innerHeight * 0.5)
-
-      if (y < 10) {
-        setHidden(false)
-      } else if (y > lastY + 4) {
-        setHidden(true)
-      } else if (y < lastY - 4) {
-        setHidden(false)
-      }
-      lastY = y
+      setAtHero(window.scrollY < window.innerHeight * 0.5)
     }
 
     onScroll()
@@ -60,14 +48,6 @@ export function Navigation() {
     }
   }, [])
 
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      if (e.clientY <= 80) setHidden(false)
-    }
-    window.addEventListener("mousemove", onMove, { passive: true })
-    return () => window.removeEventListener("mousemove", onMove)
-  }, [])
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) element.scrollIntoView({ behavior: "smooth" })
@@ -77,13 +57,7 @@ export function Navigation() {
 
   return (
     <>
-      <div
-        className="fixed left-4 top-4 z-[9500] transition-all duration-300"
-        style={{
-          opacity: hidden ? 0 : 1,
-          pointerEvents: hidden ? "none" : "auto",
-        }}
-      >
+      <div className="fixed left-4 top-4 z-[9500]">
         <div className="flex flex-col items-center gap-5">
           {navItems.map((item, index) => {
             const Icon = item.icon
@@ -107,7 +81,7 @@ export function Navigation() {
         </div>
       </div>
       <div className="fixed top-3 right-3 z-[9500]">
-        <ThemeToggle inline />
+        <ThemeToggle />
       </div>
     </>
   )

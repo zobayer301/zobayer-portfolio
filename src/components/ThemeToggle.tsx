@@ -19,17 +19,21 @@ export function ThemeToggle({ inline = false }: { inline?: boolean }) {
       role="switch"
       aria-checked={mounted ? isDark : false}
       type="button"
-      className="relative w-14 h-7 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none shadow-inner"
+      className="relative w-9 h-9 rounded-full transition-all duration-300 focus:outline-none shadow-lg hover:shadow-xl hover:scale-125 hover:rotate-12 active:scale-95"
+      style={{
+        background: isDark
+          ? "linear-gradient(135deg, #1e293b, #334155)"
+          : "linear-gradient(135deg, #fbbf24, #f59e0b)",
+        boxShadow: isDark
+          ? "0 0 20px rgba(96, 165, 250, 0.3), inset 0 1px 0 rgba(255,255,255,0.1)"
+          : "0 0 20px rgba(251, 191, 36, 0.4), inset 0 1px 0 rgba(255,255,255,0.3)",
+      }}
     >
-      <div
-        className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center transition-all duration-300 ${
-          isDark ? "left-[calc(100%-26px)]" : "left-0.5"
-        }`}
-      >
+      <div className="absolute inset-0 flex items-center justify-center">
         {mounted && isDark ? (
-          <Moon size={12} className="text-gray-800" />
+          <Moon size={16} className="text-blue-200" />
         ) : (
-          <Sun size={12} className="text-amber-500" />
+          <Sun size={16} className="text-white" />
         )}
       </div>
     </button>
