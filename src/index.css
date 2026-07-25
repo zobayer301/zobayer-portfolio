@@ -202,17 +202,20 @@
   filter: grayscale(0%);
 }
 
-/* Theme transition — vertical wipe */
+/* Theme transition — horizontal wipe */
 ::view-transition-old(root) {
-  animation: none;
+  animation: fade-out 0.2s ease-out forwards;
+}
+@keyframes fade-out {
+  to { opacity: 0; }
 }
 ::view-transition-new(root) {
-  animation: vertical-wipe-in 0.3s ease-out;
+  animation: horizontal-wipe-in 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   mix-blend-mode: normal;
 }
-@keyframes vertical-wipe-in {
+@keyframes horizontal-wipe-in {
   from {
-    clip-path: inset(0 0 100% 0);
+    clip-path: inset(0 100% 0 0);
   }
   to {
     clip-path: inset(0 0 0 0);
