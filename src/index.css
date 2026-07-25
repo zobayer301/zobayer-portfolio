@@ -81,7 +81,7 @@
     @apply bg-background text-foreground;
     line-height: 1.6;
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.15s ease, color 0.15s ease;
   }
 
   ::selection {
@@ -207,7 +207,7 @@
   animation: none;
 }
 ::view-transition-new(root) {
-  animation: vertical-wipe-in 0.5s ease;
+  animation: vertical-wipe-in 0.3s ease-out;
   mix-blend-mode: normal;
 }
 @keyframes vertical-wipe-in {
