@@ -269,7 +269,7 @@ export function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '0px' }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="w-full py-6 bg-black dark:bg-transparent flex flex-col items-center justify-center gap-1"
+        className="w-full py-6 flex flex-col items-center justify-center gap-1"
       >
         <img src="/logo.png" alt="Logo" className="h-6 w-6 rounded-full object-cover" />
         <p className="text-xs text-white/80 dark:text-gray-300">
