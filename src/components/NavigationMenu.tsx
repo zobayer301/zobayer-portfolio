@@ -48,7 +48,7 @@ export function MenuContainer({ children }: MenuContainerProps) {
 
   return (
     <div data-expanded={isExpanded}>
-      <div className="relative">
+      <div className="relative max-h-[80vh] overflow-y-auto">
         <div
           className={`relative w-8 h-8 sm:w-10 sm:h-10 cursor-pointer z-50 flex items-center justify-center transition-colors duration-200 ${iconColor}`}
           onClick={handleToggle}

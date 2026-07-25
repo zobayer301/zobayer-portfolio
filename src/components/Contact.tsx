@@ -6,7 +6,7 @@ import { User, Mail, MessageSquare, Send } from 'lucide-react'
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
+  viewport: { once: true, margin: '-50px' },
   transition: { duration: 0.8, ease: 'easeOut' }
 }
 
@@ -255,7 +255,7 @@ export function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 aria-label={link.label}
-                className="hoverable flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2"
+                className={`flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2 ${link.label !== 'ResearchGate' ? 'hoverable' : ''}`}
               >
                 <Icon />
               </motion.a>
