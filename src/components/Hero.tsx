@@ -1,72 +1,117 @@
-import { motion } from 'framer-motion'
-import { TypewriterEffect } from '@/components/TypewriterEffect'
-import { ExternalLink } from 'lucide-react'
+import React from "react"
+import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
+import { ExternalLink } from "lucide-react"
+
+const GlobeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-primary shrink-0">
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" x2="22" y1="12" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+)
+
+const MapPinIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-primary shrink-0">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+)
+
+const BriefcaseIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-primary shrink-0">
+    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+  </svg>
+)
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+  },
+}
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+}
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 w-full h-full">
-        <img
-          src="/hero-image.jpg"
-          alt="Md. Zobayer Chowdhury"
-          className="w-full h-full object-cover object-top sm:object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/50 sm:via-black/70 sm:to-black/40 md:bg-gradient-to-r md:from-black md:via-black/60 md:to-black/20" />
-      </div>
+    <motion.section
+      className="relative flex w-full flex-col overflow-hidden bg-background text-foreground md:flex-row min-h-screen"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 lg:w-3/5 lg:p-16">
+        <div>
+          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm mb-8">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+            </span>
+            <span className="text-xs sm:text-sm tracking-wide text-primary/80">Available for Opportunities</span>
+          </motion.div>
 
-      <div className="relative z-10 h-full flex items-end md:items-center pb-32 md:pb-0 px-4 sm:px-6 md:px-12 lg:px-16">
-        <div className="w-full max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 backdrop-blur-sm mb-4 md:mb-6"
+          <motion.main variants={containerVariants}>
+            <motion.h1
+              variants={itemVariants}
+              className="font-display text-5xl md:text-6xl lg:text-7xl leading-none tracking-tighter text-foreground"
             >
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
-              </span>
-              <span className="text-green-400 text-xs sm:text-sm tracking-wide">Available for Opportunities</span>
-            </motion.div>
-
-            <h1 className="font-display leading-none tracking-tighter">
-              <span className="block whitespace-nowrap text-white/90 text-[10vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[4.5vw] font-light">Md. Zobayer Chowdhury</span>
-              <span className="block mt-2">
-                <TypewriterEffect
-                  words={[
-                    { text: 'Machine' },
-                    { text: 'Learning' },
-                    { text: 'Explorer' },
-                    { text: '\u00B7' },
-                    { text: 'Data' },
-                    { text: 'Science' },
-                    { text: 'Enthusiast' },
-                  ]}
-                  className="text-[6vw] sm:text-[5vw] md:text-[3vw] lg:text-[2.5vw] font-normal tracking-normal text-left text-[#c1d1e0]"
-                />
-              </span>
-            </h1>
-            
+              Md. Zobayer<br />Chowdhury
+            </motion.h1>
+            <motion.div variants={itemVariants} className="my-6 h-1 w-20 bg-primary" />
+            <motion.p variants={itemVariants} className="mb-8 max-w-md text-base md:text-lg text-muted-foreground leading-relaxed">
+              Computer Science & Engineering Graduate<br />
+              Data Science & Machine Learning Engineer
+            </motion.p>
             <motion.a
               href="/Md_Zobayer_Chowdhury_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="inline-flex items-center justify-center gap-1.5 mt-6 md:mt-8 px-3 py-1.5 border border-white/30 text-white text-xs font-medium rounded-full hover:bg-white hover:text-black transition-all duration-300"
+              variants={itemVariants}
+              className="inline-flex items-center gap-2 text-base font-medium tracking-widest text-primary hover:text-primary/70 transition-colors"
             >
-              Resume
-              <ExternalLink size={16} className="shrink-0" />
+              RESUME
+              <ExternalLink size={16} />
             </motion.a>
-          </motion.div>
+          </motion.main>
         </div>
+
+        <motion.footer variants={itemVariants} className="mt-12 w-full">
+          <div className="grid grid-cols-1 gap-4 text-xs text-muted-foreground sm:grid-cols-3">
+            <div className="flex items-center gap-2">
+              <GlobeIcon />
+              <span>mdzobayerchowdhury3077@gmail.com</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPinIcon />
+              <span>Dhaka, Bangladesh</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <BriefcaseIcon />
+              <span>Open to opportunities</span>
+            </div>
+          </div>
+        </motion.footer>
       </div>
-    </section>
+
+      <motion.div
+        className="w-full min-h-[300px] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-2/5"
+        style={{ backgroundImage: "url(/hero-image.jpg)" }}
+        initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
+        animate={{ clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0% 100%)" }}
+        transition={{ duration: 1.2, ease: "circOut" }}
+      />
+    </motion.section>
   )
 }
+
+export default Hero
