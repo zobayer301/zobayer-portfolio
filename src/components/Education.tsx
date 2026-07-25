@@ -10,17 +10,17 @@ const fadeInUp = {
 function EducationCard({
   image,
   label,
+  url,
   degree,
   description,
   year,
-  index,
 }: {
   image: string
   label: string
+  url?: string
   degree: string
   description: string
   year: string
-  index: number
 }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
@@ -34,9 +34,20 @@ function EducationCard({
           />
         </div>
         <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-foreground/20 rounded-2xl -z-10" />
-        <p className="mt-4 text-xs text-foreground/70 uppercase tracking-widest">
-          {label}
-        </p>
+        {url ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 text-xs text-foreground/70 uppercase tracking-widest hover:text-foreground transition-colors inline-block"
+          >
+            {label}
+          </a>
+        ) : (
+          <p className="mt-4 text-xs text-foreground/70 uppercase tracking-widest">
+            {label}
+          </p>
+        )}
       </motion.div>
 
       <motion.div
@@ -78,19 +89,19 @@ export function Education() {
           <EducationCard
             image="campus.jpg"
             label="GREEN UNIVERSITY OF BANGLADESH"
+            url="https://green.edu.bd/"
             degree="B.Sc. in Computer Science & Engineering"
             description="Graduated with a Bachelor's degree in Computer Science and Engineering, specializing in Artificial Intelligence and Machine Learning. Built a solid understanding of data structures, algorithms, software engineering, databases, and data analytics while completing a research thesis on AI-based heart disease prediction."
             year="2026"
-            index={0}
           />
 
           <EducationCard
             image="college.jpg"
             label="N.S GOVT. COLLEGE, NATORE"
+            url="https://nsc.edu.bd/"
             degree="Higher Secondary Certificate (Science)"
             description="Completed Higher Secondary education with a focus on Science, building a strong foundation in physics, chemistry, mathematics, and biology."
             year="2020"
-            index={1}
           />
 
           <EducationCard
@@ -99,7 +110,6 @@ export function Education() {
             degree="Secondary School Certificate (Science)"
             description="Completed Secondary School education in the Science group, developing fundamental knowledge in core scientific disciplines and analytical thinking."
             year="2018"
-            index={2}
           />
         </div>
       </div>
