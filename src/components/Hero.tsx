@@ -54,7 +54,7 @@ export function Hero() {
 
   return (
     <motion.section
-      className="relative flex w-full flex-col overflow-hidden bg-background text-foreground md:flex-row min-h-screen"
+      className="relative flex w-full flex-col bg-background text-foreground md:flex-row min-h-screen"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
