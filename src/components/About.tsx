@@ -112,7 +112,7 @@ Club.
 
         <motion.div {...fadeInUp} className="mb-16 lg:mb-20">
           <div className="relative py-12 px-8 lg:px-16 rounded-3xl border border-foreground/10 bg-foreground/[0.02]">
-            <h2 className="font-display text-[clamp(1.5rem,6vw,3.5rem)] lg:text-[clamp(2rem,4vw,4.5rem)] xl:text-section leading-none tracking-tight text-gray-900 dark:text-white pl-4 lg:pl-12">
+            <h2 className="font-display text-[max(1.5rem,6vw)] lg:text-[max(2rem,4vw)] xl:text-section leading-none tracking-tight text-gray-900 dark:text-white pl-4 lg:pl-12">
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">&quot;SOLVING REAL-WORLD</TextScramble>
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">PROBLEMS WITH AI</TextScramble>
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">AND CONTINUOUSLY</TextScramble>

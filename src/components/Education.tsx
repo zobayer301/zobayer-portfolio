@@ -82,7 +82,7 @@ export function Education() {
 
         <motion.h2
           {...fadeInUp}
-          className="hover-bob font-display text-[clamp(2rem,10vw,5rem)] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
+          className="hover-bob font-display text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
         >
           EDUCATION
         </motion.h2>
