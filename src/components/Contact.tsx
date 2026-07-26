@@ -45,7 +45,7 @@ const ResearchGateIcon = () => (
   <img
     src="/research.png"
     alt="ResearchGate"
-    className="h-28 w-28 object-contain rounded dark:brightness-0 dark:invert"
+    className="h-28 w-28 max-w-full object-contain rounded dark:brightness-0 dark:invert"
   />
 )
 
@@ -142,7 +142,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="hover-bob font-display text-[14vw] sm:text-[10vw] lg:text-hero leading-none tracking-tight mb-8"
+          className="hover-bob font-display text-[clamp(2rem,14vw,5rem)] sm:text-[clamp(2.5rem,10vw,6rem)] lg:text-hero leading-none tracking-tight mb-8"
         >
           Get in touch
         </motion.h2>

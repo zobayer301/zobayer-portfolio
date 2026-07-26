@@ -61,7 +61,7 @@ export function Work() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
+          className="hover-bob font-display text-[clamp(2rem,10vw,5rem)] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
         >
           FEATURED<br />PROJECTS
         </motion.h2>

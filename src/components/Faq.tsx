@@ -56,7 +56,7 @@ export function Faq() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-10 lg:mb-14"
+          className="hover-bob font-display text-[clamp(2rem,10vw,5rem)] lg:text-section leading-none tracking-tight mb-10 lg:mb-14"
         >
           FREQUENTLY<br />ASKED QUESTIONS
         </motion.h2>

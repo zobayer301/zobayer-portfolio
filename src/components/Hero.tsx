@@ -63,12 +63,12 @@ export function Hero() {
         <motion.main variants={containerVariants}>
           <motion.h1
             variants={itemVariants}
-            className="font-display text-[13vw] sm:text-[10vw] md:text-[6.5vw] lg:text-[5.5vw] leading-none tracking-tighter text-foreground"
+            className="font-display text-[clamp(1.75rem,13vw,4rem)] sm:text-[clamp(2rem,10vw,5rem)] md:text-[clamp(2.5rem,6.5vw,5.5rem)] lg:text-[clamp(3rem,5.5vw,6rem)] leading-none tracking-tighter text-foreground"
           >
             Md. Zobayer Chowdhury
           </motion.h1>
           <motion.div variants={itemVariants} className="my-5 sm:my-6 h-1 w-20 bg-primary" />
-          <motion.p variants={itemVariants} className="mb-8 max-w-md text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed min-h-[1.5em]">
+          <motion.p variants={itemVariants} className="mb-8 max-w-lg text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed min-h-[1.5em]">
             <AnimatePresence mode="wait">
               <motion.span
                 key={subtitles[index]}
@@ -117,7 +117,7 @@ export function Hero() {
       </div>
 
       <motion.div
-        className="w-full min-h-[250px] sm:min-h-[300px] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-2/5"
+        className="w-full min-h-[clamp(200px,40vw,400px)] sm:min-h-[clamp(250px,35vw,450px)] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-2/5"
         style={{ backgroundImage: "url(/hero-image.jpg)" }}
         initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
         animate={{ clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0% 100%)" }}
