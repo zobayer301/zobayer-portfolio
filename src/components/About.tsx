@@ -75,8 +75,7 @@ export function About() {
               Immersive Technologies.
             </h3>
             <p className="text-base lg:text-lg text-gray-800 dark:text-gray-300 leading-relaxed mb-8">
-              Computer Science and Engineering graduate from Green University of Bangladesh with practical experience
-in artificial intelligence, machine learning, and immersive technologies. Worked as an Game Developer (Intern) at
+              Computer Science and Engineering graduate from Green University of Bangladesh. Worked as an Game Developer (Intern) at
 Battery Low Interactive Ltd. and contributed as an Assistant Graphics Designer at the Green University Computer
 Club.
             </p>
@@ -100,7 +99,7 @@ Club.
                         rel="noopener noreferrer"
                         className="hoverable mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-green-400 hover:text-green-300 transition-colors"
                       >
-                        Visit
+                        View Profile
                         <ArrowRight size={12} className="shrink-0" />
                       </a>
                     )}
