@@ -77,15 +77,13 @@
   }
 
   html {
-    overflow-x: clip;
+    scroll-behavior: smooth;
   }
 
   body {
     font-family: 'Inter', system-ui, sans-serif;
     @apply bg-background text-foreground;
     line-height: 1.6;
-    overflow-x: clip;
-    overscroll-behavior: none;
   }
 
   ::selection {
