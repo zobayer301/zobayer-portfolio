@@ -58,7 +58,7 @@ export function Faq() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="hover-bob font-display text-[10vw] lg:text-section leading-none tracking-tight mb-10 lg:mb-14"
         >
-          FREQUENTLY ASKED QUESTIONS
+          FREQUENTLY<br />ASKED QUESTIONS
         </motion.h2>
 
         <div className="max-w-4xl mx-auto">
