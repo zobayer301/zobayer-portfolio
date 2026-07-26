@@ -19,17 +19,17 @@ export function About() {
     {
       icon: <BookOpen className="w-5 h-5" />,
       title: 'University',
-      desc: 'B.Sc in CSE @ Green University of Bangladesh',
+      desc: 'B.Sc in CSE @Green University of Bangladesh',
     },
     {
       icon: <Award className="w-5 h-5" />,
       title: 'Experience',
-      desc: 'Unity Developer (Intern) @ Battery Low Interactive Ltd.',
+      desc: 'Game  Developer (Intern) @Battery Low Interactive Ltd.',
     },
     {
       icon: <Code className="w-5 h-5" />,
       title: 'Volunteer',
-      desc: 'Assistant Graphics Designer @ Green University Computer Club',
+      desc: 'Assistant Graphics Designer @Green University Computer Club',
         link: 'https://gucc.green.edu.bd/executives/221902038',
     },
     {
@@ -76,7 +76,7 @@ export function About() {
             </h3>
             <p className="text-base lg:text-lg text-gray-800 dark:text-gray-300 leading-relaxed mb-8">
               Computer Science and Engineering graduate from Green University of Bangladesh with practical experience
-in artificial intelligence, machine learning, and immersive technologies. Worked as an Unity Developer (Intern) at
+in artificial intelligence, machine learning, and immersive technologies. Worked as an Game Developer (Intern) at
 Battery Low Interactive Ltd. and contributed as an Assistant Graphics Designer at the Green University Computer
 Club.
             </p>

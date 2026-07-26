@@ -64,12 +64,7 @@ export function Navigation() {
   }
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark"
-    if (document.startViewTransition) {
-      document.startViewTransition(() => setTheme(newTheme))
-    } else {
-      setTheme(newTheme)
-    }
+    setTheme(theme === "dark" ? "light" : "dark")
   }
 
   return (
