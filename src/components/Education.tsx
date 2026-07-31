@@ -27,10 +27,13 @@ function EducationCard({
 }) {
   return (
     <div className="relative pl-14 md:pl-0">
-      {/* Timeline node */}
-      <span className="absolute left-3 lg:left-[40%] top-1.5 lg:top-1/2 w-2.5 h-2.5 -translate-x-1/2 lg:-translate-y-1/2 rounded-full bg-foreground shadow-[0_0_0_4px_hsl(var(--background))] z-10" />
+      {/* Spine segment */}
+      <div className={`absolute left-3 ${flip ? 'lg:left-[60%]' : 'lg:left-[40%]'} top-0 bottom-0 w-px -translate-x-1/2 bg-foreground/15`} />
 
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-8 lg:gap-16 items-center">
+      {/* Timeline node */}
+      <span className={`absolute left-3 ${flip ? 'lg:left-[60%]' : 'lg:left-[40%]'} top-1.5 lg:top-1/2 w-2.5 h-2.5 -translate-x-1/2 lg:-translate-y-1/2 rounded-full bg-foreground shadow-[0_0_0_4px_hsl(var(--background))] z-10`} />
+
+      <div className={`grid grid-cols-1 gap-8 lg:gap-16 items-center ${flip ? 'lg:grid-cols-[3fr_2fr]' : 'lg:grid-cols-[2fr_3fr]'}`}>
         {/* Image */}
         <motion.div
           {...fadeInUp}
@@ -133,15 +136,10 @@ export function Education() {
           EDUCATION
         </motion.h2>
 
-        <div className="relative">
-          {/* Timeline spine */}
-          <div className="absolute left-3 lg:left-[40%] top-0 bottom-0 w-px -translate-x-1/2 bg-foreground/15" />
-
-          <div className="flex flex-col gap-12 lg:gap-20">
-            {educations.map((edu, index) => (
-              <EducationCard key={edu.year} {...edu} flip={index % 2 === 1} />
-            ))}
-          </div>
+        <div className="flex flex-col gap-12 lg:gap-20">
+          {educations.map((edu, index) => (
+            <EducationCard key={edu.year} {...edu} flip={index % 2 === 1} />
+          ))}
         </div>
       </div>
     </section>
