@@ -101,8 +101,8 @@ export function Hero() {
           className="group inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-black/20 text-foreground/80 text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 dark:border-foreground/30 dark:hover:bg-foreground/10"
         >
           RESUME
-          <span className="inline-flex items-center justify-center w-4 h-4 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:-rotate-45 group-hover:-translate-y-0.5">
-            <ArrowRight size={9} className="shrink-0" />
+          <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:-rotate-45 group-hover:-translate-y-0.5">
+            <ArrowRight size={11} className="shrink-0" />
           </span>
         </motion.a>
 
@@ -129,23 +129,12 @@ export function Hero() {
       </motion.div>
 
       <motion.div
-        variants={itemVariants}
-        className="relative w-full min-h-[max(200px,40vw)] sm:min-h-[max(250px,35vw)] overflow-hidden md:w-1/2 md:min-h-full lg:w-2/5"
-      >
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url(/hero-image.jpg)",
-            clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0% 100%)",
-          }}
-        />
-        <motion.div
-          className="absolute inset-0 bg-background"
-          initial={{ x: "0%" }}
-          animate={{ x: "100%" }}
-          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
-        />
-      </motion.div>
+        className="w-full min-h-[max(200px,40vw)] sm:min-h-[max(250px,35vw)] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-2/5"
+        style={{ backgroundImage: "url(/hero-image.jpg)" }}
+        initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
+        animate={{ clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0% 100%)" }}
+        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
+      />
     </motion.section>
   )
 }
