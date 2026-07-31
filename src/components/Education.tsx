@@ -28,13 +28,13 @@ function EducationCard({
   return (
     <div className="relative pl-14 md:pl-0">
       {/* Timeline node */}
-      <span className="absolute left-3 md:left-1/2 top-1.5 md:top-1/2 w-2.5 h-2.5 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-foreground shadow-[0_0_0_4px_hsl(var(--background))] z-10" />
+      <span className="absolute left-3 lg:left-[40%] top-1.5 lg:top-1/2 w-2.5 h-2.5 -translate-x-1/2 lg:-translate-y-1/2 rounded-full bg-foreground shadow-[0_0_0_4px_hsl(var(--background))] z-10" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 lg:gap-20 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-8 lg:gap-16 items-center">
         {/* Image */}
         <motion.div
           {...fadeInUp}
-          className={`relative group ${flip ? 'md:order-2' : 'md:order-1'}`}
+          className={`relative group ${flip ? 'lg:order-2' : 'lg:order-1'}`}
         >
           <div className="hoverable relative overflow-hidden rounded-2xl">
             <div className="absolute inset-0 bg-foreground/5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -51,7 +51,7 @@ function EducationCard({
         <motion.div
           {...fadeInUp}
           transition={{ ...fadeInUp.transition, delay: 0.15 }}
-          className={`flex flex-col justify-center ${flip ? 'md:order-1' : 'md:order-2'}`}
+          className={`flex flex-col justify-center ${flip ? 'lg:order-1' : 'lg:order-2'}`}
         >
           <span className="inline-flex items-center gap-2 self-start px-4 py-1.5 mb-4 text-xs font-poppins tracking-widest uppercase text-foreground/80 border border-foreground/20 rounded-full bg-foreground/[0.03]">
             <GraduationCap size={14} className="text-primary shrink-0" />
@@ -135,7 +135,7 @@ export function Education() {
 
         <div className="relative">
           {/* Timeline spine */}
-          <div className="absolute left-3 md:left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-foreground/15" />
+          <div className="absolute left-3 lg:left-[40%] top-0 bottom-0 w-px -translate-x-1/2 bg-foreground/15" />
 
           <div className="flex flex-col gap-12 lg:gap-20">
             {educations.map((edu, index) => (
