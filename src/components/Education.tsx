@@ -73,8 +73,8 @@ function EducationCard({
               className="group mb-4 text-xs text-foreground/60 uppercase tracking-widest hover:text-foreground transition-colors inline-flex items-center gap-1.5"
             >
               {label}
-              <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-current transition-transform duration-300 group-hover:rotate-45">
-                <ArrowRight size={11} className="shrink-0 text-background" />
+              <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:rotate-45">
+                <ArrowRight size={11} className="shrink-0" />
               </span>
             </a>
           ) : (
