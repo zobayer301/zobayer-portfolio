@@ -100,7 +100,7 @@ Club.
                         className="hoverable group mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-green-400 hover:text-green-300 transition-colors"
                       >
                         View Profile
-                        <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:rotate-45">
+                        <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:-rotate-45 group-hover:-translate-y-0.5">
                           <ArrowRight size={11} className="shrink-0" />
                         </span>
                       </a>
@@ -158,7 +158,7 @@ Club.
               className="group mt-4 self-start inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-black/20 text-gray-900 text-xs font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
             >
               Preview Paper
-              <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:rotate-45">
+              <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:-rotate-45 group-hover:-translate-y-0.5">
                 <ArrowRight size={11} className="shrink-0" />
               </span>
             </a>
