@@ -97,10 +97,12 @@ Club.
                         href={m.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hoverable mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-green-400 hover:text-green-300 transition-colors"
+                        className="hoverable group mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-green-400 hover:text-green-300 transition-colors"
                       >
                         View Profile
-                        <ArrowRight size={12} className="shrink-0" />
+                        <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-current text-background transition-transform duration-300 group-hover:rotate-45">
+                          <ArrowRight size={11} className="shrink-0" />
+                        </span>
                       </a>
                     )}
                   </div>
@@ -153,10 +155,12 @@ Club.
               href="/thesispaper.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 self-start inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-black/20 text-gray-900 text-xs font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
+              className="group mt-4 self-start inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-black/20 text-gray-900 text-xs font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
             >
               Preview Paper
-               <ArrowRight size={16} className="shrink-0" />
+              <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-current text-background transition-transform duration-300 group-hover:rotate-45">
+                <ArrowRight size={11} className="shrink-0" />
+              </span>
             </a>
           </motion.div>
 

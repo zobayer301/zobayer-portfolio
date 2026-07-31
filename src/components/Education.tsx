@@ -70,10 +70,12 @@ function EducationCard({
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-4 text-xs text-foreground/60 uppercase tracking-widest hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+              className="group mb-4 text-xs text-foreground/60 uppercase tracking-widest hover:text-foreground transition-colors inline-flex items-center gap-1.5"
             >
               {label}
-              <ArrowRight size={12} className="shrink-0" />
+              <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-current text-background transition-transform duration-300 group-hover:rotate-45">
+                <ArrowRight size={11} className="shrink-0" />
+              </span>
             </a>
           ) : (
             <p className="mb-4 text-xs text-foreground/60 uppercase tracking-widest">
