@@ -28,12 +28,12 @@ const experiences = [
     link: 'https://github.com/zobayer301/Polynomial-Regression-Comparison',
   },
   {
-    title: 'Linear Regression From Scratch',
-    company: 'NumPy Implementation',
+    title: 'Flight Price \u2014 EDA & Feature Engineering',
+    company: 'Flight Price Dataset',
     period: 'Project',
-    description: 'Simple Linear Regression implemented from first principles in Python using NumPy and Matplotlib for predictive analysis and visualization.',
-    skills: ['NumPy', 'Matplotlib', 'ML Fundamentals'],
-    link: 'https://github.com/zobayer301/linear-regression-from-scratch',
+    description: 'A data analysis and feature engineering project focused on understanding and preparing flight price data for machine learning, built in Python and Jupyter.',
+    skills: ['Python', 'Pandas', 'NumPy', 'EDA', 'Feature Engineering'],
+    link: 'https://github.com/zobayer301/flight-price-eda-feature-engineering',
   },
 ]
 
