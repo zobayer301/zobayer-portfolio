@@ -47,7 +47,7 @@ export function Faq() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="group mb-10 lg:mb-12"
         >
-          <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">FAQ</span>
+          <span className="hover-bob text-sm font-sans font-medium text-foreground/80 tracking-widest uppercase">FAQ</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -56,7 +56,7 @@ export function Faq() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hover-bob font-display text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-10 lg:mb-14"
+          className="hover-bob font-display font-bold text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-10 lg:mb-14"
         >
           FREQUENTLY<br />ASKED QUESTIONS
         </motion.h2>
@@ -79,7 +79,7 @@ export function Faq() {
                 )}
                 aria-expanded={openIndex === index}
               >
-                <span className="text-sm lg:text-base font-poppins font-medium tracking-wide text-foreground pr-4">
+                <span className="text-sm lg:text-base font-sans font-medium tracking-wide text-foreground pr-4">
                   {faq.question}
                 </span>
                 <motion.div
@@ -100,7 +100,7 @@ export function Faq() {
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                     className="overflow-hidden"
                   >
-                    <p className="text-sm lg:text-base font-light font-poppins tracking-wide text-muted-foreground pb-5 lg:pb-6 leading-relaxed">
+                    <p className="text-sm lg:text-base font-serif font-normal text-muted-foreground pb-5 lg:pb-6 leading-relaxed">
                       {faq.answer}
                     </p>
                   </motion.div>

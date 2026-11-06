@@ -52,7 +52,7 @@ export function Skills() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="group mb-10 lg:mb-12"
         >
-          <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Expertise</span>
+          <span className="hover-bob text-sm font-sans font-medium text-foreground/80 tracking-widest uppercase">Expertise</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -61,7 +61,7 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hover-bob font-display text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-10 lg:mb-14"
+          className="hover-bob font-display font-bold text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-10 lg:mb-14"
         >
           SKILLS
         </motion.h2>
@@ -92,7 +92,7 @@ export function Skills() {
                 'backdrop-blur-md',
               )}>
                 <div className="mb-4">
-                  <h3 className="text-base lg:text-lg font-medium font-poppins tracking-wide text-foreground">
+                  <h3 className="text-base lg:text-lg font-sans font-medium tracking-wide text-foreground">
                     {cat.category}
                   </h3>
                 </div>
@@ -122,7 +122,7 @@ export function Skills() {
                         'border-border bg-background/70',
                         'hover:border-primary/50 hover:bg-primary/5 hover:shadow-sm',
                       )}>
-                        <span className="text-sm font-poppins font-light tracking-wide whitespace-nowrap text-foreground">
+                        <span className="text-sm font-sans font-medium tracking-wide whitespace-nowrap text-foreground">
                           {skill}
                         </span>
                       </div>

@@ -52,7 +52,7 @@ export function Work() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="group mb-10 lg:mb-12"
         >
-          <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Projects</span>
+          <span className="hover-bob text-sm font-sans font-medium text-foreground/80 tracking-widest uppercase">Projects</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -61,7 +61,7 @@ export function Work() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hover-bob font-display text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
+          className="hover-bob font-display font-bold text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
         >
           FEATURED<br />PROJECTS
         </motion.h2>
@@ -93,19 +93,19 @@ export function Work() {
               <div className="relative p-6 lg:p-8 flex flex-col h-full">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-light text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-sans font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
                       {exp.title}
                     </h3>
-                    <p className="text-sm lg:text-base text-muted-foreground mt-1">
+                    <p className="text-sm lg:text-base font-serif text-muted-foreground mt-1">
                       {exp.company}
                     </p>
                   </div>
-                  <span className="shrink-0 px-3 py-1 text-xs text-muted-foreground border border-border rounded-full tracking-widest uppercase bg-foreground/[0.03]">
+                  <span className="shrink-0 px-3 py-1 text-xs font-sans font-medium text-muted-foreground border border-border rounded-full tracking-widest uppercase bg-foreground/[0.03]">
                     {exp.period}
                   </span>
                 </div>
 
-                <p className="text-sm lg:text-base text-muted-foreground leading-relaxed mb-6 flex-1 group-hover:text-foreground/90 transition-colors duration-300">
+                <p className="text-sm lg:text-base font-serif text-muted-foreground leading-relaxed mb-6 flex-1 group-hover:text-foreground/90 transition-colors duration-300">
                   {exp.description}
                 </p>
 
@@ -113,7 +113,7 @@ export function Work() {
                   {exp.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 text-xs text-muted-foreground border border-border rounded-full bg-foreground/[0.03] group-hover:border-border/80 transition-all duration-300"
+                      className="px-3 py-1 text-xs font-sans font-medium text-muted-foreground border border-border rounded-full bg-foreground/[0.03] group-hover:border-border/80 transition-all duration-300"
                     >
                       {skill}
                     </span>

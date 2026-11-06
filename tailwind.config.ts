@@ -65,13 +65,16 @@ export default {
         acc: withOpacity("--acc"),
       },
       fontFamily: {
-        display: ['Bebas Neue', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', 'sans-serif'],
+        sans: ['"Bricolage Grotesque"', 'sans-serif'],
+        heading: ['"Bricolage Grotesque"', 'sans-serif'],
+        serif: ['Newsreader', 'Georgia', 'serif'],
+        body: ['Newsreader', 'Georgia', 'serif'],
+        poppins: ['"Bricolage Grotesque"', 'sans-serif'],
       },
       fontSize: {
-        'hero': 'clamp(4rem, 15vw, 12rem)',
-        'section': 'clamp(3rem, 10vw, 8rem)',
+        'hero': 'clamp(3.5rem, 13vw, 10rem)',
+        'section': 'clamp(2.75rem, 9vw, 7rem)',
         'large': 'clamp(2rem, 5vw, 4rem)',
       },
       letterSpacing: {
@@ -79,8 +82,8 @@ export default {
         'tighter': '-0.04em',
       },
       lineHeight: {
-        'none': '0.85',
-        'tight': '0.9',
+        'none': '1.0',
+        'tight': '1.05',
       },
       borderRadius: {
         lg: "var(--radius)",

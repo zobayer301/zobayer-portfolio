@@ -100,7 +100,7 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Newsreader', Georgia, serif;
     @apply bg-background text-foreground;
     line-height: 1.6;
     overflow-x: hidden;
@@ -160,10 +160,17 @@
 
 /* Typography utilities */
 .font-display {
-  font-family: 'Bebas Neue', sans-serif;
-  text-transform: uppercase;
+  font-family: 'Bricolage Grotesque', sans-serif;
   letter-spacing: -0.02em;
-  line-height: 0.85;
+  line-height: 1.05;
+}
+
+.font-sans-ui {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.font-serif-body {
+  font-family: 'Newsreader', Georgia, serif;
 }
 
 /* Custom scrollbar */

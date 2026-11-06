@@ -13,7 +13,7 @@ interface MenuItemProps {
 export function MenuItem({ children, onClick, disabled = false, icon }: MenuItemProps) {
   return (
     <button
-      className={`relative block w-full text-center group
+      className={`relative block w-full text-center group font-sans font-medium
         ${disabled ? "cursor-not-allowed opacity-40" : ""}
       `}
       role="menuitem"

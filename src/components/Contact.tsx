@@ -133,7 +133,7 @@ export function Contact() {
     <section id="contact" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="group mb-10 lg:mb-12">
-          <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Contact</span>
+          <span className="hover-bob text-sm font-sans font-medium text-foreground/80 tracking-widest uppercase">Contact</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
@@ -142,7 +142,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="hover-bob font-display text-[max(2rem,14vw)] sm:text-[max(2.5rem,10vw)] lg:text-hero leading-none tracking-tight mb-8"
+          className="hover-bob font-display font-bold text-[max(2rem,14vw)] sm:text-[max(2.5rem,10vw)] lg:text-hero leading-none tracking-tight mb-8"
         >
           Get in touch
         </motion.h2>
@@ -156,7 +156,7 @@ export function Contact() {
           {...fadeInUp}
           className="mb-8 lg:mb-12 max-w-2xl rounded-3xl p-2 transition-all duration-500 hover:bg-foreground/[0.03]"
         >
-          <h3 className="text-xl md:text-2xl lg:text-3xl text-foreground font-light leading-tight mb-4">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-sans font-medium text-foreground leading-tight mb-4">
             OPEN TO NEW<br />
             OPPORTUNITIES IN<br />
             <span className="text-foreground">DATA SCIENCE & ML</span>
@@ -173,7 +173,7 @@ export function Contact() {
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-2">
-                <label className="text-lg font-medium font-poppins tracking-wide text-foreground mb-1">Your name</label>
+                <label className="text-lg font-sans font-medium tracking-wide text-foreground mb-1">Your name</label>
                 <div className="relative">
                   <User size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
                   <input
@@ -184,7 +184,7 @@ export function Contact() {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="E.g. Mahmudullah Riyad"
                     required
-                    className="flex h-14 w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all"
+                    className="flex h-14 w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 font-sans text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all"
                   />
                 </div>
                 {showErrors && !nameValid && (
@@ -192,7 +192,7 @@ export function Contact() {
                 )}
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-lg font-medium font-poppins tracking-wide text-foreground mb-1">Email Address</label>
+                <label className="text-lg font-sans font-medium tracking-wide text-foreground mb-1">Email Address</label>
                 <div className="relative">
                   <Mail size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
                   <input
@@ -201,7 +201,7 @@ export function Contact() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="E.g. name@example.com"
                     required
-                    className="flex h-14 w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all"
+                    className="flex h-14 w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 font-sans text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all"
                   />
                 </div>
                 {showErrors && !emailValid && (
@@ -210,7 +210,7 @@ export function Contact() {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-lg font-medium font-poppins tracking-wide text-foreground mb-1">Project details</label>
+              <label className="text-lg font-sans font-medium tracking-wide text-foreground mb-1">Project details</label>
               <div className="relative">
                 <MessageSquare size={18} className="absolute left-3.5 top-4 text-muted-foreground pointer-events-none" />
                 <textarea
@@ -219,14 +219,14 @@ export function Contact() {
                   placeholder="Tell me about your project visions..."
                   rows={5}
                   required
-                  className="flex w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 pt-3.5 pb-3 text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all resize-none"
+                  className="flex w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 pt-3.5 pb-3 font-serif text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all resize-none"
                 />
               </div>
             </div>
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="self-start inline-flex items-center gap-1.5 h-11 px-5 rounded-2xl bg-primary text-primary-foreground text-xs font-normal tracking-wide shadow-md transition-all hover:scale-[1.03] hover:shadow-xl hover:opacity-90 active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none"
+              className="self-start inline-flex items-center gap-1.5 h-11 px-5 rounded-2xl bg-primary text-primary-foreground font-sans text-xs font-medium tracking-wide shadow-md transition-all hover:scale-[1.03] hover:shadow-xl hover:opacity-90 active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none"
             >
               <Send size={18} className="shrink-0" />
               {status === 'sending' ? 'Sending...' : "Let's talk"}
@@ -255,7 +255,7 @@ export function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 aria-label={link.label}
-                className={`flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors min-h-[44px] p-2 ${link.label !== 'ResearchGate' ? 'hoverable' : ''}`}
+                className={`flex items-center gap-3 font-sans font-medium text-muted-foreground hover:text-primary transition-colors min-h-[44px] p-2 ${link.label !== 'ResearchGate' ? 'hoverable' : ''}`}
               >
                 <Icon />
               </motion.a>
@@ -274,7 +274,7 @@ export function Contact() {
         <div className="h-10 w-10 rounded-full bg-foreground text-background flex items-center justify-center">
           <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover" />
         </div>
-        <p className="text-xs text-muted-foreground">
+        <p className="text-xs font-sans font-medium text-muted-foreground">
           &copy; 2026 All rights reserved by Md. Zobayer Chowdhury
         </p>
       </motion.footer>

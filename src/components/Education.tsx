@@ -56,12 +56,12 @@ function EducationCard({
           transition={{ ...fadeInUp.transition, delay: 0.15 }}
           className={`flex flex-col justify-center ${flip ? 'lg:order-1' : 'lg:order-2'}`}
         >
-          <span className="inline-flex items-center gap-2 self-start px-4 py-1.5 mb-4 text-xs font-poppins tracking-widest uppercase text-foreground/80 border border-border rounded-full bg-foreground/[0.03]">
+          <span className="inline-flex items-center gap-2 self-start px-4 py-1.5 mb-4 text-xs font-sans font-medium tracking-widest uppercase text-foreground/80 border border-border rounded-full bg-foreground/[0.03]">
             <GraduationCap size={14} className="text-primary shrink-0" />
             {year}
           </span>
 
-          <h3 className="text-xl lg:text-2xl text-foreground mb-3 leading-snug">
+          <h3 className="text-xl lg:text-2xl font-sans font-medium text-foreground mb-3 leading-snug">
             {degree}
           </h3>
 
@@ -70,7 +70,7 @@ function EducationCard({
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mb-4 text-xs text-muted-foreground uppercase tracking-widest hover:text-primary transition-colors inline-flex items-center gap-1.5"
+              className="group mb-4 text-xs font-sans font-medium text-muted-foreground uppercase tracking-widest hover:text-primary transition-colors inline-flex items-center gap-1.5"
             >
               {label}
               <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-primary text-primary-foreground transition-all duration-300 group-hover:-rotate-45 group-hover:-translate-y-0.5">
@@ -78,12 +78,12 @@ function EducationCard({
               </span>
             </a>
           ) : (
-            <p className="mb-4 text-xs text-muted-foreground uppercase tracking-widest">
+            <p className="mb-4 text-xs font-sans font-medium text-muted-foreground uppercase tracking-widest">
               {label}
             </p>
           )}
 
-          <p className="text-base text-muted-foreground leading-relaxed">
+          <p className="font-serif text-base text-muted-foreground leading-relaxed">
             {description}
           </p>
         </motion.div>
@@ -127,13 +127,13 @@ export function Education() {
     <section id="education" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="group mb-10 lg:mb-12">
-          <span className="hover-bob text-sm text-foreground/80 tracking-widest uppercase">Background</span>
+          <span className="hover-bob text-sm font-sans font-medium text-foreground/80 tracking-widest uppercase">Background</span>
           <div className="w-6 h-px bg-foreground/40 mt-2" />
         </motion.div>
 
         <motion.h2
           {...fadeInUp}
-          className="hover-bob font-display text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
+          className="hover-bob font-display font-bold text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
         >
           EDUCATION
         </motion.h2>

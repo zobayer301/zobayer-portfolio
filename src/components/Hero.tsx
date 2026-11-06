@@ -63,12 +63,12 @@ export function Hero() {
         <motion.main variants={containerVariants}>
           <motion.h1
             variants={itemVariants}
-            className="font-display text-[max(1.75rem,13vw)] sm:text-[max(2rem,10vw)] md:text-[max(2.5rem,6.5vw)] lg:text-[max(3rem,5.5vw)] leading-none tracking-tighter text-foreground"
+            className="font-display font-bold text-[max(1.75rem,13vw)] sm:text-[max(2rem,10vw)] md:text-[max(2.5rem,6.5vw)] lg:text-[max(3rem,5.5vw)] leading-[1.05] tracking-tight text-foreground"
           >
             Md. Zobayer Chowdhury
           </motion.h1>
           <motion.div variants={itemVariants} className="my-5 sm:my-6 h-1 w-20 bg-primary" />
-          <motion.p variants={itemVariants} className="mb-8 max-w-lg text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed min-h-[1.5em]">
+          <motion.p variants={itemVariants} className="mb-8 max-w-lg font-serif text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed min-h-[1.5em]">
             <AnimatePresence mode="wait">
               <motion.span
                 key={subtitles[index]}
@@ -87,7 +87,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             variants={itemVariants}
-            className="group inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-border text-foreground text-sm font-medium rounded-full hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300"
+            className="group inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-border text-foreground text-sm font-sans font-medium rounded-full hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300"
           >
             RESUME
             <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-primary text-primary-foreground transition-all duration-300 group-hover:-rotate-45 group-hover:-translate-y-0.5">
@@ -97,7 +97,7 @@ export function Hero() {
         </motion.main>
 
         <motion.footer variants={itemVariants} className="mt-10 sm:mt-12 md:absolute md:bottom-8 lg:bottom-12 md:left-12 lg:left-16 w-full md:max-w-[calc(100%-6rem)]">
-          <div className="flex flex-row flex-wrap justify-between gap-x-4 gap-y-2 text-xs text-muted-foreground">
+          <div className="flex flex-row flex-wrap justify-between gap-x-4 gap-y-2 text-xs font-sans font-medium text-muted-foreground">
             <div className="flex items-center gap-2">
               <Mail size={16} className="text-primary shrink-0" />
               <span className="truncate">mdzobayerchowdhury3077@gmail.com</span>
