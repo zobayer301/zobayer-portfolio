@@ -165,73 +165,85 @@ export function Contact() {
 
         <motion.div
           {...fadeInUp}
-          className="mb-8 lg:mb-12 max-w-2xl"
+          className="mb-8 lg:mb-12 max-w-xl"
         >
-          <form
-            onSubmit={handleSend}
-            className="flex flex-col gap-6 rounded-3xl border border-border bg-foreground/[0.02] p-7 sm:p-10 backdrop-blur-md shadow-2xl transition-all duration-500 hover:bg-foreground/[0.04] hover:shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] hover:border-foreground/30 hover:scale-[1.01]"
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div className="flex flex-col gap-2">
-                <label className="text-lg font-sans font-medium tracking-wide text-foreground mb-1">Your name</label>
-                <div className="relative">
-                  <User size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
-                  <input
-                    type="text"
-                    inputMode="text"
-                    pattern="[A-Za-z\s.'-]+"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="E.g. Mahmudullah Riyad"
-                    required
-                    className="flex h-14 w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 font-sans text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all"
-                  />
-                </div>
-                {showErrors && !nameValid && (
-                  <span className="text-xs text-red-500">Please write your name properly (letters only).</span>
-                )}
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-lg font-sans font-medium tracking-wide text-foreground mb-1">Email Address</label>
-                <div className="relative">
-                  <Mail size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="E.g. name@example.com"
-                    required
-                    className="flex h-14 w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 font-sans text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all"
-                  />
-                </div>
-                {showErrors && !emailValid && (
-                  <span className="text-xs text-red-500">Please enter a valid email address.</span>
-                )}
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label className="text-lg font-sans font-medium tracking-wide text-foreground mb-1">Project details</label>
-              <div className="relative">
-                <MessageSquare size={18} className="absolute left-3.5 top-4 text-muted-foreground pointer-events-none" />
-                <textarea
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Tell me about your project visions..."
-                  rows={5}
-                  required
-                  className="flex w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 pt-3.5 pb-3 font-serif text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all resize-none"
-                />
-              </div>
-            </div>
-            <button
-              type="submit"
-              disabled={status === 'sending'}
-              className="self-start inline-flex items-center gap-1.5 h-11 px-5 rounded-2xl bg-primary text-primary-foreground font-sans text-xs font-medium tracking-wide shadow-md transition-all hover:scale-[1.03] hover:shadow-xl hover:opacity-90 active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none"
+          {/* Accent glow behind form */}
+          <div className="relative">
+            <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent pointer-events-none" />
+            <form
+              onSubmit={handleSend}
+              className="relative flex flex-col gap-4 rounded-2xl border border-border/60 bg-background/80 p-5 sm:p-6 backdrop-blur-sm shadow-lg transition-all duration-500 hover:border-primary/30 hover:shadow-[0_0_30px_-8px_var(--acc)]"
             >
-              <Send size={18} className="shrink-0" />
-              {status === 'sending' ? 'Sending...' : "Let's talk"}
-            </button>
-          </form>
+              {/* Name + Email row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="flex flex-col gap-1">
+                  <label className="text-xs font-sans font-medium tracking-widest uppercase text-muted-foreground">Name</label>
+                  <div className="relative">
+                    <User size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 pointer-events-none" />
+                    <input
+                      type="text"
+                      inputMode="text"
+                      pattern="[A-Za-z\s.'-]+"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Mahmudullah Riyad"
+                      required
+                      className="h-10 w-full rounded-lg border border-border/60 bg-foreground/[0.03] pl-8 pr-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary/60 transition-all"
+                    />
+                  </div>
+                  {showErrors && !nameValid && (
+                    <span className="text-[11px] text-red-500 leading-tight">Letters only please.</span>
+                  )}
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label className="text-xs font-sans font-medium tracking-widest uppercase text-muted-foreground">Email</label>
+                  <div className="relative">
+                    <Mail size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 pointer-events-none" />
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="name@example.com"
+                      required
+                      className="h-10 w-full rounded-lg border border-border/60 bg-foreground/[0.03] pl-8 pr-3 font-sans text-sm text-foreground placeholder:text-muted-foreground/50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary/60 transition-all"
+                    />
+                  </div>
+                  {showErrors && !emailValid && (
+                    <span className="text-[11px] text-red-500 leading-tight">Enter a valid email.</span>
+                  )}
+                </div>
+              </div>
+
+              {/* Message */}
+              <div className="flex flex-col gap-1">
+                <label className="text-xs font-sans font-medium tracking-widest uppercase text-muted-foreground">Message</label>
+                <div className="relative">
+                  <MessageSquare size={14} className="absolute left-3 top-3 text-muted-foreground/70 pointer-events-none" />
+                  <textarea
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Tell me about your project..."
+                    rows={4}
+                    required
+                    className="w-full rounded-lg border border-border/60 bg-foreground/[0.03] pl-8 pr-3 pt-2.5 pb-2 font-serif text-sm text-foreground placeholder:text-muted-foreground/50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary/60 transition-all resize-none"
+                  />
+                </div>
+              </div>
+
+              {/* Footer row: hint + button */}
+              <div className="flex items-center justify-between gap-3 pt-1">
+                <span className="text-[11px] font-sans text-muted-foreground/60 leading-tight">I usually reply within 24 h</span>
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="inline-flex items-center gap-2 h-9 px-5 rounded-lg bg-primary text-primary-foreground font-sans text-xs font-medium tracking-wide shadow-sm transition-all hover:scale-[1.04] hover:shadow-[0_0_16px_-2px_var(--acc)] active:scale-[0.97] disabled:opacity-40 disabled:pointer-events-none"
+                >
+                  <Send size={13} className="shrink-0" />
+                  {status === 'sending' ? 'Sending…' : "Let's talk"}
+                </button>
+              </div>
+            </form>
+          </div>
         </motion.div>
 
         <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 mt-12 mb-12 lg:mb-16">
