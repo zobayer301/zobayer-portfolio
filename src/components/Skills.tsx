@@ -87,13 +87,12 @@ export function Skills() {
             >
               <div className={cn(
                 'relative h-full p-5 lg:p-6 rounded-3xl border transition-all duration-500',
-                'border-foreground/10 bg-gradient-to-br from-foreground/[0.04] to-foreground/[0.01]',
-                'hover:border-foreground/25 hover:bg-black/5 hover:shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)]',
-                'dark:bg-white/[0.02] dark:hover:bg-white/5 dark:hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.25)]',
+                'border-border bg-foreground/[0.02]',
+                'hover:border-foreground/25 hover:bg-foreground/[0.04] hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.15)]',
                 'backdrop-blur-md',
               )}>
                 <div className="mb-4">
-                  <h3 className="text-base lg:text-lg font-medium font-poppins tracking-wide text-foreground/80">
+                  <h3 className="text-base lg:text-lg font-medium font-poppins tracking-wide text-foreground">
                     {cat.category}
                   </h3>
                 </div>
@@ -120,11 +119,10 @@ export function Skills() {
                     >
                       <div className={cn(
                         'flex items-center h-9 px-3.5 rounded-2xl border transition-all duration-300',
-                        'border-foreground/15 bg-background/70',
-                        'hover:bg-black/5 hover:border-foreground/30 hover:shadow-md',
-                        'dark:hover:bg-white/5 dark:hover:border-foreground/30',
+                        'border-border bg-background/70',
+                        'hover:border-primary/50 hover:bg-primary/5 hover:shadow-sm',
                       )}>
-                        <span className="text-sm font-poppins font-light tracking-wide whitespace-nowrap text-gray-900 dark:text-white">
+                        <span className="text-sm font-poppins font-light tracking-wide whitespace-nowrap text-foreground">
                           {skill}
                         </span>
                       </div>

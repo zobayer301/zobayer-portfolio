@@ -87,10 +87,10 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             variants={itemVariants}
-            className="group inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-black/20 text-foreground/80 text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 dark:border-foreground/30 dark:hover:bg-foreground/10"
+            className="group inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-border text-foreground text-sm font-medium rounded-full hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300"
           >
             RESUME
-            <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:-rotate-45 group-hover:-translate-y-0.5">
+            <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-primary text-primary-foreground transition-all duration-300 group-hover:-rotate-45 group-hover:-translate-y-0.5">
               <ArrowRight size={11} className="shrink-0" />
             </span>
           </motion.a>

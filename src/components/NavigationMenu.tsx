@@ -44,7 +44,7 @@ export function MenuContainer({ children }: MenuContainerProps) {
     setIsExpanded(!isExpanded)
   }
 
-  const iconColor = "text-gray-900 dark:text-gray-100"
+  const iconColor = "text-foreground hover:text-primary"
 
   return (
     <div data-expanded={isExpanded}>

@@ -1,6 +1,15 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
+function withOpacity(variableName: string) {
+  return ({ opacityValue }: { opacityValue?: string }) => {
+    if (opacityValue !== undefined) {
+      return `color-mix(in srgb, var(${variableName}) calc(${opacityValue} * 100%), transparent)`;
+    }
+    return `var(${variableName})`;
+  };
+}
+
 export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
@@ -15,39 +24,45 @@ export default {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: withOpacity("--line"),
+        input: withOpacity("--line"),
+        ring: withOpacity("--acc"),
+        background: withOpacity("--bg"),
+        foreground: withOpacity("--ink"),
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: withOpacity("--acc"),
+          foreground: withOpacity("--bg"),
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: withOpacity("--line"),
+          foreground: withOpacity("--ink"),
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "hsl(var(--destructive, 0 84.2% 60.2%))",
+          foreground: "hsl(var(--destructive-foreground, 0 0% 98%))",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: withOpacity("--line"),
+          foreground: withOpacity("--mute"),
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: withOpacity("--acc"),
+          foreground: withOpacity("--bg"),
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: withOpacity("--bg"),
+          foreground: withOpacity("--ink"),
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: withOpacity("--bg"),
+          foreground: withOpacity("--ink"),
         },
+        // Direct palette tokens (e.g. text-ink, bg-bg, text-acc, border-line, text-mute)
+        bg: withOpacity("--bg"),
+        ink: withOpacity("--ink"),
+        mute: withOpacity("--mute"),
+        line: withOpacity("--line"),
+        acc: withOpacity("--acc"),
       },
       fontFamily: {
         display: ['Bebas Neue', 'sans-serif'],

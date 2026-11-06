@@ -149,14 +149,14 @@ export function Contact() {
 
         <motion.div
           {...fadeInUp}
-          className="w-full h-px bg-foreground/20 mb-8 lg:mb-12"
+          className="w-full h-px bg-border mb-8 lg:mb-12"
         />
 
         <motion.div
           {...fadeInUp}
-          className="mb-8 lg:mb-12 max-w-2xl rounded-3xl p-2 transition-all duration-500 hover:bg-black/5 dark:hover:bg-white/5"
+          className="mb-8 lg:mb-12 max-w-2xl rounded-3xl p-2 transition-all duration-500 hover:bg-foreground/[0.03]"
         >
-          <h3 className="text-xl md:text-2xl lg:text-3xl text-gray-900 dark:text-white font-light leading-tight mb-4">
+          <h3 className="text-xl md:text-2xl lg:text-3xl text-foreground font-light leading-tight mb-4">
             OPEN TO NEW<br />
             OPPORTUNITIES IN<br />
             <span className="text-foreground">DATA SCIENCE & ML</span>
@@ -169,13 +169,13 @@ export function Contact() {
         >
           <form
             onSubmit={handleSend}
-            className="flex flex-col gap-6 rounded-3xl border border-foreground/10 bg-gradient-to-br from-foreground/[0.04] to-foreground/[0.01] p-7 sm:p-10 backdrop-blur-md shadow-2xl transition-all duration-500 hover:bg-black/5 hover:shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] hover:border-foreground/30 hover:scale-[1.01] dark:hover:bg-white/5 dark:hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.25)]"
+            className="flex flex-col gap-6 rounded-3xl border border-border bg-foreground/[0.02] p-7 sm:p-10 backdrop-blur-md shadow-2xl transition-all duration-500 hover:bg-foreground/[0.04] hover:shadow-[0_0_40px_-5px_rgba(0,0,0,0.25)] hover:border-foreground/30 hover:scale-[1.01]"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-2">
                 <label className="text-lg font-medium font-poppins tracking-wide text-foreground mb-1">Your name</label>
                 <div className="relative">
-                  <User size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none" />
+                  <User size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
                   <input
                     type="text"
                     inputMode="text"
@@ -184,7 +184,7 @@ export function Contact() {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="E.g. Mahmudullah Riyad"
                     required
-                    className="flex h-14 w-full rounded-2xl border border-foreground/15 bg-background/70 pl-11 pr-4 text-base text-gray-900 dark:text-white placeholder:text-xs placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 focus-visible:border-transparent transition-all"
+                    className="flex h-14 w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all"
                   />
                 </div>
                 {showErrors && !nameValid && (
@@ -194,14 +194,14 @@ export function Contact() {
               <div className="flex flex-col gap-2">
                 <label className="text-lg font-medium font-poppins tracking-wide text-foreground mb-1">Email Address</label>
                 <div className="relative">
-                  <Mail size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none" />
+                  <Mail size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="E.g. name@example.com"
                     required
-                    className="flex h-14 w-full rounded-2xl border border-foreground/15 bg-background/70 pl-11 pr-4 text-base text-gray-900 dark:text-white placeholder:text-xs placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 focus-visible:border-transparent transition-all"
+                    className="flex h-14 w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all"
                   />
                 </div>
                 {showErrors && !emailValid && (
@@ -212,21 +212,21 @@ export function Contact() {
             <div className="flex flex-col gap-2">
               <label className="text-lg font-medium font-poppins tracking-wide text-foreground mb-1">Project details</label>
               <div className="relative">
-                <MessageSquare size={18} className="absolute left-3.5 top-4 text-gray-500 dark:text-gray-400 pointer-events-none" />
+                <MessageSquare size={18} className="absolute left-3.5 top-4 text-muted-foreground pointer-events-none" />
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Tell me about your project visions..."
                   rows={5}
                   required
-                  className="flex w-full rounded-2xl border border-foreground/15 bg-background/70 pl-11 pr-4 pt-3.5 pb-3 text-base text-gray-900 dark:text-white placeholder:text-xs placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 focus-visible:border-transparent transition-all resize-none"
+                  className="flex w-full rounded-2xl border border-border bg-background/70 pl-11 pr-4 pt-3.5 pb-3 text-base text-foreground placeholder:text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all resize-none"
                 />
               </div>
             </div>
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="self-start inline-flex items-center gap-1.5 h-11 px-5 rounded-2xl bg-gradient-to-r from-foreground to-foreground/80 text-background text-xs font-normal tracking-wide shadow-md transition-all hover:scale-[1.03] hover:shadow-xl active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none"
+              className="self-start inline-flex items-center gap-1.5 h-11 px-5 rounded-2xl bg-primary text-primary-foreground text-xs font-normal tracking-wide shadow-md transition-all hover:scale-[1.03] hover:shadow-xl hover:opacity-90 active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none"
             >
               <Send size={18} className="shrink-0" />
               {status === 'sending' ? 'Sending...' : "Let's talk"}
@@ -255,7 +255,7 @@ export function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 aria-label={link.label}
-                className={`flex items-center gap-3 text-gray-800 dark:text-gray-300 hover:text-foreground transition-colors min-h-[44px] p-2 ${link.label !== 'ResearchGate' ? 'hoverable' : ''}`}
+                className={`flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors min-h-[44px] p-2 ${link.label !== 'ResearchGate' ? 'hoverable' : ''}`}
               >
                 <Icon />
               </motion.a>
@@ -271,10 +271,10 @@ export function Contact() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="w-full py-6 flex flex-col items-center justify-center gap-2"
       >
-        <div className="h-10 w-10 rounded-full bg-black dark:bg-white flex items-center justify-center">
+        <div className="h-10 w-10 rounded-full bg-foreground text-background flex items-center justify-center">
           <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover" />
         </div>
-        <p className="text-xs text-gray-900 dark:text-gray-100">
+        <p className="text-xs text-muted-foreground">
           &copy; 2026 All rights reserved by Md. Zobayer Chowdhury
         </p>
       </motion.footer>

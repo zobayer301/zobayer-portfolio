@@ -4,65 +4,88 @@
 
 @layer base {
   :root {
-    --background: 210 37% 84%;
-    --foreground: 0 0% 0%;
+    /* -------------------------------------------------------------
+       Brand Palette Variables (edit these values to change the look):
+       --bg   : Background color (light: #eef1f4, dark: #0f1624)
+       --ink  : Text and plot points (light: #14213d, dark: #e6ebf5)
+       --mute : Secondary text (light: #53607a, dark: #98a4bd)
+       --line : Lines and dividers (light: #c9d1dc, dark: #2a3550)
+       --acc  : Accent (links, fitted line, +/− icons) (light: #2f5bea, dark: #7e9bff)
+       ------------------------------------------------------------- */
+    --bg: #eef1f4;
+    --ink: #14213d;
+    --mute: #53607a;
+    --line: #c9d1dc;
+    --acc: #2f5bea;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    /* Theme tokens mapped to palette */
+    --background: var(--bg);
+    --foreground: var(--ink);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --card: var(--bg);
+    --card-foreground: var(--ink);
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 98%;
+    --popover: var(--bg);
+    --popover-foreground: var(--ink);
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 9%;
+    --primary: var(--acc);
+    --primary-foreground: var(--bg);
 
-    --muted: 0 0% 30%;
-    --muted-foreground: 0 0% 20%;
+    --secondary: var(--line);
+    --secondary-foreground: var(--ink);
 
-    --accent: 0 0% 30%;
-    --accent-foreground: 0 0% 98%;
+    --muted: var(--line);
+    --muted-foreground: var(--mute);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --accent: var(--acc);
+    --accent-foreground: var(--bg);
 
-    --border: 0 0% 80%;
-    --input: 0 0% 80%;
-    --ring: 0 0% 9%;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --border: var(--line);
+    --input: var(--line);
+    --ring: var(--acc);
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    /* Brand Palette Variables — Dark Mode */
+    --bg: #0f1624;
+    --ink: #e6ebf5;
+    --mute: #98a4bd;
+    --line: #2a3550;
+    --acc: #7e9bff;
 
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 98%;
+    /* Theme tokens mapped to palette */
+    --background: var(--bg);
+    --foreground: var(--ink);
 
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 98%;
+    --card: var(--bg);
+    --card-foreground: var(--ink);
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 4%;
+    --popover: var(--bg);
+    --popover-foreground: var(--ink);
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 98%;
+    --primary: var(--acc);
+    --primary-foreground: var(--bg);
 
-    --muted: 0 0% 40%;
-    --muted-foreground: 0 0% 60%;
+    --secondary: var(--line);
+    --secondary-foreground: var(--ink);
 
-    --accent: 0 0% 53%;
-    --accent-foreground: 0 0% 4%;
+    --muted: var(--line);
+    --muted-foreground: var(--mute);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --accent: var(--acc);
+    --accent-foreground: var(--bg);
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 98%;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --border: var(--line);
+    --input: var(--line);
+    --ring: var(--acc);
   }
 
   * {
@@ -70,10 +93,6 @@
     margin: 0;
     padding: 0;
     @apply border-border;
-  }
-
-  html {
-    scroll-behavior: smooth;
   }
 
   html {
@@ -88,8 +107,8 @@
   }
 
   ::selection {
-    background-color: rgba(156, 163, 175, 0.3);
-    color: #fafafa;
+    background-color: var(--acc);
+    color: var(--bg);
   }
 }
 
@@ -153,16 +172,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--background));
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
+  background: var(--line);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--accent));
+  background: var(--acc);
 }
 
 /* Section spacing - fluid via clamp so it scales smoothly with zoom */

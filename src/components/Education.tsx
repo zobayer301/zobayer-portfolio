@@ -28,10 +28,10 @@ function EducationCard({
   return (
     <div className="relative pl-14 md:pl-0">
       {/* Spine segment */}
-      <div className={`absolute left-3 ${flip ? 'lg:left-[60%]' : 'lg:left-[40%]'} top-0 bottom-0 w-px -translate-x-1/2 bg-foreground/15`} />
+      <div className={`absolute left-3 ${flip ? 'lg:left-[60%]' : 'lg:left-[40%]'} top-0 bottom-0 w-px -translate-x-1/2 bg-border`} />
 
       {/* Timeline node */}
-      <span className={`absolute left-3 ${flip ? 'lg:left-[60%]' : 'lg:left-[40%]'} top-1.5 lg:top-1/2 w-2.5 h-2.5 -translate-x-1/2 lg:-translate-y-1/2 rounded-full bg-foreground shadow-[0_0_0_4px_hsl(var(--background))] z-10`} />
+      <span className={`absolute left-3 ${flip ? 'lg:left-[60%]' : 'lg:left-[40%]'} top-1.5 lg:top-1/2 w-2.5 h-2.5 -translate-x-1/2 lg:-translate-y-1/2 rounded-full bg-primary shadow-[0_0_0_4px_var(--bg)] z-10`} />
 
       <div className={`grid grid-cols-1 gap-8 lg:gap-16 items-center ${flip ? 'lg:grid-cols-[3fr_2fr]' : 'lg:grid-cols-[2fr_3fr]'}`}>
         {/* Image */}
@@ -47,7 +47,7 @@ function EducationCard({
               className="w-full h-auto transition-all duration-700 group-hover:scale-105"
             />
           </div>
-          <div className={`absolute -bottom-4 w-24 h-24 border border-foreground/20 rounded-2xl -z-10 ${flip ? '-left-4' : '-right-4'}`} />
+          <div className={`absolute -bottom-4 w-24 h-24 border border-border rounded-2xl -z-10 ${flip ? '-left-4' : '-right-4'}`} />
         </motion.div>
 
         {/* Details */}
@@ -56,12 +56,12 @@ function EducationCard({
           transition={{ ...fadeInUp.transition, delay: 0.15 }}
           className={`flex flex-col justify-center ${flip ? 'lg:order-1' : 'lg:order-2'}`}
         >
-          <span className="inline-flex items-center gap-2 self-start px-4 py-1.5 mb-4 text-xs font-poppins tracking-widest uppercase text-foreground/80 border border-foreground/20 rounded-full bg-foreground/[0.03]">
+          <span className="inline-flex items-center gap-2 self-start px-4 py-1.5 mb-4 text-xs font-poppins tracking-widest uppercase text-foreground/80 border border-border rounded-full bg-foreground/[0.03]">
             <GraduationCap size={14} className="text-primary shrink-0" />
             {year}
           </span>
 
-          <h3 className="text-xl lg:text-2xl text-gray-900 dark:text-white mb-3 leading-snug">
+          <h3 className="text-xl lg:text-2xl text-foreground mb-3 leading-snug">
             {degree}
           </h3>
 
@@ -70,20 +70,20 @@ function EducationCard({
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mb-4 text-xs text-foreground/60 uppercase tracking-widest hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+              className="group mb-4 text-xs text-muted-foreground uppercase tracking-widest hover:text-primary transition-colors inline-flex items-center gap-1.5"
             >
               {label}
-              <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:-rotate-45 group-hover:-translate-y-0.5">
+              <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-primary text-primary-foreground transition-all duration-300 group-hover:-rotate-45 group-hover:-translate-y-0.5">
                 <ArrowRight size={11} className="shrink-0" />
               </span>
             </a>
           ) : (
-            <p className="mb-4 text-xs text-foreground/60 uppercase tracking-widest">
+            <p className="mb-4 text-xs text-muted-foreground uppercase tracking-widest">
               {label}
             </p>
           )}
 
-          <p className="text-base text-gray-800 dark:text-gray-300 leading-relaxed">
+          <p className="text-base text-muted-foreground leading-relaxed">
             {description}
           </p>
         </motion.div>

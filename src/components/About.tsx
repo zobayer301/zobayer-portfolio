@@ -68,13 +68,13 @@ export function About() {
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
             className="lg:col-span-3 flex flex-col justify-center"
           >
-            <h3 className="font-display text-2xl lg:text-3xl text-gray-900 dark:text-white mb-6 leading-snug">
+            <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-6 leading-snug">
               Computer Science & Engineering graduate passionate about{' '}
               AI,{' '}
               Machine Learning, and{' '}
               Immersive Technologies.
             </h3>
-            <p className="text-base lg:text-lg text-gray-800 dark:text-gray-300 leading-relaxed mb-8">
+            <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-8">
               Computer Science and Engineering graduate from Green University of Bangladesh. Worked as an Game Developer (Intern) at
 Battery Low Interactive Ltd. and contributed as an Assistant Graphics Designer at the Green University Computer
 Club.
@@ -86,21 +86,21 @@ Club.
                   key={m.title}
                   {...fadeInUp}
                   transition={{ ...fadeInUp.transition, delay: 0.1 * (i + 1) }}
-                  className="hoverable flex items-start gap-3 px-4 py-3 rounded-xl border border-black bg-black hover:bg-neutral-800 hover:border-neutral-700 transition-all duration-300 min-h-[44px] dark:border-foreground/10 dark:bg-foreground/[0.02] dark:hover:bg-foreground/[0.04] dark:hover:border-foreground/20"
+                  className="hoverable flex items-start gap-3 px-4 py-3 rounded-xl border border-border bg-foreground/[0.02] hover:bg-foreground/[0.04] hover:border-foreground/20 transition-all duration-300 min-h-[44px]"
                 >
-                  <div className="text-white shrink-0">{m.icon}</div>
+                  <div className="text-primary shrink-0">{m.icon}</div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs text-neutral-400 uppercase tracking-wider">{m.title}</p>
-                    <p className="text-sm text-neutral-200 dark:text-gray-300 break-words">{m.desc}</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.title}</p>
+                    <p className="text-sm text-foreground break-words">{m.desc}</p>
                     {m.link && (
                       <a
                         href={m.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hoverable group mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-green-400 hover:text-green-300 transition-colors"
+                        className="hoverable group mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:text-primary/80 transition-colors"
                       >
                         View Profile
-                        <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:-rotate-45 group-hover:-translate-y-0.5">
+                        <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-primary text-primary-foreground transition-all duration-300 group-hover:-rotate-45 group-hover:-translate-y-0.5">
                           <ArrowRight size={11} className="shrink-0" />
                         </span>
                       </a>
@@ -114,7 +114,7 @@ Club.
 
         <motion.div {...fadeInUp} className="mb-16 lg:mb-20">
           <div className="relative py-12 px-8 lg:px-16 rounded-3xl border border-foreground/10 bg-foreground/[0.02]">
-            <h2 className="font-display text-[max(1.5rem,6vw)] lg:text-[max(2rem,4vw)] xl:text-section leading-none tracking-tight text-gray-900 dark:text-white pl-4 lg:pl-12">
+            <h2 className="font-display text-[max(1.5rem,6vw)] lg:text-[max(2rem,4vw)] xl:text-section leading-none tracking-tight text-foreground pl-4 lg:pl-12">
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">&quot;SOLVING REAL-WORLD</TextScramble>
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">PROBLEMS WITH AI</TextScramble>
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">AND CONTINUOUSLY</TextScramble>
@@ -128,26 +128,26 @@ Club.
             {...fadeInUp}
             className="lg:col-span-3 flex flex-col justify-center order-2 lg:order-1"
           >
-            <span className="text-xs text-foreground/70 tracking-widest uppercase mb-3">Undergraduate Thesis</span>
-            <h3 className="font-display text-xl lg:text-2xl text-gray-900 dark:text-white mb-4 leading-snug">
+            <span className="text-xs text-muted-foreground tracking-widest uppercase mb-3">Undergraduate Thesis</span>
+            <h3 className="font-display text-xl lg:text-2xl text-foreground mb-4 leading-snug">
               AI-Driven Early Detection of Heart Disease Using Machine Learning and Deep Learning
             </h3>
-            <p className="text-base text-gray-800 dark:text-gray-300 leading-relaxed mb-6">
+            <p className="text-base text-muted-foreground leading-relaxed mb-6">
               Developed a hybrid AI framework integrating a stacking ensemble (Random Forest, XGBoost,
               and Logistic Regression) with a Residual 1D-CNN to improve early heart disease detection
               using structured clinical data and ECG signals.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">
+              <span className="px-3 py-1 rounded-full text-xs border border-border bg-foreground/[0.03] text-foreground/80">
                 95.7% ML Accuracy
               </span>
-              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">
+              <span className="px-3 py-1 rounded-full text-xs border border-border bg-foreground/[0.03] text-foreground/80">
                 92.3% ECG Classification
               </span>
-              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">
+              <span className="px-3 py-1 rounded-full text-xs border border-border bg-foreground/[0.03] text-foreground/80">
                 Stacking Ensemble
               </span>
-              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">
+              <span className="px-3 py-1 rounded-full text-xs border border-border bg-foreground/[0.03] text-foreground/80">
                 Residual 1D-CNN
               </span>
             </div>
@@ -155,10 +155,10 @@ Club.
               href="/thesispaper.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-4 self-start inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-black/20 text-gray-900 text-xs font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 dark:border-foreground/30 dark:text-foreground/80 dark:hover:bg-foreground/10"
+              className="group mt-4 self-start inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-border text-foreground text-xs font-medium rounded-full hover:border-primary hover:text-primary transition-all duration-300"
             >
               Preview Paper
-              <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-foreground text-background transition-all duration-300 group-hover:bg-background group-hover:text-foreground group-hover:-rotate-45 group-hover:-translate-y-0.5">
+              <span className="inline-flex items-center justify-center w-5 h-5 shrink-0 rounded-full bg-primary text-primary-foreground transition-all duration-300 group-hover:-rotate-45 group-hover:-translate-y-0.5">
                 <ArrowRight size={11} className="shrink-0" />
               </span>
             </a>
@@ -199,21 +199,21 @@ Club.
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
             className="lg:col-span-3 flex flex-col justify-center"
           >
-            <span className="text-xs text-foreground/70 tracking-widest uppercase mb-3">What I Do Now</span>
-            <h3 className="font-display text-xl lg:text-2xl text-gray-900 dark:text-white mb-4 leading-snug">
+            <span className="text-xs text-muted-foreground tracking-widest uppercase mb-3">What I Do Now</span>
+            <h3 className="font-display text-xl lg:text-2xl text-foreground mb-4 leading-snug">
               Building AI & Machine Learning Solutions
             </h3>
-            <p className="text-base text-gray-800 dark:text-gray-300 leading-relaxed mb-6">
+            <p className="text-base text-muted-foreground leading-relaxed mb-6">
               I design and develop end-to-end machine learning solutions, from data preprocessing and feature
               engineering to model training, evaluation, and deployment. I enjoy transforming complex datasets into
               practical, data-driven applications using modern AI technologies.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">Python</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">scikit-learn</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">TensorFlow</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">PyTorch</span>
-              <span className="px-3 py-1 rounded-full text-xs border border-black bg-black text-white dark:bg-transparent dark:border-foreground/30 dark:text-foreground/80">Deep Learning</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-border bg-foreground/[0.03] text-foreground/80">Python</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-border bg-foreground/[0.03] text-foreground/80">scikit-learn</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-border bg-foreground/[0.03] text-foreground/80">TensorFlow</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-border bg-foreground/[0.03] text-foreground/80">PyTorch</span>
+              <span className="px-3 py-1 rounded-full text-xs border border-border bg-foreground/[0.03] text-foreground/80">Deep Learning</span>
             </div>
           </motion.div>
         </div>

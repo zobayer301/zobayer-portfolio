@@ -79,15 +79,15 @@ export function Faq() {
                 )}
                 aria-expanded={openIndex === index}
               >
-                <span className="text-sm lg:text-base font-poppins font-medium tracking-wide text-gray-900 dark:text-white pr-4">
+                <span className="text-sm lg:text-base font-poppins font-medium tracking-wide text-foreground pr-4">
                   {faq.question}
                 </span>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 45 : 0 }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="shrink-0 w-8 h-8 rounded-full border border-foreground/20 flex items-center justify-center"
+                  className="shrink-0 w-8 h-8 rounded-full border border-primary/40 flex items-center justify-center bg-primary/10"
                 >
-                  <Plus size={16} className="text-foreground/70" />
+                  <Plus size={16} className="text-primary" />
                 </motion.div>
               </button>
               <AnimatePresence initial={false}>
@@ -100,7 +100,7 @@ export function Faq() {
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                     className="overflow-hidden"
                   >
-                    <p className="text-sm lg:text-base font-light font-poppins tracking-wide text-foreground/70 pb-5 lg:pb-6 leading-relaxed">
+                    <p className="text-sm lg:text-base font-light font-poppins tracking-wide text-muted-foreground pb-5 lg:pb-6 leading-relaxed">
                       {faq.answer}
                     </p>
                   </motion.div>
