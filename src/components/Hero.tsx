@@ -119,7 +119,7 @@ export function Hero() {
       </div>
 
       <motion.div
-        className="w-full min-h-[max(200px,40vw)] sm:min-h-[max(250px,35vw)] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-2/5"
+        className="w-full min-h-[max(200px,40vw)] sm:min-h-[max(250px,35vw)] bg-cover bg-no-repeat bg-center md:w-1/2 md:min-h-full lg:w-2/5"
         style={{ backgroundImage: "url(/hero-image.jpg)" }}
         initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
         animate={{ clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0% 100%)" }}
