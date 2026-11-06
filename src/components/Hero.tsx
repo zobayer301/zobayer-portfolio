@@ -118,13 +118,57 @@ export function Hero() {
         </motion.footer>
       </div>
 
-      <motion.div
-        className="w-full min-h-[max(200px,40vw)] sm:min-h-[max(250px,35vw)] bg-cover bg-no-repeat bg-center md:w-1/2 md:min-h-full lg:w-2/5"
-        style={{ backgroundImage: "url(/hero-image.jpg)" }}
-        initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
-        animate={{ clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0% 100%)" }}
-        transition={{ duration: 1.2, ease: "circOut" }}
-      />
+      {/* Hero Visual Container */}
+      <div className="relative w-full min-h-[300px] sm:min-h-[380px] md:min-h-full md:w-1/2 lg:w-2/5 flex items-center justify-center overflow-hidden">
+        {/* Ambient Backlight Glow matching website accent theme */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-50 dark:opacity-75 transition-opacity duration-700"
+          style={{
+            background:
+              "radial-gradient(circle at 60% 45%, rgba(126, 155, 255, 0.28) 0%, rgba(47, 91, 234, 0.12) 40%, transparent 70%)",
+            filter: "blur(48px)",
+          }}
+          aria-hidden="true"
+        />
+
+        {/* Enhanced HD Photo Layer */}
+        <motion.div
+          className="relative w-full h-full min-h-[300px] sm:min-h-[380px] md:min-h-full bg-cover bg-no-repeat bg-center"
+          style={{
+            backgroundImage: "url(/hero-image.jpg)",
+            filter: "contrast(1.16) brightness(1.04) saturate(1.1)",
+            WebkitFilter: "contrast(1.16) brightness(1.04) saturate(1.1)",
+            imageRendering: "-webkit-optimize-contrast",
+          }}
+          initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
+          animate={{ clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0% 100%)" }}
+          transition={{ duration: 1.2, ease: "circOut" }}
+        >
+          {/* Subtle themed tone overlay to harmoniously match website palette */}
+          <div
+            className="absolute inset-0 pointer-events-none mix-blend-color opacity-25 dark:opacity-30"
+            style={{ backgroundColor: "var(--acc)" }}
+            aria-hidden="true"
+          />
+
+          {/* Seamless feathered edge gradients into page background */}
+          <div
+            className="absolute inset-0 pointer-events-none bg-gradient-to-r from-background via-transparent to-transparent opacity-80 md:opacity-90 hidden md:block"
+            style={{ width: "35%" }}
+            aria-hidden="true"
+          />
+          <div
+            className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background via-background/20 to-transparent opacity-70"
+            style={{ height: "40%", top: "auto" }}
+            aria-hidden="true"
+          />
+          <div
+            className="absolute inset-0 pointer-events-none bg-gradient-to-b from-background/40 via-transparent to-transparent md:hidden block"
+            style={{ height: "25%" }}
+            aria-hidden="true"
+          />
+        </motion.div>
+      </div>
     </motion.section>
   )
 }
