@@ -142,7 +142,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="hover-bob font-display font-bold text-[max(2rem,14vw)] sm:text-[max(2.5rem,10vw)] lg:text-hero leading-none tracking-tight mb-8"
+          className="hover-bob font-display font-bold text-[max(1.75rem,8vw)] sm:text-[max(2.25rem,6vw)] lg:text-hero leading-[1.05] tracking-tight mb-8"
         >
           Get in touch
         </motion.h2>
@@ -156,7 +156,7 @@ export function Contact() {
           {...fadeInUp}
           className="mb-8 lg:mb-12 max-w-2xl rounded-3xl p-2 transition-all duration-500 hover:bg-foreground/[0.03]"
         >
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-sans font-medium text-foreground leading-tight mb-4">
+          <h3 className="text-lg md:text-xl lg:text-2xl font-sans font-medium text-foreground leading-snug mb-4">
             OPEN TO NEW<br />
             OPPORTUNITIES IN<br />
             <span className="text-foreground">DATA SCIENCE & ML</span>

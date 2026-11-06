@@ -68,7 +68,7 @@ export function About() {
             transition={{ ...fadeInUp.transition, delay: 0.2 }}
             className="lg:col-span-3 flex flex-col justify-center"
           >
-            <h3 className="font-display font-bold text-2xl lg:text-3xl text-foreground mb-6 leading-snug">
+            <h3 className="font-display font-bold text-xl lg:text-2xl text-foreground mb-5 leading-snug">
               Computer Science & Engineering graduate passionate about{' '}
               AI,{' '}
               Machine Learning, and{' '}
@@ -114,7 +114,7 @@ Club.
 
         <motion.div {...fadeInUp} className="mb-16 lg:mb-20">
           <div className="relative py-12 px-8 lg:px-16 rounded-3xl border border-foreground/10 bg-foreground/[0.02]">
-            <h2 className="font-display font-bold text-[max(1.5rem,6vw)] lg:text-[max(2rem,4vw)] xl:text-section leading-none tracking-tight text-foreground pl-4 lg:pl-12">
+            <h2 className="font-display font-bold text-[max(1.35rem,4.5vw)] lg:text-[max(1.65rem,3vw)] xl:text-large leading-[1.1] tracking-tight text-foreground pl-4 lg:pl-12">
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">&quot;SOLVING REAL-WORLD</TextScramble>
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">PROBLEMS WITH AI</TextScramble>
               <TextScramble trigger={!prefersReduced} duration={1.2} speed={0.03} className="block">AND CONTINUOUSLY</TextScramble>
@@ -129,7 +129,7 @@ Club.
             className="lg:col-span-3 flex flex-col justify-center order-2 lg:order-1"
           >
             <span className="text-xs font-sans font-medium text-muted-foreground tracking-widest uppercase mb-3">Undergraduate Thesis</span>
-            <h3 className="font-display font-bold text-xl lg:text-2xl text-foreground mb-4 leading-snug">
+            <h3 className="font-display font-bold text-lg lg:text-xl text-foreground mb-3 leading-snug">
               AI-Driven Early Detection of Heart Disease Using Machine Learning and Deep Learning
             </h3>
             <p className="font-serif text-base text-muted-foreground leading-relaxed mb-6">
@@ -200,7 +200,7 @@ Club.
             className="lg:col-span-3 flex flex-col justify-center"
           >
             <span className="text-xs font-sans font-medium text-muted-foreground tracking-widest uppercase mb-3">What I Do Now</span>
-            <h3 className="font-display font-bold text-xl lg:text-2xl text-foreground mb-4 leading-snug">
+            <h3 className="font-display font-bold text-lg lg:text-xl text-foreground mb-3 leading-snug">
               Building AI & Machine Learning Solutions
             </h3>
             <p className="font-serif text-base text-muted-foreground leading-relaxed mb-6">

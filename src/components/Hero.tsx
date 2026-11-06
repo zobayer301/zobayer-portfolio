@@ -63,7 +63,7 @@ export function Hero() {
         <motion.main variants={containerVariants}>
           <motion.h1
             variants={itemVariants}
-            className="font-display font-bold text-[max(1.75rem,13vw)] sm:text-[max(2rem,10vw)] md:text-[max(2.5rem,6.5vw)] lg:text-[max(3rem,5.5vw)] leading-[1.05] tracking-tight text-foreground"
+            className="font-display font-bold text-[max(1.5rem,10vw)] sm:text-[max(1.85rem,7.5vw)] md:text-[max(2.25rem,5vw)] lg:text-[max(2.5rem,4.25vw)] leading-[1.1] tracking-tight text-foreground"
           >
             Md. Zobayer Chowdhury
           </motion.h1>

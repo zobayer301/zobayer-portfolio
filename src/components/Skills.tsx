@@ -61,7 +61,7 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hover-bob font-display font-bold text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-10 lg:mb-14"
+          className="hover-bob font-display font-bold text-[max(1.75rem,7vw)] lg:text-section leading-[1.05] tracking-tight mb-10 lg:mb-14"
         >
           SKILLS
         </motion.h2>
@@ -92,7 +92,7 @@ export function Skills() {
                 'backdrop-blur-md',
               )}>
                 <div className="mb-4">
-                  <h3 className="text-base lg:text-lg font-sans font-medium tracking-wide text-foreground">
+                  <h3 className="text-sm lg:text-base font-sans font-medium tracking-wide text-foreground">
                     {cat.category}
                   </h3>
                 </div>

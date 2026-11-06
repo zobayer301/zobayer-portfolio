@@ -61,7 +61,7 @@ function EducationCard({
             {year}
           </span>
 
-          <h3 className="text-xl lg:text-2xl font-sans font-medium text-foreground mb-3 leading-snug">
+          <h3 className="text-lg lg:text-xl font-sans font-medium text-foreground mb-2 leading-snug">
             {degree}
           </h3>
 
@@ -133,7 +133,7 @@ export function Education() {
 
         <motion.h2
           {...fadeInUp}
-          className="hover-bob font-display font-bold text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
+          className="hover-bob font-display font-bold text-[max(1.75rem,7vw)] lg:text-section leading-[1.05] tracking-tight mb-8 lg:mb-12"
         >
           EDUCATION
         </motion.h2>

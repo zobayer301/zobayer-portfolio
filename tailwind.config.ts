@@ -73,9 +73,9 @@ export default {
         poppins: ['"Bricolage Grotesque"', 'sans-serif'],
       },
       fontSize: {
-        'hero': 'clamp(3.5rem, 13vw, 10rem)',
-        'section': 'clamp(2.75rem, 9vw, 7rem)',
-        'large': 'clamp(2rem, 5vw, 4rem)',
+        'hero': 'clamp(2.5rem, 8vw, 5.5rem)',
+        'section': 'clamp(2rem, 5.5vw, 4.25rem)',
+        'large': 'clamp(1.75rem, 4vw, 3rem)',
       },
       letterSpacing: {
         'tight': '-0.02em',

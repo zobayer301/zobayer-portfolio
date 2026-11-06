@@ -61,7 +61,7 @@ export function Work() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: viewportMargin }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hover-bob font-display font-bold text-[max(2rem,10vw)] lg:text-section leading-none tracking-tight mb-8 lg:mb-12"
+          className="hover-bob font-display font-bold text-[max(1.75rem,7vw)] lg:text-section leading-[1.05] tracking-tight mb-8 lg:mb-12"
         >
           FEATURED<br />PROJECTS
         </motion.h2>
@@ -93,7 +93,7 @@ export function Work() {
               <div className="relative p-6 lg:p-8 flex flex-col h-full">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-sans font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
+                    <h3 className="text-base md:text-lg lg:text-xl font-sans font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-snug">
                       {exp.title}
                     </h3>
                     <p className="text-sm lg:text-base font-serif text-muted-foreground mt-1">
