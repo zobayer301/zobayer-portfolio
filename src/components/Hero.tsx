@@ -129,8 +129,8 @@ export function Hero() {
           transition={{ duration: 1.2, ease: "circOut" }}
         />
 
-        {/* Animated Signature positioned lower in the hero section */}
-        <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 z-20 pointer-events-auto">
+        {/* Animated Signature positioned precisely at the marked position */}
+        <div className="absolute top-[59%] left-[6%] sm:left-[8%] md:left-[10%] -translate-y-1/2 z-20 pointer-events-auto">
           <Signature />
         </div>
       </div>

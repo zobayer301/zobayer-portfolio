@@ -46,11 +46,11 @@ export function Signature({ className = "" }: { className?: string }) {
     <div
       onClick={restart}
       title="Click to replay signature"
-      className={`relative inline-flex items-center justify-center bg-transparent border-0 shadow-none p-0 cursor-pointer select-none ${className}`}
+      className={`relative inline-flex items-start justify-start text-left bg-transparent border-0 shadow-none p-0 cursor-pointer select-none ${className}`}
     >
       <span
-        className="font-['Mrs_Saint_Delafield',_cursive] text-3xl sm:text-4xl md:text-[2.65rem] font-normal text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)] tracking-wide"
-        style={{ letterSpacing: "0.03em" }}
+        className="font-['Mrs_Saint_Delafield',_cursive] text-2xl sm:text-3xl md:text-[2.35rem] font-normal text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] whitespace-nowrap leading-none"
+        style={{ letterSpacing: "0.02em" }}
       >
         {displayText}
       </span>
