@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, Mail, ChevronDown } from "lucide-react"
-import { Signature } from "@/components/Signature"
 
 const MapPinIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-primary shrink-0">
@@ -119,21 +118,13 @@ export function Hero() {
         </motion.footer>
       </div>
 
-      {/* Right Column: Hero Photo & Animated Signature */}
-      <div className="relative w-full min-h-[max(240px,42vw)] sm:min-h-[max(280px,38vw)] md:w-1/2 md:min-h-full lg:w-2/5 flex items-center justify-center">
-        <motion.div
-          className="w-full h-full min-h-[max(240px,42vw)] sm:min-h-[max(280px,38vw)] md:min-h-full bg-cover bg-no-repeat bg-center"
-          style={{ backgroundImage: "url(/hero-image.jpg)" }}
-          initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
-          animate={{ clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0% 100%)" }}
-          transition={{ duration: 1.2, ease: "circOut" }}
-        />
-
-        {/* Animated Signature positioned precisely at the marked position */}
-        <div className="absolute top-[59%] left-[6%] sm:left-[8%] md:left-[10%] -translate-y-1/2 z-20 pointer-events-auto">
-          <Signature />
-        </div>
-      </div>
+      <motion.div
+        className="w-full min-h-[max(200px,40vw)] sm:min-h-[max(250px,35vw)] bg-cover bg-no-repeat bg-center md:w-1/2 md:min-h-full lg:w-2/5"
+        style={{ backgroundImage: "url(/hero-image.jpg)" }}
+        initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
+        animate={{ clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0% 100%)" }}
+        transition={{ duration: 1.2, ease: "circOut" }}
+      />
     </motion.section>
   )
 }
