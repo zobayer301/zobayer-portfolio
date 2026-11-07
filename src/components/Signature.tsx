@@ -49,7 +49,7 @@ export function Signature({ className = "" }: { className?: string }) {
       className={`relative inline-flex items-center justify-center bg-transparent border-0 shadow-none p-0 cursor-pointer select-none ${className}`}
     >
       <span
-        className="font-['Great_Vibes',_'Alex_Brush',_cursive] text-4xl sm:text-5xl md:text-6xl font-normal text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)] tracking-wide"
+        className="font-['Mrs_Saint_Delafield',_cursive] text-3xl sm:text-4xl md:text-[2.65rem] font-normal text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)] tracking-wide"
         style={{ letterSpacing: "0.03em" }}
       >
         {displayText}
