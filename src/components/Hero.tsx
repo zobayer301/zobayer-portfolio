@@ -84,6 +84,7 @@ export function Hero() {
           </motion.p>
           <motion.a
             href="/Md_Zobayer_Chowdhury_CV.pdf"
+            download="Md_Zobayer_Chowdhury_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             variants={itemVariants}
