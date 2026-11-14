@@ -4,6 +4,16 @@ import { useIsMobile } from '@/hooks/use-mobile'
 
 const experiences = [
   {
+    title: 'Zurnix AI \u2014 Multi-Agent Intelligence System',
+    company: 'Autonomous AI Platform',
+    period: 'Live App',
+    featured: true,
+    isLive: true,
+    description: 'An interactive multi-agent artificial intelligence platform deployed on Streamlit. Orchestrates specialized autonomous agents to collaboratively analyze, plan, and execute complex workflows in real time with an intuitive web interface.',
+    skills: ['Python', 'Streamlit', 'Multi-Agent AI', 'LLM Orchestration', 'Prompt Engineering'],
+    link: 'https://zurnixai.streamlit.app/',
+  },
+  {
     title: 'Forest Fire \u2014 Data Cleaning & Feature Engineering',
     company: 'Algerian Forest Fires Dataset',
     period: 'Project',
@@ -69,7 +79,7 @@ export function Work() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-6">
           {experiences.map((exp, index) => (
             <motion.a
-              key={exp.company + exp.period}
+              key={exp.title}
               href={exp.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -86,13 +96,21 @@ export function Work() {
                   ? {}
                   : { y: -4, transition: { duration: 0.25 } }
               }
-              className="group relative block rounded-xl overflow-hidden min-h-[44px]"
+              className={`group relative block rounded-xl overflow-hidden min-h-[44px] ${
+                exp.featured ? 'sm:col-span-2 lg:col-span-2' : ''
+              }`}
             >
-              <div className="absolute inset-0 bg-foreground/[0.02] border border-border rounded-xl group-hover:border-foreground/30 group-hover:bg-foreground/[0.04] group-hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.15)] transition-all duration-500" />
+              <div
+                className={`absolute inset-0 rounded-xl transition-all duration-500 ${
+                  exp.featured
+                    ? 'bg-gradient-to-br from-primary/[0.06] via-foreground/[0.02] to-transparent border border-primary/40 group-hover:border-primary/80 group-hover:shadow-[0_12px_36px_-10px_rgba(235,94,40,0.2)]'
+                    : 'bg-foreground/[0.02] border border-border group-hover:border-foreground/30 group-hover:bg-foreground/[0.04] group-hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.15)]'
+                }`}
+              />
 
               <div className="relative p-6 lg:p-8 flex flex-col h-full">
                 <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0 pr-6">
                     <h3 className="text-base md:text-lg lg:text-xl font-sans font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-snug">
                       {exp.title}
                     </h3>
@@ -100,24 +118,39 @@ export function Work() {
                       {exp.company}
                     </p>
                   </div>
-                  <span className="shrink-0 px-3 py-1 text-xs font-sans font-medium text-muted-foreground border border-border rounded-full tracking-widest uppercase bg-foreground/[0.03]">
-                    {exp.period}
-                  </span>
+                  {exp.isLive ? (
+                    <span className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1 text-xs font-sans font-medium text-emerald-400 border border-emerald-500/30 rounded-full tracking-widest uppercase bg-emerald-500/10 shadow-[0_0_12px_rgba(52,211,153,0.15)]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      {exp.period}
+                    </span>
+                  ) : (
+                    <span className="shrink-0 px-3 py-1 text-xs font-sans font-medium text-muted-foreground border border-border rounded-full tracking-widest uppercase bg-foreground/[0.03]">
+                      {exp.period}
+                    </span>
+                  )}
                 </div>
 
                 <p className="text-sm lg:text-base font-serif text-muted-foreground leading-relaxed mb-6 flex-1 group-hover:text-foreground/90 transition-colors duration-300">
                   {exp.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {exp.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 text-xs font-sans font-medium text-muted-foreground border border-border rounded-full bg-foreground/[0.03] group-hover:border-border/80 transition-all duration-300"
-                    >
-                      {skill}
+                <div className="flex items-center justify-between gap-4 flex-wrap mt-auto">
+                  <div className="flex flex-wrap gap-2">
+                    {exp.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 text-xs font-sans font-medium text-muted-foreground border border-border rounded-full bg-foreground/[0.03] group-hover:border-border/80 transition-all duration-300"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                  {exp.isLive && (
+                    <span className="inline-flex items-center gap-1.5 text-xs font-sans font-medium text-primary transition-colors">
+                      Launch Live App
+                      <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </span>
-                  ))}
+                  )}
                 </div>
 
                 <div className="absolute top-6 right-6 lg:top-8 lg:right-8 opacity-100 transition-all duration-300 translate-x-0">

@@ -112,7 +112,7 @@ const educations = [
     year: '2020',
   },
   {
-    image: 'school.png',
+    image: 'school.jpg',
     label: 'KRISHNAGOPALPUR DWI-MUKHI HIGH SCHOOL, NAOGAON',
     url: 'https://www.sohopathi.com/krisna-gopalpur-dwi-mukhi-high-school/',
     degree: 'Secondary School Certificate (Science)',
