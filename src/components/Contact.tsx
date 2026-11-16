@@ -29,6 +29,11 @@ const GithubIcon = () => (
   </svg>
 )
 
+const KaggleIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.342-.246.534-.246h3.374c.164 0 .258.059.281.176.023.141-.023.246-.141.317l-6.237 6.132 6.447 8.784c.141.141.176.247.141.372z"/>
+  </svg>
+)
 const ResearchGateIcon = () => (
   <img
     src="/research.png"
@@ -47,6 +52,7 @@ type SocialLink = {
 const socialLinks: SocialLink[] = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-zobayer-chowdhury-5203461b3/', icon: LinkedinIcon, external: true },
   { label: 'GitHub', href: 'https://github.com/zobayer301', icon: GithubIcon, external: true },
+  { label: 'Kaggle', href: 'https://www.kaggle.com/mdzobayerchowdhury', icon: KaggleIcon, external: true },
   { label: 'Email', href: 'mailto:mdzobayerchowdhury3077@gmail.com', icon: MailIcon, external: false },
   { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Md-Zobayer-Chowdhury', icon: ResearchGateIcon, external: true },
 ]
